@@ -1218,6 +1218,17 @@ function renderPres(){
       <div class="s-av-t">${s.text}</div>
     </div>`;
   }
+  else if(s.typ==='reflektion_inline'){
+    // Reflektion placerad inne i genomförandet (ej i slutet)
+    h=`<div class="slide on">
+      <div class="s-ref-wrap">
+        <div class="s-ref-mark">"</div>
+        <div class="s-ref-qs" style="color:${accent.c}">${s.rubrik||'Fundera tillsammans'}</div>
+        <div class="s-refq">${s.fraga}</div>
+        ${s.uppgift?`<div class="s-uppg" style="margin-top:20px;text-align:left;">${s.uppgift}</div>`:''}
+      </div>
+    </div>`;
+  }
   // ── NYA SLIDE-TYPER (Fas 2) ──
   else if(s.typ==='scenario_visual'){
     const hasTimer=s.timer_sekunder>0;

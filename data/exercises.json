@@ -1380,13 +1380,19 @@
           "typ": "projektor",
           "rubrik": "Berättelsen om Felix",
           "text": "Felix är ute på skolgården.\n\nHan ser sin klasskompis Alma sitta ensam vid bänken. Alma ser ledsen ut.\n\nFelix kan gå förbi. Men han väljer att gå fram och fråga: \"Hej Alma — är du okej?\"",
-          "uppgift": "Hur tror ni Alma kände sig när Felix kom fram?"
+          "uppgift": "Lyssna noga på berättelsen."
         },
         {
-          "typ": "projektor",
-          "rubrik": "Vad var modigt?",
-          "text": "Felix valde att gå fram.\n\nHan kunde ha gått förbi som alla andra.\n\nMen han valde att se och hjälpa.",
-          "uppgift": "Det är att vara en HERO."
+          "typ": "reflektion_inline",
+          "rubrik": "Fundera tillsammans",
+          "fraga": "Vad gjorde Felix som var modigt?",
+          "uppgift": "Räck upp handen om du har en idé."
+        },
+        {
+          "typ": "reflektion_inline",
+          "rubrik": "Och Alma — vad kände hon?",
+          "fraga": "Hur tror du Alma kände sig när Felix kom fram?",
+          "uppgift": "Vänd dig till din bänkkamrat och säg en sak."
         },
         {
           "typ": "projektor",
@@ -1397,8 +1403,6 @@
         }
       ],
       "reflektionsfragor": [
-        "Vad gjorde Felix som var modigt?",
-        "Hur tror du Alma kände sig när någon kom fram till henne?",
         "Har du någon gång hjälpt någon som var ensam? Hur kändes det?",
         "Vad kan du göra om du ser att någon är ledsen?"
       ],
