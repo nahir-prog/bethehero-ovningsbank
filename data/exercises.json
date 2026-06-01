@@ -1369,18 +1369,24 @@
         },
         {
           "typ": "kort_visning",
-          "rubrik": "En riktig hjälte",
+          "rubrik": "Det här är en HERO",
           "nummer": [
             1
           ],
-          "text": "Det här är HERO-kortet.",
+          "text": "En HERO ser, bryr sig och agerar.",
           "uppgift": "Vad tror ni gör en person till en hjälte?"
         },
         {
           "typ": "projektor",
-          "rubrik": "En berättelse",
-          "text": "En kompis på skolgården ser en annan elev sitta ensam och ser ledsen ut.\n\nKompisen kan gå förbi. Men hen väljer att gå fram och fråga: \"Är du okej?\"",
-          "uppgift": "Vad tror ni den ensamma kompisen kände när någon kom fram?"
+          "rubrik": "Berättelsen om Felix",
+          "text": "Felix är ute på skolgården.\n\nHan ser sin klasskompis Alma sitta ensam vid bänken. Alma ser ledsen ut.\n\nFelix kan gå förbi. Men han väljer att gå fram och fråga: \"Hej Alma — är du okej?\"",
+          "uppgift": "Hur tror ni Alma kände sig när Felix kom fram?"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Vad var modigt?",
+          "text": "Felix valde att gå fram.\n\nHan kunde ha gått förbi som alla andra.\n\nMen han valde att se och hjälpa.",
+          "uppgift": "Det är att vara en HERO."
         },
         {
           "typ": "projektor",
@@ -1391,8 +1397,9 @@
         }
       ],
       "reflektionsfragor": [
-        "Vad gjorde Maximus som var modigt?",
-        "Har du någon gång hjälpt någon — hur kändes det?",
+        "Vad gjorde Felix som var modigt?",
+        "Hur tror du Alma kände sig när någon kom fram till henne?",
+        "Har du någon gång hjälpt någon som var ensam? Hur kändes det?",
         "Vad kan du göra om du ser att någon är ledsen?"
       ],
       "trygg_start": "\"Alla kan vara en hjälte. Det handlar inte om att vara störst eller starkast — det handlar om att se och välja.\"",
