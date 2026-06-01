@@ -176,8 +176,8 @@
       "genomforande": [
         {
           "typ": "karaktär",
-          "namn": "Detektiv HERO",
-          "text": "Hej! Vill du bli känslodetektiv idag? Vi ska leta efter ledtrådar — men inte i ett brott. Vi ska leta i oss själva.",
+          "bild": "maximus",
+          "text": "Vill du bli känslodetektiv idag?\n\nVi ska leta efter ledtrådar — men inte i ett brott. Vi ska leta i oss själva.",
           "uppgift": "Fundera: vad letar en känslodetektiv efter?"
         },
         {
@@ -281,20 +281,35 @@
         {
           "typ": "scenario_visual",
           "illustration": "klassrum",
-          "rubrik": "Berättelsen om Lova",
-          "text": "Lova sitter alltid ensam i matsalen.\n\nHampus och hans kompisar himlar med ögonen när hon går förbi.\n\nIngen säger något. Inte ens läraren som ser det.",
-          "uppgift": "Dela ut HERO-KORT 1–7. Vem är vem i berättelsen?",
+          "rubrik": "Berättelsen",
+          "text": "En elev sitter alltid ensam i matsalen.\n\nNågra andra elever himlar med ögonen när hon går förbi.\n\nIngen säger något. Inte ens läraren som ser det.",
+          "uppgift": "Lyssna noga."
+        },
+        {
+          "typ": "kort_visning",
+          "rubrik": "Vilka roller finns i berättelsen?",
+          "nummer": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "text": "Ni har HERO-KORT 1–7 framför er. Tilldela ett kort till varje person i berättelsen.",
+          "uppgift": "Diskutera i grupp — 5 minuter.",
           "timer_sekunder": 300
         },
         {
           "typ": "projektor",
           "rubrik": "Diskutera i helklass",
-          "text": "Vilket kort lade ni på läraren?",
-          "uppgift": "Fokusera på skillnaden: ÅSKÅDARE (4) vs VUXNA I SKOLAN (3)."
+          "text": "Vilket kort lade ni på läraren?\n\nVar det ÅSKÅDARE (kort 4) eller VUXNA I SKOLAN (kort 3)?",
+          "uppgift": "Fokusera på skillnaden mellan korten."
         },
         {
           "typ": "projektor",
-          "rubrik": "Nästa fråga",
+          "rubrik": "Den viktiga frågan",
           "text": "Finns det en HERO i berättelsen?\n\nVad hade behövt hända för att det skulle finnas en?",
           "uppgift": "Diskutera i grupp — 3 minuter.",
           "timer_sekunder": 180
@@ -613,8 +628,8 @@
       "genomforande": [
         {
           "typ": "karaktär",
-          "namn": "HERO frågar",
-          "text": "Hej kompis! Idag ska vi prata om känslor. Vet du vad en känsla är? Det är något du har inom dig.",
+          "bild": "maximus",
+          "text": "Hej kompis! Idag ska vi prata om något viktigt. Något som finns inom dig — varje dag.\n\nKänslor!",
           "uppgift": "Säg ett ord som beskriver en känsla."
         },
         {
@@ -639,7 +654,7 @@
         },
         {
           "typ": "karaktär",
-          "namn": "HERO",
+          "bild": "maximus-hero",
           "text": "Bra jobbat! Ni är riktiga känsloexperter nu.",
           "uppgift": "De som vill får visa sin teckning."
         }
@@ -825,18 +840,27 @@
       "tips": "Poängtera att alla har alla superkrafter — man väljer vilken man tränar mest.",
       "genomforande": [
         {
-          "typ": "projektor",
-          "rubrik": "HERO-kortens superkrafter",
-          "text": "Uppmärksam · Modig · Godhjärtad · Rättvis",
-          "uppgift": "Vilken känner ni igen hos er själva?"
+          "typ": "karaktär",
+          "bild": "maximus-hero",
+          "text": "Hej hjälte! Visste du att du har superkrafter?\n\nIdag ska vi ta reda på vilka.",
+          "uppgift": null
         },
         {
-          "typ": "superkraft_grid"
+          "typ": "kort_visning",
+          "rubrik": "Dina superkrafter",
+          "nummer": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "text": "Det här är HERO-kortens fyra superkrafter.",
+          "uppgift": "Vilken känner du igen hos dig själv?"
         },
         {
           "typ": "projektor",
           "rubrik": "Din uppgift",
-          "text": "Rita dig själv med din favoritskraft. Ge dig själv en superhjältepose!",
+          "text": "Rita dig själv med din favoritskraft.\n\nGe dig själv en superhjältepose!",
           "uppgift": "5–7 minuter.",
           "timer_sekunder": 360
         }
@@ -1339,20 +1363,29 @@
       "genomforande": [
         {
           "typ": "karaktär",
-          "namn": "HERO",
-          "text": "Hej! Jag heter HERO. Idag ska ni lära er en hemlighet — en hjälte är inte den som är starkast. En hjälte är den som ser och väljer att hjälpa.",
+          "bild": "maximus",
+          "text": "Hej kompis! Jag har en hemlighet att berätta.\n\nEn hjälte är inte den som är starkast.\n\nEn hjälte är den som ser och väljer att hjälpa.",
           "uppgift": null
         },
         {
-          "typ": "karaktär",
-          "namn": "Maximus berättar",
-          "text": "Maximus är på skolgården. Han ser en kompis sitta ensam och ser ledsen ut. Maximus kan gå förbi. Men han väljer att gå fram och fråga: \"Är du okej?\"",
-          "uppgift": "Vad tror ni kompisen kände när Maximus frågade?"
+          "typ": "kort_visning",
+          "rubrik": "En riktig hjälte",
+          "nummer": [
+            1
+          ],
+          "text": "Det här är HERO-kortet.",
+          "uppgift": "Vad tror ni gör en person till en hjälte?"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "En berättelse",
+          "text": "En kompis på skolgården ser en annan elev sitta ensam och ser ledsen ut.\n\nKompisen kan gå förbi. Men hen väljer att gå fram och fråga: \"Är du okej?\"",
+          "uppgift": "Vad tror ni den ensamma kompisen kände när någon kom fram?"
         },
         {
           "typ": "projektor",
           "rubrik": "Nu är det din tur",
-          "text": "Rita dig själv som hjälten. Vem hjälper du — och hur?",
+          "text": "Rita dig själv som hjälten.\n\nVem hjälper du — och hur?",
           "uppgift": "Du har 6 minuter.",
           "timer_sekunder": 360
         }

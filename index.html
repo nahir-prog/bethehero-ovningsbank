@@ -1327,19 +1327,61 @@ function renderPres(){
     </div>`;
   }
   else if(s.typ==='karaktär'){
+    const bildFil = s.bild === 'maximus-hero' ? 'maximus-hero-500.jpg'
+                  : s.bild === 'maximus' ? 'maximus-1-500.jpg'
+                  : 'hero-logo-400.png';
+    const objectFit = s.bild ? 'cover' : 'contain';
     h=`<div class="slide on">
       <div class="s-char-wrap">
         <div class="s-char-img" style="border-color:${accent.c}">
-          <img src="images/hero-logo-400.png" alt="${s.namn||'HERO'}">
+          <img src="images/${bildFil}" style="object-fit:${objectFit};width:100%;height:100%;" alt="${s.namn||''}">
         </div>
         <div class="s-char-body">
           <div class="s-char-bubble" style="border-color:${accent.c}">
-            <div class="s-char-name" style="color:${accent.c}">${s.namn||'HERO'}</div>
+            ${s.namn?`<div class="s-char-name" style="color:${accent.c}">${s.namn}</div>`:''}
             <div class="s-char-text">${s.text}</div>
           </div>
           ${s.uppgift?`<div class="s-char-uppg">${s.uppgift}</div>`:''}
         </div>
       </div>
+    </div>`;
+  }
+  else if(s.typ==='kort_visning'){
+    const HERO_KORT = {
+      1:{f:'hero-kort-01-hero',n:'HERO'},
+      2:{f:'hero-kort-02-utsatt',n:'UTSATT'},
+      3:{f:'hero-kort-03-vuxna',n:'VUXNA I SKOLAN'},
+      4:{f:'hero-kort-04-askadare',n:'ÅSKÅDARE'},
+      5:{f:'hero-kort-05-passiv-mobbare',n:'PASSIV MOBBARE'},
+      6:{f:'hero-kort-06-medmobbare',n:'MEDMOBBARE'},
+      7:{f:'hero-kort-07-mobbare',n:'MOBBARE'},
+      8:{f:'hero-kort-08-verbal',n:'VERBAL MOBBNING'},
+      9:{f:'hero-kort-09-fysisk',n:'FYSISK MOBBNING'},
+      10:{f:'hero-kort-10-psykisk',n:'PSYKISK MOBBNING'},
+      11:{f:'hero-kort-11-nat',n:'NÄTMOBBNING'},
+      12:{f:'hero-kort-12-uppmarksam',n:'UPPMÄRKSAM'},
+      13:{f:'hero-kort-13-modig',n:'MODIG'},
+      14:{f:'hero-kort-14-godhjartad',n:'GODHJÄRTAD'},
+      15:{f:'hero-kort-15-rattvis',n:'RÄTTVIS'},
+      16:{f:'hero-kort-16-konflikt',n:'KONFLIKT'},
+      17:{f:'hero-kort-17-krankning',n:'KRÄNKNING'},
+      18:{f:'hero-kort-18-mobbning',n:'MOBBNING'}
+    };
+    const nrs = s.nummer || [];
+    const cols = nrs.length <= 4 ? nrs.length : (nrs.length <= 6 ? 3 : 4);
+    const cards = nrs.map(n => {
+      const k = HERO_KORT[n];
+      if(!k) return '';
+      return `<div style="background:var(--ps);border:2px solid var(--pborder);border-radius:10px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <img src="images/${k.f}-400.jpg" style="width:100%;max-width:160px;height:auto;border-radius:6px;" alt="${k.n}">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--pt);">${k.n}</div>
+      </div>`;
+    }).join('');
+    h=`<div class="slide on">
+      ${s.rubrik?`<div style="text-align:center;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${accent.c};margin-bottom:14px;">${s.rubrik}</div>`:''}
+      ${s.text?`<div style="text-align:center;font-size:clamp(15px,2vw,20px);color:var(--pt);margin-bottom:20px;line-height:1.5;">${s.text}</div>`:''}
+      <div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px;max-width:720px;margin:0 auto;">${cards}</div>
+      ${s.uppgift?`<div style="text-align:center;font-size:13px;color:var(--pm);margin-top:18px;font-style:italic;">${s.uppgift}</div>`:''}
     </div>`;
   }
 
