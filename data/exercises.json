@@ -965,19 +965,22 @@
           "typ": "projektor",
           "rubrik": "SCENARIO A — 15 sekunder",
           "text": "Du ser att en klasskompis sitter ensam och gråter i korridoren. Folk går förbi. Ingen stannar.",
-          "uppgift": "⏱ Vad gör du? Räkna ner från 15."
+          "uppgift": "⏱ Vad gör du? Räkna ner från 15.",
+          "timer_sekunder": 15
         },
         {
           "typ": "projektor",
           "rubrik": "SCENARIO B — 15 sekunder",
           "text": "Någon i din grupp på gruppchatten skickar en skärmdump på en annan elev. Alla börjar skratta.",
-          "uppgift": "⏱ Vad gör du? Räkna ner från 15."
+          "uppgift": "⏱ Vad gör du? Räkna ner från 15.",
+          "timer_sekunder": 15
         },
         {
           "typ": "projektor",
           "rubrik": "SCENARIO C — 15 sekunder",
           "text": "Du hör att två i klassen planerar att utesluta en tredje person från en aktivitet imorgon.",
-          "uppgift": "⏱ Vad gör du? Räkna ner från 15."
+          "uppgift": "⏱ Vad gör du? Räkna ner från 15.",
+          "timer_sekunder": 15
         }
       ],
       "reflektionsfragor": [
