@@ -116,6 +116,7 @@ När du skapar en ny övning levererar du alltid dessa fält. Inga av dem är va
   - Quiz
   - Gruppövning
   - Survey / självskattning
+  - Experiment / lek — när eleverna upplever något själva (t.ex. socialt experiment) snarare än bara pratar om det
 - **Hur eleverna arbetar** — individuellt / i par / i grupp om 3–5 / med hela klassen
 
 ### PEDAGOGISK KÄRNA

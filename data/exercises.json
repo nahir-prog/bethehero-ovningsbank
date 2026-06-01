@@ -1799,6 +1799,115 @@
           "Vad brukar hjälpa dig att lugna ner dig?"
         ]
       }
+    },
+    {
+      "id": "BTH-017",
+      "titel": "TYST RUM",
+      "fokustema": [
+        "Grupptryck & normer",
+        "Mod & civilkurage"
+      ],
+      "alder": "Åk 7",
+      "alder_tags": [
+        "7"
+      ],
+      "tid": 35,
+      "forberedelse_tid": 10,
+      "ovningstyp": [
+        "Experiment / lek",
+        "Samtal / diskussion"
+      ],
+      "arbetssatt": [
+        "helklass",
+        "individuellt"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": true,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna upplever grupptryck i kroppen — på riktigt, i klassrummet — istället för att bara prata om det. Genom ett experiment där de själva dras med får de ett gemensamt, äkta exempel att förstå hur svårt det faktiskt är att stå emot.",
+      "forberedelse": "Välj i förväg ut 3–4 elever som är hemliga medhjälpare. Prata med dem enskilt före lektionen (i korridoren, eller via meddelande): deras enda uppgift är att resa sig på det svar du nickar mot, även om det känns konstigt. De får inte avslöja något. Välj trygga elever som klarar att hålla tyst och inte känner sig utpekade. Öppna presentationsläget.",
+      "material": "Projektor, gott om plats att resa sig vid bänken",
+      "genomforande_enkelt": [
+        "Säg bara: \"Vi ska göra ett snabbt experiment. Inga rätta svar — rösta med kroppen genom att resa er.\" Avslöja INTE vad det handlar om.",
+        "Kör Runda 1 (lätt, tydligt rätt svar). Dina medhjälpare reser sig på FEL alternativ. Räkna högt hur många som reste sig.",
+        "Kör Runda 2 (samma upplägg, medhjälparna leder mot ett konstigt svar igen). Lägg märke till hur fler följer med.",
+        "Kör Runda 3 — den riktiga frågan, utan medhjälpare som styr.",
+        "AVSLÖJA: berätta att några var med på det. Be medhjälparna räcka upp handen. Låt reaktionen landa.",
+        "Diskutera i helklass med frågorna nedan — nu har ni ett eget exempel.",
+        "Avsluta med den tysta exit-frågan."
+      ],
+      "tips": "Hemligheten är allt — om klassen vet i förväg funkar det inte. Håll tempot uppe i rundorna, det ska kännas som en lek. Vid avslöjandet: gör det lätt och nyfiket, ALDRIG som att någon blev lurad eller dum. Poängen är 'titta vad som händer med oss alla', inte 'haha ni gick på det'. Om klassen är spänd eller har pågående konflikter — kör den vanliga versionen utan hemliga medhjälpare istället (se interna anteckningar).",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "Snabbt experiment",
+          "text": "Vi ska testa en sak. Inga rätta svar, inget betyg.\n\nDu röstar med kroppen: res dig vid din bänk för det alternativ jag säger.\n\nReds? Vi kör snabbt.",
+          "uppgift": "Stå redo vid din bänk."
+        },
+        {
+          "typ": "omröstning",
+          "fraga": "RUNDA 1: Vilken är störst?",
+          "alternativ": [
+            "En fotboll",
+            "En basketboll",
+            "En pingisboll"
+          ]
+        },
+        {
+          "typ": "omröstning",
+          "fraga": "RUNDA 2: Vilken färg har en vanlig brevlåda i Sverige?",
+          "alternativ": [
+            "Gul",
+            "Blå",
+            "Röd"
+          ]
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "RUNDA 3 — den riktiga",
+          "text": "Sista frågan. Den här gången finns inget självklart svar.\n\nRes dig om du HÅLLER MED:\n\n\"Jag har någon gång gjort eller sagt något bara för att alla andra gjorde det.\"",
+          "uppgift": "Res dig om du håller med. Titta dig omkring."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "En sak till...",
+          "text": "Några i rummet visste något ni andra inte visste.\n\nDe hade i hemlighet fått i uppdrag att resa sig på ett konstigt svar — för att se vad som hände med resten av er.",
+          "uppgift": "Ni som var medhjälpare — räck upp handen nu."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Vad hände egentligen?",
+          "text": "Kände någon att de tvekade? Reste sig fast det kändes fel? Eller satt kvar fast det var jobbigt?\n\nDet ni precis kände — det är grupptryck. Inte i en film. I det här rummet.",
+          "uppgift": "Diskutera i helklass — ärligt, ingen blir uthängd."
+        },
+        {
+          "typ": "pulse_check",
+          "fraga": "Hur nära var du att följa med på ett svar du visste var fel?",
+          "sub": "Visa med fingrar 1–5",
+          "skala_min": "Inte alls nära",
+          "skala_max": "Jag gjorde det"
+        }
+      ],
+      "reflektionsfragor": [
+        "Vad hände i kroppen när du såg andra resa sig på ett svar du tyckte var fel?",
+        "Är det lättare eller svårare att stå emot när man ser exakt vilka som gör annorlunda — jämfört med en chatt där man inte ser någon?",
+        "Vad skulle behövas i det här rummet för att det ska kännas okej att vara den enda som sitter kvar?"
+      ],
+      "trygg_start": "\"Vi ska göra ett experiment. Det finns inget rätt eller fel, och ingen kommer att hängas ut. Du får alltid sitta kvar utan att förklara varför.\"",
+      "trygg_avslutning": "Var och en skriver i tysthet ner en sak: \"Nästa gång jag känner trycket att följa med, ska jag...\". Behålls privat — ingen läser upp.",
+      "npf": "Elever som inte vill resa sig kan rösta genom att räcka upp handen eller peka — tvinga aldrig kroppsligt deltagande. Förvarna gärna en elev som behöver förutsägbarhet enskilt om att 'det kommer en överraskning, men inget farligt'. Avslöjandet görs lugnt och utan press.",
+      "forskningskoppling": "Konformitetsforskningen (Asch, 1955) visade att en majoritet av deltagarna minst en gång följde gruppen till ett svar de visste var fel — effekten är särskilt stark i tonåren när grupptillhörighet väger tungt. Att uppleva mekanismen själv ger starkare inlärning än att enbart få den beskriven.",
+      "kalltyp": "Forskning",
+      "risker": "Kör INTE med hemliga medhjälpare om klassen har pågående konflikter, en utsatt elev, eller låg tillit — då kan en elev känna sig lurad. Välj medhjälpare som är trygga och inte själva i en utsatt position. Vid avslöjandet: håll tonen nyfiken, aldrig hånfull. Stanna kvar med elever som verkar besvärade efteråt.",
+      "efter_lektionen": "Stark ingång till ALLA ANDRA GÖR DET (BTH-001) eller en civilkurageövning som FEMTON SEKUNDER (BTH-010) — nu när klassen har ett eget exempel på hur trycket känns.",
+      "interna_anteckningar": "Nytt format i banken: socialt experiment där eleverna själva är variabeln, inspirerat av Asch. SÄKER VARIANT om klassen inte passar för medhjälpar-upplägget: kör samma tre rundor men utan hemliga medhjälpare, och prata istället om 'tänk om några av er hade fått i uppdrag att rösta fel — hur många tror ni hade följt med?'. Tappar lite kraft men noll risk. Följ upp med läraren om experiment-formatet kändes hanterbart.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
     }
   ]
 }
