@@ -368,6 +368,31 @@ a{color:inherit;text-decoration:none;}
 /* ══ TOAST ══ */
 .toast{position:fixed;bottom:22px;right:22px;background:var(--s2);border:1px solid var(--border);color:var(--text);padding:9px 15px;border-radius:7px;font-size:12px;font-weight:600;z-index:3000;opacity:0;transform:translateY(6px);transition:all .22s;pointer-events:none;display:flex;align-items:center;gap:7px;}
 .toast.show{opacity:1;transform:translateY(0);}
+
+/* Intro animations */
+.intro-visual{height:80px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+/* Line animation for DEN OSYNLIGA LINJEN */
+.anim-line{position:relative;width:300px;height:40px;}
+.anim-line .line-track{position:absolute;top:50%;left:0;right:0;height:3px;transform:translateY(-50%);border-radius:2px;}
+.anim-line .dot{width:16px;height:16px;border-radius:50%;position:absolute;top:50%;transform:translateY(-50%);animation:spreadDots 2s ease-in-out infinite;}
+.anim-line .dot1{background:#e05c4f;animation-delay:0s;}
+.anim-line .dot2{background:#4f7fe0;animation-delay:.1s;}
+.anim-line .dot3{background:#4fc87f;animation-delay:.2s;}
+@keyframes spreadDots{0%,100%{left:42%}33%{left:10%}66%{left:75%}}
+/* Timer animation for FEMTON SEKUNDER */
+.anim-timer{position:relative;width:70px;height:70px;}
+.anim-timer svg{transform:rotate(-90deg);}
+.anim-timer-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;}
+@keyframes timerSpin{from{stroke-dashoffset:0}to{stroke-dashoffset:283}}
+.anim-timer-fill{animation:timerSpin 15s linear infinite;fill:none;stroke-width:5;stroke-linecap:round;}
+/* Cards animation for MITT VAL */
+.anim-cards{display:flex;gap:8px;}
+.anim-card{width:28px;height:40px;border-radius:5px;animation:cardBounce 1.5s ease-in-out infinite;}
+.anim-card:nth-child(1){background:var(--gult);animation-delay:0s;}
+.anim-card:nth-child(2){background:var(--gront);animation-delay:.15s;}
+.anim-card:nth-child(3){background:var(--blatt);animation-delay:.3s;}
+.anim-card:nth-child(4){background:var(--rott);animation-delay:.45s;}
+@keyframes cardBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 </style>
 </head>
 <body>
@@ -746,7 +771,7 @@ function tvUsed(){quickUsed(cur.id);updateTVbtns();}
 function buildTeacherHTML(e){
   const notes=LS.notes(); const n=notes[e.id]||'';
   const years=e.alder_tags.map(a=>`<span class="tv-ap">${a==='F'?'F-klass':'Åk '+a}</span>`).join('');
-  const steps=e.genomforande_enkelt.map((s,i)=>`<div class="step"><div class="sn">${i+1}</div><div class="st">${s}</div></div>`).join('');
+  const steps=e.genomforande_enkelt.map((s,i)=>`<div class="step"><div class="sn">${i+1}</div><div class="st edit-steg editable-field">${s}</div></div>`).join('');
   const refs=e.reflektionsfragor.map(r=>`<div class="ri"><span class="rq">?</span>${r}</div>`).join('');
   const sidebarMaterial=e.elevmaterial?`<div class="sc"><div class="sc-t">Elevmaterial</div><div onclick="openMat('${e.id}')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--s2);border:1px solid var(--border);border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;transition:border-color .12s" onmouseover="this.style.borderColor='var(--pl)'" onmouseout="this.style.borderColor='var(--border)'"><span>📄 ${e.elevmaterial_typ}</span><span style="color:var(--pl)">Förhandsgranska & skriv ut ↗</span></div></div>`:'';
   const prodSection=e.behov_produktion?`<div class="ts"><div class="ts-h"><span class="ts-icon">🎬</span><span class="ts-title">Behöver produktion</span></div><div class="ts-b"><div class="prod-b"><div class="prod-types">${e.behov_produktion.typer.map(t=>`<span class="pbadge ${t}">${t}</span>`).join('')}</div><div class="prod-desc">${e.behov_produktion.beskrivning}</div>${e.behov_produktion.manus?`<div class="plbl" style="color:var(--muted)">Manus</div><div class="prod-manus">${e.behov_produktion.manus}</div>`:''} ${e.behov_produktion.elevenlabs_prompt?`<div class="plbl" style="color:var(--gront);margin-top:8px">ElevenLabs-prompt</div><div class="prod-prompt">${e.behov_produktion.elevenlabs_prompt}</div>`:''}</div></div></div>`:'';
@@ -760,6 +785,8 @@ function buildTeacherHTML(e){
     <div class="tv-right">
       <button class="tv-btn fav" id="tv-fav" onclick="tvFav()">☆ Favorit</button>
       <button class="tv-btn used" id="tv-used" onclick="tvUsed()">⬜ Markera som använd</button>
+      <button class="tv-btn" id="tv-edit-btn" onclick="toggleEdit()">✏ Redigera</button>
+      <button class="tv-btn" onclick="printTeacher()" title="Skriv ut lärarvy">🖨 Skriv ut</button>
       <button class="start-btn" onclick="startPres()">▶ Starta övning</button>
     </div>
   </div>
@@ -779,14 +806,14 @@ function buildTeacherHTML(e){
           <span class="tv-mtag">📋 ${e.forberedelse_tid} min förberedelse</span>
           <span class="tv-mtag">👥 ${Array.isArray(e.arbetssatt)?e.arbetssatt.join(' · '):e.arbetssatt}</span>
         </div>
-        <p class="tv-syfte">${e.syfte}</p>
+        <p class="tv-syfte editable-field" id="edit-syfte">${e.syfte}</p>
       </div>
       <div class="ts">
         <div class="ts-h"><span class="ts-icon">📋</span><span class="ts-title">Förberedelse & material</span></div>
         <div class="ts-b"><p class="prose">${e.forberedelse}</p><p class="prose" style="margin-top:6px;color:var(--muted)">${e.material}</p></div>
       </div>
       <div class="ts">
-        <div class="ts-h"><span class="ts-icon">▶️</span><span class="ts-title">Genomförande</span></div>
+        <div class="ts-h"><span class="ts-icon">▶️</span><span class="ts-title">Genomförande</span><button onclick="copyText('${e.genomforande_enkelt.join('\\n')}')" style="margin-left:auto;background:transparent;border:1px solid var(--border);color:var(--muted);font-size:10px;padding:2px 8px;border-radius:4px;cursor:pointer">Kopiera</button></div>
         <div class="ts-b"><div class="step-list">${steps}</div></div>
       </div>
       ${e.tips?`<div class="ts"><div class="ts-h"><span class="ts-icon">💡</span><span class="ts-title">Tips</span></div><div class="ts-b"><p class="prose">${e.tips}</p></div></div>`:''}
@@ -986,7 +1013,7 @@ function timerHTML(sec, accentColor){
       <div class="timer-num" id="tnum">${sec}</div>
     </div>
     <div class="timer-controls">
-      <button class="timer-start" id="tbtn" onclick="toggleTimer()">▶ Starta ${sec} sek</button>
+      <button class="timer-start" id="tbtn" onclick="toggleTimer()" style="background:${accentColor}">▶ Starta ${sec} sek</button>
       <button class="timer-reset" onclick="resetTimer()">↺ Nollställ</button>
       <div class="timer-label">Håll upp ditt MITT VAL-kort<br>när timern är slut</div>
     </div>
@@ -1048,7 +1075,7 @@ function renderPres(){
   if(s.typ==='intro'){
     const tryggClean=(s.trygg||'').replace(/^["«»""]|["«»""]$/g,'').trim();
     h=`<div class="slide on s-intro">
-      <img src="images/hero-logo-400.png" class="s-intro-logo" alt="BE THE HERO">
+      ${introVisualHTML(cur, accent)}
       <div class="s-intro-badge">${cur.ovningstyp&&cur.ovningstyp[0]||'Övning'}</div>
       <div class="s-intro-title">${s.titel}</div>
       <div class="s-intro-meta">
@@ -1121,6 +1148,66 @@ document.addEventListener('keydown',e=>{
     if(e.key==='Escape')closePres();
   }
 });
+
+// ── Print teacher view ──
+function printTeacher(){
+  const c=document.getElementById('view-teacher').innerHTML;
+  const w=window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html lang="sv"><head><meta charset="UTF-8"><title>Lärarinstruktion</title><style>body{font-family:-apple-system,sans-serif;background:white;color:#1a1a2e;padding:20px;} .tv-topbar,.tv-btn,.start-btn,.back-btn{display:none!important;} .tv-body{grid-template-columns:1fr!important;} .tv-aside{display:none!important;} .ts{border:1px solid #e2e8f0;border-radius:6px;margin-bottom:12px;} .ts-h{padding:8px 12px;border-bottom:1px solid #e2e8f0;background:#f8faff;} .ts-b{padding:12px;} .step{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;} .sn{width:22px;height:22px;background:#1B2A6B;color:white;border-radius:50%;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;} .st{font-size:13px;color:#374151;} .ri{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9;font-size:13px;} .rq{color:#2B5FBF;font-weight:800;} .trygg-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;} .tb{background:#f8faff;padding:10px;border-radius:4px;font-size:12px;} .tbl{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;} .tv-h1{font-size:22px;font-weight:900;color:#1B2A6B;margin-bottom:6px;} .tv-syfte{font-size:13px;color:#374151;margin-bottom:12px;} .tv-ap,.tv-mtag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px;background:#EEF4FF;color:#2B5FBF;border:1px solid #C7D2FE;margin-right:4px;} .tvf{font-size:11px;padding:3px 8px;border-radius:4px;margin-right:4px;} .prose{font-size:13px;color:#374151;} .fb-box{background:#f8faff;padding:10px;border-radius:4px;font-size:12px;} .kbadge{font-size:9px;background:#EEF4FF;color:#2B5FBF;padding:1px 6px;border-radius:3px;font-weight:800;margin-bottom:5px;display:inline-block;} .sc,.prod-b,.notes-ta,.mat-overlay,.toast{display:none!important;}</style></head><body>'+c+'</body></html>');
+  w.document.close(); w.focus(); setTimeout(()=>w.print(),400);
+}
+
+// ── Copy text ──
+function copyText(text){navigator.clipboard.writeText(text).then(()=>toast('📋 Kopierat!'));}
+
+// ── Inline editing ──
+let editMode=false;
+function toggleEdit(){
+  editMode=!editMode;
+  const btn=document.getElementById('tv-edit-btn');
+  if(editMode){
+    btn.style.color='var(--gront)';btn.style.borderColor='rgba(16,185,129,.4)';btn.innerHTML='✓ Avsluta redigering';
+    enableEditing();
+  } else {
+    btn.style.color='';btn.style.borderColor='';btn.innerHTML='✏ Redigera';
+    saveEdits();
+  }
+}
+function enableEditing(){
+  document.querySelectorAll('.editable-field').forEach(el=>{
+    el.contentEditable='true';
+    el.style.outline='1px dashed rgba(124,58,237,.4)';
+    el.style.borderRadius='3px';
+    el.style.minHeight='20px';
+    el.style.padding='2px 4px';
+  });
+}
+function saveEdits(){
+  document.querySelectorAll('.editable-field').forEach(el=>{
+    el.contentEditable='false';
+    el.style.outline='';
+    el.style.padding='';
+  });
+  // Store in localStorage
+  const id=cur.id;
+  const overrides=JSON.parse(localStorage.getItem('bth_overrides')||'{}');
+  overrides[id]={
+    syfte: document.getElementById('edit-syfte')?.innerText||'',
+    tips: document.getElementById('edit-tips')?.innerText||'',
+    genomforande_enkelt_raw: [...document.querySelectorAll('.edit-steg')].map(e=>e.innerText)
+  };
+  localStorage.setItem('bth_overrides', JSON.stringify(overrides));
+  toast('✓ Ändringar sparade lokalt');
+}
+
+// ── Intro visual helper ──
+function introVisualHTML(e, accent){
+  const hasMV=(e.genomforande||[]).some(s=>s.typ==='mitt-val');
+  if(e.id==='BTH-011') return `<div class="intro-visual"><div class="anim-line"><div class="line-track" style="background:${accent.c}40"></div><div class="dot dot1" style="background:${accent.c}"></div><div class="dot dot2" style="background:rgba(255,255,255,.4)"></div><div class="dot dot3" style="background:${accent.c}80"></div></div></div>`;
+  if(e.id==='BTH-010') return `<div class="intro-visual"><div class="anim-timer"><svg viewBox="0 0 100 100" width="70" height="70"><circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="5"/><circle class="anim-timer-fill" cx="50" cy="50" r="45" stroke="${accent.c}" stroke-dasharray="283"/></svg><div class="anim-timer-num" style="color:${accent.c}">15</div></div></div>`;
+  if(hasMV) return `<div class="intro-visual"><div class="anim-cards"><div class="anim-card"></div><div class="anim-card"></div><div class="anim-card"></div><div class="anim-card"></div></div></div>`;
+  return `<div class="intro-visual"><img src="images/hero-logo-400.png" style="height:70px;width:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.4))" alt="BE THE HERO"></div>`;
+}
 </script>
 </body>
 </html>
