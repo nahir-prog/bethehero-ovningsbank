@@ -312,6 +312,91 @@ a{color:inherit;text-decoration:none;}
 .s-av-l{font-size:10px;font-weight:800;letter-spacing:2px;color:#3b82f6;text-transform:uppercase;margin-bottom:12px;}
 .s-av-t{font-size:clamp(17px,2.6vw,26px);color:var(--pt2);line-height:1.55;max-width:580px;margin:0 auto;font-style:italic;}
 
+/* ── SCENARIO_VISUAL — scen med inline-illustration ── */
+.s-sv-wrap{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:center;}
+.s-sv-illus{width:240px;height:240px;display:flex;align-items:center;justify-content:center;}
+.s-sv-illus svg{width:100%;height:100%;}
+.s-sv-body{display:flex;flex-direction:column;gap:14px;}
+.s-sv-rub{font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--tc,var(--pl));display:flex;align-items:center;gap:8px;}
+.s-sv-rub::after{content:'';flex:1;height:1px;background:var(--pborder);}
+.s-sv-text{font-size:clamp(18px,2.6vw,28px);font-weight:700;color:var(--pt);line-height:1.4;}
+.s-sv-uppg{font-size:13px;color:var(--pm);font-style:italic;}
+@keyframes bubblePop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
+.bubble-pop{transform-origin:center;animation:bubblePop .5s cubic-bezier(.34,1.56,.64,1) forwards;}
+.bubble-pop.d1{animation-delay:.1s;}.bubble-pop.d2{animation-delay:.4s;}.bubble-pop.d3{animation-delay:.7s;}.bubble-pop.d4{animation-delay:1.0s;}
+
+/* ── COUNTDOWN — stor fristående nedräkning ── */
+.s-cd-wrap{text-align:center;padding:30px 20px;}
+.s-cd-rub{font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--tc,var(--pl));margin-bottom:16px;}
+.s-cd-text{font-size:clamp(16px,2.2vw,22px);color:var(--pt2);margin-bottom:28px;line-height:1.4;max-width:520px;margin-left:auto;margin-right:auto;}
+.s-cd-ring{position:relative;width:240px;height:240px;margin:0 auto 24px;}
+.s-cd-ring svg{position:absolute;inset:0;transform:rotate(-90deg);}
+.s-cd-track{fill:none;stroke:var(--ptrack);stroke-width:8;}
+.s-cd-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .9s linear,stroke .3s;}
+.s-cd-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:64px;font-weight:900;color:var(--pt);font-variant-numeric:tabular-nums;}
+.s-cd-btn{color:#fff;border:none;padding:12px 32px;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .15s;}
+.s-cd-btn:hover{opacity:.85;}
+.s-cd-btn.running{background:rgba(239,68,68,.85)!important;}
+
+/* ── FYSISK_LINJE — animerad linje för rörelseövningar ── */
+.s-fl-wrap{padding:20px;}
+.s-fl-rub{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tc,var(--pl));margin-bottom:14px;}
+.s-fl-text{font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--pt);line-height:1.4;margin-bottom:24px;}
+.s-fl-line{position:relative;width:100%;height:80px;margin:32px 0 16px;}
+.s-fl-track{position:absolute;top:50%;left:0;right:0;height:6px;transform:translateY(-50%);border-radius:3px;background:var(--ptrack);}
+.s-fl-end{position:absolute;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--pt2);max-width:140px;background:var(--pb);padding:6px 10px;border-radius:5px;border:1px solid var(--pborder);}
+.s-fl-end.left{left:0;text-align:left;}
+.s-fl-end.right{right:0;text-align:right;}
+.s-fl-dot{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 4px var(--pb),0 4px 14px rgba(0,0,0,.4);}
+.s-fl-dot.a1{animation:flMove1 6s ease-in-out infinite;}
+.s-fl-dot.a2{animation:flMove2 5s ease-in-out infinite;animation-delay:.4s;}
+.s-fl-dot.a3{animation:flMove3 7s ease-in-out infinite;animation-delay:.8s;}
+.s-fl-dot.a4{animation:flMove4 5.5s ease-in-out infinite;animation-delay:1.2s;}
+.s-fl-dot.a5{animation:flMove5 6.5s ease-in-out infinite;animation-delay:.2s;}
+@keyframes flMove1{0%,100%{left:20%}50%{left:75%}}
+@keyframes flMove2{0%,100%{left:65%}50%{left:30%}}
+@keyframes flMove3{0%,100%{left:50%}30%{left:15%}70%{left:80%}}
+@keyframes flMove4{0%,100%{left:35%}50%{left:60%}}
+@keyframes flMove5{0%,100%{left:80%}50%{left:25%}}
+
+/* ── OMRÖSTNING — live-rösträkning ── */
+.s-vote-wrap{padding:10px;}
+.s-vote-q{font-size:clamp(18px,2.6vw,28px);font-weight:800;color:var(--pt);line-height:1.35;text-align:center;margin-bottom:22px;}
+.s-vote-opts{display:flex;flex-direction:column;gap:10px;max-width:620px;margin:0 auto;}
+.s-vote-row{position:relative;background:var(--ps);border:1px solid var(--pborder);border-radius:9px;padding:14px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;overflow:hidden;transition:border-color .15s;user-select:none;}
+.s-vote-row:hover{border-color:var(--pt2);}
+.s-vote-fill{position:absolute;left:0;top:0;bottom:0;background:var(--tc,var(--pl));opacity:.2;transition:width .4s cubic-bezier(.34,1.56,.64,1);}
+.s-vote-label{font-size:15px;font-weight:600;color:var(--pt);position:relative;z-index:1;flex:1;}
+.s-vote-count{font-size:22px;font-weight:900;color:var(--pt);position:relative;z-index:1;font-variant-numeric:tabular-nums;min-width:36px;text-align:right;}
+.s-vote-reset{display:block;margin:16px auto 0;background:transparent;border:1px solid var(--pborder);color:var(--pm);font-size:11px;padding:5px 14px;border-radius:5px;cursor:pointer;}
+.s-vote-reset:hover{color:var(--pt);}
+.s-vote-hint{text-align:center;font-size:11px;color:var(--pm);margin-top:10px;}
+
+/* ── PULSE_CHECK — 1–5 stora siffror ── */
+.s-pulse-wrap{text-align:center;padding:20px;}
+.s-pulse-q{font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--pt);line-height:1.4;margin-bottom:14px;}
+.s-pulse-sub{font-size:13px;color:var(--pm);margin-bottom:30px;}
+.s-pulse-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.s-pulse-num{width:88px;height:88px;border-radius:50%;border:3px solid var(--pborder);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;color:var(--pt);transition:all .2s;background:var(--ps);}
+.s-pulse-num:hover{transform:scale(1.08);}
+.s-pulse-num.p1{border-color:rgba(239,68,68,.5);color:#ef4444;}
+.s-pulse-num.p2{border-color:rgba(245,158,11,.5);color:#f59e0b;}
+.s-pulse-num.p3{border-color:rgba(168,162,158,.5);color:#a8a29e;}
+.s-pulse-num.p4{border-color:rgba(16,185,129,.5);color:#10b981;}
+.s-pulse-num.p5{border-color:rgba(59,130,246,.5);color:#3b82f6;}
+.s-pulse-legend{margin-top:24px;font-size:12px;color:var(--pm);display:flex;gap:24px;justify-content:center;}
+
+/* ── KARAKTÄR — berättelser för F-3 ── */
+.s-char-wrap{display:grid;grid-template-columns:170px 1fr;gap:26px;align-items:center;padding:10px;}
+.s-char-img{width:170px;height:170px;border-radius:50%;background:var(--ps);border:3px solid var(--tc,var(--pl));display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.s-char-img img{width:75%;height:75%;object-fit:contain;}
+.s-char-body{display:flex;flex-direction:column;gap:10px;}
+.s-char-bubble{position:relative;background:var(--ps);border:2px solid var(--tc,var(--pl));border-radius:14px;padding:18px 22px;}
+.s-char-bubble::before{content:'';position:absolute;left:-12px;top:30px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:12px solid var(--tc,var(--pl));}
+.s-char-name{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--tc,var(--pl));margin-bottom:6px;}
+.s-char-text{font-size:clamp(15px,2vw,22px);font-weight:600;color:var(--pt);line-height:1.5;}
+.s-char-uppg{font-size:13px;color:var(--pm);font-style:italic;margin-top:6px;}
+
 /* arrows */
 .parrs{position:absolute;bottom:0;left:0;right:0;height:70px;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(8,13,20,.5);backdrop-filter:blur(10px);}
 .parr{background:var(--parr);border:1px solid var(--pborder);color:var(--pm);width:44px;height:44px;border-radius:9px;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;}
@@ -1041,6 +1126,7 @@ function startPres(){
 }
 function closePres(){
   clearInterval(timerInterval);timerInterval=null;
+  clearInterval(cdInterval);cdInterval=null;
   document.getElementById('view-pres').style.display='none';
 }
 let presLight=false;
@@ -1067,8 +1153,9 @@ function renderPres(){
   document.getElementById('pslbl').textContent=labels[cSlide]||'';
   document.getElementById('pdots').innerHTML=slides.map((_,i)=>`<div class="pd${i===cSlide?' on':''}" style="${i===cSlide?'background:'+accent.c+';width:20px':''};border-radius:3px"></div>`).join('');
 
-  // Reset timer if slide changes
+  // Reset timer + countdown vid slide-byte
   clearInterval(timerInterval);timerInterval=null;
+  clearInterval(cdInterval);cdInterval=null;
 
   let h='';
 
@@ -1130,12 +1217,231 @@ function renderPres(){
       <div class="s-av-t">${s.text}</div>
     </div>`;
   }
+  // ── NYA SLIDE-TYPER (Fas 2) ──
+  else if(s.typ==='scenario_visual'){
+    h=`<div class="slide on">
+      <div class="s-sv-wrap">
+        <div class="s-sv-illus">${svgIllustration(s.illustration||'chat', accent.c)}</div>
+        <div class="s-sv-body">
+          <div class="s-sv-rub" style="color:${accent.c}">${s.rubrik||'Scenario'}</div>
+          <div class="s-sv-text">${s.text}</div>
+          ${s.uppgift?`<div class="s-sv-uppg">${s.uppgift}</div>`:''}
+        </div>
+      </div>
+    </div>`;
+  }
+  else if(s.typ==='countdown'){
+    const sek=s.sekunder||60;
+    cdTotal=sek; cdRemaining=sek;
+    const R=110, C=2*Math.PI*R;
+    h=`<div class="slide on">
+      <div class="s-cd-wrap">
+        <div class="s-cd-rub" style="color:${accent.c}">${s.rubrik||'Tid att tänka'}</div>
+        <div class="s-cd-text">${s.text||''}</div>
+        <div class="s-cd-ring">
+          <svg viewBox="0 0 240 240">
+            <circle class="s-cd-track" cx="120" cy="120" r="${R}"/>
+            <circle class="s-cd-fill" id="cdfill" cx="120" cy="120" r="${R}"
+              stroke="${accent.c}" stroke-dasharray="${C}" stroke-dashoffset="0"/>
+          </svg>
+          <div class="s-cd-num" id="cdnum">${formatTime(sek)}</div>
+        </div>
+        <button class="s-cd-btn" id="cdbtn" onclick="toggleCountdown()" style="background:${accent.c}">▶ Starta ${formatTime(sek)}</button>
+      </div>
+    </div>`;
+  }
+  else if(s.typ==='fysisk_linje'){
+    h=`<div class="slide on">
+      <div class="s-fl-wrap">
+        <div class="s-fl-rub" style="color:${accent.c}">${s.rubrik||'Påstående'}</div>
+        <div class="s-fl-text">${s.text}</div>
+        <div class="s-fl-line">
+          <div class="s-fl-track"></div>
+          <div class="s-fl-end left" style="border-color:${accent.c}">${s.vanster||'Håller med'}</div>
+          <div class="s-fl-end right" style="border-color:${accent.c}">${s.hoger||'Håller inte med'}</div>
+          <div class="s-fl-dot a1" style="background:${accent.c}"></div>
+          <div class="s-fl-dot a2" style="background:${accent.c}"></div>
+          <div class="s-fl-dot a3" style="background:${accent.c}"></div>
+          <div class="s-fl-dot a4" style="background:${accent.c}"></div>
+          <div class="s-fl-dot a5" style="background:${accent.c}"></div>
+        </div>
+        ${s.uppgift?`<div class="s-sv-uppg" style="text-align:center;margin-top:14px">${s.uppgift}</div>`:''}
+      </div>
+    </div>`;
+  }
+  else if(s.typ==='omröstning'){
+    const opts=(s.alternativ||[]).map((a,i)=>`
+      <div class="s-vote-row" onclick="incVote(${i})">
+        <div class="s-vote-fill" id="vfill${i}" style="background:${accent.c};width:0%"></div>
+        <span class="s-vote-label">${a}</span>
+        <span class="s-vote-count" id="vcnt${i}">0</span>
+      </div>`).join('');
+    voteCounts=(s.alternativ||[]).map(()=>0);
+    h=`<div class="slide on">
+      <div class="s-vote-wrap">
+        <div class="s-vote-q">${s.fraga}</div>
+        <div class="s-vote-opts">${opts}</div>
+        <button class="s-vote-reset" onclick="resetVotes(${(s.alternativ||[]).length})">↺ Nollställ röster</button>
+        <div class="s-vote-hint">Klicka på alternativet eleverna väljer — räkna upp händer i klassen</div>
+      </div>
+    </div>`;
+  }
+  else if(s.typ==='pulse_check'){
+    h=`<div class="slide on">
+      <div class="s-pulse-wrap">
+        <div class="s-pulse-q">${s.fraga}</div>
+        <div class="s-pulse-sub">${s.sub||'Håll upp så många fingrar som passar dig'}</div>
+        <div class="s-pulse-row">
+          <div class="s-pulse-num p1">1</div>
+          <div class="s-pulse-num p2">2</div>
+          <div class="s-pulse-num p3">3</div>
+          <div class="s-pulse-num p4">4</div>
+          <div class="s-pulse-num p5">5</div>
+        </div>
+        <div class="s-pulse-legend">
+          <span>1 = ${s.skala_min||'Inte alls'}</span>
+          <span>5 = ${s.skala_max||'Helt och hållet'}</span>
+        </div>
+      </div>
+    </div>`;
+  }
+  else if(s.typ==='karaktär'){
+    h=`<div class="slide on">
+      <div class="s-char-wrap">
+        <div class="s-char-img" style="border-color:${accent.c}">
+          <img src="images/hero-logo-400.png" alt="${s.namn||'HERO'}">
+        </div>
+        <div class="s-char-body">
+          <div class="s-char-bubble" style="border-color:${accent.c}">
+            <div class="s-char-name" style="color:${accent.c}">${s.namn||'HERO'}</div>
+            <div class="s-char-text">${s.text}</div>
+          </div>
+          ${s.uppgift?`<div class="s-char-uppg">${s.uppgift}</div>`:''}
+        </div>
+      </div>
+    </div>`;
+  }
 
   document.getElementById('pstage').innerHTML=h;
   setPresBackground(accent);
 
   // Init timer UI if present
   if(s.timer_sekunder>0) updateTimerUI();
+}
+
+// ── SVG-illustrationer (Fas 2) ──
+function svgIllustration(typ, color){
+  if(typ==='chat'){
+    return `<svg viewBox="0 0 200 200">
+      <rect x="20" y="40" rx="14" ry="14" width="100" height="34" class="bubble-pop d1" fill="${color}" opacity=".22"/>
+      <rect x="20" y="40" rx="14" ry="14" width="100" height="34" class="bubble-pop d1" fill="none" stroke="${color}" stroke-width="2"/>
+      <rect x="60" y="84" rx="14" ry="14" width="120" height="34" class="bubble-pop d2" fill="${color}" opacity=".28"/>
+      <rect x="60" y="84" rx="14" ry="14" width="120" height="34" class="bubble-pop d2" fill="none" stroke="${color}" stroke-width="2"/>
+      <rect x="20" y="128" rx="14" ry="14" width="80" height="34" class="bubble-pop d3" fill="${color}" opacity=".22"/>
+      <rect x="20" y="128" rx="14" ry="14" width="80" height="34" class="bubble-pop d3" fill="none" stroke="${color}" stroke-width="2"/>
+      <text x="40" y="62" font-size="12" font-weight="600" fill="${color}" class="bubble-pop d1">haha 😂</text>
+      <text x="76" y="106" font-size="12" font-weight="600" fill="${color}" class="bubble-pop d2">vem är den?</text>
+      <text x="36" y="150" font-size="14" font-weight="700" fill="${color}" class="bubble-pop d3">😂🔥</text>
+    </svg>`;
+  }
+  if(typ==='mobil'){
+    return `<svg viewBox="0 0 200 200">
+      <rect x="60" y="20" rx="20" ry="20" width="80" height="160" fill="none" stroke="${color}" stroke-width="3"/>
+      <rect x="70" y="40" rx="6" ry="6" width="60" height="14" fill="${color}" opacity=".4" class="bubble-pop d1"/>
+      <rect x="70" y="62" rx="6" ry="6" width="45" height="14" fill="${color}" opacity=".4" class="bubble-pop d2"/>
+      <rect x="70" y="84" rx="6" ry="6" width="55" height="14" fill="${color}" opacity=".4" class="bubble-pop d3"/>
+      <rect x="80" y="110" rx="4" ry="4" width="40" height="50" fill="${color}" opacity=".5" class="bubble-pop d4"/>
+      <text x="86" y="138" font-size="14" font-weight="800" fill="white" class="bubble-pop d4">📷</text>
+    </svg>`;
+  }
+  if(typ==='klassrum'){
+    return `<svg viewBox="0 0 200 200">
+      <!-- skrivbord/tavla -->
+      <rect x="30" y="30" width="140" height="40" rx="4" fill="none" stroke="${color}" stroke-width="2"/>
+      <!-- elever (cirklar) -->
+      <circle cx="50" cy="120" r="14" fill="${color}" opacity=".7" class="bubble-pop d1"/>
+      <circle cx="100" cy="120" r="14" fill="${color}" opacity=".7" class="bubble-pop d2"/>
+      <circle cx="150" cy="120" r="14" fill="${color}" opacity=".7" class="bubble-pop d3"/>
+      <circle cx="50" cy="170" r="14" fill="${color}" opacity=".5" class="bubble-pop d2"/>
+      <circle cx="150" cy="170" r="14" fill="${color}" opacity=".5" class="bubble-pop d3"/>
+      <!-- ensam elev -->
+      <circle cx="100" cy="170" r="14" fill="none" stroke="${color}" stroke-width="2" stroke-dasharray="3 3" class="bubble-pop d4"/>
+    </svg>`;
+  }
+  if(typ==='hjarta'){
+    return `<svg viewBox="0 0 200 200">
+      <path d="M100,170 C40,130 20,80 50,55 C70,40 90,55 100,75 C110,55 130,40 150,55 C180,80 160,130 100,170 Z"
+        fill="${color}" opacity=".18" class="bubble-pop d1"/>
+      <path d="M100,170 C40,130 20,80 50,55 C70,40 90,55 100,75 C110,55 130,40 150,55 C180,80 160,130 100,170 Z"
+        fill="none" stroke="${color}" stroke-width="3" class="bubble-pop d1"/>
+    </svg>`;
+  }
+  if(typ==='vag'){
+    return `<svg viewBox="0 0 200 200">
+      <line x1="40" y1="120" x2="160" y2="120" stroke="${color}" stroke-width="3"/>
+      <polygon points="100,40 130,90 70,90" fill="${color}" opacity=".18" class="bubble-pop d1"/>
+      <polygon points="100,40 130,90 70,90" fill="none" stroke="${color}" stroke-width="2" class="bubble-pop d1"/>
+      <circle cx="65" cy="105" r="14" fill="${color}" opacity=".6" class="bubble-pop d2"/>
+      <circle cx="135" cy="105" r="14" fill="${color}" opacity=".6" class="bubble-pop d3"/>
+    </svg>`;
+  }
+  // default
+  return `<svg viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="60" fill="${color}" opacity=".18"/>
+    <circle cx="100" cy="100" r="60" fill="none" stroke="${color}" stroke-width="3"/>
+  </svg>`;
+}
+
+// ── Countdown-logik (Fas 2) ──
+let cdInterval=null, cdRemaining=0, cdTotal=0;
+function formatTime(sek){
+  if(sek<60) return sek+'s';
+  const m=Math.floor(sek/60), s=sek%60;
+  return m+':'+(s<10?'0':'')+s;
+}
+function toggleCountdown(){
+  const btn=document.getElementById('cdbtn');
+  if(cdInterval){clearInterval(cdInterval);cdInterval=null;btn.innerHTML='▶ Fortsätt';btn.classList.remove('running');return;}
+  btn.innerHTML='⏸ Pausa';btn.classList.add('running');
+  cdInterval=setInterval(()=>{
+    cdRemaining--;
+    updateCountdownUI();
+    if(cdRemaining<=0){clearInterval(cdInterval);cdInterval=null;btn.innerHTML='✓ Tiden är ute!';btn.classList.remove('running');}
+  },1000);
+}
+function updateCountdownUI(){
+  const num=document.getElementById('cdnum');
+  const fill=document.getElementById('cdfill');
+  if(!num||!fill)return;
+  num.textContent=formatTime(cdRemaining);
+  const R=110, C=2*Math.PI*R;
+  fill.style.strokeDasharray=C;
+  fill.style.strokeDashoffset=C*(1-cdRemaining/cdTotal);
+  const accent=temaAccent(cur);
+  fill.style.stroke=cdRemaining>cdTotal*0.15?accent.c:'#ef4444';
+  num.style.color=cdRemaining>cdTotal*0.15?'var(--pt)':'#ef4444';
+}
+
+// ── Omröstningslogik (Fas 2) ──
+let voteCounts=[];
+function incVote(i){
+  voteCounts[i]++;
+  const total=Math.max(1,...voteCounts);
+  voteCounts.forEach((c,idx)=>{
+    const fill=document.getElementById('vfill'+idx);
+    const cnt=document.getElementById('vcnt'+idx);
+    if(fill) fill.style.width=(c/total*100)+'%';
+    if(cnt) cnt.textContent=c;
+  });
+}
+function resetVotes(n){
+  voteCounts=Array(n).fill(0);
+  for(let i=0;i<n;i++){
+    const fill=document.getElementById('vfill'+i);
+    const cnt=document.getElementById('vcnt'+i);
+    if(fill) fill.style.width='0%';
+    if(cnt) cnt.textContent='0';
+  }
 }
 
 function nextS(){if(cSlide<slides.length-1){cSlide++;renderPres();}}
