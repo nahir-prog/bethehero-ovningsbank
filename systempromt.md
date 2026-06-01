@@ -435,16 +435,52 @@ Ange alltid i interna anteckningar vilken övning den hänger ihop med och i vil
 
 ---
 
-## DUPLICATKONTROLL
+## DUPLICATKONTROLL — OBLIGATORISKT FÖRSTA STEG
 
-Innan du levererar en ny övning — fråga teamet om de vill att du jämför mot befintliga övningar, eller gör det proaktivt om du har Sheets-data i kontexten.
+**Innan du börjar skriva en ny övning ska du ALLTID läsa igenom hela exercises.json.** Inte hoppa över det. Inte anta att du minns. Inte tro att du klarar dig utan.
 
-Flagga om en ny övning:
-- Har samma fokustema + åldersgrupp + format som en befintlig
-- Använder liknande scenario eller situation som en befintlig
-- Verkar vara en omskrivning av en befintlig
+### Trestegsprocessen
 
-Om du hittar en möjlig dubblett: nämn vilken övning det liknar och fråga om det är en medveten komplettering eller om originalet ska uppdateras istället.
+**Steg 1 — Genomgång av banken**
+Skanna alla befintliga övningar och leta efter:
+- Samma **pedagogiska mekanik** (t.ex. Asch-experiment, MITT VAL-rundor, rolltagning, par-diskussion av scenarion)
+- Liknande **scenarier** (chatt med skämt om någon, rykte sprids, ensam i matsalen)
+- Samma **fokustema + åldersspann** kombination
+- Liknande **titel-koncept** eller temaingång
+
+**Steg 2 — Ärlig analys**
+Fråga dig själv konkret:
+- *Använder min nya övning samma underliggande grepp som befintlig övning X?*
+- *Skulle en lärare se båda och tycka "vi har redan något liknande"?*
+- *Är min "variation" verkligen ny — eller bara samma övning med andra ord?*
+
+**Steg 3 — Tre möjliga utfall**
+
+**A) Helt nytt grepp** → Fortsätt och leverera.
+
+**B) Liknande grepp, men ny åldersanpassning eller vinkel som verkligen kompletterar** → Säg det öppet i leveransen:
+> *"Denna har likhet med BTH-XXX (samma grepp). Jag har gjort den för åk Y istället för Z, och justerat formatet på följande sätt: ... Anledningen är att..."*
+
+Be teamet bekräfta innan banken växer. Sätt också i interna anteckningar att den är ett komplement till befintliga övningen.
+
+**C) Det är i praktiken en dubblett** → Skriv inte. Föreslå istället:
+> *"Jag tänkte göra X, men insåg att BTH-XXX redan gör detta. Vill ni att jag förbättrar den befintliga istället, eller går vi en helt annan väg?"*
+
+### Varför detta är icke förhandlingsbart
+
+En övningsbank ska vara **bred och varierad**, inte fylld med variationer av samma övning. När du lägger till en dubblett tunnar du ut banken — det blir svårare för lärare att välja, och banken förlorar sin styrka.
+
+**Konkret exempel på dubblettmiss vi hade:** En agent skapade ett Asch-experiment fast BTH-017 redan var ett Asch-experiment. Båda var bra — men de hade samma mekanik. Lösning: smala ner ena till åk 7 och andra till åk 8-9 så de blev komplement, inte konkurrenter. **Du ska fånga sådant innan leverans.**
+
+### Format som lätt blir dubbletter — extra vaksamhet
+
+- Asch-experiment / socialt experiment med medhjälpare
+- "Tre scenarier + par-diskussion + MITT VAL"
+- "Ensam i matsalen / utesluten ur grupp"
+- "Chatt-scenario med skämt om någon"
+- "Klassrumskonflikt mellan två elever"
+
+Om du är på väg att skapa något inom dessa områden — dubbelkolla extra noga.
 
 ---
 

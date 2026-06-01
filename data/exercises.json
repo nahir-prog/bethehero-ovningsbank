@@ -1908,6 +1908,108 @@
       "elevmaterial": false,
       "elevmaterial_typ": null,
       "behov_produktion": null
+    },
+    {
+      "id": "BTH-018",
+      "titel": "PLANTORNA",
+      "fokustema": [
+        "Grupptryck & normer",
+        "Sociala roller"
+      ],
+      "alder": "Åk 8, 9",
+      "alder_tags": [
+        "8",
+        "9"
+      ],
+      "tid": 30,
+      "forberedelse_tid": 5,
+      "ovningstyp": [
+        "Experiment / lek",
+        "Samtal / diskussion"
+      ],
+      "arbetssatt": [
+        "individuellt",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": true,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna upplever grupptryck på sig själva i realtid — istället för att prata om det i teorin. De ser med egna ögon hur lätt en grupp kan få en att tvivla på något man egentligen är säker på.",
+      "forberedelse": "Skriv ut eller skriv för hand 3–4 hemliga lappar (se interna anteckningar för exakt text). Välj i förväg ut 3–4 elever som är trygga i gruppen och som klarar att hålla en hemlighet — undvik elever i utsatt position. Ge dem lappen diskret innan lektionen, t.ex. i dörren. Öppna presentationsläget.",
+      "material": "3–4 hemliga lappar, projektor",
+      "genomforande_enkelt": [
+        "Innan lektionen: ge de utvalda eleverna varsin hemlig lapp. Ingen annan vet.",
+        "Visa Bild 1 på skärmen — tre streck (A, B, C) där det är HELT tydligt vilket som är längst. Säg: rösta genom att räcka upp handen, helt själv.",
+        "Fråga efter A — låt plantorna räcka upp först och självsäkert (de röstar på fel streck). Räkna högt. Fråga sen efter B och C.",
+        "Kör Bild 2 och 3 på samma sätt. Plantorna röstar alltid fel, men säkert.",
+        "Avslöja: läs upp att några i klassen hade en hemlig uppgift att rösta fel med flit. Visa rätt svar på skärmen.",
+        "Visa diskussionsfrågorna på skärmen — kör samtalet i helklass."
+      ],
+      "tips": "Hemligheten ÄR övningen — skydda den. Avslöja aldrig vilka plantorna var efteråt om de inte vill det själva. Det viktiga är inte vem, utan att det hände. Om någon listar ut det tidigt: kör vidare ändå, poängen håller.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "Enkel uppgift",
+          "text": "Tre streck på skärmen. Ett av dem är längst.\n\nNi röstar med handuppräckning — helt själva. Inga rätt eller fel att vara nervös för.",
+          "uppgift": "Vänta på första bilden."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Bild 1",
+          "text": "A ———\nB ——————————\nC ————\n\nVilket streck är längst?",
+          "uppgift": "Räck upp handen för A, sen B, sen C. Läraren räknar."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Bild 2",
+          "text": "A ————————\nB ———\nC —————————————\n\nVilket streck är längst?",
+          "uppgift": "Räck upp handen för A, sen B, sen C."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Bild 3",
+          "text": "A ——————\nB ———————————————\nC ————\n\nVilket streck är längst?",
+          "uppgift": "Räck upp handen för A, sen B, sen C."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "En sak ni inte visste",
+          "text": "Några i klassen fick en hemlig lapp innan lektionen. Deras uppgift: rösta på FEL streck — säkert och först.\n\nRätt svar var: B, C och B.",
+          "uppgift": "Läs upp detta lugnt. Låt det sjunka in."
+        },
+        {
+          "typ": "reflektion_inline",
+          "rubrik": "Ärligt nu",
+          "fraga": "Var det någon som ändrade sin röst — eller tvekade — för att andra räckte upp handen först?",
+          "uppgift": "Inget pekande på någon. Bara handuppräckning: kände du av det?"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Det här hände på riktigt",
+          "text": "En forskare gjorde exakt det här testet för 70 år sen. Tre av fyra personer följde gruppen och svarade fel minst en gång — trots att rätt svar var självklart.\n\nNi är inte konstiga. Hjärnan är byggd så här.",
+          "uppgift": null
+        }
+      ],
+      "reflektionsfragor": [
+        "Vad hände i huvudet i sekunden mellan att du såg svaret och att du räckte upp handen?",
+        "Om det är så här lätt med tre streck — hur funkar det när det gäller åsikter, kläder eller vem man umgås med?",
+        "Vad skulle få dig att våga vara den som räcker upp handen för rätt svar, ensam?"
+      ],
+      "trygg_start": "\"Det här är ett experiment, inte ett prov. Det går inte att göra fel — det är liksom hela poängen. Lita på mig och häng med.\"",
+      "trygg_avslutning": "\"Plantorna gjorde precis det jag bad dem om — de var modiga som vågade sticka ut. Och ni andra: ni reagerade som nästan alla människor gör. Det är inget att skämmas för. Nu vet ni hur det känns — och nästa gång märker ni det.\"",
+      "npf": "Handuppräckning istället för att svara högt minskar exponering. Strecken visas tydligt på skärm — inget att hålla i minnet. Elever som inte vill rösta kan observera; det förstör inte experimentet. Avslöjandet görs lugnt och utan press på någon enskild.",
+      "forskningskoppling": "Bygger direkt på Aschs klassiska konformitetsexperiment (1955), där en majoritet anpassade sina svar efter gruppen även när svaret var uppenbart fel — en effekt som är särskilt stark i tonåren.",
+      "kalltyp": "Forskning",
+      "risker": "Välj plantor med omsorg — aldrig en elev i utsatt position. Avslöja aldrig vilka de var mot deras vilja; någon kan känna sig lurad eller utpekad. Håll tonen lätt vid avslöjandet så att ingen känner sig dum för att de följde gruppen. Kör inte om klassen har pågående konflikter kring vem som 'styr'.",
+      "efter_lektionen": "Bra ingång till ALLA ANDRA GÖR DET (BTH-001), som tar grupptryck vidare till verkliga situationer.",
+      "interna_anteckningar": "Komplement till BTH-017 TYST RUM — samma Asch-grepp men för en något äldre målgrupp. TYST RUM (åk 7) använder lekfulla setup-rundor; PLANTORNA (åk 8-9) är en renare strecklängd-replikering som passar mer mognade elever. Lapptext till plantorna: \"Du har en hemlig uppgift. När läraren visar tre streck ska du rösta på FEL streck — det som tydligt INTE är längst. Räck upp handen snabbt och säkert. Avslöja inte detta för någon. Rätt svar du ska UNDVIKA: Bild 1 = B, Bild 2 = C, Bild 3 = B.\" Bör köras före BTH-001 i ett grupptrycks-tema.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
     }
   ]
 }
