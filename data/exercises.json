@@ -67,21 +67,33 @@
         },
         {
           "typ": "projektor",
+          "rubrik": "Kolla av rummet",
+          "text": "Ni tänker olika — det är poängen.\n\nNu kommer tre scenarion. Diskutera i par.",
+          "uppgift": null
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
           "rubrik": "Scenario A",
-          "text": "Alla i gruppen skrattar åt ett skämt om en annan person. Du tycker inte det är roligt. Vad gör du?",
-          "uppgift": "Diskutera i par — 2 minuter."
+          "text": "Alla i gruppen skrattar åt ett skämt om en annan person. Du tycker inte det är roligt.\n\nVad gör du?",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
         },
         {
-          "typ": "projektor",
+          "typ": "scenario_visual",
+          "illustration": "mobil",
           "rubrik": "Scenario B",
-          "text": "Din kompis skickar en skärmdump och ber dig vidarebefordra. \"Det är bara ett skämt.\" Vad gör du?",
-          "uppgift": "Diskutera i par — 2 minuter."
+          "text": "Din kompis skickar en skärmdump och ber dig vidarebefordra. \"Det är bara ett skämt.\"\n\nVad gör du?",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
         },
         {
-          "typ": "projektor",
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
           "rubrik": "Scenario C",
-          "text": "Gruppen bestämmer att ni ska ignorera en person på rasten. Ingen förklarar varför. Vad gör du?",
-          "uppgift": "Diskutera i par — 2 minuter."
+          "text": "Gruppen bestämmer att ni ska ignorera en person på rasten. Ingen förklarar varför.\n\nVad gör du?",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
         },
         {
           "typ": "mitt-val",
@@ -163,21 +175,29 @@
       "tips": "Fungerar bra som återkommande ritual varje måndag morgon. Tvinga aldrig att dela.",
       "genomforande": [
         {
-          "typ": "projektor",
-          "rubrik": "Vad gör en detektiv?",
-          "text": "En detektiv letar efter ledtrådar och försöker förstå vad som hänt.",
-          "uppgift": "Vad tror ni en KÄNSLODETEKTIV letar efter?"
+          "typ": "karaktär",
+          "namn": "Detektiv HERO",
+          "text": "Hej! Vill du bli känslodetektiv idag? Vi ska leta efter ledtrådar — men inte i ett brott. Vi ska leta i oss själva.",
+          "uppgift": "Fundera: vad letar en känslodetektiv efter?"
         },
         {
           "typ": "projektor",
           "rubrik": "Din uppgift",
-          "text": "Rita eller skriv hur du känner dig just nu. Det finns inga fel svar.",
-          "uppgift": "3–4 minuter."
+          "text": "Rita eller skriv hur du känner dig just nu i din barometer.\n\nDet finns inga fel svar.",
+          "uppgift": "Du har 4 minuter.",
+          "timer_sekunder": 240
+        },
+        {
+          "typ": "pulse_check",
+          "fraga": "Hur stark är din känsla just nu?",
+          "sub": "Visa med fingrar 1–5",
+          "skala_min": "Knappt märkbar",
+          "skala_max": "Väldigt stark"
         },
         {
           "typ": "projektor",
-          "rubrik": "Ser ni?",
-          "text": "Vi har alla olika känslor idag. Det är helt normalt.",
+          "rubrik": "Visa varandra",
+          "text": "De som vill får hålla upp sitt blad. Ingen tvingas.\n\nSer ni? Vi har alla olika känslor idag. Det är helt normalt.",
           "uppgift": null
         }
       ],
@@ -259,10 +279,12 @@
       "tips": "Om klassen har pågående konflikter — byt namn på karaktärerna. Kort 3 vs 4 brukar ge den bästa diskussionen.",
       "genomforande": [
         {
-          "typ": "projektor",
-          "rubrik": "Berättelsen",
-          "text": "Lova sitter alltid ensam i matsalen. Hampus och hans kompisar himlar med ögonen när hon går förbi. Ingen säger något. Inte ens läraren som ser det.",
-          "uppgift": "Dela ut ett kort per person i berättelsen. Vem är vem? 5 minuter."
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "Berättelsen om Lova",
+          "text": "Lova sitter alltid ensam i matsalen.\n\nHampus och hans kompisar himlar med ögonen när hon går förbi.\n\nIngen säger något. Inte ens läraren som ser det.",
+          "uppgift": "Dela ut HERO-KORT 1–7. Vem är vem i berättelsen?",
+          "timer_sekunder": 300
         },
         {
           "typ": "projektor",
@@ -273,8 +295,9 @@
         {
           "typ": "projektor",
           "rubrik": "Nästa fråga",
-          "text": "Finns det en HERO i berättelsen? Vad hade behövt hända?",
-          "uppgift": "Diskutera i grupp — 3 minuter."
+          "text": "Finns det en HERO i berättelsen?\n\nVad hade behövt hända för att det skulle finnas en?",
+          "uppgift": "Diskutera i grupp — 3 minuter.",
+          "timer_sekunder": 180
         },
         {
           "typ": "mitt-val",
@@ -589,22 +612,36 @@
       "tips": "Håll det enkelt och kort. F-klass tröttnar snabbt — 15 minuter räcker. Färger kan hjälpa: glad = gul, ledsen = blå, arg = röd.",
       "genomforande": [
         {
-          "typ": "projektor",
-          "rubrik": "Hur känner den här personen sig?",
-          "text": "😊",
-          "uppgift": "Gissa — och visa med ditt eget ansikte!"
+          "typ": "karaktär",
+          "namn": "HERO frågar",
+          "text": "Hej kompis! Idag ska vi prata om känslor. Vet du vad en känsla är? Det är något du har inom dig.",
+          "uppgift": "Säg ett ord som beskriver en känsla."
         },
         {
           "typ": "projektor",
-          "rubrik": "Och den här?",
-          "text": "😢",
-          "uppgift": "Hur ser ledsen ut? Visa varandra."
+          "rubrik": "Hur ser känslor ut?",
+          "text": "😊 glad   😢 ledsen   😠 arg   😨 rädd",
+          "uppgift": "Visa med ditt eget ansikte! Vilken känsla är vilken?"
+        },
+        {
+          "typ": "pulse_check",
+          "fraga": "Hur glad är du idag?",
+          "sub": "Visa med fingrar — 1 är inte alls, 5 är jätteglad",
+          "skala_min": "Inte alls",
+          "skala_max": "Jätteglad"
         },
         {
           "typ": "projektor",
-          "rubrik": "Din tur",
+          "rubrik": "Din tur att rita",
           "text": "Rita hur du känner dig just nu. Välj en färg som passar.",
-          "uppgift": "3–4 minuter."
+          "uppgift": "Du har 4 minuter.",
+          "timer_sekunder": 240
+        },
+        {
+          "typ": "karaktär",
+          "namn": "HERO",
+          "text": "Bra jobbat! Ni är riktiga känsloexperter nu.",
+          "uppgift": "De som vill får visa sin teckning."
         }
       ],
       "reflektionsfragor": [
@@ -890,15 +927,32 @@
       "genomforande": [
         {
           "typ": "projektor",
+          "rubrik": "Tänk efter",
+          "text": "Ett rykte börjar med en person. Sen sprids det. Och växer.\n\nVad händer på vägen?",
+          "uppgift": "Fundera tyst — 30 sekunder.",
+          "timer_sekunder": 30
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "chat",
           "rubrik": "Scenario A",
-          "text": "Någon säger till dig att en klasskompis har sagt något elakt om dig. Du vet inte om det stämmer. Vad gör du?",
-          "uppgift": "Diskutera i par — 2 minuter."
+          "text": "Någon säger till dig att en klasskompis har sagt något elakt om dig. Du vet inte om det stämmer.\n\nVad gör du?",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "mobil",
+          "rubrik": "Scenario B",
+          "text": "Din kompis ber dig skicka vidare ett meddelande om en annan elev. Du vet inte om det är sant.\n\nVad gör du?",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
         },
         {
           "typ": "projektor",
-          "rubrik": "Scenario B",
-          "text": "Din kompis ber dig skicka vidare ett meddelande om en annan elev. Du vet inte om det är sant.",
-          "uppgift": "Vad gör du? Diskutera i par."
+          "rubrik": "Sammanfatta i helklass",
+          "text": "Vad kunde stoppat ett rykte i scenariona ni diskuterat?",
+          "uppgift": "Skriv upp svaren på tavlan."
         }
       ],
       "reflektionsfragor": [
@@ -960,24 +1014,59 @@
       "genomforande": [
         {
           "typ": "projektor",
-          "rubrik": "SCENARIO A — 15 sekunder",
-          "text": "Du ser att en klasskompis sitter ensam och gråter i korridoren. Folk går förbi. Ingen stannar.",
-          "uppgift": "⏱ Vad gör du? Räkna ner från 15.",
+          "rubrik": "Så här funkar det",
+          "text": "I verkligheten har du ofta bara några sekunder att bestämma dig.\n\nIdag ska vi träna på det.",
+          "uppgift": "Klart? Då kör vi."
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "SCENARIO A",
+          "text": "Du ser att en klasskompis sitter ensam och gråter i korridoren. Folk går förbi. Ingen stannar.\n\nVad gör du?",
+          "uppgift": "Du har 15 sekunder.",
+          "timer_sekunder": 15
+        },
+        {
+          "typ": "omröstning",
+          "fraga": "Vad gjorde du?",
+          "alternativ": [
+            "Gick fram och frågade om hen var okej",
+            "Sa till en vuxen",
+            "Gick förbi",
+            "Vågade inte göra något"
+          ]
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "chat",
+          "rubrik": "SCENARIO B",
+          "text": "Någon i din gruppchatt skickar en skärmdump på en annan elev. Alla börjar skratta.\n\nVad gör du?",
+          "uppgift": "Du har 15 sekunder.",
+          "timer_sekunder": 15
+        },
+        {
+          "typ": "omröstning",
+          "fraga": "Vad gjorde du?",
+          "alternativ": [
+            "Skrev att det inte var ok",
+            "Lämnade chatten",
+            "Sa inget men skrattade inte",
+            "Var med och skrattade"
+          ]
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "SCENARIO C",
+          "text": "Du hör att två i klassen planerar att utesluta en tredje person från en aktivitet imorgon.\n\nVad gör du?",
+          "uppgift": "Du har 15 sekunder.",
           "timer_sekunder": 15
         },
         {
           "typ": "projektor",
-          "rubrik": "SCENARIO B — 15 sekunder",
-          "text": "Någon i din grupp på gruppchatten skickar en skärmdump på en annan elev. Alla börjar skratta.",
-          "uppgift": "⏱ Vad gör du? Räkna ner från 15.",
-          "timer_sekunder": 15
-        },
-        {
-          "typ": "projektor",
-          "rubrik": "SCENARIO C — 15 sekunder",
-          "text": "Du hör att två i klassen planerar att utesluta en tredje person från en aktivitet imorgon.",
-          "uppgift": "⏱ Vad gör du? Räkna ner från 15.",
-          "timer_sekunder": 15
+          "rubrik": "Reflektera tillsammans",
+          "text": "Vad hände i dig de 15 sekunderna? Vad vägde mot varandra?",
+          "uppgift": null
         }
       ],
       "reflektionsfragor": [
@@ -1139,30 +1228,16 @@
         {
           "typ": "projektor",
           "rubrik": "Tyst minut",
-          "text": "Skriv tre ord som beskriver dig. Bara för dig — ingen annan ser.",
-          "uppgift": "1 minut tyst."
+          "text": "Skriv tre ord som beskriver dig.\n\nBara för dig — ingen annan ser.",
+          "uppgift": "1 minut tyst.",
+          "timer_sekunder": 60
         },
         {
-          "typ": "mitt-val",
-          "fraga": "Hur mycket påverkar vad andra tycker om dig — hur du ser på dig själv?",
-          "alternativ": [
-            {
-              "farg": "gult",
-              "text": "Mycket — andras syn formar mig"
-            },
-            {
-              "farg": "gront",
-              "text": "Lite — jag vet vem jag är"
-            },
-            {
-              "farg": "blatt",
-              "text": "Det beror på vem det är"
-            },
-            {
-              "farg": "rott",
-              "text": "Inte alls — jag bryr mig inte"
-            }
-          ]
+          "typ": "pulse_check",
+          "fraga": "Hur mycket påverkar andras åsikt om dig — hur du ser på dig själv?",
+          "sub": "Visa med fingrar — 1 inte alls, 5 väldigt mycket",
+          "skala_min": "Inte alls",
+          "skala_max": "Väldigt mycket"
         },
         {
           "typ": "mitt-val",
@@ -1187,10 +1262,22 @@
           ]
         },
         {
+          "typ": "omröstning",
+          "fraga": "Vad får dig att må sämst på sociala medier?",
+          "alternativ": [
+            "Jämförelse med andra",
+            "Kommentarer på det jag postar",
+            "Att inte få likes",
+            "Att se vad jag missar (FOMO)",
+            "Direkta meddelanden"
+          ]
+        },
+        {
           "typ": "projektor",
           "rubrik": "Par-diskussion",
           "text": "Finns det något du tror om dig själv som någon annan har sagt — och du inte vet om det faktiskt stämmer?",
-          "uppgift": "3 minuter i par."
+          "uppgift": "3 minuter i par.",
+          "timer_sekunder": 180
         }
       ],
       "reflektionsfragor": [
