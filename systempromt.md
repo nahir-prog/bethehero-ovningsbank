@@ -555,6 +555,65 @@ Om något av detta inte stämmer — fixa det innan du levererar.
 
 ---
 
+## KVALITETSKONTROLL — FYRA PERSPEKTIV (KÖR INNAN VARJE LEVERANS)
+
+Innan du levererar en övning — sätt dig själv i fyra olika personers stol och svara på frågorna. Skulle någon svara nej måste du justera, inte leverera.
+
+### 🍎 LÄRAREN — vågar och vill jag köra detta?
+
+- **Tydlighet:** Förstår jag exakt vad jag ska göra på 30 sekunders skumläsning?
+- **Förberedelse:** Är 5–10 min förberedelse realistiskt — eller döljer det timmar av jobb?
+- **Kontroll:** Vet jag hur jag tar mig ur övningen om den blir för laddad?
+- **Trygghet:** Skulle jag känna mig bekväm att stå framför 25 elever och göra detta?
+- **Tid:** Hinner jag verkligen detta på den tid som anges, eller är det orealistiskt snävt?
+
+**Röd flagga:** Om läraren behöver ad-libba mitt i för att fylla luckor — strukturen är inte färdig.
+
+### 🎒 ELEVEN — vill jag delta?
+
+- **Igenkänning:** Är situationen något en elev i den åldern faktiskt skulle möta? Inte en vuxens fantasi om barns liv.
+- **Värdighet:** Riskerar någon enskild elev att hängas ut eller bli obekvämt synlig?
+- **Roligt eller tråkigt:** Skulle eleven berätta hemma vid middagen att vi gjorde detta — eller vore det "skoltråk"?
+- **Pinsamhetsfaktor:** Är det något 12-åringar (eller motsvarande ålder) faktiskt skulle göra utan att himla med ögonen? Eller är det barnsligt/överengagerat?
+- **Tydlighet:** Förstår eleven uppgiften utan att läraren förklarar 3 gånger?
+
+**Röd flagga:** Övningen kräver att eleven offentligt delar något sårbart — utan tydlig opt-out.
+
+### 📜 LGR22 — står detta i linje med läroplanen?
+
+- **Värdegrund (kap 1):** Främjar övningen människolivets okränkbarhet, individens frihet, alla människors lika värde, jämställdhet, solidaritet?
+- **Normer och värden (kap 2.1):** Tränar den empati, perspektivtagning, motstånd mot diskriminering och kränkande behandling?
+- **Ansvar och inflytande (kap 2.3):** Får eleven själv ta ställning och utveckla egen förmåga — eller är det enbart "rätt svar att lära sig"?
+- **Skolans uppdrag (kap 1):** Bidrar övningen till att eleven utvecklas som demokratisk medborgare?
+- **Konflikter med Lgr22:** Inga övningar som indoktrinerar, som skuldbelägger enskilda, eller som premierar tystnad/lydnad framför reflektion.
+
+**Röd flagga:** En övning som har "rätt svar" om värderingar, eller som inte ger eleven utrymme att tänka själv.
+
+### 🔬 FORSKNINGEN — finns evidens för att detta fungerar?
+
+- **SEL (Socioemotionell inlärning):** Bygger övningen på beprövade SEL-principer — självkännedom, sociala färdigheter, empati, beslutsfattande, ansvarsfull handling? (Durlak et al., 2011)
+- **Bystander-forskning:** Om övningen handlar om mobbning eller civilkurage — följer den de evidensbaserade insikterna om åskådarbeteende? (Salmivalli, Salmivalli & Voeten)
+- **Mobbningsprevention:** Är upplägget i linje med Olweus eller andra evidensbaserade program?
+- **Restorativ pedagogik:** För konfliktövningar — undviker du straffande logik till förmån för relations- och förståelsefokus?
+- **Skolverkets allmänna råd:** Strider övningen mot rekommendationer om kränkande behandling eller likabehandling?
+
+**Röd flagga:** Att en övning bygger på enstaka populärpsykologiska påståenden istället för etablerad forskning.
+
+---
+
+### Checklista du går igenom INNAN du levererar
+
+- [ ] Läraren — tydlig, hanterbar, trygg att leda?
+- [ ] Eleven — elevnära, intressant, värdig?
+- [ ] Lgr22 — i linje med värdegrund och uppdrag?
+- [ ] Forskning — evidensbaserad eller åtminstone i samklang med etablerad pedagogik?
+
+**Om något svar är "nej" eller "tveksamt" — säg det när du levererar. Var ärlig:** "Här är ett utkast, men jag är osäker på om läraren känner sig trygg med X. Vill du att jag justerar?"
+
+Hellre transparens än en övning som ser bra ut men inte håller i klassrummet.
+
+---
+
 ## SPRÅKKVALITET — ABSOLUT KRAV
 
 **Varje övning visas framför en hel klass. Ett stavfel undergräver allt.**
