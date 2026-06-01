@@ -1,0 +1,321 @@
+{
+  "exercises": [
+    {
+      "id": "BTH-001",
+      "titel": "ALLA ANDRA GÖR DET",
+      "fokustema": ["Grupptryck & normer", "Sociala roller"],
+      "alder": "Åk 7, 8, 9",
+      "alder_tags": ["7","8","9"],
+      "tid": 30, "forberedelse_tid": 5,
+      "ovningstyp": ["Samtal / diskussion", "Värderingsövning"],
+      "arbetssatt": ["i par", "helklass"],
+      "status": "klar", "filmovning": false, "kan_vacka_kanslor": true, "elevhalsa": false,
+      "kort": "MITT VAL", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Eleverna undersöker hur grupptryck fungerar på riktigt — inte som ett abstrakt begrepp utan som situationer de faktiskt känner igen. De tränar på att skilja mellan vad de egentligen vill och vad de gör för att passa in.",
+      "forberedelse": "Dela ut MITT VAL-kort till varje elev. Öppna presentationsläget.",
+      "material": "MITT VAL-kort (ett per elev), projektor",
+      "genomforande_enkelt": [
+        "Dela ut MITT VAL-kort till alla elever.",
+        "Starta presentationsläget — visa inledningsfrågan. Eleverna håller upp sin färg.",
+        "Läs av rummet — nämn att ni tänker olika. Det är poängen.",
+        "Visa Scenario A. Eleverna diskuterar i par, 2 minuter. Lyft i helklass — fokus på skillnaderna.",
+        "Upprepa med Scenario B och C.",
+        "Avsluta med den sista MITT VAL-frågan."
+      ],
+      "tips": "Byt gärna ut scenariona mot något mer aktuellt för klassen. Om gruppen är het — vänta med övningen.",
+      "genomforande": [
+        { "typ": "mitt-val", "fraga": "Har ni någon gång gjort något ni egentligen inte ville — för att alla andra gjorde det?", "alternativ": [
+          { "farg": "gult", "text": "Ja, ofta" }, { "farg": "gront", "text": "Ja, ibland" },
+          { "farg": "blatt", "text": "Sällan" }, { "farg": "rott", "text": "Nej, aldrig" }
+        ]},
+        { "typ": "projektor", "rubrik": "Scenario A", "text": "Alla i gruppen skrattar åt ett skämt om en annan person. Du tycker inte det är roligt. Vad gör du?", "uppgift": "Diskutera i par — 2 minuter." },
+        { "typ": "projektor", "rubrik": "Scenario B", "text": "Din kompis skickar en skärmdump och ber dig vidarebefordra. \"Det är bara ett skämt.\" Vad gör du?", "uppgift": "Diskutera i par — 2 minuter." },
+        { "typ": "projektor", "rubrik": "Scenario C", "text": "Gruppen bestämmer att ni ska ignorera en person på rasten. Ingen förklarar varför. Vad gör du?", "uppgift": "Diskutera i par — 2 minuter." },
+        { "typ": "mitt-val", "fraga": "Vad är svårast med att inte följa med gruppen?", "alternativ": [
+          { "farg": "gult", "text": "Rädslan att bli utanför" }, { "farg": "gront", "text": "Att hitta rätt ord" },
+          { "farg": "blatt", "text": "Att förstå vad som är rätt" }, { "farg": "rott", "text": "Att orka bry sig" }
+        ]}
+      ],
+      "reflektionsfragor": ["Hur vet du skillnaden på vad du faktiskt tycker och vad du säger för att passa in?", "Vad gör det svårast att säga emot en grupp?", "Finns det situationer där det är okej att följa med — och situationer där det inte är det?"],
+      "trygg_start": "\"Det vi pratar om stannar i rummet. Inga rätta svar — det handlar om vad ni faktiskt tänker.\"",
+      "trygg_avslutning": "Var och en skriver ner en sak de tar med sig — behålls privat.",
+      "npf": "Elever som har svårt med öppna diskussioner kan skriva svar istället. Par-formatet ger stöd. Scenariona visas på skärm.",
+      "forskningskoppling": "Konformitetsforskning (Asch, 1955) och bystander-effekten (Latané & Darley, 1968) visar att de flesta anpassar sig efter gruppen — extra starkt i tonåren.",
+      "kalltyp": "Forskning", "risker": "Kör inte om klassen har pågående konflikter. Kan väcka starka reaktioner.",
+      "efter_lektionen": null, "interna_anteckningar": "Bra uppföljning: civilkurageövning.",
+      "elevmaterial": false, "elevmaterial_typ": null, "behov_produktion": null
+    },
+    {
+      "id": "BTH-002",
+      "titel": "KÄNSLODETEKTIVEN",
+      "fokustema": ["Känslor & självreglering"],
+      "alder": "Åk 1, 2, 3",
+      "alder_tags": ["1","2","3"],
+      "tid": 20, "forberedelse_tid": 5,
+      "ovningstyp": ["Kreativ övning"],
+      "arbetssatt": ["individuellt", "helklass"],
+      "status": "klar", "filmovning": false, "kan_vacka_kanslor": true, "elevhalsa": false,
+      "kort": "Inga", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Eleverna tränar på att sätta ord på sina känslor och förstår att alla känslor är okej — men att det är vad vi gör med dem som spelar roll.",
+      "forberedelse": "Skriv ut ett elevblad per elev. Ha pennor eller kritor redo.",
+      "material": "Utskrivna elevblad (ett per elev), pennor eller kritor",
+      "genomforande_enkelt": [
+        "Fråga klassen: Vad gör en detektiv? Låt några svara.",
+        "Berätta: Idag ska vi bli känslodetektiver och leta känslor i oss själva.",
+        "Dela ut elevbladen. Eleverna ritar eller skriver sin känsla i barometern, 3–4 minuter.",
+        "De som vill håller upp sitt blad. Lyft i helklass: vi har alla olika känslor idag."
+      ],
+      "tips": "Fungerar bra som återkommande ritual varje måndag morgon. Tvinga aldrig att dela.",
+      "genomforande": [
+        { "typ": "projektor", "rubrik": "Vad gör en detektiv?", "text": "En detektiv letar efter ledtrådar och försöker förstå vad som hänt.", "uppgift": "Vad tror ni en KÄNSLODETEKTIV letar efter?" },
+        { "typ": "projektor", "rubrik": "Din uppgift", "text": "Rita eller skriv hur du känner dig just nu. Det finns inga fel svar.", "uppgift": "3–4 minuter." },
+        { "typ": "projektor", "rubrik": "Ser ni?", "text": "Vi har alla olika känslor idag. Det är helt normalt.", "uppgift": null }
+      ],
+      "reflektionsfragor": ["Hur visste du vad du kände?", "Kan man känna flera saker på en gång?", "Vad brukar hjälpa dig när en känsla är för stor?"],
+      "trygg_start": "\"Det du skriver eller ritar är ditt. Du väljer själv om du vill visa det för någon.\"",
+      "trygg_avslutning": "Ta tre djupa andetag tillsammans. \"Ni klarade av att titta på det. Det är modigt.\"",
+      "npf": "Erbjud bildstöd med känsloansikten. Ge tydlig tidssignal. Tillåt muntlig berättelse istället för att rita.",
+      "forskningskoppling": "Förmågan att sätta ord på känslor är centralt inom SEL-forskning (Durlak et al., 2011).",
+      "kalltyp": "Forskning", "risker": "Om en elev visar tung känsla dag efter dag — följ upp enskilt.",
+      "efter_lektionen": "Kan användas som återkommande ritual.", "interna_anteckningar": null,
+      "elevmaterial": true, "elevmaterial_typ": "Elevblad", "behov_produktion": null
+    },
+    {
+      "id": "BTH-003",
+      "titel": "VEMS FEL ÄR DET EGENTLIGEN?",
+      "fokustema": ["Sociala roller", "Mobbning & kränkningar"],
+      "alder": "Åk 5, 6, 7",
+      "alder_tags": ["5","6","7"],
+      "tid": 30, "forberedelse_tid": 5,
+      "ovningstyp": ["Rollspel / scenarier", "Värderingsövning"],
+      "arbetssatt": ["grupp om 3–5", "helklass"],
+      "status": "klar", "filmovning": false, "kan_vacka_kanslor": true, "elevhalsa": false,
+      "kort": "HERO-KORT 1–7", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Eleverna förstår att mobbning aldrig är en persons fel ensamt — och tränar på att se sin egen roll i situationen.",
+      "forberedelse": "Dela ut ett set HERO-KORT 1–7 per grupp. Öppna presentationsläget.",
+      "material": "HERO-KORT 1–7 (ett set per grupp), projektor",
+      "genomforande_enkelt": [
+        "Dela ut HERO-KORT 1–7 till varje grupp — låt dem titta på korten en stund.",
+        "Visa berättelsen på skärmen. Grupperna tilldelar ett kort per person i berättelsen, 5 minuter.",
+        "Lyft i helklass: vilket kort lade ni på läraren? Fokusera på skillnaden mellan kort 3 och 4.",
+        "Visa frågan om HERO (kort 1) — vad hade behövt hända för att det skulle finnas en?",
+        "Avsluta med MITT VAL-frågan om vuxenansvar."
+      ],
+      "tips": "Om klassen har pågående konflikter — byt namn på karaktärerna. Kort 3 vs 4 brukar ge den bästa diskussionen.",
+      "genomforande": [
+        { "typ": "projektor", "rubrik": "Berättelsen", "text": "Lova sitter alltid ensam i matsalen. Hampus och hans kompisar himlar med ögonen när hon går förbi. Ingen säger något. Inte ens läraren som ser det.", "uppgift": "Dela ut ett kort per person i berättelsen. Vem är vem? 5 minuter." },
+        { "typ": "projektor", "rubrik": "Diskutera i helklass", "text": "Vilket kort lade ni på läraren?", "uppgift": "Fokusera på skillnaden: ÅSKÅDARE (4) vs VUXNA I SKOLAN (3)." },
+        { "typ": "projektor", "rubrik": "Nästa fråga", "text": "Finns det en HERO i berättelsen? Vad hade behövt hända?", "uppgift": "Diskutera i grupp — 3 minuter." },
+        { "typ": "mitt-val", "fraga": "Läraren ser vad som händer men säger ingenting. Hur fel är det?", "alternativ": [
+          { "farg": "gult", "text": "Väldigt fel — störst ansvar" }, { "farg": "gront", "text": "Fel, men kanske omedveten" },
+          { "farg": "blatt", "text": "Lite fel — eleverna har också ansvar" }, { "farg": "rott", "text": "Inte lärarens fel" }
+        ]}
+      ],
+      "reflektionsfragor": ["Finns det alltid en tydlig HERO i en mobbningssituation?", "Vad skiljer ÅSKÅDAREN (4) från VUXNA I SKOLAN (3)?", "Vad hade behövt hända för att situationen sett ut annorlunda?"],
+      "trygg_start": "\"Vi pratar om en påhittad historia. Men om ni känner igen er — det är okej.\"",
+      "trygg_avslutning": "Varje grupp lägger fram det kort de vill vara — och säger en sak de skulle göra.",
+      "npf": "Rollkortens namn på tavlan under hela övningen. MITT VAL är tyst och anonymt.",
+      "forskningskoppling": "Vuxnas passivitet normaliserar kränkande beteenden bland elever (Salmivalli, 2010).",
+      "kalltyp": "Forskning", "risker": "Byt namn på karaktärerna om klassen har pågående konflikter.",
+      "efter_lektionen": "Bra ingång till TEATERN-övningarna.", "interna_anteckningar": null,
+      "elevmaterial": false, "elevmaterial_typ": null, "behov_produktion": null
+    },
+    {
+      "id": "BTH-004",
+      "titel": "DET DU SKICKAR ÄR INTE BORTA",
+      "fokustema": ["Digitala relationer", "Mod & civilkurage"],
+      "alder": "Åk 8, 9",
+      "alder_tags": ["8","9"],
+      "tid": 30, "forberedelse_tid": 5,
+      "ovningstyp": ["Samtal / diskussion", "Värderingsövning"],
+      "arbetssatt": ["individuellt", "par", "helklass"],
+      "status": "klar", "filmovning": false, "kan_vacka_kanslor": true, "elevhalsa": false,
+      "kort": "MITT VAL", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Eleverna förstår att digitala handlingar har verkliga konsekvenser — och tränar på att fatta medvetna val innan de skickar, delar eller kommenterar online.",
+      "forberedelse": "Dela ut MITT VAL-kort. Öppna presentationsläget.",
+      "material": "MITT VAL-kort (ett per elev), projektor",
+      "genomforande_enkelt": [
+        "Dela ut MITT VAL-kort. Visa inledningsfrågan — 1 minut tyst reflektion.",
+        "Visa Scenario A — par-diskussion 2 minuter, lyft i helklass.",
+        "Visa Scenario B — samma upplägg.",
+        "Kör MITT VAL-frågan om digitalt vs fysiskt.",
+        "Avsluta med den sista projektorbilden."
+      ],
+      "tips": "Scenariona kan bytas mot mer aktuella situationer. Kör inte om digitala konflikter pågår i klassen.",
+      "genomforande": [
+        { "typ": "projektor", "rubrik": "Vad händer när du trycker skicka?", "text": "Tänk på något du skickat eller kommenterat den senaste veckan. Vad hände sedan?", "uppgift": "Skriv ett ord för er själva — 1 minut tyst." },
+        { "typ": "projektor", "rubrik": "Scenario A", "text": "Du är i en gruppchatt. Någon skickar ett skämt om en klasskompis som inte är med. Alla skrattar. Du vet att personen det handlar om skulle bli ledsen.", "uppgift": "Vad gör du? Par — 2 minuter." },
+        { "typ": "projektor", "rubrik": "Scenario B", "text": "Din vän skickar en skärmdump från någon annans privata chatt. \"Läs vad hen skriver, haha.\"", "uppgift": "Vad gör du? Par — 2 minuter." },
+        { "typ": "mitt-val", "fraga": "Är det skillnad på att göra något digitalt och att göra samma sak i verkligheten?", "alternativ": [
+          { "farg": "gult", "text": "Ja — digitalt sprids det mer" }, { "farg": "gront", "text": "Ja — man ser inte reaktionen" },
+          { "farg": "blatt", "text": "Nej — lika allvarligt" }, { "farg": "rott", "text": "Det beror på situationen" }
+        ]},
+        { "typ": "projektor", "rubrik": "Tänk om...", "text": "Om din lärare, dina föräldrar och personen det handlar om alla skulle se det du skickar — vad hade du gjort annorlunda idag?", "uppgift": null }
+      ],
+      "reflektionsfragor": ["Är det skillnad på att göra något digitalt och i verkligheten?", "Har du skickat något du ångrat? Vad hade du velat göra?", "Vad kan du göra nästa gång du är osäker?"],
+      "trygg_start": "\"Det vi pratar om handlar inte om att hitta på vem som gjort fel. Vi utgår från scenarion.\"",
+      "trygg_avslutning": "\"Digital närvaro är ett val. Ni har precis tränat på att göra det valet medvetet.\"",
+      "npf": "Scenariona visas på skärm. Par-formatet minskar exponering. Elever kan skriva svar istället för att svara högt.",
+      "forskningskoppling": "Ungdomar underskattar hur permanenta digitala handlingar är (Livingstone & Smith, 2014).",
+      "kalltyp": "Forskning", "risker": "Kör inte om digitala konflikter pågår i klassen.",
+      "efter_lektionen": null, "interna_anteckningar": "Digitala relationer underrepresenterat — passar i ett digitalt tema.",
+      "elevmaterial": false, "elevmaterial_typ": null,
+      "behov_produktion": {
+        "typer": ["voiceover"],
+        "beskrivning": "Övningen blir starkare med dramatiserad uppläsning av scenariona — skapar mer känsla av autenticitet.",
+        "manus": "SCENARIO A:\nDu sitter i en gruppchatt med dina kompisar. Någon skickar ett meme om en klasskompis. Alla skrattar. Du vet att den personen det handlar om skulle bli ledsen om den såg det. Telefonen är i din hand. Vad gör du?\n\nSCENARIO B:\nDin vän skickar dig en skärmdump. Den är tagen från någon annans privata konversation. \"Läs vad hen skriver, haha.\" Vad gör du nu?",
+        "elevenlabs_prompt": "Lugn, reflekterande ton. Paus 1,5 sekunder efter varje scenario. Långsamt tempo — åhöraren ska hinna föreställa sig situationen. Inga dramatiska effekter."
+      }
+    },
+    {
+      "id": "BTH-005",
+      "titel": "SANT ELLER FALSKT — MOBBNING EDITION",
+      "fokustema": ["Mobbning & kränkningar"],
+      "alder": "Åk 6, 7, 8",
+      "alder_tags": ["6","7","8"],
+      "tid": 20, "forberedelse_tid": 2,
+      "ovningstyp": ["Värderingsövning"],
+      "arbetssatt": ["individuellt", "helklass"],
+      "status": "klar", "filmovning": false, "kan_vacka_kanslor": false, "elevhalsa": false,
+      "kort": "MITT VAL", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Eleverna utmanar sina föreställningar om vad mobbning är och inte är — och inser att det sällan är svart eller vitt.",
+      "forberedelse": "Dela ut MITT VAL-kort. Öppna presentationsläget.",
+      "material": "MITT VAL-kort (ett per elev), projektor",
+      "genomforande_enkelt": [
+        "Dela ut MITT VAL-kort. Förklara: håll upp kortet med din färg längst upp.",
+        "Visa påstående 1 — läs upp det. Eleverna håller upp sin färg.",
+        "Kolla av rummet — fråga 1–2 som vill motivera sitt val.",
+        "Upprepa för påstående 2–5.",
+        "Avsluta: vilket påstående var svårast att ta ställning till?"
+      ],
+      "tips": "Du behöver inte kommentera varje svar — låt olikheterna tala för sig själva.",
+      "genomforande": [
+        { "typ": "mitt-val", "fraga": "Den som inte säger ifrån är lika skyldig som den som mobbar.", "alternativ": [
+          { "farg": "gult", "text": "Ja, lika skyldig" }, { "farg": "gront", "text": "Delvis — men inte lika" },
+          { "farg": "blatt", "text": "Nej, man kan inte alltid agera" }, { "farg": "rott", "text": "Nej — bara den som agerar är skyldig" }
+        ]},
+        { "typ": "mitt-val", "fraga": "En person som mobbar gör det för att hen är elak.", "alternativ": [
+          { "farg": "gult", "text": "Ja, stämmer" }, { "farg": "gront", "text": "Delvis — fler orsaker finns" },
+          { "farg": "blatt", "text": "Nej — handlar om otrygghet" }, { "farg": "rott", "text": "Nej — ingen föds elak" }
+        ]},
+        { "typ": "mitt-val", "fraga": "Det är möjligt att stoppa mobbning i en klass.", "alternativ": [
+          { "farg": "gult", "text": "Ja, om alla hjälps åt" }, { "farg": "gront", "text": "Ja, men det tar tid" },
+          { "farg": "blatt", "text": "Svårt — mobbning sker ändå" }, { "farg": "rott", "text": "Nej — det finns alltid i grupper" }
+        ]}
+      ],
+      "reflektionsfragor": ["Vilket påstående var svårast att ta ställning till?", "Var det något svar i rummet som överraskade dig?", "Har du ändrat dig om något efter den här rundan?"],
+      "trygg_start": "\"Det finns inga rätta svar. Du väljer vad du faktiskt tänker.\"",
+      "trygg_avslutning": "\"Ni har visat att den här gruppen tänker på olika sätt. Det är en styrka.\"",
+      "npf": "MITT VAL är tyst och anonymt. Påståendena visas på skärm.",
+      "forskningskoppling": "Attityder till mobbning formas av normer — värderingsövningar är effektivare än informationsgivning (Salmivalli & Voeten, 2004).",
+      "kalltyp": "Forskning", "risker": "Låg risk. Påståendena berör inga specifika individer.",
+      "efter_lektionen": null, "interna_anteckningar": "Kan köras flera gånger per år — se om attityder förändras.",
+      "elevmaterial": false, "elevmaterial_typ": null,
+      "behov_produktion": { "typer": ["quiz"], "beskrivning": "Fungerar utmärkt som Kahoot eller Mentimeter med realtidsresultat.", "manus": "Samma 5 påståenden, fyra alternativ per fråga, visa diagram efter varje.", "elevenlabs_prompt": null }
+    },
+    {
+      "id": "BTH-006",
+      "titel": "HUR KÄNNS DET?",
+      "fokustema": ["Känslor & självreglering", "Empati & perspektiv"],
+      "alder": "F-klass",
+      "alder_tags": ["F"],
+      "tid": 15, "forberedelse_tid": 5,
+      "ovningstyp": ["Kreativ övning"],
+      "arbetssatt": ["helklass", "individuellt"],
+      "status": "klar", "filmovning": false, "kan_vacka_kanslor": false, "elevhalsa": false,
+      "kort": "Inga", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Barnen tränar på att känna igen och benämna enkla känslor — glad, ledsen, arg, rädd — och förstår att alla kan känna så.",
+      "forberedelse": "Skriv ut ett elevblad per barn. Ha kritor i olika färger redo.",
+      "material": "Elevblad (ett per barn), kritor",
+      "genomforande_enkelt": [
+        "Visa ett känsloansiktet på projektorn — fråga: Hur tror ni att den här personen känner sig?",
+        "Visa nästa ansikte — låt barnen gissa och visa med sina egna ansikten.",
+        "Dela ut elevbladen. Barnen ritar hur de känner sig just nu.",
+        "Visa varandras bilder om man vill — ingen tvingas."
+      ],
+      "tips": "Håll det enkelt och kort. F-klass tröttnar snabbt — 15 minuter räcker. Färger kan hjälpa: glad = gul, ledsen = blå, arg = röd.",
+      "genomforande": [
+        { "typ": "projektor", "rubrik": "Hur känner den här personen sig?", "text": "😊", "uppgift": "Gissa — och visa med ditt eget ansikte!" },
+        { "typ": "projektor", "rubrik": "Och den här?", "text": "😢", "uppgift": "Hur ser ledsen ut? Visa varandra." },
+        { "typ": "projektor", "rubrik": "Din tur", "text": "Rita hur du känner dig just nu. Välj en färg som passar.", "uppgift": "3–4 minuter." }
+      ],
+      "reflektionsfragor": ["Vilken känsla ritade du?", "Är det okej att vara ledsen ibland?", "Vad gör du när du är arg?"],
+      "trygg_start": "\"Det finns inga fel svar. Alla känslor är okej.\"",
+      "trygg_avslutning": "\"Bra jobbat! Ni är riktiga känsloexperter.\"",
+      "npf": "Använd bildstöd för känslor. Håll instruktionerna korta och konkreta. Tillåt rörelse — barnen kan visa känslan med kroppen.",
+      "forskningskoppling": "Tidig träning i emotionell igenkänning är kopplad till bättre sociala färdigheter och trivsel i skolan (Denham et al., 2003).",
+      "kalltyp": "Forskning", "risker": "Minimal risk för F-klass. Om ett barn blir upprörd — ta det privat efteråt.",
+      "efter_lektionen": "Sätt upp bilderna anonymt i klassrummet.", "interna_anteckningar": "Passar perfekt som första övning i läsåret.",
+      "elevmaterial": true, "elevmaterial_typ": "Elevblad", "behov_produktion": null
+    },
+    {
+      "id": "BTH-007",
+      "titel": "KOMPISLOTTERIET",
+      "fokustema": ["Gemenskap & inkludering"],
+      "alder": "Åk 3, 4",
+      "alder_tags": ["3","4"],
+      "tid": 30, "forberedelse_tid": 10,
+      "ovningstyp": ["Kreativ övning", "Gruppövning"],
+      "arbetssatt": ["i par", "helklass"],
+      "status": "klar", "filmovning": false, "kan_vacka_kanslor": false, "elevhalsa": false,
+      "kort": "Inga", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Eleverna övar på att samarbeta med någon de inte väljer själva — och inser att man kan ha kul med vem som helst.",
+      "forberedelse": "Klipp ut namnlappar — en per elev. Lägg i en påse. Skriv ut uppgiftsblad.",
+      "material": "Namnlappar i påse, uppgiftsblad (ett per par), pennor",
+      "genomforande_enkelt": [
+        "Varje elev drar en namnlapp — det är ens kompis för den här övningen.",
+        "Paren hittar varandra och presenterar sig: tre saker de inte visste om varandra.",
+        "Paren löser uppgifterna på bladet tillsammans — 15 minuter.",
+        "Lyft i helklass: vad lärde ni er om er kompis? Vad förvånade er?"
+      ],
+      "tips": "Om någon är frånvarande — skapa ett trio. Uppgiftsblad kan anpassas till klassens intressen.",
+      "genomforande": [
+        { "typ": "projektor", "rubrik": "Dra ett namn!", "text": "Din kompis för idag är den du drar ur påsen. Hitta varandra och säg hej.", "uppgift": null },
+        { "typ": "projektor", "rubrik": "Lär känna varandra", "text": "Berätta tre saker om dig själv som din kompis troligtvis inte vet.", "uppgift": "2 minuter var." },
+        { "typ": "projektor", "rubrik": "Uppgiften", "text": "Lös uppgifterna på bladet tillsammans. Ni väljer ordning själva.", "uppgift": "15 minuter." }
+      ],
+      "reflektionsfragor": ["Vad lärde du dig om din kompis som du inte visste?", "Hur kändes det att jobba med någon du inte valde själv?", "Tror du att ni kan bli vänner?"],
+      "trygg_start": "\"Idag lottar vi kompisar — precis som livet fungerar. Man väljer inte alltid vem man möter, men man väljer hur man är mot dem.\"",
+      "trygg_avslutning": "Klappen varandra på axeln — \"tack för samarbetet.\"",
+      "npf": "Ge paret strukturerade uppgifter med tydliga steg. Tillåt att sitta på valfri plats. Uppgiftsblad = visuellt stöd.",
+      "forskningskoppling": "Strukturerade samarbetsövningar ökar inkludering och minskar utanförskap mer effektivt än fri lek (Johnson & Johnson, 2009).",
+      "kalltyp": "Forskning", "risker": "Se till att ingen drar sig själv. Ha koll på elever som kan bli isolerade om de hamnar med någon de har konflikter med.",
+      "efter_lektionen": "Kan upprepas en gång i månaden med nya par.", "interna_anteckningar": "Bra klassrumsbyggare i början av terminen.",
+      "elevmaterial": true, "elevmaterial_typ": "Elevblad", "behov_produktion": null
+    },
+    {
+      "id": "BTH-008",
+      "titel": "MINA SUPERKRAFTER",
+      "fokustema": ["Mod & civilkurage", "Självkänsla & identitet"],
+      "alder": "Åk 2, 3",
+      "alder_tags": ["2","3"],
+      "tid": 20, "forberedelse_tid": 5,
+      "ovningstyp": ["Kreativ övning"],
+      "arbetssatt": ["individuellt", "helklass"],
+      "status": "utkast", "filmovning": false, "kan_vacka_kanslor": false, "elevhalsa": false,
+      "kort": "HERO-KORT 12–15", "datum_skapad": "2026-05-30", "ny": true,
+      "syfte": "Eleverna kopplar HERO-kortens superkrafter till sig själva — och förstår att de redan har dessa egenskaper inom sig.",
+      "forberedelse": "Ta fram HERO-KORT 12–15 (ett set). Skriv ut elevblad.",
+      "material": "HERO-KORT 12–15 (ett set för klassen), elevblad, pennor/kritor",
+      "genomforande_enkelt": [
+        "Visa HERO-KORT 12–15 för klassen — läs upp namnen: Uppmärksam, Modig, Godhjärtad, Rättvis.",
+        "Fråga klassen: Vilken superkraft använde du senast? Låt 3–4 berätta.",
+        "Dela ut elevbladen. Eleverna ritar sig själva med sin favoritskraft.",
+        "Frivillig visning — vem ritade vilken kraft och varför?"
+      ],
+      "tips": "Poängtera att alla har alla superkrafter — man väljer vilken man tränar mest.",
+      "genomforande": [
+        { "typ": "projektor", "rubrik": "HERO-kortens superkrafter", "text": "Uppmärksam · Modig · Godhjärtad · Rättvis", "uppgift": "Vilken känner ni igen hos er själva?" },
+        { "typ": "projektor", "rubrik": "Din uppgift", "text": "Rita dig själv med din favoritskraft. Ge dig själv en superhjältepose!", "uppgift": "5–7 minuter." }
+      ],
+      "reflektionsfragor": ["Vilken superkraft är lättast för dig?", "Vilken vill du träna mer på?", "När behövde du vara modig den senaste veckan?"],
+      "trygg_start": "\"Alla ni i det här rummet har superkrafter. Idag ska vi ta reda på vilka.\"",
+      "trygg_avslutning": "\"Ni är alla hjältar — ni behöver bara bestämma er för att använda era krafter.\"",
+      "npf": "Korten hjälper elever med läs- och skrivsvårigheter — bilderna ger stöd. Tillåt att berätta muntligt istället för att rita.",
+      "forskningskoppling": "Att koppla positiva egenskaper till den egna identiteten stärker self-efficacy och prosocialt beteende (Bandura, 1997).",
+      "kalltyp": "Forskning", "risker": "Låg risk. Se till att alla känner sig sedda i presentationsrundan.",
+      "efter_lektionen": "Sätt upp ritningarna i klassrummet som en superkraftsgalleri.", "interna_anteckningar": "Bra introduktionsövning till HERO-korten för yngre elever.",
+      "elevmaterial": true, "elevmaterial_typ": "Elevblad", "behov_produktion": null
+    }
+  ]
+}

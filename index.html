@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BE THE HERO — Övningsbank</title>
+<style>
+:root {
+  --bg:#0d1117; --s1:#161b27; --s2:#1e2535; --s3:#252d40;
+  --border:#2a3249; --purple:#7c3aed; --ph:#6d28d9; --pl:#a78bfa; --pp:rgba(124,58,237,.12);
+  --text:#e8edf8; --muted:#7a8499; --dim:#4a5568;
+  --gult:#f59e0b; --gront:#10b981; --blatt:#3b82f6; --rott:#ef4444;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;}
+button,input,textarea{font-family:inherit;}
+a{color:inherit;text-decoration:none;}
+
+/* ══ TOPBAR ══ */
+.topbar{height:52px;background:var(--s1);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 18px;gap:16px;position:sticky;top:0;z-index:200;}
+.brand{display:flex;align-items:center;gap:9px;flex-shrink:0;}
+.brand-h{width:28px;height:28px;background:var(--purple);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;}
+.brand-name{font-size:13px;font-weight:800;}
+.brand-sub{font-size:10px;color:var(--muted);}
+.topbar-sep{width:1px;height:24px;background:var(--border);}
+.top-tabs{display:flex;gap:2px;}
+.top-tab{background:transparent;border:none;color:var(--muted);font-size:12px;font-weight:600;padding:5px 11px;border-radius:5px;cursor:pointer;transition:all .12s;display:flex;align-items:center;gap:5px;}
+.top-tab:hover{color:var(--text);background:var(--s2);}
+.top-tab.on{color:var(--pl);background:var(--pp);}
+.top-tab .tc{font-size:10px;background:var(--s3);color:var(--dim);padding:1px 5px;border-radius:8px;min-width:18px;text-align:center;transition:all .12s;}
+.top-tab.on .tc{background:var(--purple);color:#fff;}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px;}
+.sort-sel{background:var(--s2);border:1px solid var(--border);color:var(--text);font-size:12px;padding:5px 9px;border-radius:5px;outline:none;cursor:pointer;}
+
+/* ══ LAYOUT ══ */
+#app{display:flex;min-height:calc(100vh - 52px);}
+.sidebar{width:210px;flex-shrink:0;background:var(--s1);border-right:1px solid var(--border);padding:14px 12px;overflow-y:auto;height:calc(100vh - 52px);position:sticky;top:52px;}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+
+/* ══ SIDEBAR ══ */
+.clear-btn{width:100%;background:transparent;border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;padding:6px;border-radius:5px;cursor:pointer;margin-bottom:12px;transition:all .12s;letter-spacing:.3px;}
+.clear-btn:hover{border-color:var(--rott);color:var(--rott);}
+.clear-btn.has-filters{border-color:rgba(239,68,68,.4);color:var(--rott);background:rgba(239,68,68,.06);}
+.f-label{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:6px;display:block;}
+.f-divider{height:1px;background:var(--border);margin:10px 0;}
+
+/* Year grid */
+.year-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-bottom:2px;}
+.yb{background:var(--s2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;padding:5px 2px;border-radius:4px;cursor:pointer;text-align:center;transition:all .12s;}
+.yb:hover{color:var(--text);}
+.yb.on{background:var(--pp);border-color:var(--purple);color:var(--pl);}
+.yb.zero{opacity:.35;}
+.yb .yc{display:block;font-size:8px;font-weight:400;color:var(--dim);}
+.yb.on .yc{color:var(--pl);opacity:.7;}
+
+/* Filter buttons */
+.f-group{display:flex;flex-direction:column;gap:2px;}
+.fb{background:transparent;border:1px solid transparent;color:var(--muted);font-size:11px;padding:5px 8px;border-radius:4px;cursor:pointer;text-align:left;transition:all .1s;display:flex;justify-content:space-between;align-items:center;width:100%;}
+.fb:hover{background:var(--s2);color:var(--text);}
+.fb.on{background:var(--pp);border-color:rgba(124,58,237,.3);color:var(--pl);font-weight:600;}
+.fb .fc{font-size:9px;color:var(--dim);background:var(--s3);padding:1px 4px;border-radius:3px;}
+.fb.on .fc{color:var(--pl);background:rgba(124,58,237,.2);}
+
+/* ══ WORKSPACE HEADER ══ */
+.ws-header{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--s1);}
+.ws-count{font-size:12px;color:var(--muted);white-space:nowrap;flex-shrink:0;}
+.active-chips{display:flex;flex-wrap:wrap;gap:5px;flex:1;}
+.achip{display:flex;align-items:center;gap:5px;background:var(--pp);border:1px solid rgba(124,58,237,.25);color:var(--pl);font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;}
+.achip-x{background:transparent;border:none;color:var(--pl);font-size:13px;cursor:pointer;line-height:1;padding:0 0 0 2px;opacity:.7;}
+.achip-x:hover{opacity:1;}
+.search-wrap{position:relative;}
+.search-wrap input{background:var(--s2);border:1px solid var(--border);color:var(--text);font-size:12px;padding:6px 12px 6px 30px;border-radius:5px;outline:none;width:200px;transition:border-color .15s;}
+.search-wrap input:focus{border-color:var(--purple);width:240px;}
+.search-wrap input::placeholder{color:var(--muted);}
+.si{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;pointer-events:none;}
+
+/* ══ GRID ══ */
+.grid-area{flex:1;padding:16px 18px;overflow-y:auto;}
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:11px;}
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);}
+.empty-icon{font-size:32px;margin-bottom:10px;}
+
+/* ══ CARD ══ */
+.card{background:var(--s1);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
+.card:hover{border-color:var(--purple);box-shadow:0 3px 14px rgba(124,58,237,.1);}
+.card-stripe{height:3px;width:100%;}
+.card-stripe.klar{background:var(--gront);}
+.card-stripe.utkast{background:var(--dim);}
+.card-stripe.granskas{background:var(--gult);}
+.card-stripe.publicerad{background:var(--pl);}
+.card-body{padding:13px 14px 11px;}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:7px;}
+.card-title{font-size:13px;font-weight:800;line-height:1.2;flex:1;}
+.card-qbtns{display:flex;gap:2px;flex-shrink:0;}
+.qb{background:transparent;border:none;font-size:14px;padding:2px 3px;cursor:pointer;opacity:.35;transition:opacity .12s;line-height:1;}
+.qb:hover,.qb.on{opacity:1;}
+.card-years{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:7px;}
+.cy{font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;background:var(--pp);color:var(--pl);border:1px solid rgba(124,58,237,.18);}
+.card-temas{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px;}
+.ct{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--s2);border:1px solid var(--border);color:var(--muted);}
+.card-meta{display:flex;gap:10px;font-size:11px;color:var(--muted);margin-bottom:7px;}
+.card-flags{display:flex;flex-wrap:wrap;gap:4px;}
+.cf{font-size:10px;padding:1px 6px;border-radius:3px;border:1px solid var(--border);background:var(--s2);color:var(--muted);}
+.cf.warn{border-color:rgba(245,158,11,.3);color:var(--gult);background:rgba(245,158,11,.05);}
+.cf.kort{border-color:rgba(124,58,237,.3);color:var(--pl);background:var(--pp);}
+.cf.prod{border-color:rgba(59,130,246,.3);color:var(--blatt);background:rgba(59,130,246,.05);}
+.cf.new{border-color:rgba(16,185,129,.3);color:var(--gront);background:rgba(16,185,129,.05);}
+.cf.used{border-color:rgba(16,185,129,.3);color:var(--gront);}
+
+/* ══ TEACHER VIEW ══ */
+#view-teacher{display:none;flex:1;overflow-y:auto;}
+.tv-topbar{position:sticky;top:0;z-index:100;background:var(--s1);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.tv-left{display:flex;align-items:center;gap:10px;}
+.back-btn{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);padding:6px 11px;border-radius:5px;border:1px solid var(--border);background:transparent;cursor:pointer;transition:all .12s;}
+.back-btn:hover{color:var(--text);border-color:var(--pl);}
+.tv-title{font-size:14px;font-weight:800;color:var(--text);}
+.tv-right{display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+.tv-btn{background:var(--s2);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:600;padding:6px 12px;border-radius:5px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .12s;white-space:nowrap;}
+.tv-btn:hover{color:var(--text);border-color:var(--pl);}
+.tv-btn.fav.on{color:var(--gult);border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.07);}
+.tv-btn.used.on{color:var(--gront);border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.07);}
+.start-btn{background:var(--purple);color:#fff;border:none;font-size:13px;font-weight:700;padding:7px 18px;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .15s;}
+.start-btn:hover{background:var(--ph);}
+.tv-body{max-width:980px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:1fr 250px;gap:20px;}
+.tv-main{display:flex;flex-direction:column;gap:16px;}
+.tv-aside{display:flex;flex-direction:column;gap:12px;}
+
+/* TV flags */
+.tv-flags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.tvf{font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;border:1px solid transparent;display:flex;align-items:center;gap:4px;}
+.tvf.warn{color:var(--gult);background:rgba(245,158,11,.07);border-color:rgba(245,158,11,.2);}
+.tvf.ok{color:var(--gront);background:rgba(16,185,129,.05);border-color:rgba(16,185,129,.15);}
+.tvf.info{color:var(--muted);background:var(--s2);border-color:var(--border);}
+.tvf.kort{color:var(--pl);background:var(--pp);border-color:rgba(124,58,237,.25);}
+
+/* TV header */
+.tv-alder{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;}
+.tv-ap{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--pp);border:1px solid rgba(124,58,237,.22);color:var(--pl);}
+.tv-h1{font-size:26px;font-weight:900;margin-bottom:6px;line-height:1.1;}
+.tv-meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.tv-mtag{background:var(--s2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;}
+.tv-syfte{font-size:14px;color:#b0bcd4;line-height:1.65;max-width:600px;}
+
+/* Sections */
+.ts{background:var(--s1);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.ts-h{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);}
+.ts-icon{font-size:15px;}
+.ts-title{font-size:12px;font-weight:800;letter-spacing:.2px;}
+.ts-b{padding:15px;}
+
+/* Steps */
+.step-list{display:flex;flex-direction:column;gap:1px;}
+.step{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+.step:last-child{border-bottom:none;}
+.sn{width:24px;height:24px;background:var(--purple);color:#fff;border-radius:50%;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.st{font-size:13px;color:#c8d3e8;line-height:1.5;flex:1;}
+
+/* Prose, refs, trygg */
+.prose{font-size:13px;color:#b0bcd4;line-height:1.65;}
+.ref-list{display:flex;flex-direction:column;gap:1px;}
+.ri{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;color:#b0bcd4;align-items:flex-start;}
+.ri:last-child{border-bottom:none;}
+.rq{color:var(--pl);font-weight:800;flex-shrink:0;font-size:14px;}
+.trygg-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.tb{background:var(--s2);border-radius:6px;padding:12px;font-size:12px;color:#b0bcd4;line-height:1.6;}
+.tbl{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.tbl.start{color:var(--gront);}.tbl.slut{color:var(--blatt);}
+
+/* Forskning */
+.fb-box{background:var(--s2);border-radius:6px;padding:12px;font-size:13px;color:#b0bcd4;line-height:1.65;}
+.kbadge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;background:var(--pp);color:var(--pl);padding:2px 6px;border-radius:3px;margin-bottom:7px;}
+
+/* Prod box */
+.prod-b{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:13px;}
+.prod-types{display:flex;gap:5px;margin-bottom:8px;}
+.pbadge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;}
+.pbadge.voiceover{background:rgba(16,185,129,.1);color:var(--gront);border:1px solid rgba(16,185,129,.2);}
+.pbadge.film{background:rgba(239,68,68,.1);color:var(--rott);border:1px solid rgba(239,68,68,.2);}
+.pbadge.quiz{background:var(--pp);color:var(--pl);border:1px solid rgba(124,58,237,.2);}
+.prod-desc{font-size:13px;color:#b0bcd4;margin-bottom:10px;line-height:1.6;}
+.prod-manus{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:9px;font-size:11px;color:#7a8499;font-family:monospace;white-space:pre-wrap;line-height:1.55;max-height:120px;overflow-y:auto;}
+.prod-prompt{background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.2);border-radius:4px;padding:9px;font-size:11px;color:var(--gront);font-style:italic;margin-top:7px;line-height:1.6;}
+.plbl{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+
+/* Sidebar cards */
+.sc{background:var(--s1);border:1px solid var(--border);border-radius:7px;padding:13px;}
+.sc-t{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:9px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.sr{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:12px;}
+.sr:last-child{border-bottom:none;}
+.sk{color:var(--muted);}
+.sv{font-weight:600;font-size:11px;text-align:right;}
+.sp{font-size:10px;font-weight:700;padding:2px 6px;border-radius:8px;}
+.sp.utkast{background:rgba(74,85,104,.15);color:#9ca3af;}
+.sp.granskas{background:rgba(245,158,11,.1);color:var(--gult);}
+.sp.klar{background:rgba(16,185,129,.1);color:var(--gront);}
+.sp.publicerad{background:var(--pp);color:var(--pl);}
+.notes-ta{width:100%;background:var(--s2);border:1px solid var(--border);color:var(--text);font-size:12px;padding:8px 10px;border-radius:5px;outline:none;resize:vertical;min-height:65px;line-height:1.5;}
+.notes-ta:focus{border-color:var(--purple);}
+.notes-ta::placeholder{color:var(--muted);}
+.tema-pills{display:flex;flex-wrap:wrap;gap:4px;}
+.tp{font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;background:var(--pp);color:var(--pl);border:1px solid rgba(124,58,237,.2);}
+
+/* ══ PRODUKTION TAB ══ */
+#view-prod{display:none;flex:1;overflow-y:auto;padding:20px;}
+.prod-list{display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto;}
+.pcard{background:var(--s1);border:1px solid rgba(59,130,246,.2);border-radius:8px;overflow:hidden;}
+.pcard-h{padding:13px 15px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.pcard-info{flex:1;}
+.pcard-t{font-size:14px;font-weight:800;}
+.pcard-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+.pcard-b{padding:13px 15px;}
+
+/* ══ PRESENTATION ══ */
+#view-pres{display:none;position:fixed;inset:0;background:#070a0f;z-index:1000;}
+.pnav{position:absolute;top:0;left:0;right:0;height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;z-index:10;}
+.px{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);width:34px;height:34px;border-radius:6px;font-size:17px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;}
+.px:hover{background:rgba(255,255,255,.14);color:#fff;}
+.pprog{display:flex;align-items:center;gap:8px;}
+.pdots{display:flex;gap:4px;}
+.pd{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.15);transition:all .2s;}
+.pd.on{background:var(--pl);width:14px;border-radius:3px;}
+.pcnt{font-size:11px;color:rgba(255,255,255,.3);}
+.pstage{position:absolute;inset:50px 0 72px 0;display:flex;align-items:center;justify-content:center;padding:36px;}
+.slide{display:none;width:100%;max-width:800px;animation:sIn .2s ease;}
+.slide.on{display:block;}
+@keyframes sIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* slide: text */
+.s-num{width:40px;height:40px;background:var(--purple);border-radius:50%;font-size:18px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.s-body{font-size:clamp(18px,2.8vw,28px);color:rgba(255,255,255,.85);line-height:1.5;}
+/* slide: projektor */
+.s-rub{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--pl);margin-bottom:12px;}
+.s-text{font-size:clamp(20px,3vw,34px);font-weight:700;color:#fff;line-height:1.35;margin-bottom:10px;}
+.s-uppg{font-size:13px;color:rgba(255,255,255,.35);}
+/* slide: mitt-val */
+.mv-q{font-size:clamp(17px,2.4vw,26px);font-weight:700;color:#fff;line-height:1.4;margin-bottom:22px;text-align:center;}
+.mv-opts{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.mvo{border-radius:9px;padding:16px 18px;display:flex;align-items:center;gap:12px;}
+.mvo.gult{background:rgba(245,158,11,.13);border:2px solid rgba(245,158,11,.38);}
+.mvo.gront{background:rgba(16,185,129,.1);border:2px solid rgba(16,185,129,.32);}
+.mvo.blatt{background:rgba(59,130,246,.1);border:2px solid rgba(59,130,246,.32);}
+.mvo.rott{background:rgba(239,68,68,.1);border:2px solid rgba(239,68,68,.32);}
+.mvsq{width:36px;height:36px;border-radius:6px;flex-shrink:0;}
+.mvsq.gult{background:var(--gult);}.mvsq.gront{background:var(--gront);}.mvsq.blatt{background:var(--blatt);}.mvsq.rott{background:var(--rott);}
+.mvct{font-size:clamp(12px,1.8vw,16px);font-weight:600;color:#fff;line-height:1.3;}
+/* slide: reflektion */
+.s-reflbl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--pl);margin-bottom:12px;}
+.s-refq{font-size:clamp(22px,3.5vw,40px);font-weight:800;color:#fff;line-height:1.3;}
+/* slide: avslutning */
+.s-av{text-align:center;}
+.s-av-i{font-size:40px;margin-bottom:12px;}
+.s-av-l{font-size:10px;font-weight:800;letter-spacing:2px;color:var(--blatt);text-transform:uppercase;margin-bottom:10px;}
+.s-av-t{font-size:clamp(17px,2.4vw,24px);color:rgba(255,255,255,.8);line-height:1.55;max-width:560px;margin:0 auto;}
+/* arrows */
+.parrs{position:absolute;bottom:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.parr{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.45);width:42px;height:42px;border-radius:8px;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;}
+.parr:hover:not(:disabled){background:rgba(124,58,237,.18);border-color:var(--purple);color:var(--pl);}
+.parr:disabled{opacity:.15;cursor:default;}
+.pslbl{font-size:11px;color:rgba(255,255,255,.22);min-width:90px;text-align:center;}
+
+/* ══ TOAST ══ */
+.toast{position:fixed;bottom:22px;right:22px;background:var(--s2);border:1px solid var(--border);color:var(--text);padding:9px 15px;border-radius:7px;font-size:12px;font-weight:600;z-index:3000;opacity:0;transform:translateY(6px);transition:all .22s;pointer-events:none;display:flex;align-items:center;gap:7px;}
+.toast.show{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-h">H</div>
+    <div><div class="brand-name">BE THE HERO</div><div class="brand-sub">Övningsbank</div></div>
+  </div>
+  <div class="topbar-sep"></div>
+  <div class="top-tabs">
+    <button class="top-tab on" data-tab="bank" onclick="switchTab('bank',this)">Alla övningar <span class="tc" id="tc-bank">0</span></button>
+    <button class="top-tab" data-tab="fav" onclick="switchTab('fav',this)">⭐ Favoriter <span class="tc" id="tc-fav">0</span></button>
+    <button class="top-tab" data-tab="oanvand" onclick="switchTab('oanvand',this)">⬜ Oanvända <span class="tc" id="tc-oanvand">0</span></button>
+    <button class="top-tab" data-tab="prod" onclick="switchTab('prod',this)">🎬 Behöver produktion <span class="tc" id="tc-prod">0</span></button>
+  </div>
+  <div class="topbar-right">
+    <select class="sort-sel" onchange="render()">
+      <option value="ny">Nyast först</option>
+      <option value="az">A–Ö</option>
+      <option value="tid-asc">Kortast tid</option>
+      <option value="tid-desc">Längst tid</option>
+    </select>
+  </div>
+</header>
+
+<div id="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <button class="clear-btn" id="clear-btn" onclick="clearFilters()">✕ Rensa alla filter</button>
+
+    <span class="f-label">Årskurs</span>
+    <div class="year-grid" id="year-grid"></div>
+    <div style="margin-bottom:10px"></div>
+
+    <div class="f-divider"></div>
+    <span class="f-label">Fokustema</span>
+    <div class="f-group" id="tema-group"></div>
+
+    <div class="f-divider"></div>
+    <span class="f-label">Tid</span>
+    <div class="f-group">
+      <button class="fb on" data-f="tid" data-v="alla" onclick="setF('tid','alla',this)">Alla <span class="fc"></span></button>
+      <button class="fb" data-f="tid" data-v="10" onclick="setF('tid','10',this)">10 min</button>
+      <button class="fb" data-f="tid" data-v="20" onclick="setF('tid','20',this)">20 min</button>
+      <button class="fb" data-f="tid" data-v="30" onclick="setF('tid','30',this)">30 min</button>
+      <button class="fb" data-f="tid" data-v="40" onclick="setF('tid','40',this)">40+ min</button>
+    </div>
+
+    <div class="f-divider"></div>
+    <span class="f-label">Kort</span>
+    <div class="f-group">
+      <button class="fb on" data-f="kort" data-v="alla" onclick="setF('kort','alla',this)">Alla</button>
+      <button class="fb" data-f="kort" data-v="MITT VAL" onclick="setF('kort','MITT VAL',this)">MITT VAL</button>
+      <button class="fb" data-f="kort" data-v="HERO" onclick="setF('kort','HERO',this)">HERO-KORT</button>
+      <button class="fb" data-f="kort" data-v="Inga" onclick="setF('kort','Inga',this)">Inga kort</button>
+    </div>
+
+    <div class="f-divider"></div>
+    <span class="f-label">Status</span>
+    <div class="f-group">
+      <button class="fb on" data-f="status" data-v="alla" onclick="setF('status','alla',this)">Alla</button>
+      <button class="fb" data-f="status" data-v="utkast" onclick="setF('status','utkast',this)">● Utkast</button>
+      <button class="fb" data-f="status" data-v="granskas" onclick="setF('status','granskas',this)">● Granskas</button>
+      <button class="fb" data-f="status" data-v="klar" onclick="setF('status','klar',this)">● Klar</button>
+      <button class="fb" data-f="status" data-v="publicerad" onclick="setF('status','publicerad',this)">● Publicerad</button>
+    </div>
+  </aside>
+
+  <!-- MAIN: BANK -->
+  <div id="view-bank" style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+    <div class="ws-header">
+      <span class="ws-count" id="ws-count">– övningar</span>
+      <div class="active-chips" id="active-chips"></div>
+      <div class="search-wrap">
+        <span class="si">🔍</span>
+        <input type="text" id="search" placeholder="Sök…" oninput="render()">
+      </div>
+    </div>
+    <div class="grid-area">
+      <div class="ex-grid" id="ex-grid"></div>
+    </div>
+  </div>
+
+  <!-- PRODUKTION VIEW (inside app, replaces main) -->
+  <div id="view-prod" style="display:none;flex:1;overflow-y:auto;padding:20px;">
+    <div class="prod-list" id="prod-list"></div>
+  </div>
+</div>
+
+<!-- TEACHER VIEW — outside #app so hiding #app doesn't kill it -->
+<div id="view-teacher" style="display:none;position:fixed;inset:52px 0 0 0;background:var(--bg);z-index:50;overflow-y:auto;"></div>
+
+<!-- PRESENTATION -->
+<div id="view-pres">
+  <nav class="pnav">
+    <button class="px" onclick="closePres()">✕</button>
+    <div class="pprog">
+      <div class="pdots" id="pdots"></div>
+      <span class="pcnt" id="pcnt"></span>
+    </div>
+    <div style="width:34px"></div>
+  </nav>
+  <div class="pstage" id="pstage"></div>
+  <div class="parrs">
+    <button class="parr" id="pp" onclick="prevS()">←</button>
+    <span class="pslbl" id="pslbl"></span>
+    <button class="parr" id="pn" onclick="nextS()">→</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const YEARS = ['F','1','2','3','4','5','6','7','8','9'];
+const TEMAN = ['Konflikter','Sociala roller','Mod & civilkurage','Digitala relationer','Empati & perspektiv','Grupptryck & normer','Mobbning & kränkningar','Gemenskap & inkludering','Självkänsla & identitet','Känslor & självreglering'];
+
+let exercises=[], cur=null, slides=[], cSlide=0, activeTab='bank';
+let selYears=new Set(), selTemas=new Set();
+let fTid='alla', fKort='alla', fStatus='alla';
+
+// ── Storage ──
+const LS = {
+  favs:()=>new Set(JSON.parse(localStorage.getItem('bth_f')||'[]')),
+  used:()=>new Set(JSON.parse(localStorage.getItem('bth_u')||'[]')),
+  notes:()=>JSON.parse(localStorage.getItem('bth_n')||'{}'),
+  saveFavs:s=>localStorage.setItem('bth_f',JSON.stringify([...s])),
+  saveUsed:s=>localStorage.setItem('bth_u',JSON.stringify([...s])),
+  saveNotes:o=>localStorage.setItem('bth_n',JSON.stringify(o)),
+};
+
+// ── Load ──
+fetch('data/exercises.json').then(r=>r.json()).then(d=>{
+  exercises=d.exercises;
+  buildYearGrid();
+  buildTemaGroup();
+  updateCounts();
+  render();
+});
+
+function buildYearGrid(){
+  const g=document.getElementById('year-grid');
+  g.innerHTML=YEARS.map(y=>{
+    const n=exercises.filter(e=>e.alder_tags.includes(y)).length;
+    return`<button class="yb${n===0?' zero':''}" data-y="${y}" onclick="toggleYear('${y}',this)">${y==='F'?'F':'Åk '+y}<span class="yc">${n}</span></button>`;
+  }).join('');
+}
+
+function buildTemaGroup(){
+  const g=document.getElementById('tema-group');
+  g.innerHTML=TEMAN.map(t=>{
+    const n=exercises.filter(e=>e.fokustema.includes(t)).length;
+    return`<button class="fb" data-tema="${t}" onclick="toggleTema('${t}',this)">${t}<span class="fc">${n}</span></button>`;
+  }).join('');
+}
+
+function toggleYear(y,btn){
+  if(selYears.has(y)){selYears.delete(y);btn.classList.remove('on');}
+  else{selYears.add(y);btn.classList.add('on');}
+  render();updateChips();updateClearBtn();
+}
+
+function toggleTema(t,btn){
+  if(selTemas.has(t)){selTemas.delete(t);btn.classList.remove('on');}
+  else{selTemas.add(t);btn.classList.add('on');}
+  render();updateChips();updateClearBtn();
+}
+
+function setF(type,val,btn){
+  if(type==='tid')fTid=val;
+  else if(type==='kort')fKort=val;
+  else if(type==='status')fStatus=val;
+  document.querySelectorAll(`[data-f="${type}"]`).forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  render();updateChips();updateClearBtn();
+}
+
+function clearFilters(){
+  selYears=new Set();selTemas=new Set();fTid='alla';fKort='alla';fStatus='alla';
+  document.querySelectorAll('.yb').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('[data-tema]').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('[data-f]').forEach(b=>{
+    b.classList.remove('on');
+    if(b.dataset.v==='alla')b.classList.add('on');
+  });
+  document.getElementById('search').value='';
+  render();updateChips();updateClearBtn();
+}
+
+function updateClearBtn(){
+  const hasF=selYears.size>0||selTemas.size>0||fTid!=='alla'||fKort!=='alla'||fStatus!=='alla';
+  document.getElementById('clear-btn').classList.toggle('has-filters',hasF);
+}
+
+function updateChips(){
+  const c=document.getElementById('active-chips');
+  let chips=[];
+  selYears.forEach(y=>chips.push(`<span class="achip">${y==='F'?'F-klass':'Åk '+y}<button class="achip-x" onclick="toggleYear('${y}',document.querySelector('[data-y=\\'${y}\\']'))">×</button></span>`));
+  selTemas.forEach(t=>chips.push(`<span class="achip">${t}<button class="achip-x" onclick="toggleTema('${t}',document.querySelector('[data-tema=\\'${t}\\']'))">×</button></span>`));
+  if(fTid!=='alla')chips.push(`<span class="achip">${fTid==='40'?'40+ min':fTid+' min'}<button class="achip-x" onclick="setF('tid','alla',document.querySelector('[data-f=tid][data-v=alla]'))">×</button></span>`);
+  if(fKort!=='alla')chips.push(`<span class="achip">${fKort}<button class="achip-x" onclick="setF('kort','alla',document.querySelector('[data-f=kort][data-v=alla]'))">×</button></span>`);
+  if(fStatus!=='alla')chips.push(`<span class="achip">${fStatus}<button class="achip-x" onclick="setF('status','alla',document.querySelector('[data-f=status][data-v=alla]'))">×</button></span>`);
+  c.innerHTML=chips.join('');
+}
+
+// ── Filter + sort ──
+function filterEx(){
+  const q=(document.getElementById('search').value||'').toLowerCase();
+  const favs=LS.favs(), used=LS.used();
+  return exercises.filter(e=>{
+    if(activeTab==='fav'&&!favs.has(e.id))return false;
+    if(activeTab==='oanvand'&&used.has(e.id))return false;
+    if(q&&!e.titel.toLowerCase().includes(q)&&!e.syfte.toLowerCase().includes(q)&&!e.fokustema.join(' ').toLowerCase().includes(q))return false;
+    if(selYears.size>0&&!e.alder_tags.some(a=>selYears.has(a)))return false;
+    if(selTemas.size>0&&!e.fokustema.some(t=>selTemas.has(t)))return false;
+    if(fTid!=='alla'){const t=parseInt(fTid);if(fTid==='40'){if(e.tid<40)return false;}else{if(e.tid!==t)return false;}}
+    if(fKort!=='alla'){
+      if(fKort==='MITT VAL'&&e.kort!=='MITT VAL')return false;
+      if(fKort==='HERO'&&!e.kort.startsWith('HERO'))return false;
+      if(fKort==='Inga'&&e.kort!=='Inga')return false;
+    }
+    if(fStatus!=='alla'&&e.status!==fStatus)return false;
+    return true;
+  });
+}
+
+function sortEx(arr){
+  const s=document.querySelector('.sort-sel').value;
+  return [...arr].sort((a,b)=>{
+    if(s==='az')return a.titel.localeCompare(b.titel,'sv');
+    if(s==='tid-asc')return a.tid-b.tid;
+    if(s==='tid-desc')return b.tid-a.tid;
+    return b.id.localeCompare(a.id); // ny = högt ID
+  });
+}
+
+function updateCounts(){
+  const favs=LS.favs(), used=LS.used();
+  document.getElementById('tc-bank').textContent=exercises.length;
+  document.getElementById('tc-fav').textContent=exercises.filter(e=>favs.has(e.id)).length;
+  document.getElementById('tc-oanvand').textContent=exercises.filter(e=>!used.has(e.id)).length;
+  document.getElementById('tc-prod').textContent=exercises.filter(e=>e.behov_produktion).length;
+}
+
+// ── Render bank ──
+function render(){
+  if(activeTab==='prod'){renderProd();return;}
+  const filtered=sortEx(filterEx());
+  const favs=LS.favs(), used=LS.used();
+  document.getElementById('ws-count').textContent=filtered.length+' övning'+(filtered.length===1?'':'ar');
+  const grid=document.getElementById('ex-grid');
+  if(!filtered.length){grid.innerHTML='<div class="empty-state"><div class="empty-icon">🔍</div><p style="font-size:13px">Inga övningar matchar filtren.</p></div>';return;}
+  grid.innerHTML=filtered.map(e=>{
+    const isFav=favs.has(e.id), isUsed=used.has(e.id);
+    const years=e.alder_tags.map(a=>`<span class="cy">${a==='F'?'F-klass':'Åk '+a}</span>`).join('');
+    return`<div class="card" onclick="showTeacher('${e.id}')">
+      <div class="card-stripe ${e.status}"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-title">${e.titel}</div>
+          <div class="card-qbtns">
+            <button class="qb${isFav?' on':''}" onclick="event.stopPropagation();quickFav('${e.id}')" title="${isFav?'Ta bort favorit':'Lägg till favorit'}">${isFav?'⭐':'☆'}</button>
+            <button class="qb${isUsed?' on':''}" onclick="event.stopPropagation();quickUsed('${e.id}')" title="${isUsed?'Markera som oanvänd':'Markera som använd'}">${isUsed?'✅':'⬜'}</button>
+          </div>
+        </div>
+        <div class="card-years">${years}</div>
+        <div class="card-temas">${e.fokustema.map(t=>`<span class="ct">${t}</span>`).join('')}</div>
+        <div class="card-meta"><span>⏱ ${e.tid} min</span><span>📋 ${e.ovningstyp[0]}</span></div>
+        <div class="card-flags">
+          ${e.ny?'<span class="cf new">✦ Ny</span>':''}
+          ${e.kan_vacka_kanslor?'<span class="cf warn">⚠ Känslor</span>':''}
+          ${e.kort!=='Inga'?`<span class="cf kort">🃏 ${e.kort}</span>`:''}
+          ${e.elevmaterial?`<span class="cf">📄 ${e.elevmaterial_typ}</span>`:''}
+          ${e.behov_produktion?'<span class="cf prod">🎬 Produktion</span>':''}
+          ${isUsed?'<span class="cf used">✓ Använd</span>':''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function quickFav(id){
+  const f=LS.favs();
+  const on=f.has(id);
+  on?f.delete(id):f.add(id);
+  LS.saveFavs(f);
+  updateCounts(); render();
+  toast(on?'☆ Borttagen från favoriter':'⭐ Tillagd i favoriter');
+}
+function quickUsed(id){
+  const u=LS.used();
+  const on=u.has(id);
+  on?u.delete(id):u.add(id);
+  LS.saveUsed(u);
+  updateCounts(); render();
+  toast(on?'⬜ Markerad som oanvänd':'✅ Markerad som använd');
+}
+
+// ── Tab switching ──
+function switchTab(tab,btn){
+  activeTab=tab;
+  document.querySelectorAll('.top-tab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const isBank=tab==='bank'||tab==='fav'||tab==='oanvand';
+  document.getElementById('view-bank').style.display=isBank?'flex':'none';
+  document.getElementById('view-prod').style.display=tab==='prod'?'flex':'none';
+  if(tab==='prod')renderProd(); else render();
+}
+
+// ── Produktion ──
+function renderProd(){
+  const list=document.getElementById('prod-list');
+  const prods=exercises.filter(e=>e.behov_produktion);
+  if(!prods.length){list.innerHTML='<div class="empty-state"><div class="empty-icon">🎬</div><p>Inga övningar behöver produktion ännu.</p></div>';return;}
+  list.innerHTML=prods.map(e=>{
+    const p=e.behov_produktion;
+    return`<div class="pcard">
+      <div class="pcard-h">
+        <div class="pcard-info"><div class="pcard-t">${e.titel}</div><div class="pcard-sub">${e.alder} · ${e.fokustema.join(', ')}</div></div>
+        <div class="prod-types">${p.typer.map(t=>`<span class="pbadge ${t}">${t}</span>`).join('')}</div>
+      </div>
+      <div class="pcard-b">
+        <div class="prod-desc">${p.beskrivning}</div>
+        ${p.manus?`<div class="plbl" style="color:var(--muted)">Manus / innehåll</div><div class="prod-manus">${p.manus}</div>`:''}
+        ${p.elevenlabs_prompt?`<div class="plbl" style="color:var(--gront);margin-top:8px">ElevenLabs-prompt</div><div class="prod-prompt">${p.elevenlabs_prompt}</div>`:''}
+        <button class="back-btn" style="margin-top:10px;font-size:11px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--muted)" onclick="showTeacher('${e.id}')">Se hela övningen →</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Teacher view ──
+function showTeacher(id){
+  cur=exercises.find(e=>e.id===id);
+  if(!cur)return;
+  const tv=document.getElementById('view-teacher');
+  tv.innerHTML=buildTeacherHTML(cur);
+  tv.style.display='block';
+  tv.scrollTop=0;
+  updateTVbtns();
+}
+
+function showBank(){
+  document.getElementById('view-teacher').style.display='none';
+  document.getElementById('view-teacher').innerHTML='';
+}
+
+function updateTVbtns(){
+  const favs=LS.favs(), used=LS.used();
+  const fb=document.getElementById('tv-fav'), ub=document.getElementById('tv-used');
+  if(fb){fb.classList.toggle('on',favs.has(cur.id));fb.innerHTML=favs.has(cur.id)?'⭐ Favorit':'☆ Favorit';}
+  if(ub){ub.classList.toggle('on',used.has(cur.id));ub.innerHTML=used.has(cur.id)?'✅ Markerad':'⬜ Markera som använd';}
+}
+function tvFav(){quickFav(cur.id);updateTVbtns();}
+function tvUsed(){quickUsed(cur.id);updateTVbtns();}
+
+function buildTeacherHTML(e){
+  const notes=LS.notes(); const n=notes[e.id]||'';
+  const years=e.alder_tags.map(a=>`<span class="tv-ap">${a==='F'?'F-klass':'Åk '+a}</span>`).join('');
+  const steps=e.genomforande_enkelt.map((s,i)=>`<div class="step"><div class="sn">${i+1}</div><div class="st">${s}</div></div>`).join('');
+  const refs=e.reflektionsfragor.map(r=>`<div class="ri"><span class="rq">?</span>${r}</div>`).join('');
+  const sidebarMaterial=e.elevmaterial?`<div class="sc"><div class="sc-t">Elevmaterial</div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--s2);border:1px solid var(--border);border-radius:5px;font-size:12px;font-weight:600;cursor:pointer"><span>📄 ${e.elevmaterial_typ}</span><span style="color:var(--pl)">↗</span></div></div>`:'';
+  const prodSection=e.behov_produktion?`<div class="ts"><div class="ts-h"><span class="ts-icon">🎬</span><span class="ts-title">Behöver produktion</span></div><div class="ts-b"><div class="prod-b"><div class="prod-types">${e.behov_produktion.typer.map(t=>`<span class="pbadge ${t}">${t}</span>`).join('')}</div><div class="prod-desc">${e.behov_produktion.beskrivning}</div>${e.behov_produktion.manus?`<div class="plbl" style="color:var(--muted)">Manus</div><div class="prod-manus">${e.behov_produktion.manus}</div>`:''} ${e.behov_produktion.elevenlabs_prompt?`<div class="plbl" style="color:var(--gront);margin-top:8px">ElevenLabs-prompt</div><div class="prod-prompt">${e.behov_produktion.elevenlabs_prompt}</div>`:''}</div></div></div>`:'';
+
+  return`
+  <div class="tv-topbar">
+    <div class="tv-left">
+      <button class="back-btn" onclick="showBank()">← Övningsbank</button>
+      <span class="tv-title">${e.titel}</span>
+    </div>
+    <div class="tv-right">
+      <button class="tv-btn fav" id="tv-fav" onclick="tvFav()">☆ Favorit</button>
+      <button class="tv-btn used" id="tv-used" onclick="tvUsed()">⬜ Markera som använd</button>
+      <button class="start-btn" onclick="startPres()">▶ Starta övning</button>
+    </div>
+  </div>
+  <div class="tv-body">
+    <div class="tv-main">
+      <div>
+        <div class="tv-flags">
+          ${e.kan_vacka_kanslor?'<span class="tvf warn">⚠️ Kan väcka känslor</span>':''}
+          ${e.elevhalsa?'<span class="tvf warn">🏥 Elevhälsa rekommenderas</span>':'<span class="tvf ok">✓ Elevhälsa krävs ej</span>'}
+          ${e.kort!=='Inga'?`<span class="tvf kort">🃏 ${e.kort}</span>`:''}
+          ${e.filmovning?'<span class="tvf info">🎬 Filmövning</span>':''}
+        </div>
+        <div class="tv-alder">${years}</div>
+        <h1 class="tv-h1">${e.titel}</h1>
+        <div class="tv-meta-row">
+          <span class="tv-mtag">⏱ ${e.tid} min</span>
+          <span class="tv-mtag">📋 ${e.forberedelse_tid} min förberedelse</span>
+          <span class="tv-mtag">👥 ${Array.isArray(e.arbetssatt)?e.arbetssatt.join(' · '):e.arbetssatt}</span>
+        </div>
+        <p class="tv-syfte">${e.syfte}</p>
+      </div>
+      <div class="ts">
+        <div class="ts-h"><span class="ts-icon">📋</span><span class="ts-title">Förberedelse & material</span></div>
+        <div class="ts-b"><p class="prose">${e.forberedelse}</p><p class="prose" style="margin-top:6px;color:var(--muted)">${e.material}</p></div>
+      </div>
+      <div class="ts">
+        <div class="ts-h"><span class="ts-icon">▶️</span><span class="ts-title">Genomförande</span></div>
+        <div class="ts-b"><div class="step-list">${steps}</div></div>
+      </div>
+      ${e.tips?`<div class="ts"><div class="ts-h"><span class="ts-icon">💡</span><span class="ts-title">Tips</span></div><div class="ts-b"><p class="prose">${e.tips}</p></div></div>`:''}
+      <div class="ts">
+        <div class="ts-h"><span class="ts-icon">💬</span><span class="ts-title">Reflektionsfrågor</span></div>
+        <div class="ts-b"><div class="ref-list">${refs}</div></div>
+      </div>
+      <div class="ts">
+        <div class="ts-h"><span class="ts-icon">🛡️</span><span class="ts-title">Trygg start & avslutning</span></div>
+        <div class="ts-b"><div class="trygg-2">
+          <div class="tb"><div class="tbl start">🟢 Start</div>${e.trygg_start}</div>
+          <div class="tb"><div class="tbl slut">🔵 Avslutning</div>${e.trygg_avslutning}</div>
+        </div></div>
+      </div>
+      <div class="ts">
+        <div class="ts-h"><span class="ts-icon">♿</span><span class="ts-title">NPF-anpassningar</span></div>
+        <div class="ts-b"><p class="prose">${e.npf}</p></div>
+      </div>
+      <div class="ts">
+        <div class="ts-h"><span class="ts-icon">⚠️</span><span class="ts-title">Risker</span></div>
+        <div class="ts-b"><p class="prose">${e.risker}</p></div>
+      </div>
+      <div class="ts">
+        <div class="ts-h"><span class="ts-icon">🔬</span><span class="ts-title">Forskningskoppling</span></div>
+        <div class="ts-b"><div class="fb-box"><div class="kbadge">${e.kalltyp}</div><p>${e.forskningskoppling}</p></div></div>
+      </div>
+      ${prodSection}
+    </div>
+    <aside class="tv-aside">
+      <div class="sc">
+        <div class="sc-t">Info</div>
+        <div class="sr"><span class="sk">Ålder</span><span class="sv">${e.alder}</span></div>
+        <div class="sr"><span class="sk">Tid</span><span class="sv">${e.tid} min</span></div>
+        <div class="sr"><span class="sk">Förberedelse</span><span class="sv">${e.forberedelse_tid} min</span></div>
+        <div class="sr"><span class="sk">Kort</span><span class="sv">${e.kort}</span></div>
+        <div class="sr"><span class="sk">Status</span><span class="sv"><span class="sp ${e.status}">${e.status}</span></span></div>
+        <div class="sr"><span class="sk">ID</span><span class="sv" style="color:var(--dim);font-size:10px">${e.id}</span></div>
+      </div>
+      <div class="sc">
+        <div class="sc-t">Fokustema</div>
+        <div class="tema-pills">${e.fokustema.map(t=>`<span class="tp">${t}</span>`).join('')}</div>
+      </div>
+      ${sidebarMaterial}
+      <div class="sc">
+        <div class="sc-t">Mina anteckningar</div>
+        <textarea class="notes-ta" id="notes-ta" placeholder="Egna noteringar om övningen…" onchange="saveNote('${e.id}',this.value)">${n}</textarea>
+      </div>
+      ${e.interna_anteckningar?`<div class="sc"><div class="sc-t">Interna anteckningar</div><p class="prose" style="font-style:italic;color:var(--muted)">${e.interna_anteckningar}</p></div>`:''}
+    </aside>
+  </div>`;
+}
+
+function saveNote(id,val){const n=LS.notes();n[id]=val;LS.saveNotes(n);}
+
+// ── Toast ──
+let toastTimer;
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+// ── Presentation ──
+function buildSlides(e){
+  const s=[];
+  s.push({typ:'intro',titel:e.titel,syfte:e.syfte,meta:e.alder+' · '+e.tid+' min'});
+  let n=1;
+  (e.genomforande||[]).forEach(st=>s.push({...st,n:n++}));
+  (e.reflektionsfragor||[]).forEach((q,i)=>s.push({typ:'reflektion',fraga:q,nr:i+1,tot:e.reflektionsfragor.length}));
+  s.push({typ:'avslutning',text:e.trygg_avslutning});
+  return s;
+}
+function startPres(){
+  if(!cur)return;
+  slides=buildSlides(cur);cSlide=0;
+  renderPres();
+  document.getElementById('view-pres').style.display='block';
+}
+function closePres(){document.getElementById('view-pres').style.display='none';}
+
+function renderPres(){
+  const s=slides[cSlide];
+  document.getElementById('pcnt').textContent=(cSlide+1)+' / '+slides.length;
+  document.getElementById('pp').disabled=cSlide===0;
+  document.getElementById('pn').disabled=cSlide===slides.length-1;
+  const labels=['Intro',...(cur.genomforande||[]).map((_,i)=>'Steg '+(i+1)),...(cur.reflektionsfragor||[]).map((_,i)=>'Reflektion '+(i+1)),'Avslutning'];
+  document.getElementById('pslbl').textContent=labels[cSlide]||'';
+  document.getElementById('pdots').innerHTML=slides.map((_,i)=>`<div class="pd${i===cSlide?' on':''}"></div>`).join('');
+  let h='';
+  if(s.typ==='intro') h=`<div class="slide on"><div class="s-rub">${s.meta}</div><div class="s-text">${s.titel}</div><div class="s-uppg" style="font-size:15px;color:rgba(255,255,255,.5);margin-top:12px">${s.syfte}</div></div>`;
+  else if(s.typ==='text') h=`<div class="slide on"><div class="s-num">${s.n}</div><div class="s-body">${s.text}</div></div>`;
+  else if(s.typ==='projektor') h=`<div class="slide on"><div class="s-rub">${s.rubrik||'📽 Visas på skärmen'}</div><div class="s-text">${s.text}</div>${s.uppgift?`<div class="s-uppg">${s.uppgift}</div>`:''}</div>`;
+  else if(s.typ==='mitt-val'){
+    const opts=(s.alternativ||[]).map(a=>`<div class="mvo ${a.farg}"><div class="mvsq ${a.farg}"></div><div class="mvct">${a.text}</div></div>`).join('');
+    h=`<div class="slide on"><div class="mv-q">${s.fraga}</div><div class="mv-opts">${opts}</div></div>`;
+  }
+  else if(s.typ==='reflektion') h=`<div class="slide on"><div class="s-reflbl">Reflektion ${s.nr} av ${s.tot}</div><div class="s-refq">${s.fraga}</div></div>`;
+  else if(s.typ==='avslutning') h=`<div class="slide on s-av"><div class="s-av-i">🔵</div><div class="s-av-l">Trygg avslutning</div><div class="s-av-t">${s.text}</div></div>`;
+  document.getElementById('pstage').innerHTML=h;
+}
+function nextS(){if(cSlide<slides.length-1){cSlide++;renderPres();}}
+function prevS(){if(cSlide>0){cSlide--;renderPres();}}
+
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('view-pres').style.display==='block'){
+    if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();nextS();}
+    if(e.key==='ArrowLeft'){e.preventDefault();prevS();}
+    if(e.key==='Escape')closePres();
+  }
+});
+</script>
+</body>
+</html>
