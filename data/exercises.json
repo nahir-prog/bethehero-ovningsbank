@@ -196,7 +196,25 @@
       "interna_anteckningar": null,
       "elevmaterial": true,
       "elevmaterial_typ": "Elevblad",
-      "behov_produktion": null
+      "behov_produktion": null,
+      "material_innehall": {
+        "intro": "Du är en känslodetektiv. Din uppgift: ta reda på hur du känner dig just nu. Rita eller skriv i barometern nedan.",
+        "uppgifter": [
+          {
+            "typ": "barometer",
+            "label": "Min känslobarometer"
+          },
+          {
+            "typ": "rader",
+            "antal": 2,
+            "label": "Det här känner jag för att..."
+          }
+        ],
+        "reflektioner": [
+          "Hur visste du vad du kände?",
+          "Vad brukar hjälpa dig när en känsla är för stor?"
+        ]
+      }
     },
     {
       "id": "BTH-003",
@@ -614,7 +632,34 @@
       "interna_anteckningar": "Passar perfekt som första övning i läsåret.",
       "elevmaterial": true,
       "elevmaterial_typ": "Elevblad",
-      "behov_produktion": null
+      "behov_produktion": null,
+      "material_innehall": {
+        "intro": "Rita hur du känner dig just nu. Välj en färg som passar — det finns inga fel svar.",
+        "uppgifter": [
+          {
+            "typ": "rityta",
+            "label": "Så här känner jag mig idag"
+          },
+          {
+            "typ": "checkboxar",
+            "label": "Ringa in din känsla:",
+            "alternativ": [
+              "Glad",
+              "Nyfiken",
+              "Lugn",
+              "Ledsen",
+              "Orolig",
+              "Arg",
+              "Trött",
+              "Ivrig"
+            ]
+          }
+        ],
+        "reflektioner": [
+          "Är det okej att känna sig ledsen ibland?",
+          "Vad gör du när du har en stor känsla?"
+        ]
+      }
     },
     {
       "id": "BTH-007",
@@ -689,7 +734,26 @@
       "interna_anteckningar": "Bra klassrumsbyggare i början av terminen.",
       "elevmaterial": true,
       "elevmaterial_typ": "Elevblad",
-      "behov_produktion": null
+      "behov_produktion": null,
+      "material_innehall": {
+        "intro": "Ni har blivit ett par för den här övningen. Lär känna varandra — ni kanske blir förvånade!",
+        "uppgifter": [
+          {
+            "typ": "rader_med_nummer",
+            "antal": 3,
+            "label": "Berätta 3 saker om dig själv som din kompis troligtvis inte vet:"
+          },
+          {
+            "typ": "rader",
+            "antal": 2,
+            "label": "Det bästa jag lärde mig om min kompis:"
+          }
+        ],
+        "reflektioner": [
+          "Hur kändes det att jobba med någon du inte valde själv?",
+          "Vad är en sak ni har gemensamt?"
+        ]
+      }
     },
     {
       "id": "BTH-008",
@@ -758,7 +822,34 @@
       "interna_anteckningar": "Bra introduktionsövning till HERO-korten för yngre elever.",
       "elevmaterial": true,
       "elevmaterial_typ": "Elevblad",
-      "behov_produktion": null
+      "behov_produktion": null,
+      "material_innehall": {
+        "intro": "Välj din favoritskraft och rita dig själv som hjälten. Du kan ha fler än en!",
+        "uppgifter": [
+          {
+            "typ": "superkraft_val",
+            "alternativ": [
+              "UPPMÄRKSAM",
+              "MODIG",
+              "GODHJÄRTAD",
+              "RÄTTVIS"
+            ]
+          },
+          {
+            "typ": "rityta",
+            "label": "Jag som hjälten"
+          },
+          {
+            "typ": "rader",
+            "antal": 1,
+            "label": "Min superkraft används när..."
+          }
+        ],
+        "reflektioner": [
+          "Vilken superkraft är lättast för dig?",
+          "Vilken vill du träna mer på?"
+        ]
+      }
     },
     {
       "id": "BTH-009",
@@ -1177,7 +1268,30 @@
       "interna_anteckningar": "Första övningen i banken som kombinerar F och åk 1 med HERO-KORT. Introducerar korten för yngre barn.",
       "elevmaterial": true,
       "elevmaterial_typ": "Elevblad",
-      "behov_produktion": null
+      "behov_produktion": null,
+      "material_innehall": {
+        "intro": "Du är hjälten i din egen berättelse. Rita dig själv när du hjälper någon — vem hjälper du och hur?",
+        "uppgifter": [
+          {
+            "typ": "rityta",
+            "label": "Jag som hjälten"
+          },
+          {
+            "typ": "rader",
+            "antal": 1,
+            "label": "Jag hjälper:"
+          },
+          {
+            "typ": "rader",
+            "antal": 1,
+            "label": "Så här gör jag det:"
+          }
+        ],
+        "reflektioner": [
+          "Vad var modigt med det du valde att göra?",
+          "Hur tror du att personen kände sig efter?"
+        ]
+      }
     }
   ]
 }
