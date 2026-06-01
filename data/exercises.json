@@ -949,7 +949,7 @@
           "typ": "projektor",
           "rubrik": "Påstående 1",
           "text": "Om en kompis tar din sak utan att fråga — det är stöld.",
-          "uppgift": "Ställ dig på linjen. Ingen får prata ännu."
+          "uppgift": "Ställ dig på linjen. Ingen pratar ännu."
         },
         {
           "typ": "projektor",
@@ -962,6 +962,18 @@
           "rubrik": "Påstående 3",
           "text": "Det är alltid möjligt att lösa en konflikt utan att någon behöver be om förlåtelse.",
           "uppgift": "Ställ dig på linjen."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Påstående 4",
+          "text": "Den som börjar ett bråk har alltid mest fel.",
+          "uppgift": "Ställ dig på linjen."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Påstående 5",
+          "text": "Om du inte visste att det skulle göra någon ledsen — är det ändå ditt fel?",
+          "uppgift": "Ställ dig på linjen. Det svåraste påståendet."
         }
       ],
       "reflektionsfragor": [
