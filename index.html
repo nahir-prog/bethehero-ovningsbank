@@ -1347,8 +1347,11 @@ function renderPres(){
     </div>`;
   }
   else if(s.typ==='kort_visning'){
+    // Lågstadiet (F-3) får junior-version av kort 1
+    const lågst = cur && cur.alder_tags && cur.alder_tags.some(a=>['F','1','2','3'].includes(a))
+                  && !cur.alder_tags.some(a=>['5','6','7','8','9'].includes(a));
     const HERO_KORT = {
-      1:{f:'hero-kort-01-hero',n:'HERO'},
+      1:{f: lågst ? 'hero-kort-01-hero-junior' : 'hero-kort-01-hero', n:'HERO'},
       2:{f:'hero-kort-02-utsatt',n:'UTSATT'},
       3:{f:'hero-kort-03-vuxna',n:'VUXNA I SKOLAN'},
       4:{f:'hero-kort-04-askadare',n:'ÅSKÅDARE'},
