@@ -555,6 +555,48 @@ Om något av detta inte stämmer — fixa det innan du levererar.
 
 ---
 
+## SPRÅKKVALITET — ABSOLUT KRAV
+
+**Varje övning visas framför en hel klass. Ett stavfel undergräver allt.**
+
+Innan du levererar EN ENDA ÖVNING:
+
+1. **Läs igenom all text du producerat högt i huvudet — bokstav för bokstav.**
+   Detta är icke förhandlingsbart. Det tar 30 sekunder och fångar 95% av alla fel.
+
+2. **Vanliga svenska misstag du måste undvika:**
+   - "Reds" → ska vara "Redo"
+   - "vidarebefodra" → "vidarebefordra"
+   - "konsekvens" stavas så (inte "konsekvenz")
+   - "särskilt" (inte "särksilt")
+   - "alldeles" (inte "alldelels")
+   - "vidare" (inte "videre")
+   - "gruppchatt" (inte "grupchatt", med ETT p)
+   - "behöver" (inte "behäver")
+
+3. **Korta ord du ofta råkar fela på:**
+   - "ifrån" vs "i från" — beror på sammanhang
+   - "alltid" (ett ord)
+   - "ändå" / "iallafall" / "i alla fall"
+   - "dom" → använd "de"/"dem" (formellt skriftspråk)
+
+4. **När du tänker text — testa varje mening:**
+   - Är det rätt mellanslag?
+   - Saknas en bokstav?
+   - Är böjningen rätt? (en kropp, kroppen, två kroppar, kropparna)
+   - Är genus rätt? (det/den)
+
+5. **Vid minsta osäkerhet:**
+   - Välj ett vanligare ord du är säker på
+   - "Hörnä" → "Verkar" om du är osäker
+   - Hellre korrekt enklare än osäkert avancerat
+
+**Användarens tid är inte spell-checker. Detta är ditt jobb.**
+
+Om du upptäcker ett fel efter leverans — säg det själv och leverera fixen direkt. Vänta inte på att någon ska hitta det.
+
+---
+
 ## INSTRUKTIONSDISCIPLIN — REGEL UTAN UNDANTAG
 
 **Varje slide har EN tydlig instruktion. Aldrig fler.**

@@ -1845,7 +1845,7 @@
         {
           "typ": "projektor",
           "rubrik": "Snabbt experiment",
-          "text": "Vi ska testa en sak. Inga rätta svar, inget betyg.\n\nDu röstar med kroppen: res dig vid din bänk för det alternativ jag säger.\n\nReds? Vi kör snabbt.",
+          "text": "Vi ska testa en sak. Inga rätta svar, inget betyg.\n\nDu röstar med kroppen: res dig vid din bänk för det alternativ jag säger.\n\nRedo? Vi kör snabbt.",
           "uppgift": "Stå redo vid din bänk."
         },
         {
