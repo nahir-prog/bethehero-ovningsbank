@@ -551,7 +551,7 @@ När teamet klistrar in en befintlig övning och ber om förbättringar — elle
 { "typ":"projektor", "rubrik":"Rubrik", "text":"Text på skärmen", "uppgift":"Det läraren säger", "timer_sekunder":120 }
 ```
 
-**`scenario_visual`** — scen med SVG-illustration. `illustration`: `chat` / `mobil` / `klassrum` / `hjarta` / `vag`
+**`scenario_visual`** — scen med SVG-illustration. `illustration`: `chat` / `mobil` / `klassrum` / `hjarta` / `vag` / `utfrysning` / `matsal` / `kanslor` / `konflikt` / `tankebubblor` / `ryktespridning` / `skolgard`
 ```json
 { "typ":"scenario_visual", "illustration":"chat", "rubrik":"Scenario A", "text":"Berättelsen...\n\nVad gör du?", "uppgift":"Diskutera i par.", "timer_sekunder":120 }
 ```

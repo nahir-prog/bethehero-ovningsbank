@@ -280,7 +280,7 @@
       "genomforande": [
         {
           "typ": "scenario_visual",
-          "illustration": "klassrum",
+          "illustration": "matsal",
           "rubrik": "Berättelsen",
           "text": "En elev sitter alltid ensam i matsalen.\n\nNågra andra elever himlar med ögonen när hon går förbi.\n\nIngen säger något. Inte ens läraren som ser det.",
           "uppgift": "Lyssna noga."
@@ -757,7 +757,7 @@
         },
         {
           "typ": "scenario_visual",
-          "illustration": "klassrum",
+          "illustration": "skolgard",
           "rubrik": "Uppgiften",
           "text": "Lös uppgifterna på bladet tillsammans. Ni väljer ordning själva.",
           "uppgift": "15 minuter — jobba i ert tempo.",
@@ -958,6 +958,13 @@
         },
         {
           "typ": "scenario_visual",
+          "illustration": "ryktespridning",
+          "rubrik": "Så här sprids ett rykte",
+          "text": "Det börjar med EN person. Sedan blir det två.\n\nSedan tio. Sedan trettio.\n\nOch personen det handlar om hör det till slut själv.",
+          "uppgift": null
+        },
+        {
+          "typ": "scenario_visual",
           "illustration": "chat",
           "rubrik": "Scenario A",
           "text": "Någon säger till dig att en klasskompis har sagt något elakt om dig. Du vet inte om det stämmer.\n\nVad gör du?",
@@ -1024,7 +1031,7 @@
       "kort": "Inga",
       "datum_skapad": "2026-06-01",
       "ny": true,
-      "syfte": "Eleverna inser att civilkurage oftast avgörs på femton sekunder — och tränar på att fatta rätt beslut under tidspress, precis som det fungerar på riktigt.",
+      "syfte": "Eleverna tränar på att ha förberedda handlingsalternativ för svåra situationer — så att de vet vad de kan göra när tiden är knapp och pressen är stor. Civilkurage byggs upp i förväg, inte i ögonblicket.",
       "forberedelse": "Öppna presentationsläget. Inga utskrifter behövs.",
       "material": "Projektor, timer (valfritt)",
       "genomforande_enkelt": [
@@ -1034,12 +1041,12 @@
         "Kör Scenario B och C på samma sätt.",
         "Avsluta: Vad gör det svårt att agera på 15 sekunder? Vad gör det lättare?"
       ],
-      "tips": "Tidspress är poängen — håll den. Det skapar en spänning som gör diskussionen äkta. Räkna gärna högt tillsammans.",
+      "tips": "Tidspressen är ett pedagogiskt grepp för att skapa fokus — inte en bild av hur civilkurage egentligen fungerar. Var tydlig: ingen ska kasta sig in i situationer utan att tänka. Poängen är att förbereda VAL, inte träna reaktionsfart.",
       "genomforande": [
         {
           "typ": "projektor",
           "rubrik": "Så här funkar det",
-          "text": "I verkligheten har du ofta bara några sekunder att bestämma dig.\n\nIdag ska vi träna på det.",
+          "text": "I verkligheten har du ibland bara några sekunder på dig.\n\nIdag tränar vi: vad är DINA förberedda val? Vad vill DU göra om det händer?",
           "uppgift": "Klart? Då kör vi."
         },
         {
@@ -1089,7 +1096,7 @@
         {
           "typ": "projektor",
           "rubrik": "Reflektera tillsammans",
-          "text": "Vad hände i dig de 15 sekunderna? Vad vägde mot varandra?",
+          "text": "Det handlar inte om att agera snabbt — det handlar om att VETA i förväg vad du vill göra.\n\nNär du vet, blir det lättare i stunden.",
           "uppgift": null
         }
       ],
@@ -1100,12 +1107,12 @@
       ],
       "trygg_start": "\"Det finns inga rätta svar här — vi tränar på att tänka snabbt, inte på att vara perfekta.\"",
       "trygg_avslutning": "\"Ni har just tränat på något de flesta vuxna aldrig tränar på. Det där tar ni med er.\"",
-      "npf": "Elever som behöver mer tid kan svara efter att resten haft 15 sekunder — utan press. Scenariona visas på skärm.",
-      "forskningskoppling": "Bystander-forskning visar att beslut om att ingripa fattas inom sekunder — och att träning på dessa ögonblick ökar sannolikheten att agera (Darley & Latané, 1968).",
+      "npf": "Elever som behöver mer tid kan svara efter att resten haft 15 sekunder — utan press. Scenariona visas på skärm. Eleverna med ångest kring beslut bör förvarnas att tidspressen är ett pedagogiskt grepp, inte en bild av verklig civilkurage.",
+      "forskningskoppling": "Bystander-forskning (Darley & Latané, 1968) visar att ingripande är en kognitiv process i flera steg — inte ett snabbeslut. Senare forskning om bystander-träning (Banyard et al., 2007) visar att övade handlingsalternativ ökar sannolikheten att agera när situationen uppstår.",
       "kalltyp": "Forskning",
-      "risker": "Låg risk. Håll tonen lätt — det är träning, inte betygsättning av moral.",
+      "risker": "Låg risk. Var tydlig med att övningen handlar om förberedda val, inte om att agera utan tanke. Håll tonen lätt — det är träning, inte betygsättning av moral. Elever kan känna skam över tidigare situationer där de inte agerade — påminn att det är hjärnan som fungerar så, inte de som personer.",
       "efter_lektionen": null,
-      "interna_anteckningar": "Formatet med tidpress är nytt i banken — följ upp om det känns bra att använda igen.",
+      "interna_anteckningar": "Justerad efter forskningspanelens granskning: syftet och forskningskopplingen omformulerade så övningen inte påstår att 'civilkurage avgörs på 15 sekunder'. Bystander-modellen är en process — det är förberedda val som spelar roll. Tidspressen behålls som pedagogiskt grepp för fokus.",
       "elevmaterial": false,
       "elevmaterial_typ": null,
       "behov_produktion": null
@@ -1255,6 +1262,13 @@
           "text": "Skriv tre ord som beskriver dig.\n\nBara för dig — ingen annan ser.",
           "uppgift": "1 minut tyst.",
           "timer_sekunder": 60
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "tankebubblor",
+          "rubrik": "Varifrån kommer bilden av dig?",
+          "text": "Det du tror om dig själv — kommer det från dig?\n\nEller från andra som har sagt något om dig?",
+          "uppgift": null
         },
         {
           "typ": "pulse_check",
@@ -1609,10 +1623,11 @@
       "tips": "Motstå att leta efter den skyldige — hela poängen är att det sällan finns en. Om klassen har en pågående konflikt, byt namn och detaljer så det inte pekar ut någon.",
       "genomforande": [
         {
-          "typ": "projektor",
+          "typ": "scenario_visual",
           "rubrik": "Konflikten",
           "text": "Två vänner, Sam och Noor, har varit nära länge.\n\nSam märker att Noor börjat hänga mer med en annan grupp. Sam slutar svara på Noors meddelanden.\n\nNoor tycker att Sam blivit kall utan förklaring och börjar prata med andra om att Sam är konstig.\n\nNu pratar de inte alls.",
-          "uppgift": "Lyssna på hela händelsen först."
+          "uppgift": "Lyssna på hela händelsen först.",
+          "illustration": "konflikt"
         },
         {
           "typ": "scenario_visual",
@@ -1719,10 +1734,11 @@
       "tips": "Håll det konkret och kroppsligt — i den här åldern fastnar 'andas djupt' bättre än 'reglera dina känslor'. Testa andningsövningen på riktigt tillsammans, prata inte bara om den.",
       "genomforande": [
         {
-          "typ": "projektor",
+          "typ": "scenario_visual",
           "rubrik": "Kroppen säger till först",
           "text": "Innan en stor känsla tar över brukar kroppen säga till.\n\nHänderna knyts. Ansiktet blir varmt. Hjärtat dunkar. Magen knyter sig.\n\nDet är kroppens varningslampa.",
-          "uppgift": "Var i kroppen känner du först?"
+          "uppgift": "Var i kroppen känner du först?",
+          "illustration": "kanslor"
         },
         {
           "typ": "pulse_check",
