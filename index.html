@@ -1001,6 +1001,36 @@ function buildMatHTML(e){
       body+=`<div style="margin-bottom:14px"><div class="mat-section-lbl">Min superkraft</div><div class="mat-superkraft">`;
       for(const a of (u.alternativ||[])) body+=`<div class="mat-sk"><div class="mat-sk-box"></div>${a}</div>`;
       body+='</div></div>';
+    } else if(u.typ==='kroppskarta'){
+      body+=`<div style="margin-bottom:14px"><div class="mat-section-lbl">${u.label||'Markera på kroppen'}</div>
+      <div style="display:flex;gap:18px;align-items:flex-start;">
+        <svg viewBox="0 0 120 220" style="width:140px;height:auto;flex-shrink:0;">
+          <!-- huvud -->
+          <circle cx="60" cy="22" r="16" fill="none" stroke="#1B2A6B" stroke-width="2"/>
+          <!-- hals -->
+          <line x1="60" y1="38" x2="60" y2="46" stroke="#1B2A6B" stroke-width="2"/>
+          <!-- överkropp -->
+          <path d="M 30,52 L 90,52 L 86,120 L 34,120 Z" fill="none" stroke="#1B2A6B" stroke-width="2"/>
+          <!-- armar -->
+          <path d="M 30,52 L 18,110 L 22,118" fill="none" stroke="#1B2A6B" stroke-width="2"/>
+          <path d="M 90,52 L 102,110 L 98,118" fill="none" stroke="#1B2A6B" stroke-width="2"/>
+          <!-- händer -->
+          <circle cx="22" cy="120" r="4" fill="none" stroke="#1B2A6B" stroke-width="2"/>
+          <circle cx="98" cy="120" r="4" fill="none" stroke="#1B2A6B" stroke-width="2"/>
+          <!-- ben -->
+          <line x1="44" y1="120" x2="40" y2="200" stroke="#1B2A6B" stroke-width="2"/>
+          <line x1="76" y1="120" x2="80" y2="200" stroke="#1B2A6B" stroke-width="2"/>
+          <!-- fötter -->
+          <line x1="36" y1="200" x2="48" y2="200" stroke="#1B2A6B" stroke-width="3" stroke-linecap="round"/>
+          <line x1="72" y1="200" x2="84" y2="200" stroke="#1B2A6B" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div style="flex:1;font-size:11px;color:#64748b;line-height:1.6;">
+          <div style="font-weight:700;color:#1B2A6B;margin-bottom:6px;">Hur du gör:</div>
+          • Rita ett kryss där känslan känns mest<br>
+          • Ringa in områden där det också känns<br>
+          • Skriv ord bredvid om du vill (varm, kall, stickig…)
+        </div>
+      </div></div>`;
     }
   }
   let refs='';

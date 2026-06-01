@@ -1440,6 +1440,365 @@
           "Hur tror du att personen kände sig efter?"
         ]
       }
+    },
+    {
+      "id": "BTH-014",
+      "titel": "VAD SER ALLA ANDRA?",
+      "fokustema": [
+        "Digitala relationer",
+        "Empati & perspektiv"
+      ],
+      "alder": "Åk 5, 6",
+      "alder_tags": [
+        "5",
+        "6"
+      ],
+      "tid": 30,
+      "forberedelse_tid": 5,
+      "ovningstyp": [
+        "Samtal / diskussion",
+        "Värderingsövning"
+      ],
+      "arbetssatt": [
+        "i par",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": true,
+      "elevhalsa": false,
+      "kort": "MITT VAL",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna förstår att det de skickar och delar i en chatt syns av fler än de tänker — och tränar på att stanna upp en sekund innan de skickar vidare något om en annan person.",
+      "forberedelse": "Dela ut MITT VAL-kort till varje elev. Öppna presentationsläget.",
+      "material": "MITT VAL-kort (ett per elev), projektor",
+      "genomforande_enkelt": [
+        "Dela ut MITT VAL-kort. Visa inledningsfrågan — eleverna håller upp sin färg.",
+        "Visa Scenario A. Eleverna diskuterar i par, 2 minuter. Lyft i helklass — fokus på vad personen i chatten inte ser.",
+        "Visa Scenario B på samma sätt.",
+        "Kör MITT VAL-frågan om att skicka vidare.",
+        "Avsluta med projektorbilden 'Tänk om det var du'."
+      ],
+      "tips": "Håll det konkret och vardagsnära — gruppchattar i klassen, inte abstrakt 'internet'. Använd inte verkliga exempel från klassen. Om en digital konflikt pågår just nu — vänta med övningen.",
+      "genomforande": [
+        {
+          "typ": "mitt-val",
+          "fraga": "Har du varit med i en chatt där någon skrev något om en person som inte var med?",
+          "alternativ": [
+            {
+              "farg": "gult",
+              "text": "Ja, flera gånger"
+            },
+            {
+              "farg": "gront",
+              "text": "Ja, någon gång"
+            },
+            {
+              "farg": "blatt",
+              "text": "Sällan"
+            },
+            {
+              "farg": "rott",
+              "text": "Nej, aldrig"
+            }
+          ]
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "chat",
+          "rubrik": "Scenario A",
+          "text": "I gruppchatten skickar någon en bild på en klasskompis med en rolig text under. Alla skickar skratt-emojis.\n\nPersonen på bilden är inte med i chatten.\n\nVad gör du?",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "mobil",
+          "rubrik": "Scenario B",
+          "text": "En kompis skickar en skärmdump till dig privat. \"Kolla vad hon skrev, skicka vidare till de andra.\"\n\nDu vet inte ens om det är sant.\n\nVad gör du?",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
+        },
+        {
+          "typ": "mitt-val",
+          "fraga": "Vad är svårast när någon ber dig skicka något vidare?",
+          "alternativ": [
+            {
+              "farg": "gult",
+              "text": "Att säga nej till en kompis"
+            },
+            {
+              "farg": "gront",
+              "text": "Att vara den enda som inte gör det"
+            },
+            {
+              "farg": "blatt",
+              "text": "Att veta om det är okej eller inte"
+            },
+            {
+              "farg": "rott",
+              "text": "Att orka bry sig"
+            }
+          ]
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Tänk om det var du",
+          "text": "Personen som det skrivs om ser ofta aldrig vem som skickade vidare.\n\nMen det räcker med en person som väljer att inte göra det.",
+          "uppgift": null
+        }
+      ],
+      "reflektionsfragor": [
+        "Vad är skillnaden på att skicka något själv och att bara skicka vidare?",
+        "Hur känns det att vara den som inte är med i chatten men som det skrivs om?",
+        "Vad kan du säga om du inte vill skicka vidare något?"
+      ],
+      "trygg_start": "\"Det vi pratar om är påhittade situationer — inte någon i den här klassen. Det finns inga rätta svar, bara vad du faktiskt skulle göra.\"",
+      "trygg_avslutning": "Var och en tänker på en sak de skulle kunna säga nästa gång någon ber dem skicka vidare något. Behålls för dig själv.",
+      "npf": "Par-formatet ger stöd. Scenariona visas på skärm. MITT VAL är tyst och anonymt. Elever kan skriva svar istället för att svara högt.",
+      "forskningskoppling": "Barn börjar använda egna chattar och sociala plattformar i mellanstadieåldern, och vidarespridning av material om andra är en vanlig form av kränkning i den åldern (Internetstiftelsen, Svenskarna och internet).",
+      "kalltyp": "Forskning",
+      "risker": "Kör inte om en digital konflikt pågår i klassen. Använd aldrig verkliga exempel. Kan väcka känslor hos elever som själva varit utsatta — var uppmärksam efteråt.",
+      "efter_lektionen": "Bra ingång till STOPPA RYKTET (BTH-009) eller ett digitalt tema.",
+      "interna_anteckningar": "Fyller den största temaluckan: digitala relationer fanns bara för åk 8-9 (BTH-004). Detta är mellanstadieversionen.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
+    },
+    {
+      "id": "BTH-015",
+      "titel": "INGEN VINNARE",
+      "fokustema": [
+        "Konflikter",
+        "Empati & perspektiv"
+      ],
+      "alder": "Åk 8, 9",
+      "alder_tags": [
+        "8",
+        "9"
+      ],
+      "tid": 35,
+      "forberedelse_tid": 3,
+      "ovningstyp": [
+        "Rollspel / scenarier",
+        "Samtal / diskussion"
+      ],
+      "arbetssatt": [
+        "grupp om 3–5",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": true,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna inser att de flesta konflikter inte handlar om vem som har rätt, utan om att två personer ser samma sak från olika håll — och tränar på att hitta en väg framåt som inte kräver en förlorare.",
+      "forberedelse": "Öppna presentationsläget. Möblera så grupper om 3–5 kan sitta vända mot varandra.",
+      "material": "Projektor",
+      "genomforande_enkelt": [
+        "Förklara ramen: ni ska titta på en konflikt från två håll — inte döma vem som har rätt.",
+        "Visa konflikten på projektorn. Läs den högt.",
+        "Visa Version A — samma händelse ur den ena personens perspektiv. Sedan Version B — ur den andras.",
+        "Grupperna diskuterar: vad ville var och en egentligen? 5 minuter.",
+        "Grupperna får uppdraget att hitta en väg framåt där ingen behöver 'förlora'. 5 minuter.",
+        "Lyft i helklass: vilka lösningar hittade ni? Avsluta med reflektionsfrågorna."
+      ],
+      "tips": "Motstå att leta efter den skyldige — hela poängen är att det sällan finns en. Om klassen har en pågående konflikt, byt namn och detaljer så det inte pekar ut någon.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "Konflikten",
+          "text": "Två vänner, Sam och Noor, har varit nära länge.\n\nSam märker att Noor börjat hänga mer med en annan grupp. Sam slutar svara på Noors meddelanden.\n\nNoor tycker att Sam blivit kall utan förklaring och börjar prata med andra om att Sam är konstig.\n\nNu pratar de inte alls.",
+          "uppgift": "Lyssna på hela händelsen först."
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "Version A — så här kändes det för Sam",
+          "text": "\"Noor drog sig undan och valde andra. Jag kände mig bortvald. Jag visste inte vad jag gjort fel, så jag drog mig undan med.\"",
+          "uppgift": "Vad ville Sam egentligen?"
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "Version B — så här kändes det för Noor",
+          "text": "\"Jag försökte få fler kompisar — inte lämna Sam. När Sam slutade svara trodde jag att Sam inte brydde sig längre. Det gjorde ont, så jag pratade med andra.\"",
+          "uppgift": "Vad ville Noor egentligen?"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Gruppuppdrag 1",
+          "text": "I gruppen: vad var det egentligen var och en var rädd för eller ville ha?\n\nVar fanns missförståndet?",
+          "uppgift": "Diskutera i grupp — 5 minuter.",
+          "timer_sekunder": 300
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Gruppuppdrag 2 — det svåra",
+          "text": "Hitta en väg framåt där ingen behöver vara förloraren.\n\nVad skulle den första meningen kunna vara — den som någon faktiskt vågar säga?",
+          "uppgift": "Diskutera och formulera — 5 minuter.",
+          "timer_sekunder": 300
+        },
+        {
+          "typ": "omröstning",
+          "fraga": "Vad är svårast när man fastnat i en konflikt?",
+          "alternativ": [
+            "Att vara den som tar första steget",
+            "Att erkänna att man också gjort något",
+            "Att tro att den andra vill lösa det",
+            "Att veta vad man ska säga"
+          ]
+        }
+      ],
+      "reflektionsfragor": [
+        "Kan båda i en konflikt ha rätt på samma gång — hur då?",
+        "Vad gör det så svårt att ta första steget mot någon man är osams med?",
+        "Vad behövs för att lösa en konflikt utan att någon känner sig som förloraren?"
+      ],
+      "trygg_start": "\"Vi pratar om en påhittad konflikt. Om ni känner igen något — det är okej, men ni behöver inte berätta om er själva. Det finns ingen som ska pekas ut som skyldig idag.\"",
+      "trygg_avslutning": "\"Ni har precis tränat på något de flesta vuxna också tycker är svårt — att se en konflikt från två håll samtidigt. Det är en styrka ni tar med er.\"",
+      "npf": "Att händelsen visas i text på skärmen ger stöd. Gruppformatet minskar exponering i helklass. Elever som inte vill tala kan bidra genom att skriva ner gruppens förslag.",
+      "forskningskoppling": "Perspektivtagning — förmågan att se en situation från en annans synvinkel — är en av de starkaste skyddsfaktorerna mot kränkande beteenden och hjälper ungdomar att lösa konflikter konstruktivt (Eisenberg et al., 2006).",
+      "kalltyp": "Forskning",
+      "risker": "Kan väcka känslor hos elever mitt i en egen vänskapskonflikt. Byt namn och detaljer om klassen har en pågående konflikt. Var uppmärksam på elever som verkar tyngda efteråt.",
+      "efter_lektionen": "Kan följas upp med VEM BESTÄMMER VEM JAG ÄR (BTH-012) eller en civilkurageövning.",
+      "interna_anteckningar": "Fyller dubbel lucka: konflikt-temat fanns bara för åk 4-5 (BTH-011), och högstadiet saknade konfliktmaterial helt.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": {
+        "typer": [
+          "voiceover"
+        ],
+        "beskrivning": "Version A och B blir starkare med två olika röster som läser varje perspektiv — det gör skillnaden mellan synvinklarna tydligare.",
+        "manus": "VERSION A (Sams röst): Noor drog sig undan och valde andra. Jag kände mig bortvald. Jag visste inte vad jag gjort fel, så jag drog mig undan med.\n\nVERSION B (Noors röst): Jag försökte få fler kompisar — inte lämna Sam. När Sam slutade svara trodde jag att Sam inte brydde sig längre. Det gjorde ont, så jag pratade med andra.",
+        "elevenlabs_prompt": "Två olika röster, en per version. Lugn och ärlig ton, inte dramatisk. Kort paus mellan meningarna så åhöraren hinner känna in perspektivet."
+      }
+    },
+    {
+      "id": "BTH-016",
+      "titel": "NÄR KÄNSLAN TAR ÖVER",
+      "fokustema": [
+        "Känslor & självreglering"
+      ],
+      "alder": "Åk 4, 5",
+      "alder_tags": [
+        "4",
+        "5"
+      ],
+      "tid": 30,
+      "forberedelse_tid": 5,
+      "ovningstyp": [
+        "Samtal / diskussion",
+        "Kreativ övning"
+      ],
+      "arbetssatt": [
+        "individuellt",
+        "i par",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": true,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna lär sig känna igen vad som händer i kroppen precis innan en stor känsla tar över — och får konkreta saker att göra i stunden, så att känslan inte styr vad de gör.",
+      "forberedelse": "Skriv ut ett elevblad per elev. Ha pennor redo. Öppna presentationsläget.",
+      "material": "Elevblad (ett per elev), pennor, projektor",
+      "genomforande_enkelt": [
+        "Fråga klassen: var i kroppen känner ni när ni blir riktigt arga eller stressade? Låt några svara.",
+        "Visa kroppsbilden på projektorn — knytnävar, varm i ansiktet, hjärtat som dunkar. Det är kroppens varningssignal.",
+        "Dela ut elevbladen. Eleverna markerar var i kroppen de känner sin stora känsla, 4 minuter.",
+        "Visa de tre verktygen på projektorn — andas, pausa, säga. Eleverna testar andningen tillsammans.",
+        "I par: berätta om en sak som brukar hjälpa dig. Avsluta i helklass med reflektionsfrågorna."
+      ],
+      "tips": "Håll det konkret och kroppsligt — i den här åldern fastnar 'andas djupt' bättre än 'reglera dina känslor'. Testa andningsövningen på riktigt tillsammans, prata inte bara om den.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "Kroppen säger till först",
+          "text": "Innan en stor känsla tar över brukar kroppen säga till.\n\nHänderna knyts. Ansiktet blir varmt. Hjärtat dunkar. Magen knyter sig.\n\nDet är kroppens varningslampa.",
+          "uppgift": "Var i kroppen känner du först?"
+        },
+        {
+          "typ": "pulse_check",
+          "fraga": "Hur lätt är det för dig att märka när en stor känsla är på väg?",
+          "sub": "Visa med fingrar 1–5",
+          "skala_min": "Märker sällan",
+          "skala_max": "Märker nästan alltid"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Din uppgift",
+          "text": "På ditt blad finns en kropp. Markera var DU känner när du blir arg, stressad eller ledsen.\n\nDet finns inga fel svar — alla känner olika.",
+          "uppgift": "Du har 4 minuter.",
+          "timer_sekunder": 240
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Tre saker du kan göra",
+          "text": "När varningslampan lyser kan du:\n\n1. ANDAS — in genom näsan, långsamt ut genom munnen, tre gånger.\n2. PAUSA — vänta innan du säger eller gör något.\n3. SÄGA — berätta för någon hur det känns.",
+          "uppgift": "Vi testar andningen tillsammans nu — tre gånger.",
+          "timer_sekunder": 30
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Par-prat",
+          "text": "Berätta för din bänkkamrat om en sak som brukar hjälpa dig när en känsla blir för stor.",
+          "uppgift": "2 minuter — båda hinner berätta.",
+          "timer_sekunder": 120
+        }
+      ],
+      "reflektionsfragor": [
+        "Hur märker du att en stor känsla är på väg — innan den tar över?",
+        "Vad brukar hjälpa dig att lugna ner dig?",
+        "Är det skillnad på att känna något och att göra något åt det man känner?"
+      ],
+      "trygg_start": "\"Alla känslor är okej — också de stora och jobbiga. Det vi tränar på idag är vad vi kan göra med dem. Det du skriver på ditt blad är ditt eget.\"",
+      "trygg_avslutning": "Ta tre lugna andetag tillsammans. \"Nu vet ni vad ni kan göra när en känsla blir stor. Det är något ni kan använda var som helst.\"",
+      "npf": "Kroppsbilden ger visuellt stöd. Andningsövningen passar elever som behöver något konkret att göra. Tillåt att markera på bladet utan att dela. Ge tydlig tidssignal innan moment byts.",
+      "forskningskoppling": "Att känna igen kroppens signaler och ha konkreta strategier i stunden är centralt för känsloreglering, en av kärnkompetenserna inom SEL-forskning (Durlak et al., 2011).",
+      "kalltyp": "Forskning",
+      "risker": "Kan väcka känslor hos elever med svårt hemma eller återkommande stress. Om en elev markerar mycket starka kroppssignaler dag efter dag — följ upp enskilt och involvera elevhälsan vid behov.",
+      "efter_lektionen": "Kan användas som återkommande verktyg — påminn om de tre stegen när en konflikt uppstår i klassen.",
+      "interna_anteckningar": "Bygger bron i känslo-temat: KÄNSLODETEKTIVEN (002) och HUR KÄNNS DET (006) stannade vid åk 3. Detta är mellanstadieversionen, med kropps- och handlingsfokus istället för bara igenkänning.",
+      "elevmaterial": true,
+      "elevmaterial_typ": "Elevblad",
+      "behov_produktion": null,
+      "material_innehall": {
+        "intro": "När en stor känsla är på väg säger kroppen till först. Den här övningen hjälper dig att märka det — och att veta vad du kan göra.",
+        "uppgifter": [
+          {
+            "typ": "kroppskarta",
+            "label": "Markera var i kroppen du känner din stora känsla"
+          },
+          {
+            "typ": "checkboxar",
+            "label": "Vad brukar hjälpa dig? Ringa in:",
+            "alternativ": [
+              "Andas djupt",
+              "Gå undan en stund",
+              "Prata med någon",
+              "Röra på mig",
+              "Lyssna på musik",
+              "Vara ensam en stund"
+            ]
+          },
+          {
+            "typ": "rader",
+            "antal": 2,
+            "label": "En sak jag kan göra nästa gång en känsla blir för stor:"
+          }
+        ],
+        "reflektioner": [
+          "Hur märker du att en stor känsla är på väg?",
+          "Vad brukar hjälpa dig att lugna ner dig?"
+        ]
+      }
     }
   ]
 }
