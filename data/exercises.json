@@ -362,55 +362,24 @@
           "typ": "projektor",
           "rubrik": "Vad händer när du trycker skicka?",
           "text": "Tänk på något du skickat eller kommenterat den senaste veckan. Vad hände sedan?",
-          "uppgift": "Skriv ett ord för er själva — 1 minut tyst."
+          "uppgift": "Skriv ett ord för dig själv — 1 minut tyst.",
+          "timer_sekunder": 60
         },
         {
           "typ": "scenario_visual",
           "illustration": "chat",
           "rubrik": "Scenario A",
           "text": "Du är i en gruppchatt. Någon skickar ett skämt om en klasskompis som inte är med. Alla skrattar. Du vet att personen det handlar om skulle bli ledsen.",
-          "uppgift": "Vad gör du? Par — 2 minuter."
-        },
-        {
-          "typ": "countdown",
-          "rubrik": "Par-diskussion",
-          "sekunder": 120,
-          "text": "Diskutera Scenario A i par. Vad hade du gjort?"
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
         },
         {
           "typ": "scenario_visual",
           "illustration": "mobil",
           "rubrik": "Scenario B",
-          "text": "Din vän skickar en skärmdump från någon annans privata chatt. \"Läs vad hen skriver, haha.\"",
-          "uppgift": "Vad gör du? Par — 2 minuter."
-        },
-        {
-          "typ": "countdown",
-          "rubrik": "Par-diskussion",
-          "sekunder": 120,
-          "text": "Diskutera Scenario B i par. Vad hade du gjort?"
-        },
-        {
-          "typ": "mitt-val",
-          "fraga": "Är det skillnad på att göra något digitalt och att göra samma sak i verkligheten?",
-          "alternativ": [
-            {
-              "farg": "gult",
-              "text": "Ja — digitalt sprids det mer"
-            },
-            {
-              "farg": "gront",
-              "text": "Ja — man ser inte reaktionen"
-            },
-            {
-              "farg": "blatt",
-              "text": "Nej — lika allvarligt"
-            },
-            {
-              "farg": "rott",
-              "text": "Det beror på situationen"
-            }
-          ]
+          "text": "Din vän skickar en skärmdump från någon annans privata chatt. \"Läs vad hon eller han skriver, haha.\"",
+          "uppgift": "Diskutera i par — 2 minuter.",
+          "timer_sekunder": 120
         },
         {
           "typ": "projektor",
@@ -439,7 +408,7 @@
           "voiceover"
         ],
         "beskrivning": "Övningen blir starkare med dramatiserad uppläsning av scenariona — skapar mer känsla av autenticitet.",
-        "manus": "SCENARIO A:\nDu sitter i en gruppchatt med dina kompisar. Någon skickar ett meme om en klasskompis. Alla skrattar. Du vet att den personen det handlar om skulle bli ledsen om den såg det. Telefonen är i din hand. Vad gör du?\n\nSCENARIO B:\nDin vän skickar dig en skärmdump. Den är tagen från någon annans privata konversation. \"Läs vad hen skriver, haha.\" Vad gör du nu?",
+        "manus": "SCENARIO A:\nDu sitter i en gruppchatt med dina kompisar. Någon skickar ett meme om en klasskompis. Alla skrattar. Du vet att den personen det handlar om skulle bli ledsen om den såg det. Telefonen är i din hand. Vad gör du?\n\nSCENARIO B:\nDin vän skickar dig en skärmdump. Den är tagen från någon annans privata konversation. \"Läs vad han eller hon skriver, haha.\" Vad gör du nu?",
         "elevenlabs_prompt": "Lugn, reflekterande ton. Paus 1,5 sekunder efter varje scenario. Långsamt tempo — åhöraren ska hinna föreställa sig situationen. Inga dramatiska effekter."
       }
     },
@@ -514,7 +483,7 @@
         },
         {
           "typ": "mitt-val",
-          "fraga": "En person som mobbar gör det för att hen är elak.",
+          "fraga": "En person som mobbar gör det för att han eller hon är elak.",
           "alternativ": [
             {
               "farg": "gult",
@@ -731,26 +700,16 @@
           "typ": "projektor",
           "rubrik": "Lär känna varandra",
           "text": "Berätta tre saker om dig själv som din kompis troligtvis inte vet.",
-          "uppgift": "2 minuter var."
-        },
-        {
-          "typ": "countdown",
-          "rubrik": "Lär-känna-tid",
-          "sekunder": 240,
-          "text": "2 minuter var — totalt 4 minuter. Berätta något din kompis inte vet om dig."
+          "uppgift": "2 minuter var — totalt 4 minuter.",
+          "timer_sekunder": 240
         },
         {
           "typ": "scenario_visual",
           "illustration": "klassrum",
           "rubrik": "Uppgiften",
           "text": "Lös uppgifterna på bladet tillsammans. Ni väljer ordning själva.",
-          "uppgift": "15 minuter. Be om hjälp om något är oklart."
-        },
-        {
-          "typ": "countdown",
-          "rubrik": "Arbeta tillsammans",
-          "sekunder": 900,
-          "text": "15 minuter — jobba i ert tempo. Klart innan tiden är ute? Hitta något ni har gemensamt."
+          "uppgift": "15 minuter — jobba i ert tempo.",
+          "timer_sekunder": 900
         }
       ],
       "reflektionsfragor": [
@@ -759,7 +718,7 @@
         "Tror du att ni kan bli vänner?"
       ],
       "trygg_start": "\"Idag lottar vi kompisar — precis som livet fungerar. Man väljer inte alltid vem man möter, men man väljer hur man är mot dem.\"",
-      "trygg_avslutning": "Klappen varandra på axeln — \"tack för samarbetet.\"",
+      "trygg_avslutning": "Klappa varandra på axeln — \"tack för samarbetet.\"",
       "npf": "Ge paret strukturerade uppgifter med tydliga steg. Tillåt att sitta på valfri plats. Uppgiftsblad = visuellt stöd.",
       "forskningskoppling": "Strukturerade samarbetsövningar ökar inkludering och minskar utanförskap mer effektivt än fri lek (Johnson & Johnson, 2009).",
       "kalltyp": "Forskning",
@@ -835,10 +794,14 @@
           "uppgift": "Vilken känner ni igen hos er själva?"
         },
         {
+          "typ": "superkraft_grid"
+        },
+        {
           "typ": "projektor",
           "rubrik": "Din uppgift",
           "text": "Rita dig själv med din favoritskraft. Ge dig själv en superhjältepose!",
-          "uppgift": "5–7 minuter."
+          "uppgift": "5–7 minuter.",
+          "timer_sekunder": 360
         }
       ],
       "reflektionsfragor": [
@@ -1303,13 +1266,8 @@
           "typ": "projektor",
           "rubrik": "Nu är det din tur",
           "text": "Rita dig själv som hjälten. Vem hjälper du — och hur?",
-          "uppgift": "5–7 minuter att rita."
-        },
-        {
-          "typ": "countdown",
-          "rubrik": "Rita din hjältebild",
-          "sekunder": 360,
-          "text": "Du har 6 minuter att rita. Sen får alla som vill visa."
+          "uppgift": "Du har 6 minuter.",
+          "timer_sekunder": 360
         }
       ],
       "reflektionsfragor": [

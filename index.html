@@ -1219,6 +1219,8 @@ function renderPres(){
   }
   // ── NYA SLIDE-TYPER (Fas 2) ──
   else if(s.typ==='scenario_visual'){
+    const hasTimer=s.timer_sekunder>0;
+    if(hasTimer){timerTotal=s.timer_sekunder;timerRemaining=s.timer_sekunder;}
     h=`<div class="slide on">
       <div class="s-sv-wrap">
         <div class="s-sv-illus">${svgIllustration(s.illustration||'chat', accent.c)}</div>
@@ -1226,7 +1228,25 @@ function renderPres(){
           <div class="s-sv-rub" style="color:${accent.c}">${s.rubrik||'Scenario'}</div>
           <div class="s-sv-text">${s.text}</div>
           ${s.uppgift?`<div class="s-sv-uppg">${s.uppgift}</div>`:''}
+          ${hasTimer?timerHTML(s.timer_sekunder,accent.c):''}
         </div>
+      </div>
+    </div>`;
+  }
+  else if(s.typ==='superkraft_grid'){
+    const sk=[
+      {f:'uppmarksam', n:'UPPMÄRKSAM', t:'Ser vad som händer'},
+      {f:'modig', n:'MODIG', t:'Vågar säga ifrån'},
+      {f:'godhjartad', n:'GODHJÄRTAD', t:'Behandlar alla med vänlighet'},
+      {f:'rattvis', n:'RÄTTVIS', t:'Förhindrar orättvisor'}
+    ];
+    h=`<div class="slide on">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:680px;margin:0 auto;">
+        ${sk.map(k=>`<div style="background:var(--ps);border:2px solid var(--pborder);border-radius:12px;padding:18px;text-align:center;">
+          <img src="images/superkraft-${k.f}-400.png" style="width:90px;height:90px;object-fit:contain;margin-bottom:10px;" alt="${k.n}">
+          <div style="font-size:14px;font-weight:800;letter-spacing:1.5px;color:var(--pt);margin-bottom:4px;">${k.n}</div>
+          <div style="font-size:12px;color:var(--pm);">${k.t}</div>
+        </div>`).join('')}
       </div>
     </div>`;
   }
