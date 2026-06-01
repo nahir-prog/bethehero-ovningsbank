@@ -829,6 +829,343 @@
       "elevmaterial": false,
       "elevmaterial_typ": null,
       "behov_produktion": null
+    },
+    {
+      "id": "BTH-010",
+      "titel": "FEMTON SEKUNDER",
+      "fokustema": [
+        "Mod & civilkurage",
+        "Gemenskap & inkludering"
+      ],
+      "alder": "Åk 6, 7",
+      "alder_tags": [
+        "6",
+        "7"
+      ],
+      "tid": 25,
+      "forberedelse_tid": 3,
+      "ovningstyp": [
+        "Rollspel / scenarier"
+      ],
+      "arbetssatt": [
+        "individuellt",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": false,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna inser att civilkurage oftast avgörs på femton sekunder — och tränar på att fatta rätt beslut under tidspress, precis som det fungerar på riktigt.",
+      "forberedelse": "Öppna presentationsläget. Inga utskrifter behövs.",
+      "material": "Projektor, timer (valfritt)",
+      "genomforande_enkelt": [
+        "Förklara: I verkliga situationer har man ofta bara 15 sekunder att bestämma sig innan ögonblicket är förbi.",
+        "Visa Scenario A på projektorn. Starta en 15-sekunders nedräkning (räkna högt eller använd timer).",
+        "När tiden är ute: räck upp handen om du hade agerat. Fråga 2–3: vad hade du gjort?",
+        "Kör Scenario B och C på samma sätt.",
+        "Avsluta: Vad gör det svårt att agera på 15 sekunder? Vad gör det lättare?"
+      ],
+      "tips": "Tidspress är poängen — håll den. Det skapar en spänning som gör diskussionen äkta. Räkna gärna högt tillsammans.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "SCENARIO A — 15 sekunder",
+          "text": "Du ser att en klasskompis sitter ensam och gråter i korridoren. Folk går förbi. Ingen stannar.",
+          "uppgift": "⏱ Vad gör du? Räkna ner från 15."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "SCENARIO B — 15 sekunder",
+          "text": "Någon i din grupp på gruppchatten skickar en skärmdump på en annan elev. Alla börjar skratta.",
+          "uppgift": "⏱ Vad gör du? Räkna ner från 15."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "SCENARIO C — 15 sekunder",
+          "text": "Du hör att två i klassen planerar att utesluta en tredje person från en aktivitet imorgon.",
+          "uppgift": "⏱ Vad gör du? Räkna ner från 15."
+        }
+      ],
+      "reflektionsfragor": [
+        "Vad hände i dig de 15 sekunderna — vad vägde mot varandra?",
+        "Varför är det lättare att inte göra något när man har ont om tid?",
+        "Vad kan du göra för att vara mer redo nästa gång?"
+      ],
+      "trygg_start": "\"Det finns inga rätta svar här — vi tränar på att tänka snabbt, inte på att vara perfekta.\"",
+      "trygg_avslutning": "\"Ni har just tränat på något de flesta vuxna aldrig tränar på. Det där tar ni med er.\"",
+      "npf": "Elever som behöver mer tid kan svara efter att resten haft 15 sekunder — utan press. Scenariona visas på skärm.",
+      "forskningskoppling": "Bystander-forskning visar att beslut om att ingripa fattas inom sekunder — och att träning på dessa ögonblick ökar sannolikheten att agera (Darley & Latané, 1968).",
+      "kalltyp": "Forskning",
+      "risker": "Låg risk. Håll tonen lätt — det är träning, inte betygsättning av moral.",
+      "efter_lektionen": null,
+      "interna_anteckningar": "Formatet med tidpress är nytt i banken — följ upp om det känns bra att använda igen.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
+    },
+    {
+      "id": "BTH-011",
+      "titel": "DEN OSYNLIGA LINJEN",
+      "fokustema": [
+        "Konflikter",
+        "Empati & perspektiv"
+      ],
+      "alder": "Åk 4, 5",
+      "alder_tags": [
+        "4",
+        "5"
+      ],
+      "tid": 30,
+      "forberedelse_tid": 5,
+      "ovningstyp": [
+        "Värderingsövning"
+      ],
+      "arbetssatt": [
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": false,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna förstår att konflikter handlar om perspektiv — inte om vem som har rätt. De tränar på att fysiskt ta ställning och sen lyssna på dem som tänker annorlunda.",
+      "forberedelse": "Skapa en imaginär linje tvärs över klassrummet — ena väggen = \"Håller helt med\", andra = \"Håller inte alls med\". Möblera så det finns plats att röra sig.",
+      "material": "Fritt utrymme i klassrummet, projektor",
+      "genomforande_enkelt": [
+        "Förklara linjen: ena väggen = håller helt med, andra = håller inte alls med. Mitt i = osäker.",
+        "Visa Påstående 1 på projektorn. Eleverna ställer sig på linjen utan att prata.",
+        "Titta runt — kommentera att ni spridde er. Fråga en från varje ytterlighet: varför står du där?",
+        "Lyssna på varandra. Får någon flytta sig efter att ha hört? Det är okej.",
+        "Upprepa med Påstående 2 och 3. Avsluta sittande i ring."
+      ],
+      "tips": "Poängen är rörelsen och lyssnandet — inte att enas. Om alla klumpar sig i mitten: uppmuntra dem att välja mer aktivt.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "Påstående 1",
+          "text": "Om en kompis tar din sak utan att fråga — det är stöld.",
+          "uppgift": "Ställ dig på linjen. Ingen får prata ännu."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Påstående 2",
+          "text": "Om någon skriker på dig för att de är ledsna — de har ursäkt.",
+          "uppgift": "Ställ dig på linjen."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Påstående 3",
+          "text": "Det är alltid möjligt att lösa en konflikt utan att någon behöver be om förlåtelse.",
+          "uppgift": "Ställ dig på linjen."
+        }
+      ],
+      "reflektionsfragor": [
+        "Var det ett påstående där ni spred er mest — vad tror du det beror på?",
+        "Hörde du något argument som fick dig att tänka om?",
+        "Vad behövs för att lösa en konflikt på riktigt?"
+      ],
+      "trygg_start": "\"Det finns inget rätt svar. Ni ska stå för vad ni faktiskt tänker — inte vad ni tror att jag vill höra.\"",
+      "trygg_avslutning": "Samla klassen i en ring. \"Ni har precis gjort något svårt — ni lyssnade på folk som tänker annorlunda. Det är en superkraft.\"",
+      "npf": "Rörelseövningen ger stöd åt elever som lär sig bättre när kroppen är med. Elever som inte vill röra sig kan peka eller hålla upp fingrar istället.",
+      "forskningskoppling": "Perspektivtagning — förmågan att se en situation från en annans synvinkel — är en av de starkaste skyddsfaktorerna mot kränkande beteenden (Eisenberg et al., 2006).",
+      "kalltyp": "Forskning",
+      "risker": "Se till att ingen hånas för sin placering på linjen. Tydliggör att det är ens åsikt, inte ens person, som placeras.",
+      "efter_lektionen": "Kan följas upp med Konfliktlösarkortet om klassen har pågående konflikter.",
+      "interna_anteckningar": "Rörelseformat — nytt i banken. Fungerar bäst med en klass som redan känner varandra lite.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
+    },
+    {
+      "id": "BTH-012",
+      "titel": "VEM BESTÄMMER VEM JAG ÄR?",
+      "fokustema": [
+        "Självkänsla & identitet",
+        "Grupptryck & normer"
+      ],
+      "alder": "Åk 8, 9",
+      "alder_tags": [
+        "8",
+        "9"
+      ],
+      "tid": 30,
+      "forberedelse_tid": 3,
+      "ovningstyp": [
+        "Värderingsövning",
+        "Samtal / diskussion"
+      ],
+      "arbetssatt": [
+        "individuellt",
+        "par",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": true,
+      "elevhalsa": false,
+      "kort": "MITT VAL",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "Eleverna undersöker var deras bild av sig själva egentligen kommer ifrån — och ifrågasätter om den bilden verkligen är deras egen.",
+      "forberedelse": "Dela ut MITT VAL-kort. Öppna presentationsläget.",
+      "material": "MITT VAL-kort (ett per elev), projektor",
+      "genomforande_enkelt": [
+        "Starta med en tyst minut: eleverna skriver tre ord som beskriver dem själva — ingen ser.",
+        "Fråga klassen: Varifrån kom de orden? Låt 2–3 berätta.",
+        "Kör MITT VAL-runda — en fråga i taget. Lyft 1–2 svar efter varje.",
+        "Diskutera i par: Finns det något du tror om dig själv som någon annan har sagt — och du inte vet om det stämmer?",
+        "Avsluta i helklass med sista frågan."
+      ],
+      "tips": "Den här övningen kan bli personlig. Håll ett varsamt tempo — det är okej med tystnad. Tvinga ingen att dela.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "Tyst minut",
+          "text": "Skriv tre ord som beskriver dig. Bara för dig — ingen annan ser.",
+          "uppgift": "1 minut tyst."
+        },
+        {
+          "typ": "mitt-val",
+          "fraga": "Hur mycket påverkar vad andra tycker om dig — hur du ser på dig själv?",
+          "alternativ": [
+            {
+              "farg": "gult",
+              "text": "Mycket — andras syn formar mig"
+            },
+            {
+              "farg": "gront",
+              "text": "Lite — jag vet vem jag är"
+            },
+            {
+              "farg": "blatt",
+              "text": "Det beror på vem det är"
+            },
+            {
+              "farg": "rott",
+              "text": "Inte alls — jag bryr mig inte"
+            }
+          ]
+        },
+        {
+          "typ": "mitt-val",
+          "fraga": "Sociala medier får mig att känna mig...",
+          "alternativ": [
+            {
+              "farg": "gult",
+              "text": "Sämre om mig själv"
+            },
+            {
+              "farg": "gront",
+              "text": "Bättre — inspiration och kontakt"
+            },
+            {
+              "farg": "blatt",
+              "text": "Ingenting — det är bara underhållning"
+            },
+            {
+              "farg": "rott",
+              "text": "Olika beroende på dag"
+            }
+          ]
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Par-diskussion",
+          "text": "Finns det något du tror om dig själv som någon annan har sagt — och du inte vet om det faktiskt stämmer?",
+          "uppgift": "3 minuter i par."
+        }
+      ],
+      "reflektionsfragor": [
+        "Varifrån kommer bilden du har av dig själv?",
+        "Är det någon i ditt liv vars åsikt om dig väger tyngre än andras — varför?",
+        "Vad skulle du vilja att andra visste om vem du verkligen är?"
+      ],
+      "trygg_start": "\"Det vi pratar om idag är personligt. Du bestämmer helt vad du delar. MITT VAL-rundan är anonym — ingen ser din färg förutom du.\"",
+      "trygg_avslutning": "\"De tre orden ni wrote i början — titta på dem. De är era. Ingen annan satte dit dem.\"",
+      "npf": "MITT VAL är tyst och anonymt. Par-formatet ger stöd för dem som inte vill tala i helklass. Tydliggör att ingenting behöver delas.",
+      "forskningskoppling": "Identitetsutvecklingen i tonåren är starkt kopplad till social jämförelse och extern bekräftelse — att medvetandegöra denna process skyddar mot sårbar självkänsla (Harter, 1999).",
+      "kalltyp": "Forskning",
+      "risker": "Kan väcka starka känslor hos elever med låg självkänsla eller som utsatts för utseendekommentarer. Var uppmärksam och stanna kvar med elever som verkar tunga efteråt.",
+      "efter_lektionen": null,
+      "interna_anteckningar": "En av de mer personliga övningarna vi har. Fungerar bäst i en klass med viss tillit redan etablerad.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
+    },
+    {
+      "id": "BTH-013",
+      "titel": "HJÄLTEN I BERÄTTELSEN",
+      "fokustema": [
+        "Empati & perspektiv",
+        "Sociala roller"
+      ],
+      "alder": "F-klass, Åk 1",
+      "alder_tags": [
+        "F",
+        "1"
+      ],
+      "tid": 20,
+      "forberedelse_tid": 5,
+      "ovningstyp": [
+        "Kreativ övning"
+      ],
+      "arbetssatt": [
+        "helklass",
+        "individuellt"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": false,
+      "elevhalsa": false,
+      "kort": "HERO-KORT 1",
+      "datum_skapad": "2026-06-01",
+      "ny": true,
+      "syfte": "De allra yngsta eleverna förstår vad en hjälte gör på riktigt — inte en med mantel, utan en som ser andra och väljer att hjälpa.",
+      "forberedelse": "Ta fram HERO-KORT 1 (ett kort). Skriv ut ett elevblad per barn.",
+      "material": "HERO-KORT 1 (ett kort för hela klassen), elevblad, kritor",
+      "genomforande_enkelt": [
+        "Visa HERO-KORT 1 för klassen — vad ser de? Läs upp vad som står.",
+        "Fråga: Har ni sett en hjälte på riktigt — inte i en film, utan i er skola eller hemma?",
+        "Berätta en kort berättelse om Maximus som ser att någon är ledsen och väljer att gå fram (visas på projektorn).",
+        "Dela ut elevbladen. Barnen ritar sig själva som hjälten i en situation de hittar på.",
+        "Frivillig visning — berätta om din ritning."
+      ],
+      "tips": "Håll berättelsen kort och konkret. Poängen är att hjälten ser och väljer — inte att hjälten är stark.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "Maximus ser något",
+          "text": "Maximus är på skolgården. Han ser en kompis som sitter ensam och ser ledsen ut. Maximus kan gå förbi. Men han väljer att gå fram och fråga: Är du okej?",
+          "uppgift": "Vad tror ni kompisen kände när Maximus frågade?"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Nu är det din tur",
+          "text": "Rita dig själv som hjälten. Vem hjälper du — och hur?",
+          "uppgift": "5–7 minuter."
+        }
+      ],
+      "reflektionsfragor": [
+        "Vad gjorde Maximus som var modigt?",
+        "Har du någon gång hjälpt någon — hur kändes det?",
+        "Vad kan du göra om du ser att någon är ledsen?"
+      ],
+      "trygg_start": "\"Alla kan vara en hjälte. Det handlar inte om att vara störst eller starkast — det handlar om att se och välja.\"",
+      "trygg_avslutning": "Samla barnens ritningar. \"Titta — det här rummet är fullt av hjältar.\"",
+      "npf": "Enkla och konkreta instruktioner. Ritning ger alternativ för barn som inte kan skriva. HERO-KORT 1 som visuellt ankare under hela övningen.",
+      "forskningskoppling": "Prosocialt beteende grundläggs tidigt — barn i 5–7-årsåldern är mottagliga för berättelser om hjälpande som normgivande modeller (Eisenberg & Fabes, 1998).",
+      "kalltyp": "Forskning",
+      "risker": "Minimal risk. Om ett barn berättar om en svår situation hemma — ta det privat efteråt.",
+      "efter_lektionen": "Häng upp hjälteritningarna i klassrummet.",
+      "interna_anteckningar": "Första övningen i banken som kombinerar F och åk 1 med HERO-KORT. Introducerar korten för yngre barn.",
+      "elevmaterial": true,
+      "elevmaterial_typ": "Elevblad",
+      "behov_produktion": null
     }
   ]
 }
