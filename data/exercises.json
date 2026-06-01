@@ -369,7 +369,7 @@
           "typ": "scenario_visual",
           "illustration": "chat",
           "rubrik": "Scenario A",
-          "text": "Du är i en gruppchatt. Någon skickar ett skämt om en klasskompis som inte är med. Alla skrattar. Du vet att personen det handlar om skulle bli ledsen.",
+          "text": "Du är i en gruppchatt. Någon skickar ett skämt om en klasskompis som inte är med. Alla skrattar. Du vet att personen det handlar om skulle bli ledsen.\n\nVad gör du?",
           "uppgift": "Diskutera i par — 2 minuter.",
           "timer_sekunder": 120
         },
@@ -377,7 +377,7 @@
           "typ": "scenario_visual",
           "illustration": "mobil",
           "rubrik": "Scenario B",
-          "text": "Din vän skickar en skärmdump från någon annans privata chatt. \"Läs vad hon eller han skriver, haha.\"",
+          "text": "Din vän skickar en skärmdump från någon annans privata chatt. \"Läs vad hon eller han skriver, haha.\"\n\nVad gör du?",
           "uppgift": "Diskutera i par — 2 minuter.",
           "timer_sekunder": 120
         },
