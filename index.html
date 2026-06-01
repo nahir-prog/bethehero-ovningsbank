@@ -321,9 +321,26 @@ a{color:inherit;text-decoration:none;}
 .s-sv-rub::after{content:'';flex:1;height:1px;background:var(--pborder);}
 .s-sv-text{font-size:clamp(18px,2.6vw,28px);font-weight:700;color:var(--pt);line-height:1.4;white-space:pre-line;}
 .s-sv-uppg{font-size:13px;color:var(--pm);font-style:italic;}
-@keyframes bubblePop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
-.bubble-pop{transform-origin:center;animation:bubblePop .5s cubic-bezier(.34,1.56,.64,1) forwards;}
-.bubble-pop.d1{animation-delay:.1s;}.bubble-pop.d2{animation-delay:.4s;}.bubble-pop.d3{animation-delay:.7s;}.bubble-pop.d4{animation-delay:1.0s;}
+/* Lugn fade-in + subtil loopande andning — aldrig distraherande */
+@keyframes appearGently {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes breatheGently {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.025); opacity: .94; }
+}
+.bubble-pop {
+  opacity: 0;
+  transform-origin: center;
+  animation:
+    appearGently 1.6s ease-out forwards,
+    breatheGently 6s ease-in-out infinite 1.6s;
+}
+.bubble-pop.d1 { animation-delay: 0s, 1.6s; }
+.bubble-pop.d2 { animation-delay: 0.8s, 2.4s; }
+.bubble-pop.d3 { animation-delay: 1.6s, 3.2s; }
+.bubble-pop.d4 { animation-delay: 2.4s, 4.0s; }
 
 /* ── COUNTDOWN — stor fristående nedräkning ── */
 .s-cd-wrap{text-align:center;padding:30px 20px;}

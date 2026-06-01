@@ -552,6 +552,25 @@ När teamet klistrar in en befintlig övning och ber om förbättringar — elle
 ```
 
 **`scenario_visual`** — scen med SVG-illustration. `illustration`: `chat` / `mobil` / `klassrum` / `hjarta` / `vag` / `utfrysning` / `matsal` / `kanslor` / `konflikt` / `tankebubblor` / `ryktespridning` / `skolgard`
+
+**Princip för motion graphics — alltid lugn rytm:**
+
+Använd visuella illustrationer **särskilt i textTunga övningar** för att skapa liv. Men:
+
+- Animationer ska vara **långsamma och subtila** — aldrig blixtsnabba
+- Element framträder gradvis (1.5–2 sek) och **andas sedan i loop** (var 6 sek)
+- Aldrig blinkningar, skarpa rörelser eller distraherande effekter
+- Eleven ska kunna fokusera på lärarens röst och texten — illustrationen är bakgrundsstöd, inte huvudaktör
+
+**När du SKA använda en illustration:**
+- Övningen är textTung och behöver visuellt stöd
+- Berättelsen blir starkare när eleven också ser scenariot
+- Yngre åldrar (F-6) som har lättare med bild + text
+
+**När du INTE ska använda en illustration:**
+- Övningen är redan visuell (MITT VAL, kort_visning, omröstning)
+- Sliden är en personlig reflektion — då stör en bild
+- Det inte tillför något konkret
 ```json
 { "typ":"scenario_visual", "illustration":"chat", "rubrik":"Scenario A", "text":"Berättelsen...\n\nVad gör du?", "uppgift":"Diskutera i par.", "timer_sekunder":120 }
 ```
