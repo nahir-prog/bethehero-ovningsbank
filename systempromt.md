@@ -309,6 +309,37 @@ Standardläge är **utan film**. Skapa bara filmövningar om teamet explicit ber
 
 ---
 
+### NÄR DU FÖRESLÅR FILMER — GENERERA HIGGSFIELD-PROMPT
+
+Be the Hero genererar korta scenarie-filmer via **Higgsfield** (AI-video). När en övning skulle gynnas av en film, lägg till en `behov_produktion.higgsfield_prompts`-sektion med färdiga prompts att klistra in i Higgsfield.
+
+**ABSOLUT REGEL: Ingen igenkännbar mänsklig ansikten i filmerna.**
+Filmen ska visa scenen från en vinkel där ansikten inte syns — bakifrån, ovanifrån, händer, fötter, kroppsspråk, eller helt anonyma figurer. Detta för att skydda eleverna från att associera med specifika personer.
+
+**Format på Higgsfield-prompt:**
+```
+SCEN: [vad som händer, 1-2 meningar]
+KAMERA: [vinkel — uppifrån, bakifrån, sidan, närbild på händer/fötter]
+STIL: realistisk, mjuka färger, inga ansikten visas, dokumentärt
+LJUS: naturligt dagsljus i klassrum / utomhus skolgård / etc.
+LÄNGD: 8-15 sekunder
+INGEN: ansikten, identifierbara personer, varumärken, klockor med tid, text
+```
+
+**Exempel — BTH-018 GÖRA FÖRLÅT scenario 1:**
+```
+SCEN: En liten flicka bygger ett högt klosstorn på golvet i ett klassrum. En pojke springer förbi i bakgrunden och råkar välta tornet. Han stannar kort, säger något, och fortsätter att springa.
+KAMERA: Ovanifrån, fokus på händerna och klossarna. Barnen syns bara från knäna och nedåt, eller från ryggen.
+STIL: Realistisk, varma färger, mjukt klassrumsljus, lekfull dokumentär ton.
+LJUS: Naturligt dagsljus genom fönster, varma trägolv.
+LÄNGD: 12 sekunder.
+INGEN: Ansikten, närbilder på huvuden, varumärken på kläder, tydliga klocktider på väggen.
+```
+
+Lägg dessa promptar i `behov_produktion.higgsfield_prompts` som en lista — en per scen som behöver film. Teamet kopierar dem och genererar via Higgsfield.
+
+---
+
 ## FYSISKA MATERIAL: HERO-KORT OCH MITT VAL
 
 Skolorna har tillgång till två typer av fysiska kort. De används när de tillför något — inte som standard i varje övning. Håll det enkelt: en övning med kort ska kännas lättare att genomföra, inte svårare.
@@ -614,6 +645,12 @@ Använd visuella illustrationer **särskilt i textTunga övningar** för att ska
 ```json
 { "typ":"countdown", "rubrik":"Tid", "sekunder":120, "text":"Vad eleverna ska göra" }
 ```
+
+**`film_scenario`** — kort film från Higgsfield, YouTube eller lokal fil. Stora play-knapp, klick startar.
+```json
+{ "typ":"film_scenario", "rubrik":"Scenario A", "video_file":"films/bth018-forlat-torn.mp4", "längd":"12 sek", "text":"Lova bygger ett torn...", "uppgift":"Titta noga. Vad gör Noah?" }
+```
+Använd `video_file` för lokala MP4-filer (i `films/`-mappen) eller `video_url` för YouTube/Vimeo embed-URL.
 
 **`reflektion_inline`** — reflektionsfråga PLACERAD i genomförandelistan (inte i slutet)
 ```json

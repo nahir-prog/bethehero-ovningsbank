@@ -1986,11 +1986,12 @@
           "uppgift": "Vad betyder förlåt? Räck upp handen om du vet."
         },
         {
-          "typ": "scenario_visual",
-          "illustration": "klassrum",
+          "typ": "film_scenario",
           "rubrik": "Noah och Lova",
-          "text": "Lova har byggt ett högt torn med klossar.\n\nNoah springer förbi och råkar välta det. Allt rasar.\n\nNoah säger \"förlåt\" — och går vidare och leker.",
-          "uppgift": "Lyssna på berättelsen."
+          "video_file": "films/bth018-forlat-torn.mp4",
+          "längd": "12 sek",
+          "text": "Lova har byggt ett högt torn med klossar.\n\nNoah springer förbi och råkar välta det.\n\nHan säger \"förlåt\" — och går vidare och leker.",
+          "uppgift": "Titta noga. Vad gjorde Noah efter att han sa förlåt?"
         },
         {
           "typ": "reflektion_inline",

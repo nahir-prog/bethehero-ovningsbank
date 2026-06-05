@@ -403,6 +403,21 @@ a{color:inherit;text-decoration:none;}
 .s-pulse-num.p5{border-color:rgba(59,130,246,.5);color:#3b82f6;}
 .s-pulse-legend{margin-top:24px;font-size:12px;color:var(--pm);display:flex;gap:24px;justify-content:center;}
 
+/* ── FILM_SCENARIO — kort film från Higgsfield, YouTube eller lokal fil ── */
+.s-film-wrap{display:flex;flex-direction:column;gap:14px;max-width:760px;margin:0 auto;}
+.s-film-rub{font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--tc,var(--pl));display:flex;align-items:center;gap:8px;}
+.s-film-rub::after{content:'';flex:1;height:1px;background:var(--pborder);}
+.s-film-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;border:1px solid var(--pborder);box-shadow:0 8px 32px rgba(0,0,0,.4);}
+.s-film-poster{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1f2e,#0a0d14);cursor:pointer;transition:opacity .25s;z-index:2;}
+.s-film-poster.hidden{opacity:0;pointer-events:none;}
+.s-film-play{width:80px;height:80px;border-radius:50%;background:var(--tc,var(--pl));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.5);transition:transform .15s;}
+.s-film-poster:hover .s-film-play{transform:scale(1.1);}
+.s-film-play svg{width:32px;height:32px;fill:white;margin-left:4px;}
+.s-film-label{position:absolute;bottom:14px;left:14px;color:rgba(255,255,255,.55);font-size:11px;font-weight:600;letter-spacing:1px;}
+.s-film-video,.s-film-iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:block;}
+.s-film-text{font-size:clamp(15px,2vw,20px);color:var(--pt);line-height:1.5;}
+.s-film-uppg{font-size:13px;color:var(--pm);font-style:italic;}
+
 /* ── KARAKTÄR — berättelser för F-3 ── */
 .s-char-wrap{display:grid;grid-template-columns:170px 1fr;gap:26px;align-items:center;padding:10px;}
 .s-char-img{width:170px;height:170px;border-radius:50%;background:var(--ps);border:3px solid var(--tc,var(--pl));display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -1407,6 +1422,41 @@ function renderPres(){
       </div>
     </div>`;
   }
+  else if(s.typ==='film_scenario'){
+    // Stöd: lokal fil (video_file), YouTube (video_url med embed/), Vimeo (video_url med player.vimeo)
+    const isYoutube = s.video_url && s.video_url.includes('youtube');
+    const isVimeo = s.video_url && s.video_url.includes('vimeo');
+    const isLokal = !!s.video_file;
+    const filmId = 'film-' + cSlide;
+
+    let playerHTML = '';
+    if(isLokal){
+      playerHTML = `<video class="s-film-video" id="${filmId}" controls preload="metadata">
+        <source src="${s.video_file}" type="video/mp4">
+        Din webbläsare stödjer inte video.
+      </video>`;
+    } else if(isYoutube || isVimeo){
+      const autoplayUrl = s.video_url + (s.video_url.includes('?')?'&':'?') + 'autoplay=1';
+      playerHTML = `<iframe class="s-film-iframe" id="${filmId}" src="${autoplayUrl}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+    }
+
+    h=`<div class="slide on">
+      <div class="s-film-wrap">
+        <div class="s-film-rub" style="color:${accent.c}">🎬 ${s.rubrik||'Scenario'}</div>
+        <div class="s-film-frame" id="${filmId}-frame">
+          <div class="s-film-poster" id="${filmId}-poster" onclick="playFilm('${filmId}','${isLokal?'video':'iframe'}')">
+            <div class="s-film-play" style="background:${accent.c}">
+              <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+            </div>
+            <div class="s-film-label">Klicka för att spela ▸ ${s.längd||''}</div>
+          </div>
+          ${playerHTML}
+        </div>
+        ${s.text?`<div class="s-film-text">${s.text}</div>`:''}
+        ${s.uppgift?`<div class="s-film-uppg">${s.uppgift}</div>`:''}
+      </div>
+    </div>`;
+  }
   else if(s.typ==='karaktär'){
     const bildFil = s.bild === 'maximus-hero' ? 'maximus-hero-500.jpg'
                   : s.bild === 'maximus' ? 'maximus-1-500.jpg'
@@ -1771,8 +1821,21 @@ function resetVotes(n){
   }
 }
 
-function nextS(){if(cSlide<slides.length-1){cSlide++;renderPres();}}
-function prevS(){if(cSlide>0){cSlide--;renderPres();}}
+function playFilm(id, typ){
+  const poster = document.getElementById(id+'-poster');
+  if(poster) poster.classList.add('hidden');
+  const el = document.getElementById(id);
+  if(typ === 'video' && el && el.play) el.play();
+  // iframe spelar automatiskt via autoplay=1
+}
+
+function stopAllVideos(){
+  // Pausa lokala videor vid slidbyte
+  document.querySelectorAll('video').forEach(v=>{try{v.pause();}catch(e){}});
+}
+
+function nextS(){if(cSlide<slides.length-1){stopAllVideos();cSlide++;renderPres();}}
+function prevS(){if(cSlide>0){stopAllVideos();cSlide--;renderPres();}}
 
 document.addEventListener('keydown',e=>{
   if(document.getElementById('view-pres').style.display==='block'){
