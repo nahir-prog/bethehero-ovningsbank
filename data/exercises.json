@@ -1815,6 +1815,127 @@
           "Vad brukar hjälpa dig att lugna ner dig?"
         ]
       }
+    },
+    {
+      "id": "BTH-017",
+      "titel": "HEMLIGA HJÄLTEUPPDRAG",
+      "fokustema": [
+        "Mod & civilkurage",
+        "Gemenskap & inkludering"
+      ],
+      "alder": "F-klass, Åk 1, 2, 3",
+      "alder_tags": [
+        "F",
+        "1",
+        "2",
+        "3"
+      ],
+      "tid": 20,
+      "forberedelse_tid": 5,
+      "ovningstyp": [
+        "Experiment / lek",
+        "Kreativ övning"
+      ],
+      "arbetssatt": [
+        "individuellt",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": false,
+      "elevhalsa": false,
+      "kort": "HERO-KORT 12–15",
+      "datum_skapad": "2026-06-05",
+      "ny": true,
+      "syfte": "Barnen får träna sina superkrafter på riktigt — på rasten, i smyg. De upptäcker att en superkraft inte är något man pratar om, utan något man gör.",
+      "forberedelse": "Skriv ut hemliga uppdragskort och klipp isär — ett per barn. Ta fram HERO-KORT 12–15. Bestäm en samlingsplats ute och en tid då ni möts igen.",
+      "material": "HERO-KORT 12–15 (ett set för klassen), hemliga uppdragskort (ett per barn, klipps isär från elevbladet), projektor för introduktionen inne",
+      "genomforande_enkelt": [
+        "Inne, innan rasten: Maximus berättar att alla ska få ett hemligt hjälteuppdrag idag.",
+        "Visa HERO-KORT 12–15 och läs upp de fyra superkrafterna: Uppmärksam, Modig, Godhjärtad, Rättvis.",
+        "Förklara regeln: uppdraget är hemligt. Ingen ska veta vad just du har. Du gör det i smyg på rasten.",
+        "Varje barn drar ett uppdragskort. Läs lågt för den som inte kan läsa själv — viska, så det förblir hemligt.",
+        "Ut på rasten — barnen gör sina uppdrag.",
+        "Samlas på avtalad plats efter rasten. Var och en som vill berättar vilken superkraft de tränade och hur det kändes."
+      ],
+      "tips": "Hemligheten är hela poängen — håll på den. Viska när du delar ut kort. Barnen som klarar att hålla tyst tycker det är spännande. Om någon glömmer sitt uppdrag på rasten — det är okej, påminn vänligt efteråt.",
+      "genomforande": [
+        {
+          "typ": "karaktär",
+          "bild": "maximus-hero",
+          "text": "Hej hjälte! Idag har jag något hemligt åt dig.\n\nVar och en av er får ett uppdrag. Ingen annan får veta vad just du ska göra.",
+          "uppgift": null
+        },
+        {
+          "typ": "kort_visning",
+          "rubrik": "Dina fyra superkrafter",
+          "nummer": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "text": "Uppmärksam ser den som är ensam. Modig vågar säga hej. Godhjärtad hjälper. Rättvis ser till att alla får vara med.",
+          "uppgift": "Vilken superkraft tror du att du får idag?"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Så funkar uppdraget",
+          "text": "Du drar ett hemligt kort.\n\nPå rasten gör du ditt uppdrag — i smyg.\n\nIngen vet vad du har. Det är hemligt!",
+          "uppgift": "Dra ditt kort. Titta tyst — visa inte för någon."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Ut på rasten",
+          "text": "Nu går vi ut.\n\nKom ihåg ditt hemliga uppdrag.\n\nVi ses här igen när rasten är slut.",
+          "uppgift": "Lycka till, hjälte!"
+        },
+        {
+          "typ": "reflektion_inline",
+          "rubrik": "Tillbaka inne — berätta om ni vill",
+          "fraga": "Vilken superkraft tränade du? Och gjorde du ditt uppdrag?",
+          "uppgift": "Den som vill får berätta. Ingen måste."
+        }
+      ],
+      "reflektionsfragor": [
+        "Hur kändes det att göra något snällt i smyg — när ingen visste om det?",
+        "Var det lätt eller svårt att komma ihåg ditt uppdrag på rasten?",
+        "Vilken superkraft vill du träna på nästa rast?"
+      ],
+      "trygg_start": "\"Idag får alla ett hemligt uppdrag. Det finns inget rätt eller fel — det viktiga är att du försöker. Och om du glömmer bort det, så är det också helt okej.\"",
+      "trygg_avslutning": "Maximus tackar alla hjältar. \"Skolgården var full av superkrafter idag — fast nästan ingen såg det. Det är så riktiga hjältar jobbar.\"",
+      "npf": "Viska uppdraget eller använd ett uppdragskort med en enkel bild för barn som inte läser. Ge ett konkret, litet uppdrag till den som behöver tydlighet (t.ex. \"säg hej till en kompis\"). Tvinga ingen att berätta efteråt — att bara ha gjort sitt uppdrag räcker. Barn som tycker rastens frihet är svår kan få göra uppdraget tillsammans med en vuxen.",
+      "forskningskoppling": "Att utföra snälla handlingar mot andra ökar barns egen trivsel och stärker gruppgemenskapen — och effekten är större när handlingen är konkret och genomförd, inte bara pratad om (Layous et al., 2012).",
+      "kalltyp": "Forskning",
+      "risker": "Låg risk. Se till att uppdragen är så enkla att alla kan lyckas. Ha koll på att inget barn känner sig misslyckat om de glömde — betona att försöket är det som räknas. Undvik uppdrag som kräver att ett specifikt barn 'tar emot' hjälpen, så ingen pekas ut.",
+      "efter_lektionen": "Kan bli en återkommande ritual — ett nytt hemligt uppdrag varje fredag. Sätt gärna upp HERO-KORT 12–15 på väggen som påminnelse om de fyra krafterna.",
+      "interna_anteckningar": "Första skolgårds-/uteövningen i banken. Experiment/lek-format för de yngsta. Bygger vidare på MINA SUPERKRAFTER (BTH-008) — den introducerar krafterna inne, den här tränar dem ute. Bra ordning: kör BTH-008 först, sen denna. NOTERA: Övningen levererades från Claude.ai-agenten som BTH-014, men det ID:t var upptaget. Lagt som BTH-017 (efter att gamla 17+18 togs bort efter forskningspanel-granskning).",
+      "elevmaterial": true,
+      "elevmaterial_typ": "Samtalskort",
+      "behov_produktion": null,
+      "material_innehall": {
+        "intro": "Klipp isär korten — ett hemligt uppdrag per barn. Varje uppdrag tränar en av de fyra superkrafterna. Dela ut i smyg.",
+        "uppgifter": [
+          {
+            "typ": "uppdragskort",
+            "label": "Hemliga hjälteuppdrag (klipp isär)",
+            "kort": [
+              "UPPMÄRKSAM: Leta efter någon som är ensam på rasten. Gå dit.",
+              "UPPMÄRKSAM: Hitta en kompis som ser ledsen ut. Fråga hur det är.",
+              "MODIG: Säg hej till någon du inte brukar leka med.",
+              "MODIG: Fråga någon om de vill vara med och leka.",
+              "GODHJÄRTAD: Hjälp någon med något på rasten — utan att de ber om det.",
+              "GODHJÄRTAD: Säg något snällt till en kompis.",
+              "RÄTTVIS: Se till att alla får vara med i leken.",
+              "RÄTTVIS: Om någon blir lämnad utanför — bjud in dem."
+            ]
+          }
+        ],
+        "reflektioner": [
+          "Hur kändes det att göra ditt uppdrag i smyg?",
+          "Vilken superkraft vill du träna nästa rast?"
+        ]
+      }
     }
   ]
 }

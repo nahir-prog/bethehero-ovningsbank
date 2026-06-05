@@ -1018,6 +1018,29 @@ function buildMatHTML(e){
       body+=`<div style="margin-bottom:14px"><div class="mat-section-lbl">Min superkraft</div><div class="mat-superkraft">`;
       for(const a of (u.alternativ||[])) body+=`<div class="mat-sk"><div class="mat-sk-box"></div>${a}</div>`;
       body+='</div></div>';
+    } else if(u.typ==='uppdragskort'){
+      const SUPERFARG = {
+        'UPPMÄRKSAM':'#2B5FBF', 'MODIG':'#1B2A6B',
+        'GODHJÄRTAD':'#E74C3C', 'RÄTTVIS':'#27AE60'
+      };
+      const kort = u.kort || [];
+      body += `<div style="margin-bottom:14px"><div class="mat-section-lbl">${u.label||'Hemliga uppdragskort (klipp isär)'}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">`;
+      for(const k of kort){
+        const colonIdx = k.indexOf(':');
+        const superkraft = colonIdx > -1 ? k.substring(0,colonIdx).trim() : '';
+        const uppdrag = colonIdx > -1 ? k.substring(colonIdx+1).trim() : k;
+        const farg = SUPERFARG[superkraft] || '#1B2A6B';
+        body += `<div style="border:1.5px dashed #94a3b8;border-radius:8px;padding:12px 14px;background:#fafbff;position:relative;min-height:90px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+            <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:${farg};">${superkraft}</div>
+            <div style="font-size:14px;color:${farg};opacity:.4;">✦</div>
+          </div>
+          <div style="font-size:11.5px;color:#1a1a2e;line-height:1.5;font-weight:500;">${uppdrag}</div>
+          <div style="position:absolute;bottom:6px;right:10px;font-size:8px;color:#94a3b8;letter-spacing:1px;">BE THE HERO</div>
+        </div>`;
+      }
+      body += `</div><div style="font-size:9px;color:#94a3b8;text-align:center;margin-top:8px;font-style:italic;">✂ Klipp längs den streckade linjen</div></div>`;
     } else if(u.typ==='kroppskarta'){
       body+=`<div style="margin-bottom:14px"><div class="mat-section-lbl">${u.label||'Markera på kroppen'}</div>
       <div style="display:flex;gap:18px;align-items:flex-start;">
