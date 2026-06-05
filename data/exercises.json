@@ -2041,6 +2041,126 @@
       "elevmaterial": false,
       "elevmaterial_typ": null,
       "behov_produktion": null
+    },
+    {
+      "id": "BTH-019",
+      "titel": "OSYNLIGA REGLER",
+      "fokustema": [
+        "Grupptryck & normer",
+        "Empati & perspektiv"
+      ],
+      "alder": "Åk 7, 8, 9",
+      "alder_tags": [
+        "7",
+        "8",
+        "9"
+      ],
+      "tid": 40,
+      "forberedelse_tid": 5,
+      "ovningstyp": [
+        "Värderingsövning",
+        "Samtal / diskussion"
+      ],
+      "arbetssatt": [
+        "grupp om 3–5",
+        "helklass"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": true,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-05",
+      "ny": true,
+      "syfte": "Eleverna lär sig att diskriminering sällan låter som ett glåpord — den göms i vem som inte blir vald, vilket skämt som passerar och vem som aldrig får frågan. De tränar på att känna igen de sju diskrimineringsgrunderna i situationer som ser harmlösa ut.",
+      "forberedelse": "Öppna presentationsläget. Dela in klassen i spaningsgrupper om 3–5 innan ni börjar (eller låt det ske snabbt på plats).",
+      "material": "Projektor",
+      "genomforande_enkelt": [
+        "Visa kroken: en situation som klassen direkt ska avgöra — diskriminering eller inte? Låt det vara oklart.",
+        "Visa de sju diskrimineringsgrunderna en gång som referens. Förklara: det här är gruppens verktyg, inte ett facit.",
+        "Visa Fall 1. Grupperna avgör i 3 minuter: är det diskriminering, och vilken grund? Lyft skillnaderna i helklass.",
+        "Kör Fall 2 och Fall 3 på samma sätt.",
+        "Visa vändningen: en sida av Fall 2 som grupperna troligtvis missade. Låt det sjunka in.",
+        "Avsluta med pulse_check och den sista reflektionsbilden."
+      ],
+      "tips": "Poängen är inte att hitta rätt svar — det är att se det dolda. Pressa inte fram konsensus. Om en grupp landar i 'det är inte diskriminering' och kan motivera det — bra, då tänker de. Fall 2-vändningen är hjärtat i övningen; ta den lugnt.",
+      "genomforande": [
+        {
+          "typ": "projektor",
+          "rubrik": "En enkel fråga",
+          "text": "I en klass väljs lagkaptener varje gympalektion. Det är alltid samma fem personer som väljs. Ingen har bestämt det. Det bara blir så.\n\nÄr det diskriminering — eller inte?",
+          "uppgift": "Säg vad du tänker till den som sitter bredvid — 30 sekunder.",
+          "timer_sekunder": 30
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Era verktyg",
+          "text": "Det finns sju grunder i svensk lag som man inte får diskrimineras på:\n\nKön · Könsidentitet eller uttryck · Etnisk tillhörighet · Religion eller trosuppfattning · Funktionsnedsättning · Sexuell läggning · Ålder",
+          "uppgift": "Ni är spaningsgrupper. Er uppgift: hitta den som gömmer sig under ytan.",
+          "timer_sekunder": null
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "Fall 1",
+          "text": "En grupp planerar ett spel på rasten. När Sam vill vara med säger någon: \"Aa men du fattar ändå inte reglerna, du kan väl bara titta.\" Sam har en synnedsättning.\n\nÄr det diskriminering — och vilken grund?",
+          "uppgift": "Spaningsgrupp — 3 minuter.",
+          "timer_sekunder": 180
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "chat",
+          "rubrik": "Fall 2",
+          "text": "I klassens gruppchatt skriver någon: \"Vi tar väl inte med Aram på festen, han firar ändå inte sånt här.\" Flera svarar med en tumme upp.\n\nÄr det diskriminering — och vilken grund?",
+          "uppgift": "Spaningsgrupp — 3 minuter.",
+          "timer_sekunder": 180
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "Fall 3",
+          "text": "En lärare delar in klassen i grupper och säger: \"Killarna tar de tunga sakerna, tjejerna fixar dekorationerna.\" Ingen reagerar — det känns helt normalt.\n\nÄr det diskriminering — och vilken grund?",
+          "uppgift": "Spaningsgrupp — 3 minuter.",
+          "timer_sekunder": 180
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Vändningen — tillbaka till Fall 2",
+          "text": "Ni la troligtvis Fall 2 på religion. Men titta igen.\n\nIngen frågade Aram. De bestämde åt honom vad han firar, vad han tror, vad han vill. Det kanske inte ens stämde.\n\nDet är där diskrimineringen sitter: i antagandet ingen kollade.",
+          "uppgift": null,
+          "timer_sekunder": null
+        },
+        {
+          "typ": "pulse_check",
+          "fraga": "Hur ofta tror du att den här sortens 'osynliga' diskriminering händer på din skola?",
+          "sub": "Visa med fingrar — 1 nästan aldrig, 5 hela tiden",
+          "skala_min": "Nästan aldrig",
+          "skala_max": "Hela tiden"
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Innan vi slutar",
+          "text": "Gå tillbaka till lagkaptenerna i början. Samma fem väljs varje gång, ingen bestämde det.\n\nVad var det egentligen som styrde — och vem märkte aldrig att de inte blev valda?",
+          "uppgift": null,
+          "timer_sekunder": null
+        }
+      ],
+      "reflektionsfragor": [
+        "Vilket av fallen var svårast att avgöra — och varför?",
+        "Har du själv varit med om en 'osynlig regel' som bestämde vem som fick vara med?",
+        "Vad kan du göra nästa gång du märker att ett antagande görs om någon — utan att någon frågar?"
+      ],
+      "trygg_start": "\"Det vi pratar om idag handlar om påhittade situationer — inte om någon i den här klassen. Och det finns inga självklara rätta svar. Det är själva poängen.\"",
+      "trygg_avslutning": "Var och en formulerar tyst en 'osynlig regel' de sett på skolan — och behåller den för sig själv. \"Ni har precis tränat på att se det de flesta vuxna missar.\"",
+      "npf": "Fallen visas på skärm så ingen behöver hålla instruktionen i huvudet. Grupparbetet ger stöd åt elever som inte vill tala i helklass. Tydlig tidssignal på varje fall. Elever som vill kan skriva sitt svar istället för att säga det högt.",
+      "forskningskoppling": "Modern diskrimineringsforskning visar att de mest utbredda formerna är subtila och vardagliga — så kallade mikroaggressioner — som ofta passerar obemärkt eftersom de saknar tydlig illvilja (Sue et al., 2007).",
+      "kalltyp": "Forskning",
+      "risker": "Kan väcka starka känslor hos elever som själva utsatts för någon av grunderna. Var uppmärksam på elever som blir tysta eller berörda. Undvik att låta diskussionen glida in på verkliga personer i klassen — styr tillbaka till fallen.",
+      "efter_lektionen": "Kan följas upp med en uppgift där klassen tillsammans formulerar ett par 'synliga regler' som motvikt — vad som faktiskt ska gälla hos dem.",
+      "interna_anteckningar": "Första övningen i banken som tar upp diskrimineringsgrunderna direkt. Vändningen i Fall 2 är det som gör den — testa om den landar och justera vid behov. Passar i ett tema om normer eller inkludering. NOTERA: levererad från Claude.ai som BTH-014, lagt som BTH-019 (nästa lediga ID).",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
     }
   ]
 }
