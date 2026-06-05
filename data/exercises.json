@@ -1936,6 +1936,110 @@
           "Vilken superkraft vill du träna nästa rast?"
         ]
       }
+    },
+    {
+      "id": "BTH-018",
+      "titel": "GÖRA FÖRLÅT",
+      "fokustema": [
+        "Empati & perspektiv",
+        "Konflikter"
+      ],
+      "alder": "F-klass",
+      "alder_tags": [
+        "F"
+      ],
+      "tid": 20,
+      "forberedelse_tid": 3,
+      "ovningstyp": [
+        "Rollspel / scenarier",
+        "Samtal / diskussion"
+      ],
+      "arbetssatt": [
+        "helklass",
+        "i par"
+      ],
+      "status": "klar",
+      "filmovning": false,
+      "kan_vacka_kanslor": false,
+      "elevhalsa": false,
+      "kort": "Inga",
+      "datum_skapad": "2026-06-05",
+      "ny": true,
+      "syfte": "Barnen lär sig vad förlåt betyder — och att ordet inte räcker. Ett riktigt förlåt syns: man gör något också. De får prova själva.",
+      "forberedelse": "Öppna presentationsläget. Inga utskrifter behövs. Tänk igenom hur du vill leda det korta paret längst bak.",
+      "material": "Projektor",
+      "genomforande_enkelt": [
+        "Maximus frågar klassen vad förlåt betyder. Låt några barn svara.",
+        "Visa berättelsen om Noah och Lova — Noah råkar välta Lovas torn. Han säger förlåt men gör inget mer.",
+        "Fråga klassen: blev Lova glad? Lyssna på svaren.",
+        "Visa berättelsen igen — men nu hjälper Noah till att bygga upp tornet. Fråga: vad var skillnaden?",
+        "Berätta: ett riktigt förlåt har två delar — man säger det OCH gör något.",
+        "Barnen provar i par: den ena säger förlåt, den andra visar hur man kan göra förlåt också. Byt sen.",
+        "Samlas. Den som vill berättar vad de gjorde."
+      ],
+      "tips": "Håll berättelsen kort och spela gärna med rösten — barnen lever sig in. Poängen är enkel: säga + göra. Upprepa den meningen flera gånger så fastnar den. Om ett par kör fast, ge dem ett färdigt exempel: 'Noah kan hjälpa till att bygga igen.'",
+      "genomforande": [
+        {
+          "typ": "karaktär",
+          "bild": "maximus",
+          "text": "Hej kompis! Idag ska vi prata om ett litet ord som är jättestort.\n\nFörlåt.",
+          "uppgift": "Vad betyder förlåt? Räck upp handen om du vet."
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "Noah och Lova",
+          "text": "Lova har byggt ett högt torn med klossar.\n\nNoah springer förbi och råkar välta det. Allt rasar.\n\nNoah säger \"förlåt\" — och går vidare och leker.",
+          "uppgift": "Lyssna på berättelsen."
+        },
+        {
+          "typ": "reflektion_inline",
+          "rubrik": "Vad hände med Lova?",
+          "fraga": "Noah sa förlåt. Men blev Lova glad igen?",
+          "uppgift": "Räck upp handen och berätta vad du tror."
+        },
+        {
+          "typ": "scenario_visual",
+          "illustration": "klassrum",
+          "rubrik": "Noah och Lova — en gång till",
+          "text": "Tornet rasar igen.\n\nMen den här gången säger Noah förlåt — och sätter sig ner och hjälper Lova att bygga upp tornet igen.\n\nLova ler.",
+          "uppgift": "Lyssna noga. Vad gjorde Noah den här gången?"
+        },
+        {
+          "typ": "reflektion_inline",
+          "rubrik": "Vad var skillnaden?",
+          "fraga": "Första gången sa Noah bara förlåt. Andra gången gjorde han något också. Vilket förlåt blev bäst?",
+          "uppgift": "Säg en sak till din bänkkamrat."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Säga OCH göra",
+          "text": "Ett riktigt förlåt har två delar:\n\n1. Du SÄGER förlåt.\n2. Du GÖR något också — hjälper, lagar, eller är snäll.",
+          "uppgift": "Säg det med mig: säga OCH göra."
+        },
+        {
+          "typ": "projektor",
+          "rubrik": "Nu provar ni",
+          "text": "Jobba två och två.\n\nDen ena säger förlåt.\nDen andra visar hur man kan GÖRA förlåt också.\n\nSen byter ni.",
+          "uppgift": "Prova tillsammans. Jag går runt och tittar."
+        }
+      ],
+      "reflektionsfragor": [
+        "Har du någon gång sagt förlåt till någon? Vad gjorde du sen?",
+        "Vad kan du göra, förutom att säga förlåt, om du råkar göra någon ledsen?",
+        "Hur känns det inuti när någon gör förlåt på riktigt mot dig?"
+      ],
+      "trygg_start": "\"Alla råkar göra fel ibland — det är helt vanligt. Idag ska vi lära oss vad man kan göra sen. Det finns inga fel svar här.\"",
+      "trygg_avslutning": "Maximus avslutar: \"Nu kan ni en hemlighet. Förlåt är inte bara ett ord — det är något man gör. Ni är riktiga förlåt-hjältar.\"",
+      "npf": "Visa berättelsen med bild på skärmen som stöd för dem som inte kan läsa. Ge konkreta exempel på vad 'göra förlåt' kan vara (hjälpa, laga, ge en sak tillbaka) så det inte blir abstrakt. Barn som tycker pararbete är svårt kan visa tillsammans med en vuxen istället. Tillåt att visa med kroppen istället för att prata.",
+      "forskningskoppling": "Små barn förstår ursäkter bättre när de kopplas till en konkret gottgörande handling — en ursäkt som följs av reparation upplevs som mer äkta och återställer relationen mer än ord ensamma (Vaish et al., 2011).",
+      "kalltyp": "Forskning",
+      "risker": "Låg risk. Om en pågående konflikt finns i klassen — undvik att låta de inblandade spela mot varandra i paret. Pressa aldrig ett barn att be om förlåt på riktigt inför andra; övningen handlar om att förstå, inte om att tvinga fram ursäkter.",
+      "efter_lektionen": "Använd 'säga och göra' som ett vardagsuttryck i klassrummet när konflikter uppstår: 'Hur kan du göra förlåt nu?' Då lever lärdomen vidare.",
+      "interna_anteckningar": "Renodlad F-klassövning. Kombinerar att se (Maximus berättelse) med att göra (pararbete) enligt önskemål. Maximus är endast programledare — berättelsens karaktärer heter Noah och Lova. Ingen koppling till en specifik tidigare övning, men passar bra ihop med känsloövningarna BTH-006 och BTH-013. NOTERA: levererades från Claude.ai som BTH-015, men det ID:t var upptaget av INGEN VINNARE. Lagt som BTH-018.",
+      "elevmaterial": false,
+      "elevmaterial_typ": null,
+      "behov_produktion": null
     }
   ]
 }
