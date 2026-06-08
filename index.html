@@ -141,6 +141,51 @@ a{color:inherit;text-decoration:none;}
 .tv-mtag{background:var(--s2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;}
 .tv-syfte{font-size:14px;color:#b0bcd4;line-height:1.65;max-width:600px;}
 
+/* ── SNABBKORT — lärarens 60-sekunders skanning ── */
+.t-quickcard{background:linear-gradient(135deg,var(--s1),var(--s2));border:1px solid var(--border);border-left:4px solid var(--gront);border-radius:9px;padding:16px 18px;margin:18px 0;}
+.t-quickcard-label{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gront);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.t-quickcard-quote{font-size:14px;color:var(--text);line-height:1.55;font-style:italic;margin-bottom:12px;padding:10px 14px;background:rgba(16,185,129,.06);border-radius:6px;border-left:2px solid var(--gront);}
+.t-quickcard-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);padding-top:10px;border-top:1px solid var(--border);}
+.t-quickcard-meta strong{color:var(--text);font-weight:600;}
+.t-quickcard-warn{display:inline-flex;align-items:center;gap:5px;color:var(--gult);font-weight:600;}
+
+/* ── VARNINGSRUTA för risker ── */
+.t-warning-section{background:rgba(239,68,68,.05);border:1px solid var(--border);border-left:4px solid var(--rott);border-radius:8px;overflow:hidden;}
+.t-warning-section .ts-h{background:rgba(239,68,68,.08);border-bottom-color:rgba(239,68,68,.2);}
+.t-warning-section .ts-h .ts-title{color:var(--rott);}
+.t-warning-section .ts-b{padding:14px 16px;}
+.t-warning-section .prose{color:#f0c4c4;}
+
+/* ── SLIDTHUMBNAILS — förhandsvisning av projektor-slides ── */
+.t-thumbs-section{background:var(--s1);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:14px;}
+.t-thumbs-header{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);cursor:pointer;}
+.t-thumbs-header .ts-title{font-size:12px;font-weight:800;}
+.t-thumbs-toggle{margin-left:auto;color:var(--muted);font-size:11px;transition:transform .15s;}
+.t-thumbs-section.open .t-thumbs-toggle{transform:rotate(180deg);}
+.t-thumbs-body{display:none;padding:14px 15px;}
+.t-thumbs-section.open .t-thumbs-body{display:block;}
+.t-thumbs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+.t-thumb{background:var(--s2);border:1px solid var(--border);border-radius:6px;overflow:hidden;cursor:default;transition:border-color .15s;}
+.t-thumb:hover{border-color:var(--pl);}
+.t-thumb-canvas{aspect-ratio:16/9;background:#0a0d14;display:flex;flex-direction:column;justify-content:center;padding:10px;position:relative;overflow:hidden;}
+.t-thumb-typebadge{position:absolute;top:5px;right:6px;font-size:8px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);padding:1px 5px;border-radius:3px;}
+.t-thumb-title{font-size:9px;font-weight:800;letter-spacing:.5px;color:var(--pl);margin-bottom:3px;text-transform:uppercase;}
+.t-thumb-text{font-size:10px;color:rgba(255,255,255,.85);line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.t-thumb-mv{display:flex;gap:3px;margin-top:4px;}
+.t-thumb-mv-dot{width:8px;height:8px;border-radius:2px;}
+.t-thumb-mv-dot.gult{background:var(--gult);}.t-thumb-mv-dot.gront{background:var(--gront);}.t-thumb-mv-dot.blatt{background:var(--blatt);}.t-thumb-mv-dot.rott{background:var(--rott);}
+.t-thumb-meta{padding:5px 8px;font-size:9px;color:var(--muted);background:var(--s1);border-top:1px solid var(--border);display:flex;justify-content:space-between;}
+
+/* ── COLLAPSIBLE — Visa mer ── */
+.t-collapse{background:var(--s1);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.t-collapse-h{display:flex;align-items:center;gap:7px;padding:11px 15px;cursor:pointer;background:rgba(255,255,255,.01);transition:background .12s;}
+.t-collapse-h:hover{background:rgba(255,255,255,.03);}
+.t-collapse-h .ts-title{flex:1;}
+.t-collapse-arrow{color:var(--muted);font-size:12px;transition:transform .15s;}
+.t-collapse.open .t-collapse-arrow{transform:rotate(180deg);}
+.t-collapse-body{display:none;padding:14px 16px;border-top:1px solid var(--border);}
+.t-collapse.open .t-collapse-body{display:block;}
+
 /* Sections */
 .ts{background:var(--s1);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
 .ts-h{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);}
@@ -893,6 +938,11 @@ function buildTeacherHTML(e){
   const sidebarMaterial=e.elevmaterial?`<div class="sc"><div class="sc-t">Elevmaterial</div><div onclick="openMat('${e.id}')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--s2);border:1px solid var(--border);border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;transition:border-color .12s" onmouseover="this.style.borderColor='var(--pl)'" onmouseout="this.style.borderColor='var(--border)'"><span>📄 ${e.elevmaterial_typ}</span><span style="color:var(--pl)">Förhandsgranska & skriv ut ↗</span></div></div>`:'';
   const prodSection=e.behov_produktion?`<div class="ts"><div class="ts-h"><span class="ts-icon">🎬</span><span class="ts-title">Behöver produktion</span></div><div class="ts-b"><div class="prod-b"><div class="prod-types">${e.behov_produktion.typer.map(t=>`<span class="pbadge ${t}">${t}</span>`).join('')}</div><div class="prod-desc">${e.behov_produktion.beskrivning}</div>${e.behov_produktion.manus?`<div class="plbl" style="color:var(--muted)">Manus</div><div class="prod-manus">${e.behov_produktion.manus}</div>`:''} ${e.behov_produktion.elevenlabs_prompt?`<div class="plbl" style="color:var(--gront);margin-top:8px">ElevenLabs-prompt</div><div class="prod-prompt">${e.behov_produktion.elevenlabs_prompt}</div>`:''}</div></div></div>`:'';
 
+  // Generera thumbnails av projektor-slides
+  const thumbsHTML = buildSlideThumbnails(e);
+  // Rensa citationstecken från trygg start för snabbkort
+  const tryggStartClean = (e.trygg_start||'').replace(/^["«»""]|["«»""]$/g,'').trim();
+
   return`
   <div class="tv-topbar">
     <div class="tv-left">
@@ -901,7 +951,7 @@ function buildTeacherHTML(e){
     </div>
     <div class="tv-right">
       <button class="tv-btn fav" id="tv-fav" onclick="tvFav()">☆ Favorit</button>
-      <button class="tv-btn used" id="tv-used" onclick="tvUsed()">⬜ Markera som använd</button>
+      <button class="tv-btn used" id="tv-used" onclick="tvUsed()">⬜ Använd</button>
       <button class="tv-btn" id="tv-edit-btn" onclick="toggleEdit()">✏ Redigera</button>
       <button class="tv-btn" onclick="printTeacher()" title="Skriv ut lärarvy">🖨 Skriv ut</button>
       <button class="start-btn" onclick="startPres()">▶ Starta övning</button>
@@ -925,6 +975,23 @@ function buildTeacherHTML(e){
         </div>
         <p class="tv-syfte editable-field" id="edit-syfte">${e.syfte}</p>
       </div>
+
+      <!-- SNABBKORT — 60 sekunders skanning -->
+      <div class="t-quickcard">
+        <div class="t-quickcard-label">🟢 Säg detta först — sätter trygg ram</div>
+        <div class="t-quickcard-quote">${tryggStartClean}</div>
+        <div class="t-quickcard-meta">
+          <span>⏱ <strong>${e.tid} min</strong></span>
+          <span>📋 <strong>${e.forberedelse_tid} min</strong> förberedelse</span>
+          <span>👥 <strong>${Array.isArray(e.arbetssatt)?e.arbetssatt.join(', '):e.arbetssatt}</strong></span>
+          ${e.kort!=='Inga'?`<span>🃏 <strong>${e.kort}</strong></span>`:''}
+          ${e.kan_vacka_kanslor?'<span class="t-quickcard-warn">⚠️ Kan väcka känslor</span>':''}
+        </div>
+      </div>
+
+      <!-- FÖRHANDSGRANSKA SLIDES (collapsible) -->
+      ${thumbsHTML}
+
       <div class="ts">
         <div class="ts-h"><span class="ts-icon">📋</span><span class="ts-title">Förberedelse & material</span></div>
         <div class="ts-b"><p class="prose">${e.forberedelse}</p><p class="prose" style="margin-top:6px;color:var(--muted)">${e.material}</p></div>
@@ -945,18 +1012,37 @@ function buildTeacherHTML(e){
           <div class="tb"><div class="tbl slut">🔵 Avslutning</div>${e.trygg_avslutning}</div>
         </div></div>
       </div>
-      <div class="ts">
-        <div class="ts-h"><span class="ts-icon">♿</span><span class="ts-title">NPF-anpassningar</span></div>
-        <div class="ts-b"><p class="prose">${e.npf}</p></div>
-      </div>
-      <div class="ts">
-        <div class="ts-h"><span class="ts-icon">⚠️</span><span class="ts-title">Risker</span></div>
+
+      <!-- RISKER som varningsruta -->
+      <div class="t-warning-section">
+        <div class="ts-h"><span class="ts-icon">⚠️</span><span class="ts-title">Risker — läs innan du kör</span></div>
         <div class="ts-b"><p class="prose">${e.risker}</p></div>
       </div>
-      <div class="ts">
-        <div class="ts-h"><span class="ts-icon">🔬</span><span class="ts-title">Forskningskoppling</span></div>
-        <div class="ts-b"><div class="fb-box"><div class="kbadge">${e.kalltyp}</div><p>${e.forskningskoppling}</p></div></div>
+
+      <!-- COLLAPSIBLE: NPF -->
+      <div class="t-collapse" onclick="this.classList.toggle('open')">
+        <div class="t-collapse-h">
+          <span class="ts-icon">♿</span>
+          <span class="ts-title">NPF-anpassningar</span>
+          <span class="t-collapse-arrow">▼</span>
+        </div>
+        <div class="t-collapse-body" onclick="event.stopPropagation()">
+          <p class="prose">${e.npf}</p>
+        </div>
       </div>
+
+      <!-- COLLAPSIBLE: Forskning -->
+      <div class="t-collapse" onclick="this.classList.toggle('open')">
+        <div class="t-collapse-h">
+          <span class="ts-icon">🔬</span>
+          <span class="ts-title">Forskningskoppling</span>
+          <span class="t-collapse-arrow">▼</span>
+        </div>
+        <div class="t-collapse-body" onclick="event.stopPropagation()">
+          <div class="fb-box"><div class="kbadge">${e.kalltyp}</div><p>${e.forskningskoppling}</p></div>
+        </div>
+      </div>
+
       ${prodSection}
     </div>
     <aside class="tv-aside">
@@ -1846,11 +1932,264 @@ document.addEventListener('keydown',e=>{
 });
 
 // ── Print teacher view ──
+// ── Slide-thumbnails — förhandsvisning för läraren ──
+function buildSlideThumbnails(e){
+  if(!e.genomforande || !e.genomforande.length) return '';
+  const accent = temaAccent(e);
+  const FARG = {gult:'#f59e0b',gront:'#10b981',blatt:'#3b82f6',rott:'#ef4444'};
+  const TYPLABEL = {
+    projektor:'TEXT', scenario_visual:'BILD', mitt_val:'MITT VAL', 'mitt-val':'MITT VAL',
+    karaktär:'KARAKTÄR', omröstning:'RÖST', pulse_check:'PULS', kort_visning:'HERO-KORT',
+    countdown:'TIMER', fysisk_linje:'RÖRELSE', reflektion_inline:'REFLEKTION',
+    superkraft_grid:'SUPERKRAFTER', film_scenario:'🎬 FILM'
+  };
+  const thumbs = e.genomforande.map((s,i)=>{
+    const lbl = TYPLABEL[s.typ] || s.typ.toUpperCase();
+    let body = '';
+    if(s.typ==='mitt-val'){
+      const dots = (s.alternativ||[]).map(a=>`<div class="t-thumb-mv-dot ${a.farg}"></div>`).join('');
+      body = `<div class="t-thumb-title">MITT VAL</div>
+              <div class="t-thumb-text">${(s.fraga||'').substring(0,80)}</div>
+              <div class="t-thumb-mv">${dots}</div>`;
+    } else if(s.typ==='pulse_check'){
+      body = `<div class="t-thumb-title">PULSE 1–5</div>
+              <div class="t-thumb-text">${(s.fraga||'').substring(0,80)}</div>`;
+    } else if(s.typ==='reflektion_inline'){
+      body = `<div class="t-thumb-title" style="color:${accent.c}">${s.rubrik||'Reflektion'}</div>
+              <div class="t-thumb-text" style="font-style:italic">"${(s.fraga||'').substring(0,80)}"</div>`;
+    } else if(s.typ==='karaktär'){
+      body = `<div class="t-thumb-title">${(s.namn||'Maximus').toUpperCase()}</div>
+              <div class="t-thumb-text">${(s.text||'').substring(0,80)}</div>`;
+    } else if(s.typ==='kort_visning'){
+      body = `<div class="t-thumb-title">HERO-KORT ${(s.nummer||[]).join(', ')}</div>
+              <div class="t-thumb-text">${(s.rubrik||s.text||'').substring(0,80)}</div>`;
+    } else if(s.typ==='film_scenario'){
+      body = `<div class="t-thumb-title">🎬 ${s.rubrik||'Film'}</div>
+              <div class="t-thumb-text">${(s.text||'').substring(0,80)}</div>`;
+    } else if(s.typ==='omröstning'){
+      body = `<div class="t-thumb-title">OMRÖSTNING</div>
+              <div class="t-thumb-text">${(s.fraga||'').substring(0,80)}</div>`;
+    } else if(s.typ==='fysisk_linje'){
+      body = `<div class="t-thumb-title" style="color:${accent.c}">${s.rubrik||'Påstående'}</div>
+              <div class="t-thumb-text">${(s.text||'').substring(0,80)}</div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:7px;color:rgba(255,255,255,.5);"><span>← ${s.vanster||'Håller med'}</span><span>${s.hoger||'Inte med'} →</span></div>`;
+    } else if(s.typ==='countdown'){
+      body = `<div class="t-thumb-title">⏱ ${s.sekunder||60} sek</div>
+              <div class="t-thumb-text">${(s.text||'').substring(0,80)}</div>`;
+    } else {
+      body = `<div class="t-thumb-title" style="color:${accent.c}">${s.rubrik||'Slide'}</div>
+              <div class="t-thumb-text">${(s.text||'').substring(0,90)}</div>`;
+    }
+    const timer = s.timer_sekunder ? `⏱ ${s.timer_sekunder}s` : '';
+    return `<div class="t-thumb">
+      <div class="t-thumb-canvas">
+        <div class="t-thumb-typebadge">${lbl}</div>
+        ${body}
+      </div>
+      <div class="t-thumb-meta">
+        <span>Slide ${i+1}</span>
+        ${timer?`<span>${timer}</span>`:''}
+      </div>
+    </div>`;
+  }).join('');
+  return `<div class="t-thumbs-section" onclick="this.classList.toggle('open')">
+    <div class="t-thumbs-header">
+      <span class="ts-icon">📽</span>
+      <span class="ts-title">Förhandsgranska projektor-slides (${e.genomforande.length})</span>
+      <span class="t-thumbs-toggle">▼</span>
+    </div>
+    <div class="t-thumbs-body" onclick="event.stopPropagation()">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px;">Det här ser eleverna när du startar övningen:</div>
+      <div class="t-thumbs-grid">${thumbs}</div>
+    </div>
+  </div>`;
+}
+
+// ── Skriv ut lärarvy — ny dokumentdesign ──
 function printTeacher(){
-  const c=document.getElementById('view-teacher').innerHTML;
-  const w=window.open('','_blank');
-  w.document.write('<!DOCTYPE html><html lang="sv"><head><meta charset="UTF-8"><title>Lärarinstruktion</title><style>body{font-family:-apple-system,sans-serif;background:white;color:#1a1a2e;padding:20px;} .tv-topbar,.tv-btn,.start-btn,.back-btn{display:none!important;} .tv-body{grid-template-columns:1fr!important;} .tv-aside{display:none!important;} .ts{border:1px solid #e2e8f0;border-radius:6px;margin-bottom:12px;} .ts-h{padding:8px 12px;border-bottom:1px solid #e2e8f0;background:#f8faff;} .ts-b{padding:12px;} .step{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;} .sn{width:22px;height:22px;background:#1B2A6B;color:white;border-radius:50%;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;} .st{font-size:13px;color:#374151;} .ri{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9;font-size:13px;} .rq{color:#2B5FBF;font-weight:800;} .trygg-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;} .tb{background:#f8faff;padding:10px;border-radius:4px;font-size:12px;} .tbl{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;} .tv-h1{font-size:22px;font-weight:900;color:#1B2A6B;margin-bottom:6px;} .tv-syfte{font-size:13px;color:#374151;margin-bottom:12px;} .tv-ap,.tv-mtag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px;background:#EEF4FF;color:#2B5FBF;border:1px solid #C7D2FE;margin-right:4px;} .tvf{font-size:11px;padding:3px 8px;border-radius:4px;margin-right:4px;} .prose{font-size:13px;color:#374151;} .fb-box{background:#f8faff;padding:10px;border-radius:4px;font-size:12px;} .kbadge{font-size:9px;background:#EEF4FF;color:#2B5FBF;padding:1px 6px;border-radius:3px;font-weight:800;margin-bottom:5px;display:inline-block;} .sc,.prod-b,.notes-ta,.mat-overlay,.toast{display:none!important;}</style></head><body>'+c+'</body></html>');
-  w.document.close(); w.focus(); setTimeout(()=>w.print(),400);
+  if(!cur) return;
+  const e = cur;
+  const today = new Date().toLocaleDateString('sv-SE',{year:'numeric',month:'long',day:'numeric'});
+  const tryggStart = (e.trygg_start||'').replace(/^["«»""]|["«»""]$/g,'').trim();
+  const stegHTML = e.genomforande_enkelt.map((s,i)=>`<li><div class="p-stepnum">${i+1}</div><div class="p-steptext">${s}</div></li>`).join('');
+  const refHTML = e.reflektionsfragor.map((r,i)=>`<li><span class="p-q">${i+1}.</span> ${r}</li>`).join('');
+  const checklist = [
+    e.forberedelse && {l:'Läst igenom förberedelser', t:e.forberedelse_tid+' min'},
+    e.material && {l:'Material på plats', t:e.material.substring(0,60)+(e.material.length>60?'…':'')},
+    e.kort!=='Inga' && {l:`${e.kort} delade ut`, t:''},
+    e.elevmaterial && {l:`${e.elevmaterial_typ} utskrivet`, t:''},
+    {l:'Presentationsläget öppnat', t:''},
+    e.kan_vacka_kanslor && {l:'Tänkt igenom om klassen är redo', t:''}
+  ].filter(Boolean).map(c=>`<li><div class="p-checkbox"></div><div><strong>${c.l}</strong>${c.t?` <span style="color:#64748b;font-weight:400">— ${c.t}</span>`:''}</div></li>`).join('');
+
+  const html = `<!DOCTYPE html><html lang="sv"><head><meta charset="UTF-8"><title>${e.titel} — Lärarinstruktion</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 22mm 16mm; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a2e;line-height:1.5;font-size:11pt;}
+
+  /* Sidhuvud — på första sidan */
+  .p-header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #1B2A6B;padding-bottom:10px;margin-bottom:18px;}
+  .p-brand{display:flex;align-items:center;gap:10px;}
+  .p-logo{width:38px;height:38px;background:#1B2A6B;color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;}
+  .p-brand-text{font-size:9pt;color:#64748b;}
+  .p-brand-text strong{display:block;font-size:11pt;color:#1B2A6B;letter-spacing:1px;}
+  .p-doctype{font-size:8pt;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase;text-align:right;}
+  .p-id{font-size:8pt;color:#94a3b8;margin-top:2px;}
+
+  /* Titel */
+  .p-title{font-size:24pt;font-weight:900;color:#1B2A6B;line-height:1.1;margin-bottom:8px;}
+  .p-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .p-mtag{font-size:9pt;font-weight:600;padding:3px 9px;border-radius:4px;background:#EEF4FF;color:#2B5FBF;border:1px solid #c7d2fe;}
+  .p-mtag.warn{background:#fef3c7;color:#92400e;border-color:#fcd34d;}
+  .p-mtag.kort{background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;}
+  .p-syfte{font-size:11pt;color:#374151;line-height:1.6;margin-bottom:18px;font-style:italic;border-left:3px solid #2B5FBF;padding-left:12px;}
+
+  /* Snabbkort */
+  .p-quickcard{background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #16a34a;border-radius:6px;padding:12px 14px;margin-bottom:16px;}
+  .p-quickcard-label{font-size:8pt;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#15803d;margin-bottom:6px;}
+  .p-quickcard-quote{font-size:11pt;font-style:italic;color:#1a1a2e;line-height:1.5;}
+
+  /* Sektion */
+  .p-section{margin-bottom:18px;page-break-inside:avoid;}
+  .p-section-title{font-size:9pt;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1B2A6B;margin-bottom:9px;display:flex;align-items:center;gap:6px;padding-bottom:5px;border-bottom:1px solid #cbd5e1;}
+  .p-section-body{font-size:10.5pt;color:#374151;line-height:1.6;}
+
+  /* Checklista */
+  .p-checklist{list-style:none;padding:0;}
+  .p-checklist li{display:flex;align-items:flex-start;gap:10px;padding:5px 0;}
+  .p-checkbox{width:14px;height:14px;border:1.5px solid #94a3b8;border-radius:3px;flex-shrink:0;margin-top:3px;}
+
+  /* Steg */
+  .p-steps{list-style:none;padding:0;}
+  .p-steps li{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid #f1f5f9;}
+  .p-stepnum{width:22px;height:22px;background:#1B2A6B;color:white;border-radius:50%;font-size:9pt;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .p-steptext{font-size:10.5pt;color:#1a1a2e;line-height:1.55;}
+
+  /* Trygg start/avslutning */
+  .p-trygg{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .p-trygg-box{padding:10px 12px;border-radius:5px;font-size:10pt;line-height:1.5;}
+  .p-trygg-box.start{background:#f0fdf4;border-left:3px solid #16a34a;}
+  .p-trygg-box.slut{background:#eff6ff;border-left:3px solid #3b82f6;}
+  .p-trygg-lbl{font-size:8pt;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;}
+  .p-trygg-box.start .p-trygg-lbl{color:#15803d;}
+  .p-trygg-box.slut .p-trygg-lbl{color:#1d4ed8;}
+
+  /* Risker — varning */
+  .p-warning{background:#fef2f2;border:1px solid #fecaca;border-left:4px solid #dc2626;border-radius:5px;padding:12px 14px;}
+  .p-warning-lbl{font-size:8pt;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#991b1b;margin-bottom:6px;}
+  .p-warning-text{font-size:10pt;color:#7f1d1d;line-height:1.55;}
+
+  /* Reflektion */
+  .p-refs{list-style:none;padding:0;}
+  .p-refs li{padding:6px 0;border-bottom:1px solid #f1f5f9;font-size:10.5pt;}
+  .p-q{color:#2B5FBF;font-weight:800;}
+
+  /* Tips */
+  .p-tips{background:#fefce8;border-left:3px solid #eab308;padding:10px 14px;border-radius:5px;font-size:10pt;color:#713f12;line-height:1.6;}
+
+  /* Forskning */
+  .p-forskning{font-size:9.5pt;color:#475569;line-height:1.6;border:1px dashed #cbd5e1;padding:10px 12px;border-radius:5px;background:#f8fafc;}
+  .p-kalltyp{display:inline-block;font-size:7.5pt;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:#EEF4FF;color:#2B5FBF;padding:1px 7px;border-radius:3px;margin-bottom:6px;}
+
+  /* Sidfot — fixed på varje sida */
+  .p-footer{position:fixed;bottom:8mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px solid #e2e8f0;font-size:8pt;color:#94a3b8;}
+
+  @media print {
+    body { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .p-section { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="p-header">
+  <div class="p-brand">
+    <div class="p-logo">H</div>
+    <div class="p-brand-text"><strong>BE THE HERO</strong>Lärarinstruktion</div>
+  </div>
+  <div>
+    <div class="p-doctype">${today}</div>
+    <div class="p-id">${e.id}</div>
+  </div>
+</div>
+
+<h1 class="p-title">${e.titel}</h1>
+<div class="p-meta">
+  <span class="p-mtag">👥 ${e.alder}</span>
+  <span class="p-mtag">⏱ ${e.tid} min</span>
+  <span class="p-mtag">📋 ${e.forberedelse_tid} min förberedelse</span>
+  <span class="p-mtag">${e.fokustema.join(' · ')}</span>
+  ${e.kort!=='Inga'?`<span class="p-mtag kort">🃏 ${e.kort}</span>`:''}
+  ${e.kan_vacka_kanslor?`<span class="p-mtag warn">⚠️ Kan väcka känslor</span>`:''}
+</div>
+<p class="p-syfte">${e.syfte}</p>
+
+<div class="p-quickcard">
+  <div class="p-quickcard-label">🟢 Säg detta först</div>
+  <div class="p-quickcard-quote">${tryggStart}</div>
+</div>
+
+<div class="p-section">
+  <div class="p-section-title">✅ Förberedelse — checklista</div>
+  <ul class="p-checklist">${checklist}</ul>
+</div>
+
+<div class="p-section">
+  <div class="p-section-title">▶️ Genomförande</div>
+  <ol class="p-steps">${stegHTML}</ol>
+</div>
+
+${e.tips?`<div class="p-section">
+  <div class="p-section-title">💡 Tips</div>
+  <div class="p-tips">${e.tips}</div>
+</div>`:''}
+
+<div class="p-section">
+  <div class="p-section-title">💬 Reflektionsfrågor (slutet)</div>
+  <ul class="p-refs">${refHTML}</ul>
+</div>
+
+<div class="p-section">
+  <div class="p-section-title">🛡️ Trygg start & avslutning</div>
+  <div class="p-trygg">
+    <div class="p-trygg-box start"><div class="p-trygg-lbl">🟢 Start</div>${e.trygg_start}</div>
+    <div class="p-trygg-box slut"><div class="p-trygg-lbl">🔵 Avslutning</div>${e.trygg_avslutning}</div>
+  </div>
+</div>
+
+<div class="p-section">
+  <div class="p-warning">
+    <div class="p-warning-lbl">⚠️ Risker — läs innan du kör</div>
+    <div class="p-warning-text">${e.risker}</div>
+  </div>
+</div>
+
+<div class="p-section">
+  <div class="p-section-title">♿ NPF-anpassningar</div>
+  <div class="p-section-body">${e.npf}</div>
+</div>
+
+<div class="p-section">
+  <div class="p-section-title">🔬 Forskningskoppling</div>
+  <div class="p-forskning">
+    <div class="p-kalltyp">${e.kalltyp}</div>
+    <div>${e.forskningskoppling}</div>
+  </div>
+</div>
+
+<div class="p-footer">
+  <span><strong style="color:#1B2A6B">BE THE HERO</strong> · bethehero.se</span>
+  <span>${e.titel} · ${e.id}</span>
+</div>
+
+</body></html>`;
+
+  const w = window.open('','_blank');
+  w.document.write(html);
+  w.document.close();
+  w.focus();
+  setTimeout(()=>w.print(),500);
 }
 
 // ── Copy text ──
