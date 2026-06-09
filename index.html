@@ -84,10 +84,65 @@ a{color:inherit;text-decoration:none;}
 .card{background:var(--s1);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
 .card:hover{border-color:var(--purple);box-shadow:0 3px 14px rgba(124,58,237,.1);}
 .card-stripe{height:3px;width:100%;}
-.card-stripe.klar{background:var(--gront);}
+/* Workflow-statusar — sätter färg på kortets toppribbon */
 .card-stripe.utkast{background:var(--dim);}
-.card-stripe.granskas{background:var(--gult);}
-.card-stripe.publicerad{background:var(--pl);}
+.card-stripe.pedagogisk_granskning{background:#f59e0b;}
+.card-stripe.material_produktion{background:#a855f7;}
+.card-stripe.sprakkoll{background:#facc15;}
+.card-stripe.klar_for_portal{background:var(--gront);}
+.card-stripe.exporterad{background:#3b82f6;}
+/* Legacy-statusar (mappar till nya) */
+.card-stripe.klar{background:var(--gront);}
+.card-stripe.granskas{background:#f59e0b;}
+.card-stripe.publicerad{background:#3b82f6;}
+
+/* QA-pill på kort + lärarvy */
+.qa-pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.3px;border:1px solid transparent;}
+.qa-pill.complete{background:rgba(16,185,129,.1);color:var(--gront);border-color:rgba(16,185,129,.3);}
+.qa-pill.almost{background:rgba(245,158,11,.1);color:#f59e0b;border-color:rgba(245,158,11,.3);}
+.qa-pill.incomplete{background:rgba(239,68,68,.08);color:var(--rott);border-color:rgba(239,68,68,.25);}
+.qa-pill .qa-bar{width:28px;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;}
+.qa-pill .qa-bar-fill{height:100%;background:currentColor;border-radius:2px;}
+.card-qa-missing{font-size:10px;color:var(--rott);margin-top:5px;font-style:italic;}
+
+/* QA-panel i lärarvy */
+.qa-panel{background:var(--s1);border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-top:14px;}
+.qa-panel-h{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--border);}
+.qa-panel-title{font-size:13px;font-weight:800;flex:1;}
+.qa-panel-score{font-size:14px;font-weight:900;}
+.qa-panel-score.complete{color:var(--gront);}
+.qa-panel-score.almost{color:#f59e0b;}
+.qa-panel-score.incomplete{color:var(--rott);}
+.qa-panel-progress{height:6px;background:var(--s3);}
+.qa-panel-progress-fill{height:100%;transition:width .3s;}
+.qa-panel-progress-fill.complete{background:var(--gront);}
+.qa-panel-progress-fill.almost{background:#f59e0b;}
+.qa-panel-progress-fill.incomplete{background:var(--rott);}
+.qa-panel-body{padding:12px 16px;}
+.qa-check{display:flex;gap:9px;padding:6px 0;font-size:12px;align-items:flex-start;border-bottom:1px solid var(--border);}
+.qa-check:last-child{border-bottom:none;}
+.qa-check-icon{width:16px;flex-shrink:0;font-weight:800;font-size:12px;margin-top:1px;}
+.qa-check.ok .qa-check-icon{color:var(--gront);}
+.qa-check.miss .qa-check-icon{color:var(--rott);}
+.qa-check.warn .qa-check-icon{color:#f59e0b;}
+.qa-check-label{color:var(--muted);}
+.qa-check.miss .qa-check-label,.qa-check.warn .qa-check-label{color:var(--text);}
+.qa-check-detail{font-size:11px;color:var(--muted);margin-top:2px;font-style:italic;}
+.qa-mark-btn{margin-top:14px;width:100%;background:var(--gront);color:#fff;border:none;padding:10px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .15s;}
+.qa-mark-btn:hover{opacity:.9;}
+.qa-mark-btn:disabled{background:var(--s3);color:var(--dim);cursor:not-allowed;}
+
+/* Status-pill — nya färger */
+.sp.utkast{background:rgba(74,85,104,.15);color:#9ca3af;}
+.sp.pedagogisk_granskning{background:rgba(245,158,11,.12);color:#f59e0b;}
+.sp.material_produktion{background:rgba(168,85,247,.12);color:#a855f7;}
+.sp.sprakkoll{background:rgba(250,204,21,.12);color:#facc15;}
+.sp.klar_for_portal{background:rgba(16,185,129,.12);color:var(--gront);}
+.sp.exporterad{background:rgba(59,130,246,.12);color:#3b82f6;}
+/* Legacy */
+.sp.granskas{background:rgba(245,158,11,.1);color:#f59e0b;}
+.sp.klar{background:rgba(16,185,129,.1);color:var(--gront);}
+.sp.publicerad{background:rgba(59,130,246,.1);color:#3b82f6;}
 .card-body{padding:13px 14px 11px;}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:7px;}
 .card-title{font-size:13px;font-weight:800;line-height:1.2;flex:1;}
@@ -617,10 +672,20 @@ a{color:inherit;text-decoration:none;}
     <span class="f-label">Status</span>
     <div class="f-group">
       <button class="fb on" data-f="status" data-v="alla" onclick="setF('status','alla',this)">Alla</button>
-      <button class="fb" data-f="status" data-v="utkast" onclick="setF('status','utkast',this)">● Utkast</button>
-      <button class="fb" data-f="status" data-v="granskas" onclick="setF('status','granskas',this)">● Granskas</button>
-      <button class="fb" data-f="status" data-v="klar" onclick="setF('status','klar',this)">● Klar</button>
-      <button class="fb" data-f="status" data-v="publicerad" onclick="setF('status','publicerad',this)">● Publicerad</button>
+      <button class="fb" data-f="status" data-v="utkast" onclick="setF('status','utkast',this)"><span style="color:#9ca3af">●</span> Utkast</button>
+      <button class="fb" data-f="status" data-v="pedagogisk_granskning" onclick="setF('status','pedagogisk_granskning',this)"><span style="color:#f59e0b">●</span> Pedagogisk granskning</button>
+      <button class="fb" data-f="status" data-v="material_produktion" onclick="setF('status','material_produktion',this)"><span style="color:#a855f7">●</span> Material/produktion</button>
+      <button class="fb" data-f="status" data-v="sprakkoll" onclick="setF('status','sprakkoll',this)"><span style="color:#facc15">●</span> Språkkoll</button>
+      <button class="fb" data-f="status" data-v="klar_for_portal" onclick="setF('status','klar_for_portal',this)"><span style="color:#10b981">●</span> Klar för portal</button>
+      <button class="fb" data-f="status" data-v="exporterad" onclick="setF('status','exporterad',this)"><span style="color:#3b82f6">●</span> Exporterad</button>
+    </div>
+
+    <div class="f-divider"></div>
+    <span class="f-label">QA</span>
+    <div class="f-group">
+      <button class="fb on" data-f="qa" data-v="alla" onclick="setF('qa','alla',this)">Alla</button>
+      <button class="fb" data-f="qa" data-v="portal_ready" onclick="setF('qa','portal_ready',this)">✓ Klar för portal</button>
+      <button class="fb" data-f="qa" data-v="problem" onclick="setF('qa','problem',this)">⚠ Har problem</button>
     </div>
   </aside>
 
@@ -689,9 +754,211 @@ a{color:inherit;text-decoration:none;}
 
 <script>
 const YEARS = ['F','1','2','3','4','5','6','7','8','9'];
+
+// ══ STATUSMODELL — interna arbetsstatusar ══
+const STATUS_LABELS = {
+  'utkast':                 'Utkast',
+  'pedagogisk_granskning':  'Behöver pedagogisk granskning',
+  'material_produktion':    'Behöver material/produktion',
+  'sprakkoll':              'Behöver språkkoll',
+  'klar_for_portal':        'Klar för portal',
+  'exporterad':             'Exporterad till portal',
+  // Legacy
+  'granskas':               'Behöver pedagogisk granskning',
+  'klar':                   'Klar för portal',
+  'publicerad':             'Exporterad till portal'
+};
+const STATUS_OPTIONS = ['utkast','pedagogisk_granskning','material_produktion','sprakkoll','klar_for_portal','exporterad'];
+
+// Normalisera legacy-statusar
+function normStatus(s){
+  if(s==='klar') return 'klar_for_portal';
+  if(s==='granskas') return 'pedagogisk_granskning';
+  if(s==='publicerad') return 'exporterad';
+  return s||'utkast';
+}
+
+// ══ QA-CHECKLISTA — Klar för portal ══
+// Returnerar {score, total, missing:[{key,label,detail,severity}], passed:bool}
+function checkPortalReady(e){
+  const checks = [];
+  const add = (key,label,test,detail='',severity='miss') => {
+    checks.push({key,label,ok:!!test,detail,severity});
+  };
+
+  // ── OBLIGATORISKA FÄLT ──
+  add('titel','Titel finns',
+    e.titel && e.titel.length >= 3 && e.titel.length <= 60,
+    e.titel ? (e.titel.length > 60 ? 'För lång (max 60 tecken)' : '') : 'Saknas helt');
+
+  add('syfte','Syfte är kort och tydligt (40–300 tecken)',
+    e.syfte && e.syfte.length >= 40 && e.syfte.length <= 400,
+    e.syfte ? `${e.syfte.length} tecken` : 'Saknas');
+
+  add('alder','Årskurs/stadium angivet',
+    e.alder_tags && e.alder_tags.length > 0,
+    e.alder_tags ? `${e.alder_tags.length} årskurs(er)` : 'Saknas');
+
+  add('tid','Tidsåtgång angiven',
+    typeof e.tid === 'number' && e.tid > 0,
+    e.tid ? `${e.tid} min` : 'Saknas');
+
+  add('forberedelse_tid','Förberedelsetid angiven',
+    typeof e.forberedelse_tid === 'number',
+    e.forberedelse_tid != null ? `${e.forberedelse_tid} min` : 'Saknas');
+
+  add('arbetssatt','Arbetsform angiven',
+    e.arbetssatt && (Array.isArray(e.arbetssatt) ? e.arbetssatt.length : e.arbetssatt.length) > 0,
+    '');
+
+  add('material','Material angivet',
+    e.material && e.material.length >= 5,
+    e.material ? '' : 'Saknas');
+
+  add('fokustema','Fokustema angivet',
+    e.fokustema && e.fokustema.length > 0,
+    '');
+
+  add('ovningstyp','Typ av övning angiven',
+    e.ovningstyp && e.ovningstyp.length > 0,
+    '');
+
+  add('trygg_start','Trygg start / säg detta först',
+    e.trygg_start && e.trygg_start.length >= 20,
+    e.trygg_start ? '' : 'Saknas');
+
+  add('genomforande_enkelt','Genomförande har numrerade steg (minst 3)',
+    e.genomforande_enkelt && e.genomforande_enkelt.length >= 3,
+    e.genomforande_enkelt ? `${e.genomforande_enkelt.length} steg` : 'Saknas');
+
+  add('reflektionsfragor','Reflektionsfrågor finns (minst 2)',
+    e.reflektionsfragor && e.reflektionsfragor.length >= 2,
+    e.reflektionsfragor ? `${e.reflektionsfragor.length} frågor` : 'Saknas');
+
+  add('tips','Tips finns',
+    e.tips && e.tips.length >= 20,
+    e.tips ? '' : 'Rekommenderas');
+
+  add('risker','Risker / trygghetsnotis finns',
+    e.risker && e.risker.length >= 20,
+    e.risker ? '' : 'Saknas');
+
+  add('npf','NPF-anpassning finns',
+    e.npf && e.npf.length >= 30,
+    e.npf ? '' : 'Saknas');
+
+  // ── KVALITETSKRAV — varningar ──
+  // Inga interna ord i lärartext
+  const placeholders = /\b(TODO|FIXME|XXX|placeholder|lorem ipsum|test test)\b/i;
+  const allText = [e.syfte, e.tips, e.risker, e.npf, ...(e.genomforande_enkelt||[]), ...(e.reflektionsfragor||[])].filter(Boolean).join(' ');
+  add('no_placeholders','Inga placeholder-texter eller TODO',
+    !placeholders.test(allText),
+    placeholders.test(allText) ? 'Hittade TODO/placeholder i lärartext' : '');
+
+  // Trygg avslutning
+  add('trygg_avslutning','Trygg avslutning finns',
+    e.trygg_avslutning && e.trygg_avslutning.length >= 20,
+    '');
+
+  // Genomförande är inte alla en lång textklump
+  const longSteps = (e.genomforande_enkelt||[]).filter(s => s.length > 400);
+  add('no_long_steps','Inget steg är för långt (max 400 tecken)',
+    longSteps.length === 0,
+    longSteps.length > 0 ? `${longSteps.length} steg är för långa` : '');
+
+  // ── ÄKTA FÄLT — varningar (gör inte att check fallerar, men flaggas) ──
+  const warns = [];
+  if(!e.forskningskoppling || e.forskningskoppling.length < 30){
+    warns.push({key:'forskning',label:'Forskningskoppling saknas',severity:'warn'});
+  }
+  if(e.elevmaterial && !e.material_innehall){
+    warns.push({key:'material_innehall',label:'Markerad som elevmaterial men material_innehall saknas',severity:'miss'});
+  }
+  if(e.behov_produktion && !e.behov_produktion.beskrivning){
+    warns.push({key:'produktion_complete',label:'Behov av produktion är angivet men beskrivning saknas',severity:'warn'});
+  }
+
+  const total = checks.length;
+  const score = checks.filter(c => c.ok).length;
+  const missing = checks.filter(c => !c.ok);
+  const passed = missing.length === 0 && warns.filter(w=>w.severity==='miss').length === 0;
+
+  return {
+    score, total,
+    checks, missing, warns,
+    passed,
+    pct: Math.round(score/total*100),
+    bandClass: passed ? 'complete' : (score/total >= 0.85 ? 'almost' : 'incomplete')
+  };
+}
+
+// ══ QA-PANEL för lärarvy ══
+function buildQaPanel(e){
+  const qa = checkPortalReady(e);
+  const headerLabel = qa.passed ? '✓ Klar för portal' : `${qa.score}/${qa.total} uppfyllda`;
+  const checksHTML = qa.checks.map(c => `
+    <div class="qa-check ${c.ok?'ok':'miss'}">
+      <span class="qa-check-icon">${c.ok?'✓':'✗'}</span>
+      <div style="flex:1">
+        <span class="qa-check-label">${c.label}</span>
+        ${c.detail?`<div class="qa-check-detail">${c.detail}</div>`:''}
+      </div>
+    </div>`).join('');
+  const warnsHTML = qa.warns.map(w => `
+    <div class="qa-check ${w.severity}">
+      <span class="qa-check-icon">${w.severity==='miss'?'✗':'⚠'}</span>
+      <span class="qa-check-label">${w.label}</span>
+    </div>`).join('');
+  const markAsReadyBtn = qa.passed && normStatus(e.status)!=='klar_for_portal'
+    ? `<button class="qa-mark-btn" onclick="markPortalReady('${e.id}')">✓ Markera som "Klar för portal"</button>`
+    : (qa.passed && normStatus(e.status)==='klar_for_portal'
+        ? `<div style="text-align:center;color:var(--gront);font-size:12px;font-weight:700;margin-top:14px;padding:10px;background:rgba(16,185,129,.08);border-radius:6px;">✓ Markerad som klar för portal</div>`
+        : `<button class="qa-mark-btn" disabled>Fix ${qa.missing.length} sak${qa.missing.length===1?'':'er'} först</button>`);
+
+  return `<div class="qa-panel">
+    <div class="qa-panel-h">
+      <span class="qa-panel-title">📋 Klar för portal-checklista</span>
+      <span class="qa-panel-score ${qa.bandClass}">${headerLabel}</span>
+    </div>
+    <div class="qa-panel-progress"><div class="qa-panel-progress-fill ${qa.bandClass}" style="width:${qa.pct}%"></div></div>
+    <div class="qa-panel-body">
+      ${checksHTML}
+      ${warnsHTML}
+      ${markAsReadyBtn}
+    </div>
+  </div>`;
+}
+
+// Manuell uppdatering av status (i lärarvy)
+function updateStatus(id, newStatus){
+  const e = exercises.find(x=>x.id===id);
+  if(!e) return;
+  e.status = newStatus;
+  // Spara i localStorage som override (eftersom vi inte kan skriva tillbaka till JSON från frontend)
+  const overrides = JSON.parse(localStorage.getItem('bth_status_overrides')||'{}');
+  overrides[id] = newStatus;
+  localStorage.setItem('bth_status_overrides', JSON.stringify(overrides));
+  toast('✓ Status uppdaterad: ' + (STATUS_LABELS[newStatus]||newStatus));
+  // Uppdatera lärarvy och bank
+  if(cur && cur.id===id) showTeacher(id);
+  render();
+}
+
+function markPortalReady(id){
+  updateStatus(id, 'klar_for_portal');
+}
+
+// Vid uppstart: läs in status-overrides från localStorage
+function applyStatusOverrides(){
+  const overrides = JSON.parse(localStorage.getItem('bth_status_overrides')||'{}');
+  for(const e of exercises){
+    if(overrides[e.id]) e.status = overrides[e.id];
+  }
+}
 const TEMAN = ['Konflikter','Sociala roller','Mod & civilkurage','Digitala relationer','Empati & perspektiv','Grupptryck & normer','Mobbning & kränkningar','Gemenskap & inkludering','Självkänsla & identitet','Känslor & självreglering'];
 
 let exercises=[], cur=null, slides=[], cSlide=0, activeTab='bank';
+let fQa='alla';
 let selYears=new Set(), selTemas=new Set();
 let fTid='alla', fKort='alla', fStatus='alla';
 
@@ -708,6 +975,7 @@ const LS = {
 // ── Load ──
 fetch('data/exercises.json').then(r=>r.json()).then(d=>{
   exercises=d.exercises;
+  applyStatusOverrides();
   buildYearGrid();
   buildTemaGroup();
   updateCounts();
@@ -746,13 +1014,14 @@ function setF(type,val,btn){
   if(type==='tid')fTid=val;
   else if(type==='kort')fKort=val;
   else if(type==='status')fStatus=val;
+  else if(type==='qa')fQa=val;
   document.querySelectorAll(`[data-f="${type}"]`).forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
   render();updateChips();updateClearBtn();
 }
 
 function clearFilters(){
-  selYears=new Set();selTemas=new Set();fTid='alla';fKort='alla';fStatus='alla';
+  selYears=new Set();selTemas=new Set();fTid='alla';fKort='alla';fStatus='alla';fQa='alla';
   document.querySelectorAll('.yb').forEach(b=>b.classList.remove('on'));
   document.querySelectorAll('[data-tema]').forEach(b=>b.classList.remove('on'));
   document.querySelectorAll('[data-f]').forEach(b=>{
@@ -764,7 +1033,7 @@ function clearFilters(){
 }
 
 function updateClearBtn(){
-  const hasF=selYears.size>0||selTemas.size>0||fTid!=='alla'||fKort!=='alla'||fStatus!=='alla';
+  const hasF=selYears.size>0||selTemas.size>0||fTid!=='alla'||fKort!=='alla'||fStatus!=='alla'||fQa!=='alla';
   document.getElementById('clear-btn').classList.toggle('has-filters',hasF);
 }
 
@@ -775,7 +1044,8 @@ function updateChips(){
   selTemas.forEach(t=>chips.push(`<span class="achip">${t}<button class="achip-x" onclick="toggleTema('${t}',document.querySelector('[data-tema=\\'${t}\\']'))">×</button></span>`));
   if(fTid!=='alla')chips.push(`<span class="achip">${fTid==='40'?'40+ min':fTid+' min'}<button class="achip-x" onclick="setF('tid','alla',document.querySelector('[data-f=tid][data-v=alla]'))">×</button></span>`);
   if(fKort!=='alla')chips.push(`<span class="achip">${fKort}<button class="achip-x" onclick="setF('kort','alla',document.querySelector('[data-f=kort][data-v=alla]'))">×</button></span>`);
-  if(fStatus!=='alla')chips.push(`<span class="achip">${fStatus}<button class="achip-x" onclick="setF('status','alla',document.querySelector('[data-f=status][data-v=alla]'))">×</button></span>`);
+  if(fStatus!=='alla')chips.push(`<span class="achip">${STATUS_LABELS[fStatus]||fStatus}<button class="achip-x" onclick="setF('status','alla',document.querySelector('[data-f=status][data-v=alla]'))">×</button></span>`);
+  if(fQa!=='alla'){const lbl=fQa==='portal_ready'?'✓ Klar för portal':'⚠ Har problem';chips.push(`<span class="achip">${lbl}<button class="achip-x" onclick="setF('qa','alla',document.querySelector('[data-f=qa][data-v=alla]'))">×</button></span>`);}
   c.innerHTML=chips.join('');
 }
 
@@ -795,7 +1065,12 @@ function filterEx(){
       if(fKort==='HERO'&&!e.kort.startsWith('HERO'))return false;
       if(fKort==='Inga'&&e.kort!=='Inga')return false;
     }
-    if(fStatus!=='alla'&&e.status!==fStatus)return false;
+    if(fStatus!=='alla' && normStatus(e.status)!==fStatus) return false;
+    if(fQa!=='alla'){
+      const qa = checkPortalReady(e);
+      if(fQa==='portal_ready' && !qa.passed) return false;
+      if(fQa==='problem' && qa.passed) return false;
+    }
     return true;
   });
 }
@@ -829,8 +1104,12 @@ function render(){
   grid.innerHTML=filtered.map(e=>{
     const isFav=favs.has(e.id), isUsed=used.has(e.id);
     const years=e.alder_tags.map(a=>`<span class="cy">${a==='F'?'F-klass':'Åk '+a}</span>`).join('');
+    const status = normStatus(e.status);
+    const qa = checkPortalReady(e);
+    const qaLabel = qa.passed ? '✓ Klar för portal' : `${qa.score}/${qa.total}`;
+    const firstMissing = qa.missing.length>0 ? `Saknas: ${qa.missing[0].label.toLowerCase().replace(/[()].*$/,'').trim()}` : '';
     return`<div class="card" onclick="showTeacher('${e.id}')">
-      <div class="card-stripe ${e.status}"></div>
+      <div class="card-stripe ${status}"></div>
       <div class="card-body">
         <div class="card-top">
           <div class="card-title">${e.titel}</div>
@@ -843,13 +1122,12 @@ function render(){
         <div class="card-temas">${e.fokustema.map(t=>`<span class="ct">${t}</span>`).join('')}</div>
         <div class="card-meta"><span>⏱ ${e.tid} min</span><span>📋 ${e.ovningstyp[0]}</span></div>
         <div class="card-flags">
-          ${e.ny?'<span class="cf new">✦ Ny</span>':''}
+          <span class="qa-pill ${qa.bandClass}">${qaLabel}<span class="qa-bar"><span class="qa-bar-fill" style="width:${qa.pct}%"></span></span></span>
           ${e.kan_vacka_kanslor?'<span class="cf warn">⚠ Känslor</span>':''}
           ${e.kort!=='Inga'?`<span class="cf kort">🃏 ${e.kort}</span>`:''}
-          ${e.elevmaterial?`<span class="cf">📄 ${e.elevmaterial_typ}</span>`:''}
           ${e.behov_produktion?'<span class="cf prod">🎬 Produktion</span>':''}
-          ${isUsed?'<span class="cf used">✓ Använd</span>':''}
         </div>
+        ${firstMissing?`<div class="card-qa-missing">${firstMissing}</div>`:''}
       </div>
     </div>`;
   }).join('');
@@ -989,6 +1267,9 @@ function buildTeacherHTML(e){
         </div>
       </div>
 
+      <!-- QA-PANEL: Klar för portal-checklista -->
+      ${buildQaPanel(e)}
+
       <!-- FÖRHANDSGRANSKA SLIDES (collapsible) -->
       ${thumbsHTML}
 
@@ -1052,8 +1333,16 @@ function buildTeacherHTML(e){
         <div class="sr"><span class="sk">Tid</span><span class="sv">${e.tid} min</span></div>
         <div class="sr"><span class="sk">Förberedelse</span><span class="sv">${e.forberedelse_tid} min</span></div>
         <div class="sr"><span class="sk">Kort</span><span class="sv">${e.kort}</span></div>
-        <div class="sr"><span class="sk">Status</span><span class="sv"><span class="sp ${e.status}">${e.status}</span></span></div>
+        <div class="sr"><span class="sk">Status</span><span class="sv"><span class="sp ${normStatus(e.status)}">${STATUS_LABELS[normStatus(e.status)]||e.status}</span></span></div>
         <div class="sr"><span class="sk">ID</span><span class="sv" style="color:var(--dim);font-size:10px">${e.id}</span></div>
+      </div>
+
+      <!-- STATUS-VÄLJARE — manuell uppdatering -->
+      <div class="sc">
+        <div class="sc-t">Workflow-status</div>
+        <select onchange="updateStatus('${e.id}',this.value)" style="width:100%;background:var(--s2);border:1px solid var(--border);color:var(--text);font-size:12px;padding:7px 9px;border-radius:5px;cursor:pointer;">
+          ${STATUS_OPTIONS.map(s=>`<option value="${s}"${normStatus(e.status)===s?' selected':''}>${STATUS_LABELS[s]}</option>`).join('')}
+        </select>
       </div>
       <div class="sc">
         <div class="sc-t">Fokustema</div>
