@@ -1,7 +1,7 @@
 # Bankstatus — översikt för agenten
 
-**Senast uppdaterad:** 1781015453.2180235
-**Total:** 19 legacy + 6 schema v1 = 25 övningar
+**Senast uppdaterad:** 1781039031.324191
+**Total:** 19 legacy + 7 schema v1 = 26 övningar
 
 Denna fil är agentens snabbreferens för vad som finns i banken och vad som saknas.
 Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
@@ -18,6 +18,7 @@ Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
 - **RESPEKTORDET** (BTH-V2-001) — Åk 4,5,6 · Gemenskap & inkludering, Sociala roller
 - **KARTAN ÖVER OSS** (BTH-V2-002) — Åk 6,7,8 · Gemenskap & inkludering, Sociala roller
 - **DET DU INTE SA** (BTH-V2-003) — Åk 8,9 · Empati & perspektiv, Mod & civilkurage
+- **FRÅGA FÖRST** (BTH-V2-007) — Åk 2 · Digitala relationer, Empati & perspektiv
 
 ### Legacy (19 st, gamla strukturen — för referens & inspiration)
 - **ALLA ANDRA GÖR DET** (BTH-001) — Åk 7,8,9 · Grupptryck & normer, Sociala roller
@@ -49,8 +50,8 @@ Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
 | Konflikter | 3 | ✅ Bra |
 | Sociala roller | 5 | ✅ Bra |
 | Mod & civilkurage | 6 | ✅ Bra |
-| Digitala relationer | 2 | ⚠ Tunt |
-| Empati & perspektiv | 9 | ✅ Bra |
+| Digitala relationer | 3 | ✅ Bra |
+| Empati & perspektiv | 10 | ✅ Bra |
 | Grupptryck & normer | 3 | ✅ Bra |
 | Mobbning & kränkningar | 3 | ✅ Bra |
 | Gemenskap & inkludering | 6 | ✅ Bra |
@@ -65,7 +66,7 @@ Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
 |---|---|---|
 | F-klass | 6 | ✅ Bra |
 | Åk 1 | 5 | ✅ Bra |
-| Åk 2 | 5 | ✅ Bra |
+| Åk 2 | 6 | ✅ Bra |
 | Åk 3 | 7 | ✅ Bra |
 | Åk 4 | 7 | ✅ Bra |
 | Åk 5 | 8 | ✅ Bra |
@@ -78,8 +79,7 @@ Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
 
 ## 🎯 Tydliga luckor — agenten bör föreslå nya övningar här
 
-
-**Saknade tema-ålder-kombinationer (TOP 10):**
+**Saknade tema-ålder-kombinationer (TOP 15):**
 - Konflikter × Åk 1
 - Konflikter × Åk 2
 - Konflikter × Åk 3
@@ -90,11 +90,11 @@ Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
 - Mod & civilkurage × Åk 4
 - Digitala relationer × F-klass
 - Digitala relationer × Åk 1
-- Digitala relationer × Åk 2
 - Digitala relationer × Åk 3
 - Digitala relationer × Åk 4
 - Digitala relationer × Åk 7
-- Empati & perspektiv × Åk 2
+- Grupptryck & normer × F-klass
+- Grupptryck & normer × Åk 1
 
 
 ---

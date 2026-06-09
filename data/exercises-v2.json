@@ -1249,6 +1249,201 @@
         "createdBy": "AI-agent (migration från CSV)"
       },
       "requiresPrintMaterials": true
+    },
+    {
+      "schemaVersion": 1,
+      "title": "FRÅGA FÖRST",
+      "slug": "fraga-forst",
+      "shortDescription": "En kort och lekfull övning för åk 2 om att fråga innan man tar eller tittar på någon annans surfplatta, telefon eller skärm. Eleverna visar med tummen om det känns okej eller inte okej i olika små vardagssituationer.",
+      "teacherPurpose": "Eleverna lär sig att en skärm är någons egen sak — precis som ett gosedjur eller en ryggsäck. De övar på att fråga först och att det är okej att säga nej när någon vill ta deras platta. Det bygger en enkel regel klassen kan luta sig mot: fråga först.",
+      "image": null,
+      "taxonomy": {
+        "themes": [
+          "Digitala relationer",
+          "Empati & perspektiv"
+        ],
+        "focusAreas": [
+          "fråga först",
+          "respektera andras saker",
+          "säga nej"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "social förmåga"
+        ],
+        "classNeeds": [
+          "ny klass",
+          "återkommande rutin",
+          "vid konflikt om saker"
+        ]
+      },
+      "safety": {
+        "level": "standard",
+        "note": null
+      },
+      "metadata": {
+        "durationMinutes": 20,
+        "preparationMinutes": 2,
+        "gradeRange": [
+          "2"
+        ],
+        "stages": [
+          "lågstadiet"
+        ],
+        "workForm": [
+          "individuellt",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "projektor",
+          "ingen platta behövs — bara händer och tummar"
+        ],
+        "cardNeeds": []
+      },
+      "requiresPrintMaterials": false,
+      "lessonSetup": {
+        "safeStartText": "Idag pratar vi om plattor och telefoner — men ingen behöver ta fram sin egen. Vi använder bara våra tummar. Det finns inga fel svar.",
+        "preparation": "Slå på projektorn och ha presentationen redo. Öva en gång på tummen upp / tummen ner så alla förstår innan ni börjar.",
+        "materials": "Projektor för presentationen. Eleverna behöver bara sina händer.",
+        "printMaterials": [
+          {
+            "title": "VI FRÅGAR FÖRST — affisch",
+            "description": "A4-affisch med klassens regel. Sätt upp i klassrummet som påminnelse efter lektionen.",
+            "filename": "fraga-forst-affisch.html",
+            "url": "https://github.com/nahir-prog/bethehero-ovningsbank/blob/main/affischer/fraga-forst-affisch.html"
+          }
+        ]
+      },
+      "implementation": {
+        "intro": "Berätta att ni ska titta på små berättelser om barn och deras plattor — och att eleverna får svara med tummen.",
+        "steps": [
+          {
+            "title": "Visa tummen-tecknet",
+            "body": "Visa hur man svarar i dag: tummen UPP betyder 'det här känns okej', tummen NER betyder 'det här känns inte okej'. Låt alla testa en gång.",
+            "teacherSays": "Tummen upp om det känns okej. Tummen ner om det känns inte okej. Prova nu!",
+            "timeEstimate": "2 min"
+          },
+          {
+            "title": "Visa första berättelsen",
+            "body": "Visa berättelsen om Saga och Vidar på skärmen. Läs den högt om någon inte hunnit läsa själv. Låt alla visa sin tumme samtidigt.",
+            "subItems": [
+              "Räkna högt: 'ett, två, tre — visa tummen!'",
+              "Fråga någon med tummen ner: varför känns det inte okej?"
+            ],
+            "timeEstimate": "4 min"
+          },
+          {
+            "title": "Prata om att fråga först",
+            "body": "Prata tillsammans om vad Vidar kunde ha gjort i stället. Landa i den enkla regeln: man frågar först innan man tar någon annans platta.",
+            "teacherSays": "Vad kunde Vidar sagt i stället? Hur frågar man en kompis snällt?",
+            "timeEstimate": "3 min"
+          },
+          {
+            "title": "Visa fler berättelser",
+            "body": "Visa de andra berättelserna en i taget. Eleverna visar tummen för varje. Stanna upp och prata kort om de som blir tummen ner hos många.",
+            "subItems": [
+              "Det är okej att tycka olika",
+              "Fråga gärna: 'hur skulle DU känna om det var din platta?'"
+            ],
+            "timeEstimate": "6 min"
+          },
+          {
+            "title": "Öva att fråga och att säga nej",
+            "body": "Två och två: den ena frågar 'får jag låna din platta?' och den andra får svara ja ELLER nej. Båda svaren är okej. Byt sedan.",
+            "teacherSays": "Om kompisen säger nej — då är det nej. Och det är okej.",
+            "timeEstimate": "3 min"
+          }
+        ],
+        "outro": "Avsluta med klassens regel: 'Vi frågar först.' Säg den tillsammans en gång."
+      },
+      "reflection": {
+        "questions": [
+          "Hur känns det om någon tar din platta utan att fråga?",
+          "Hur frågar man en kompis snällt om man vill låna något?",
+          "Vad kan du göra nästa gång du vill titta på någon annans skärm?"
+        ]
+      },
+      "teacherSupport": {
+        "tips": [
+          "Håll tempot uppe — korta berättelser, snabb tumme, lite prat. Sitt inte fast i en enda situation.",
+          "Knyt an till saker barnen redan äger: 'det är som ditt gosedjur — man frågar först.'",
+          "Återkom till regeln 'vi frågar först' nästa gång det blir bråk om en platta eller en sak."
+        ],
+        "adaptations": [
+          "Elev som inte vill visa tummen inför andra kan visa mot bröstet eller bara titta.",
+          "Låt par-momentet bli ett trekompis-moment om någon hellre vill det."
+        ],
+        "riskNote": null,
+        "npfSupport": "Tummen-tecknet ger ett konkret, tydligt sätt att svara utan ord. Räkna alltid 'ett-två-tre' före varje tumme så det blir förutsägbart. Eleven kan välja att bara observera under par-momentet. Berättelserna är korta och visas en i taget så ingen behöver hålla flera saker i huvudet samtidigt.",
+        "followUp": "Sätt upp 'VI FRÅGAR FÖRST' i klassrummet. Peka på den nästa gång någon tar en kompis sak utan att fråga."
+      },
+      "presentations": [
+        {
+          "id": "fraga-forst-elev-01",
+          "exerciseSlug": "fraga-forst",
+          "title": "Fråga först",
+          "audience": "students",
+          "status": "ready",
+          "slides": [
+            {
+              "title": "Tummen upp eller tummen ner?",
+              "body": "Tummen UPP = det känns okej.\n\nTummen NER = det känns inte okej.",
+              "instructionForTeacher": "Låt alla testa en gång innan ni börjar. Räkna ett-två-tre.",
+              "slideType": "intro",
+              "mood": "energetic",
+              "durationEstimate": "2 min"
+            },
+            {
+              "title": "Saga och Vidar",
+              "body": "Saga ritar en katt på sin platta.\n\nVidar tar plattan ur hennes hand — utan att fråga.\n\nKänns det okej?",
+              "instructionForTeacher": "Läs högt. Räkna ett-två-tre, låt alla visa tummen. Fråga någon: varför?",
+              "slideType": "observation",
+              "mood": "focused",
+              "durationEstimate": "4 min"
+            },
+            {
+              "title": "Vad kunde Vidar göra?",
+              "body": "Hur frågar man en kompis snällt?",
+              "instructionForTeacher": "Samla förslag. Landa i regeln: man frågar först.",
+              "slideType": "discussion",
+              "mood": "collaborative",
+              "durationEstimate": "3 min"
+            },
+            {
+              "title": "Leo vill titta",
+              "body": "Leo lutar sig över och tittar på Minas skärm.\n\nHan frågar inte om han får.\n\nKänns det okej?",
+              "instructionForTeacher": "Räkna ett-två-tre. Fråga: hur skulle DU känna om det var din skärm?",
+              "slideType": "observation",
+              "mood": "focused",
+              "durationEstimate": "3 min"
+            },
+            {
+              "title": "Vi frågar först",
+              "body": "Fråga en kompis: 'Får jag låna din platta?'\n\nDen andra får svara ja ELLER nej.\n\nBåda svaren är okej.",
+              "instructionForTeacher": "Två och två. Påminn: säger kompisen nej, så är det nej. Byt sedan.",
+              "slideType": "activity",
+              "mood": "collaborative",
+              "durationEstimate": "3 min"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "author": "AI-agent + redaktör",
+        "source": "Nybyggd 2026-06-09 — fyller lucka Digitala relationer × åk 2",
+        "createdAt": "2026-06-09",
+        "language": "sv"
+      },
+      "internal": {
+        "id": "BTH-V2-007",
+        "productionStatus": "utkast",
+        "qualityChecklist": null,
+        "notes": "Fyller bank-luckan Digitala relationer × åk 2. Smal målgrupp (bara åk 2). Ingen platta behövs — medvetet val så övningen kan köras var som helst utan teknik utöver projektorn. Affisch byggd separat av Claude Code.",
+        "lockedFields": [],
+        "createdAt": "2026-06-09",
+        "updatedAt": "2026-06-09",
+        "createdBy": "AI-agent"
+      }
     }
   ]
 }
