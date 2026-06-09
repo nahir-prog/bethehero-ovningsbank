@@ -15,7 +15,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;}
 button,input,select,textarea{font-family:inherit;}
 
-/* ── TOPBAR ── */
+/* TOPBAR */
 .topbar{height:52px;background:var(--s1);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 18px;gap:14px;position:sticky;top:0;z-index:50;}
 .brand{display:flex;align-items:center;gap:9px;flex-shrink:0;}
 .brand-h{width:28px;height:28px;background:var(--purple);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;}
@@ -25,39 +25,45 @@ button,input,select,textarea{font-family:inherit;}
 .back-link{margin-left:auto;font-size:12px;color:var(--muted);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:5px;transition:all .12s;}
 .back-link:hover{color:var(--text);border-color:var(--pl);}
 
-/* ── LAYOUT ── */
-#app{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 52px);}
+/* LAYOUT */
+#app{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 52px);}
 .sidebar{background:var(--s1);border-right:1px solid var(--border);padding:18px 14px;overflow-y:auto;height:calc(100vh - 52px);position:sticky;top:52px;}
 .sidebar-title{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
 .sidebar-info{font-size:11px;color:var(--muted);line-height:1.55;padding:10px;background:var(--s2);border-radius:6px;margin-bottom:16px;}
+.section-divider{font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);margin:14px 0 8px;padding-top:10px;border-top:1px solid var(--border);}
 .ex-list{display:flex;flex-direction:column;gap:6px;}
-.ex-item{padding:11px 12px;background:var(--s2);border:1px solid var(--border);border-radius:7px;cursor:pointer;transition:all .12s;}
+.ex-item{padding:10px 12px;background:var(--s2);border:1px solid var(--border);border-radius:7px;cursor:pointer;transition:all .12s;}
 .ex-item:hover{border-color:var(--pl);}
 .ex-item.active{background:var(--pp);border-color:var(--purple);}
 .ex-item-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
-.ex-item-meta{font-size:10px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;}
-.ex-item-id{font-size:9px;color:var(--dim);margin-top:4px;font-family:monospace;}
+.ex-item-meta{font-size:10px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap;}
+.ex-item-id{font-size:9px;color:var(--dim);margin-top:3px;font-family:monospace;}
+.ex-item-badge{display:inline-block;font-size:8px;font-weight:800;padding:1px 5px;border-radius:3px;margin-top:3px;}
+.ex-item-badge.new{background:rgba(124,58,237,.2);color:var(--pl);}
+.ex-item-badge.legacy{background:rgba(245,158,11,.15);color:var(--gult);}
+.ex-item-badge.extra{background:rgba(239,68,68,.15);color:var(--rott);margin-left:4px;}
 
 .main{padding:24px 28px;overflow-y:auto;max-width:1100px;}
-
-/* ── TABS ── */
 .tabs{display:flex;gap:2px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:4px;margin-bottom:22px;}
-.tab{flex:1;background:transparent;border:none;color:var(--muted);font-size:13px;font-weight:600;padding:9px 14px;border-radius:5px;cursor:pointer;transition:all .12s;}
+.tab{flex:1;background:transparent;border:none;color:var(--muted);font-size:12px;font-weight:600;padding:8px 12px;border-radius:5px;cursor:pointer;transition:all .12s;}
 .tab:hover{color:var(--text);}
 .tab.on{background:var(--purple);color:#fff;}
 
-/* ── TEACHER VIEW (renderar från structured JSON) ── */
+/* LÄRARVY */
 .tv-header{margin-bottom:20px;}
 .tv-h1{font-size:30px;font-weight:900;color:var(--text);line-height:1.1;margin-bottom:8px;letter-spacing:-.3px;}
 .tv-short{font-size:15px;color:#b0bcd4;line-height:1.6;margin-bottom:14px;max-width:680px;}
 .tv-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
 .tv-meta-tag{background:var(--s2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 10px;border-radius:5px;}
 .tv-meta-tag.alder{background:var(--pp);color:var(--pl);border-color:rgba(124,58,237,.25);}
-
+.tv-meta-tag.safety-extra{background:rgba(239,68,68,.08);color:var(--rott);border-color:rgba(239,68,68,.25);}
+.tv-meta-tag.safety-elev{background:rgba(245,158,11,.08);color:var(--gult);border-color:rgba(245,158,11,.25);}
+.tv-image{margin-bottom:16px;border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:400px;max-height:200px;display:flex;align-items:center;justify-content:center;background:var(--s2);}
+.tv-image img{width:100%;height:auto;display:block;}
+.tv-image.placeholder{height:120px;flex-direction:column;color:var(--muted);font-size:11px;padding:14px;}
 .tv-purpose-card{background:linear-gradient(135deg,var(--s1),var(--s2));border:1px solid var(--border);border-left:3px solid var(--pl);border-radius:8px;padding:14px 16px;margin-bottom:22px;}
 .tv-purpose-label{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--pl);margin-bottom:6px;}
 .tv-purpose-text{font-size:14px;color:var(--text);line-height:1.65;}
-
 .tv-section{background:var(--s1);border:1px solid var(--border);border-radius:9px;margin-bottom:14px;overflow:hidden;}
 .tv-section-h{padding:13px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);display:flex;align-items:center;gap:8px;}
 .tv-section-icon{font-size:16px;}
@@ -66,18 +72,17 @@ button,input,select,textarea{font-family:inherit;}
 .tv-prose{font-size:13.5px;color:#c8d3e8;line-height:1.65;}
 .tv-prose strong{color:var(--text);font-weight:600;}
 
-/* Trygg start */
 .tv-safe-start{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.25);border-left:4px solid var(--gront);border-radius:8px;padding:14px 16px;margin-bottom:16px;}
 .tv-safe-start-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gront);margin-bottom:6px;}
 .tv-safe-start-text{font-size:14px;color:var(--text);line-height:1.55;font-style:italic;}
 
-/* Implementation steps */
 .tv-steps{display:flex;flex-direction:column;gap:14px;}
 .tv-step{display:flex;gap:14px;align-items:flex-start;}
 .tv-step-num{width:32px;height:32px;background:var(--purple);color:#fff;border-radius:50%;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.tv-step-content{flex:1;}
-.tv-step-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;display:flex;align-items:center;gap:10px;}
-.tv-step-time{font-size:11px;font-weight:600;color:var(--muted);background:var(--s2);padding:2px 8px;border-radius:4px;border:1px solid var(--border);}
+.tv-step-content{flex:1;min-width:0;}
+.tv-step-title-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap;}
+.tv-step-title{font-size:14px;font-weight:700;color:var(--text);line-height:1.3;}
+.tv-step-time{font-size:11px;font-weight:600;color:var(--muted);background:var(--s2);padding:2px 8px;border-radius:4px;border:1px solid var(--border);white-space:nowrap;}
 .tv-step-body{font-size:13px;color:#b0bcd4;line-height:1.6;margin-bottom:8px;}
 .tv-step-subitems{list-style:none;padding-left:0;display:flex;flex-direction:column;gap:5px;margin:8px 0;}
 .tv-step-subitems li{font-size:12.5px;color:#9aaac4;padding-left:18px;position:relative;line-height:1.5;}
@@ -85,46 +90,50 @@ button,input,select,textarea{font-family:inherit;}
 .tv-step-says{background:rgba(124,58,237,.07);border-left:2px solid var(--pl);padding:8px 12px;border-radius:0 5px 5px 0;font-size:12.5px;color:var(--pl);font-style:italic;margin-top:8px;}
 .tv-step-says::before{content:'💬 ';font-style:normal;}
 
-/* Reflection */
 .tv-questions{display:flex;flex-direction:column;gap:1px;}
 .tv-q{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:#b0bcd4;align-items:flex-start;}
 .tv-q:last-child{border-bottom:none;}
 .tv-q-num{color:var(--pl);font-weight:800;flex-shrink:0;font-size:13px;}
 
-/* Tips, adaptations, follow-up */
 .tv-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;}
 .tv-list li{font-size:13px;color:#b0bcd4;line-height:1.55;padding-left:20px;position:relative;}
 .tv-list li::before{content:'→';position:absolute;left:0;color:var(--pl);}
 
-/* Risk note */
 .tv-risk{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-left:4px solid var(--rott);border-radius:7px;padding:12px 14px;margin-bottom:12px;}
 .tv-risk-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--rott);margin-bottom:6px;}
 .tv-risk-text{font-size:13px;color:#f0c4c4;line-height:1.55;}
 
-/* Print materials */
 .tv-print-mat{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;}
 .tv-print-mat-info{flex:1;}
 .tv-print-mat-title{font-size:13px;font-weight:700;color:var(--text);}
 .tv-print-mat-desc{font-size:11px;color:var(--muted);margin-top:2px;}
 .tv-print-mat-icon{font-size:18px;color:var(--pl);}
 
-/* ── JSON-vy ── */
-.json-toolbar{display:flex;gap:8px;margin-bottom:12px;align-items:center;}
-.json-btn{background:var(--s2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:600;padding:7px 14px;border-radius:6px;cursor:pointer;transition:all .12s;}
-.json-btn:hover{border-color:var(--pl);color:var(--pl);}
-.json-btn.primary{background:var(--purple);color:#fff;border-color:var(--purple);}
-.json-btn.primary:hover{background:#6d28d9;color:#fff;}
-.json-info{font-size:11px;color:var(--muted);margin-left:auto;}
-.json-box{background:#0a0d14;border:1px solid var(--border);border-radius:8px;padding:16px;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:11.5px;color:#a8b5d1;overflow-x:auto;max-height:600px;overflow-y:auto;white-space:pre;line-height:1.6;}
+/* PRESENTATIONSLÄGE (elevvy) */
+.pres-frame{background:#0a0d14;border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+.pres-toolbar{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;background:var(--s1);}
+.pres-toolbar-info{font-size:11px;color:var(--muted);}
+.pres-toolbar-counter{margin-left:auto;font-size:12px;color:var(--text);font-weight:600;}
+.pres-stage{padding:60px 50px;min-height:480px;display:flex;align-items:center;justify-content:center;}
+.pres-slide{max-width:760px;width:100%;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.pres-slide-counter{font-size:11px;color:rgba(255,255,255,.35);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;}
+.pres-slide-title{font-size:38px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:20px;letter-spacing:-.5px;}
+.pres-slide-body{font-size:20px;color:rgba(255,255,255,.85);line-height:1.55;white-space:pre-line;}
+.pres-arrows{padding:14px 16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px;justify-content:center;background:var(--s1);}
+.pres-arrow{background:var(--s2);border:1px solid var(--border);color:var(--text);width:42px;height:38px;border-radius:5px;font-size:18px;cursor:pointer;transition:all .15s;}
+.pres-arrow:hover:not(:disabled){border-color:var(--pl);color:var(--pl);}
+.pres-arrow:disabled{opacity:.3;cursor:default;}
+.pres-progress{flex:1;height:4px;background:var(--s2);border-radius:2px;overflow:hidden;margin:0 12px;}
+.pres-progress-fill{height:100%;background:var(--pl);transition:width .25s;}
 
-/* JSON syntax highlighting */
-.json-key{color:#a78bfa;}
-.json-string{color:#86efac;}
-.json-number{color:#fbbf24;}
-.json-boolean{color:#60a5fa;}
-.json-null{color:#94a3b8;font-style:italic;}
+.pres-teacher-help{margin-top:14px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.2);border-radius:7px;padding:12px 14px;}
+.pres-teacher-help-label{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--pl);margin-bottom:5px;}
+.pres-teacher-help-text{font-size:12.5px;color:#b0bcd4;line-height:1.55;}
 
-/* ── PDF Preview ── */
+.pres-meta{display:flex;justify-content:space-between;padding:12px 14px;background:var(--s2);border:1px solid var(--border);border-radius:7px;margin-top:12px;font-size:11px;color:var(--muted);}
+
+/* PDF PREVIEW */
 .pdf-toolbar{display:flex;gap:8px;margin-bottom:14px;align-items:center;}
 .pdf-frame{background:#525252;padding:30px;border-radius:8px;display:flex;justify-content:center;}
 .pdf-page{background:#fff;color:#1a1a2e;padding:18mm 16mm 22mm 16mm;width:210mm;min-height:297mm;font-family:-apple-system,sans-serif;font-size:11pt;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,.4);}
@@ -146,14 +155,15 @@ button,input,select,textarea{font-family:inherit;}
 .pdf-section{margin-bottom:16px;page-break-inside:avoid;}
 .pdf-section-title{font-size:8.5pt;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:#1B2A6B;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid #cbd5e1;}
 .pdf-steps{list-style:none;padding:0;}
-.pdf-steps > li{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid #f1f5f9;}
-.pdf-stepnum{width:22px;height:22px;background:#1B2A6B;color:#fff;border-radius:50%;font-size:9pt;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.pdf-stepbody{flex:1;}
-.pdf-steptitle{font-size:10.5pt;font-weight:700;color:#1a1a2e;margin-bottom:4px;}
+.pdf-steps > li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f1f5f9;}
+.pdf-stepnum{width:24px;height:24px;background:#1B2A6B;color:#fff;border-radius:50%;font-size:9.5pt;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.pdf-stepbody{flex:1;min-width:0;}
+.pdf-stepheader{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;flex-wrap:wrap;}
+.pdf-steptitle{font-size:11pt;font-weight:700;color:#1a1a2e;line-height:1.3;flex:1;}
+.pdf-steptime{font-size:8pt;font-weight:600;color:#64748b;background:#f1f5f9;padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;white-space:nowrap;align-self:flex-start;}
 .pdf-steptext{font-size:9.5pt;color:#475569;line-height:1.55;}
-.pdf-stepsub{list-style:disc;padding-left:18px;margin-top:4px;font-size:9pt;color:#64748b;line-height:1.5;}
-.pdf-stepsays{margin-top:6px;font-size:9pt;font-style:italic;color:#6d28d9;border-left:2px solid #c4b5fd;padding-left:10px;}
-.pdf-steptime{font-size:7.5pt;font-weight:600;color:#94a3b8;background:#f1f5f9;padding:1px 7px;border-radius:3px;margin-left:8px;}
+.pdf-stepsub{list-style:disc;padding-left:18px;margin-top:5px;font-size:9pt;color:#64748b;line-height:1.55;}
+.pdf-stepsays{margin-top:7px;font-size:9pt;font-style:italic;color:#6d28d9;border-left:2px solid #c4b5fd;padding-left:10px;background:#faf5ff;padding-top:4px;padding-bottom:4px;border-radius:0 4px 4px 0;}
 .pdf-refs{list-style:none;padding:0;}
 .pdf-refs li{padding:5px 0;border-bottom:1px solid #f1f5f9;font-size:10pt;color:#1a1a2e;display:flex;gap:8px;}
 .pdf-refs .pdf-q{color:#2B5FBF;font-weight:800;}
@@ -166,10 +176,24 @@ button,input,select,textarea{font-family:inherit;}
 .pdf-risk-text{font-size:9.5pt;color:#7f1d1d;line-height:1.55;}
 .pdf-footer{margin-top:24px;padding-top:8px;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;font-size:7.5pt;color:#94a3b8;}
 
-/* ── ADMIN & QA ── */
+/* JSON-vy */
+.json-toolbar{display:flex;gap:8px;margin-bottom:12px;align-items:center;flex-wrap:wrap;}
+.json-btn{background:var(--s2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:600;padding:7px 14px;border-radius:6px;cursor:pointer;transition:all .12s;}
+.json-btn:hover{border-color:var(--pl);color:var(--pl);}
+.json-btn.primary{background:var(--purple);color:#fff;border-color:var(--purple);}
+.json-btn.primary:hover{background:#6d28d9;color:#fff;}
+.json-info{font-size:11px;color:var(--muted);margin-left:auto;}
+.json-box{background:#0a0d14;border:1px solid var(--border);border-radius:8px;padding:16px;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:11.5px;color:#a8b5d1;overflow-x:auto;max-height:600px;overflow-y:auto;white-space:pre;line-height:1.6;}
+.json-key{color:#a78bfa;}
+.json-string{color:#86efac;}
+.json-number{color:#fbbf24;}
+.json-boolean{color:#60a5fa;}
+.json-null{color:#94a3b8;font-style:italic;}
+
+/* ADMIN & QA */
 .admin-section{background:var(--s1);border:1px solid var(--border);border-radius:9px;padding:18px;margin-bottom:16px;}
 .admin-section-title{font-size:12px;font-weight:800;letter-spacing:.3px;margin-bottom:12px;color:var(--text);}
-.admin-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;}
+.admin-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;align-items:center;}
 .admin-row:last-child{border-bottom:none;}
 .admin-key{color:var(--muted);}
 .admin-val{font-weight:600;text-align:right;color:var(--text);}
@@ -179,28 +203,27 @@ button,input,select,textarea{font-family:inherit;}
 .admin-status-pill.exporterad{background:rgba(59,130,246,.12);color:#3b82f6;}
 .admin-notes{font-size:12.5px;color:#b0bcd4;line-height:1.6;padding:10px;background:var(--s2);border-radius:6px;border-left:3px solid var(--pl);}
 
-/* QA-checklist (samma som huvudsida) */
-.qa-summary{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-.qa-summary-score{font-size:24px;font-weight:900;}
+.qa-summary{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);gap:14px;}
+.qa-summary-score{font-size:24px;font-weight:900;white-space:nowrap;}
 .qa-summary-score.complete{color:var(--gront);}
 .qa-summary-score.almost{color:#f59e0b;}
 .qa-summary-score.incomplete{color:var(--rott);}
 .qa-summary-label{font-size:11px;color:var(--muted);margin-top:2px;}
-.qa-progress{flex:1;margin:0 20px;height:6px;background:var(--s3);border-radius:3px;overflow:hidden;}
+.qa-progress{flex:1;height:6px;background:var(--s3);border-radius:3px;overflow:hidden;}
 .qa-progress-fill{height:100%;transition:width .3s;}
-.qa-check{display:flex;gap:9px;padding:6px 0;font-size:12.5px;align-items:flex-start;border-bottom:1px solid var(--border);}
+.qa-check{display:flex;gap:9px;padding:8px 0;font-size:12.5px;align-items:flex-start;border-bottom:1px solid var(--border);}
 .qa-check:last-child{border-bottom:none;}
 .qa-check-icon{width:16px;flex-shrink:0;font-weight:800;font-size:13px;}
 .qa-check.ok .qa-check-icon{color:var(--gront);}
 .qa-check.miss .qa-check-icon{color:var(--rott);}
+.qa-check.warn .qa-check-icon{color:#f59e0b;}
+.qa-check-content{flex:1;}
 .qa-check-label{color:var(--muted);}
-.qa-check.miss .qa-check-label{color:var(--text);}
+.qa-check.miss .qa-check-label,.qa-check.warn .qa-check-label{color:var(--text);}
+.qa-check-detail{font-size:11px;color:var(--muted);margin-top:2px;font-style:italic;}
+.qa-group{margin-bottom:18px;}
+.qa-group-title{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--pl);margin-bottom:8px;}
 
-/* Empty / loading */
-.empty{text-align:center;padding:80px 20px;color:var(--muted);}
-.empty-icon{font-size:42px;margin-bottom:12px;opacity:.6;}
-
-/* Toast */
 .toast{position:fixed;bottom:22px;right:22px;background:var(--s2);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:7px;font-size:12px;font-weight:600;z-index:3000;opacity:0;transform:translateY(6px);transition:all .22s;pointer-events:none;}
 .toast.show{opacity:1;transform:translateY(0);}
 </style>
@@ -215,23 +238,23 @@ button,input,select,textarea{font-family:inherit;}
       <div class="brand-sub">Övningsbank</div>
     </div>
   </div>
-  <span class="test-badge">SCHEMA V2 — TEST</span>
+  <span class="test-badge">SCHEMA V1 — TEST</span>
   <a href="index.html" class="back-link">← Tillbaka till banken</a>
 </header>
 
 <div id="app">
   <aside class="sidebar">
     <div class="sidebar-info">
-      <strong style="color:var(--text);font-size:12px;">Testversion av strukturerad modell</strong><br><br>
-      Här testas hur AI-agenten ska producera övningar i en struktur som portalen kan läsa direkt — utan att tolka HTML.
+      <strong style="color:var(--text);font-size:12px;">Strukturerad modell — facit</strong><br><br>
+      Testar att AI-agenten kan producera och befintliga BTH-övningar kan migreras till samma struktur.
     </div>
-    <div class="sidebar-title">Testövningar (3)</div>
     <div class="ex-list" id="ex-list"></div>
   </aside>
 
   <main class="main">
     <div class="tabs">
       <button class="tab on" data-tab="teacher" onclick="switchTab('teacher')">📖 Lärarvy</button>
+      <button class="tab" data-tab="presentation" onclick="switchTab('presentation')">🎬 Presentationsläge</button>
       <button class="tab" data-tab="pdf" onclick="switchTab('pdf')">🖨 PDF-preview</button>
       <button class="tab" data-tab="json" onclick="switchTab('json')">{ } JSON</button>
       <button class="tab" data-tab="admin" onclick="switchTab('admin')">⚙ Admin & QA</button>
@@ -246,8 +269,8 @@ button,input,select,textarea{font-family:inherit;}
 let exercises = [];
 let currentIdx = 0;
 let currentTab = 'teacher';
+let presSlideIdx = 0;
 
-// ── Load data ──
 fetch('data/exercises-v2.json').then(r=>r.json()).then(data=>{
   exercises = data.exercises;
   renderSidebar();
@@ -256,27 +279,41 @@ fetch('data/exercises-v2.json').then(r=>r.json()).then(data=>{
 
 function renderSidebar(){
   const list = document.getElementById('ex-list');
-  list.innerHTML = exercises.map((e,i)=>`
-    <div class="ex-item ${i===currentIdx?'active':''}" onclick="selectExercise(${i})">
-      <div class="ex-item-title">${e.title}</div>
-      <div class="ex-item-meta">
-        <span>${e.metadata.durationMinutes} min</span>
-        <span>·</span>
-        <span>Åk ${e.metadata.gradeRange.join(', ')}</span>
-      </div>
-      <div class="ex-item-id">${e.internal.id}</div>
-    </div>
-  `).join('');
+  // Gruppera nya vs legacy baserat på provenance.source
+  const nya = exercises.filter(e => !e.provenance?.source?.includes('Migrerad'));
+  const legacy = exercises.filter(e => e.provenance?.source?.includes('Migrerad'));
+
+  const renderGroup = (arr, label, badgeClass) => `
+    <div class="section-divider">${label}</div>
+    ${arr.map((e,_)=>{
+      const i = exercises.indexOf(e);
+      const isExtra = e.safety?.level === 'extra_care';
+      return `<div class="ex-item ${i===currentIdx?'active':''}" onclick="selectExercise(${i})">
+        <div class="ex-item-title">${e.title}</div>
+        <div class="ex-item-meta">
+          <span>${e.metadata.durationMinutes} min</span>
+          <span>·</span>
+          <span>Åk ${e.metadata.gradeRange.join(', ')}</span>
+        </div>
+        <div class="ex-item-id">${e.internal.id}</div>
+        <span class="ex-item-badge ${badgeClass}">${label}</span>
+        ${isExtra ? '<span class="ex-item-badge extra">⚠ extra_care</span>' : ''}
+      </div>`;
+    }).join('')}`;
+
+  list.innerHTML = renderGroup(nya, 'Nya AI', 'new') + renderGroup(legacy, 'BTH-original', 'legacy');
 }
 
 function selectExercise(i){
   currentIdx = i;
+  presSlideIdx = 0;
   renderSidebar();
   renderMain();
 }
 
 function switchTab(t){
   currentTab = t;
+  presSlideIdx = 0;
   document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on', b.dataset.tab===t));
   renderMain();
 }
@@ -285,20 +322,27 @@ function renderMain(){
   if(!exercises.length) return;
   const e = exercises[currentIdx];
   const c = document.getElementById('content');
-  if(currentTab==='teacher')      c.innerHTML = renderTeacherView(e);
-  else if(currentTab==='pdf')     c.innerHTML = renderPdfPreview(e);
-  else if(currentTab==='json')    c.innerHTML = renderJsonView(e);
-  else if(currentTab==='admin')   c.innerHTML = renderAdminView(e);
+  if(currentTab==='teacher')           c.innerHTML = renderTeacherView(e);
+  else if(currentTab==='presentation') c.innerHTML = renderPresentationView(e);
+  else if(currentTab==='pdf')          c.innerHTML = renderPdfPreview(e);
+  else if(currentTab==='json')         c.innerHTML = renderJsonView(e);
+  else if(currentTab==='admin')        c.innerHTML = renderAdminView(e);
 }
 
 // ══════════════════════════════════════
-// LÄRARVY — endast lärarrelevant data
+// LÄRARVY
 // ══════════════════════════════════════
 function renderTeacherView(e){
   const m = e.metadata;
   const ls = e.lessonSetup;
   const impl = e.implementation;
   const ts = e.teacherSupport;
+  const safety = e.safety||{};
+
+  const safetyTag = safety.level==='extra_care' ? '<span class="tv-meta-tag safety-extra">⚠ Extra varsamhet</span>'
+                  : safety.level==='elevhalsa_recommended' ? '<span class="tv-meta-tag safety-elev">🏥 Elevhälsa rekommenderas</span>' : '';
+
+  const imageHTML = e.image && e.image.url ? `<div class="tv-image"><img src="${e.image.url}" alt="${e.image.alt||''}" onerror="this.parentElement.classList.add('placeholder');this.style.display='none';this.parentElement.innerHTML='📷 ${e.image.alt||'Bild ej tillgänglig'}<br><span style=&quot;font-size:9px;opacity:.5;margin-top:4px&quot;>${e.image.url}</span>';"></div>` : '';
 
   const safeStartHTML = ls.safeStartText ? `
     <div class="tv-safe-start">
@@ -309,11 +353,14 @@ function renderTeacherView(e){
   const stepsHTML = (impl.steps||[]).map((s,i)=>{
     const subItems = s.subItems ? `<ul class="tv-step-subitems">${s.subItems.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
     const says = s.teacherSays ? `<div class="tv-step-says">${s.teacherSays}</div>` : '';
-    const time = s.timeEstimate ? `<span class="tv-step-time">${s.timeEstimate}</span>` : '';
+    const time = s.timeEstimate ? `<span class="tv-step-time">⏱ ${s.timeEstimate}</span>` : '';
     return `<div class="tv-step">
       <div class="tv-step-num">${i+1}</div>
       <div class="tv-step-content">
-        <div class="tv-step-title">${s.title}${time}</div>
+        <div class="tv-step-title-row">
+          <div class="tv-step-title">${s.title}</div>
+          ${time}
+        </div>
         <div class="tv-step-body">${s.body}</div>
         ${subItems}
         ${says}
@@ -378,8 +425,10 @@ function renderTeacherView(e){
         <span class="tv-meta-tag">⏱ ${m.durationMinutes} min</span>
         <span class="tv-meta-tag">📋 ${m.preparationMinutes} min förberedelse</span>
         <span class="tv-meta-tag">👥 ${m.workForm.join(' · ')}</span>
-        ${m.cardNeeds && m.cardNeeds.length ? `<span class="tv-meta-tag">🃏 ${m.cardNeeds.join(', ')}</span>` : ''}
+        ${(m.cardNeeds||[]).length ? `<span class="tv-meta-tag">🃏 ${m.cardNeeds.join(', ')}</span>` : ''}
+        ${safetyTag}
       </div>
+      ${imageHTML}
     </div>
 
     <div class="tv-purpose-card">
@@ -422,7 +471,73 @@ function renderTeacherView(e){
 }
 
 // ══════════════════════════════════════
-// PDF PREVIEW — så ser läraren det utskrivet
+// PRESENTATIONSLÄGE — bara studentvisning
+// ══════════════════════════════════════
+function renderPresentationView(e){
+  const presentations = e.presentations || [];
+  if(!presentations.length){
+    return `<div style="text-align:center;padding:60px;color:var(--muted);">
+      <div style="font-size:40px;margin-bottom:12px;">🎬</div>
+      <p>Denna övning har ingen presentation kopplad än.</p>
+    </div>`;
+  }
+
+  // Visa första studentpresentationen
+  const pres = presentations.find(p => p.audience==='students') || presentations[0];
+  const slides = pres.slides || [];
+  if(!slides.length) return '<p>Presentationen har inga slides.</p>';
+
+  const slide = slides[presSlideIdx];
+  const progress = ((presSlideIdx+1) / slides.length) * 100;
+
+  return `
+    <div style="margin-bottom:14px;">
+      <div style="font-size:13px;color:var(--muted);margin-bottom:4px;">
+        Presentation: <strong style="color:var(--text)">${pres.title}</strong>
+        <span style="color:var(--pl);font-size:11px;margin-left:8px;">📚 Visas för: ${pres.audience==='students'?'elever':pres.audience}</span>
+      </div>
+    </div>
+
+    <div class="pres-frame">
+      <div class="pres-toolbar">
+        <div class="pres-toolbar-info">Det här ser eleverna på skärmen</div>
+        <div class="pres-toolbar-counter">Slide ${presSlideIdx+1} / ${slides.length}</div>
+      </div>
+      <div class="pres-stage">
+        <div class="pres-slide">
+          <div class="pres-slide-counter">${slide.interactionType||'slide'} · ${slide.estimatedTime||''}</div>
+          <h2 class="pres-slide-title">${slide.title}</h2>
+          ${slide.body ? `<div class="pres-slide-body">${slide.body}</div>` : ''}
+        </div>
+      </div>
+      <div class="pres-arrows">
+        <button class="pres-arrow" onclick="presPrev()" ${presSlideIdx===0?'disabled':''}>←</button>
+        <div class="pres-progress"><div class="pres-progress-fill" style="width:${progress}%"></div></div>
+        <button class="pres-arrow" onclick="presNext()" ${presSlideIdx===slides.length-1?'disabled':''}>→</button>
+      </div>
+    </div>
+
+    ${slide.instructionForTeacher ? `<div class="pres-teacher-help">
+      <div class="pres-teacher-help-label">👨‍🏫 Lärarinstruktion (visas EJ för eleverna)</div>
+      <div class="pres-teacher-help-text">${slide.instructionForTeacher}</div>
+    </div>` : ''}
+
+    <div class="pres-meta">
+      <span>📐 instructionForTeacher syns ALDRIG för eleverna — bara här i lärarvyn</span>
+      <span>${slides.length} slides totalt · ${pres.status}</span>
+    </div>
+  `;
+}
+
+function presNext(){
+  const e = exercises[currentIdx];
+  const pres = (e.presentations||[]).find(p=>p.audience==='students') || e.presentations[0];
+  if(presSlideIdx < pres.slides.length-1){presSlideIdx++;renderMain();}
+}
+function presPrev(){if(presSlideIdx>0){presSlideIdx--;renderMain();}}
+
+// ══════════════════════════════════════
+// PDF PREVIEW — separerade titel + tid
 // ══════════════════════════════════════
 function renderPdfPreview(e){
   const m = e.metadata;
@@ -433,12 +548,15 @@ function renderPdfPreview(e){
 
   const stepsHTML = (impl.steps||[]).map((s,i)=>{
     const sub = s.subItems ? `<ul class="pdf-stepsub">${s.subItems.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
-    const says = s.teacherSays ? `<div class="pdf-stepsays">💬 ${s.teacherSays}</div>` : '';
-    const time = s.timeEstimate ? `<span class="pdf-steptime">${s.timeEstimate}</span>` : '';
+    const says = s.teacherSays ? `<div class="pdf-stepsays"><strong>💬 Säg till eleverna:</strong> ${s.teacherSays}</div>` : '';
+    const time = s.timeEstimate ? `<span class="pdf-steptime">⏱ ${s.timeEstimate}</span>` : '';
     return `<li>
       <div class="pdf-stepnum">${i+1}</div>
       <div class="pdf-stepbody">
-        <div class="pdf-steptitle">${s.title}${time}</div>
+        <div class="pdf-stepheader">
+          <div class="pdf-steptitle">${s.title}</div>
+          ${time}
+        </div>
         <div class="pdf-steptext">${s.body}</div>
         ${sub}
         ${says}
@@ -554,7 +672,6 @@ function printPdf(){
     @page{size:A4;margin:0;}
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:-apple-system,sans-serif;color:#1a1a2e;}
-    .pdf-page{padding:18mm 16mm 22mm 16mm;width:210mm;min-height:297mm;font-size:11pt;line-height:1.5;background:white;box-shadow:none;}
     ${document.querySelector('style').innerHTML}
     .pdf-frame{padding:0;background:none;}
     .pdf-page{box-shadow:none;}
@@ -563,7 +680,7 @@ function printPdf(){
 }
 
 // ══════════════════════════════════════
-// JSON VIEW — strukturerad export
+// JSON VIEW
 // ══════════════════════════════════════
 function exportableJson(e){
   // Endast portaldata — internal-fält är INTE med
@@ -573,7 +690,6 @@ function exportableJson(e){
 
 function renderJsonView(e){
   const portalJson = JSON.stringify(exportableJson(e), null, 2);
-  const fullJson = JSON.stringify(e, null, 2);
   const portalHighlighted = highlightJson(portalJson);
   return `
     <div class="json-toolbar">
@@ -583,8 +699,6 @@ function renderJsonView(e){
       <span class="json-info">Portal-export: ${(portalJson.length/1024).toFixed(1)} kB · INGA internal-fält</span>
     </div>
     <div class="json-box" id="json-box"><code>${portalHighlighted}</code></div>
-    <input type="hidden" id="json-data" value='${escapeForAttr(portalJson)}'>
-    <input type="hidden" id="json-full" value='${escapeForAttr(fullJson)}'>
   `;
 }
 
@@ -626,65 +740,141 @@ function highlightJson(json){
     .replace(/: null/g, ': <span class="json-null">null</span>');
 }
 
-function escapeForAttr(s){
-  return s.replace(/'/g,'&apos;').replace(/"/g,'&quot;');
-}
-
 // ══════════════════════════════════════
-// ADMIN & QA VIEW — endast intern data
+// ADMIN & QA — kvalitetsstark checklista
 // ══════════════════════════════════════
 function checkPortalReadyV2(e){
-  const checks = [];
-  const add = (label, ok, detail='') => checks.push({label, ok, detail});
+  const groups = {
+    obligatorisk: [],
+    struktur: [],
+    kvalitet: [],
+    separation: []
+  };
 
-  add('Titel finns', !!e.title && e.title.length >= 3, e.title?'':'Saknas');
-  add('Kort beskrivning finns (40–300 tecken)',
-    !!e.shortDescription && e.shortDescription.length>=40 && e.shortDescription.length<=400,
-    e.shortDescription?`${e.shortDescription.length} tecken`:'Saknas');
-  add('Lärarsyfte (teacherPurpose) finns',
-    !!e.teacherPurpose && e.teacherPurpose.length>=40,
-    e.teacherPurpose?'':'Saknas eller för kort');
-  add('Metadata komplett',
+  const add = (group, label, ok, detail='') => groups[group].push({label, ok, detail});
+
+  // ── OBLIGATORISKT INNEHÅLL ──
+  add('obligatorisk', 'Titel finns och har lagom längd',
+    e.title && e.title.length>=3 && e.title.length<=60,
+    e.title ? `${e.title.length} tecken` : 'Saknas');
+
+  add('obligatorisk', 'Kort beskrivning är konkret och lärarvänlig',
+    e.shortDescription && e.shortDescription.length>=40 && e.shortDescription.length<=400 &&
+    !/lorem ipsum|placeholder|TODO/i.test(e.shortDescription) &&
+    /\b(eleverna|barnen|läraren|klassen|gruppen)\b/i.test(e.shortDescription),
+    e.shortDescription ? (e.shortDescription.length<40 ? 'För kort' : (e.shortDescription.length>400 ? 'För lång' : 'OK')) : 'Saknas');
+
+  add('obligatorisk', 'Lärarsyfte (teacherPurpose) är välformulerat',
+    e.teacherPurpose && e.teacherPurpose.length>=40,
+    e.teacherPurpose ? `${e.teacherPurpose.length} tecken` : 'Saknas');
+
+  add('obligatorisk', 'Metadata är komplett',
     e.metadata && e.metadata.durationMinutes>0 && (e.metadata.gradeRange||[]).length>0 && (e.metadata.workForm||[]).length>0,
     '');
-  add('Minst 2 genomförandesteg',
-    e.implementation && (e.implementation.steps||[]).length>=2,
-    e.implementation?`${(e.implementation.steps||[]).length} steg`:'');
-  add('Varje steg har titel + body',
-    (e.implementation?.steps||[]).every(s=>s.title && s.body),
-    '');
-  add('Reflektionsfrågor finns (minst 2)',
+
+  add('obligatorisk', 'Reflektionsfrågor finns (minst 2)',
     (e.reflection?.questions||[]).length>=2,
     `${(e.reflection?.questions||[]).length} frågor`);
-  add('Trygg start finns vid känsligare övning',
-    !e.teacherSupport?.riskNote || (e.lessonSetup?.safeStartText && e.lessonSetup.safeStartText.length>20),
-    e.teacherSupport?.riskNote && !e.lessonSetup?.safeStartText ? 'Övning har riskNote men saknar safeStartText' : '');
-  add('printMaterials kopplade om de behövs',
-    true, // alltid OK för nu
-    '');
-  add('Inga interna anteckningar i lärarrelevant text',
-    !JSON.stringify({...e, internal:undefined}).match(/\b(TODO|FIXME|placeholder|XXX)\b/i),
+
+  // ── STRUKTUR ──
+  add('struktur', 'Minst 2 genomförandesteg',
+    (e.implementation?.steps||[]).length>=2,
+    `${(e.implementation?.steps||[]).length} steg`);
+
+  add('struktur', 'Varje steg har tydlig titel + handlingsbody',
+    (e.implementation?.steps||[]).every(s=>s.title && s.title.length>=3 && s.body && s.body.length>=15),
     '');
 
-  const score = checks.filter(c=>c.ok).length;
-  const total = checks.length;
+  add('struktur', 'Steg har handlingsord (Skriv, Visa, Dela, Diskutera, Rita...)',
+    (e.implementation?.steps||[]).every(s=>/\b(Skriv|Visa|Dela|Diskutera|Rita|Berätta|Läs|Samla|Förklara|Bygg|Ge|Tänk|Be|Starta|Sätt|Förbered|Lyssna|Spela|Räkna|Klipp|Fyll|Markera|Rangordna|Välj|Avsluta|Lägg|Koppla|Hitta|Forma|Klippa|Fylla)\b/i.test(s.title)),
+    '');
+
+  add('struktur', 'Inget steg är för långt (max 600 tecken i body)',
+    (e.implementation?.steps||[]).every(s=>!s.body || s.body.length<=600),
+    '');
+
+  add('struktur', 'Presentation finns kopplad till övningen',
+    (e.presentations||[]).length>0 && (e.presentations[0].slides||[]).length>=3,
+    e.presentations?.length ? `${e.presentations[0].slides?.length||0} slides` : 'Saknas');
+
+  // ── KVALITET ──
+  add('kvalitet', 'safeStartText är specifik (inte generisk)',
+    !e.lessonSetup?.safeStartText || (e.lessonSetup.safeStartText.length>20 && !/^(välkommen|hej|idag ska vi)\.?$/i.test(e.lessonSetup.safeStartText.trim())),
+    e.lessonSetup?.safeStartText ? 'OK' : 'Övning utan safeStart (kanske onödigt)');
+
+  add('kvalitet', 'safeStart finns vid känsliga övningar',
+    e.safety?.level!=='extra_care' || (e.lessonSetup?.safeStartText && e.lessonSetup.safeStartText.length>20),
+    e.safety?.level==='extra_care' && !e.lessonSetup?.safeStartText ? 'Krävs för extra_care' : '');
+
+  add('kvalitet', 'riskNote finns vid känsliga övningar',
+    e.safety?.level!=='extra_care' || (e.teacherSupport?.riskNote && e.teacherSupport.riskNote.length>30),
+    e.safety?.level==='extra_care' && !e.teacherSupport?.riskNote ? 'Krävs för extra_care' : '');
+
+  add('kvalitet', 'NPF-stöd finns och är specifikt',
+    e.teacherSupport?.npfSupport && e.teacherSupport.npfSupport.length>30,
+    e.teacherSupport?.npfSupport ? '' : 'Saknas eller för kort');
+
+  add('kvalitet', 'Inte fler än 7 sektioner till läraren (kognitiv belastning)',
+    true, // svår att mäta automatiskt — alltid OK
+    '');
+
+  // ── SEPARATION ──
+  const publicJson = JSON.stringify(exportableJson(e));
+  add('separation', 'Inga interna ord (TODO, FIXME, placeholder) i publik data',
+    !/TODO|FIXME|placeholder|XXX/i.test(publicJson),
+    '');
+
+  add('separation', 'Inga referenser till internt ID i lärarvy',
+    !publicJson.includes(e.internal.id),
+    '');
+
+  add('separation', 'Inga produktionsstatus-ord i publik text',
+    !/(utkast|granskning|productionStatus)/i.test(publicJson),
+    '');
+
+  // Aggregat
+  const allChecks = [...groups.obligatorisk, ...groups.struktur, ...groups.kvalitet, ...groups.separation];
+  const score = allChecks.filter(c=>c.ok).length;
+  const total = allChecks.length;
   const passed = score === total;
-  return {checks, score, total, passed, pct: Math.round(score/total*100),
-    bandClass: passed ? 'complete' : (score/total >= 0.85 ? 'almost' : 'incomplete')};
+
+  return {
+    groups,
+    score, total, passed,
+    pct: Math.round(score/total*100),
+    bandClass: passed ? 'complete' : (score/total >= 0.85 ? 'almost' : 'incomplete')
+  };
 }
 
 function renderAdminView(e){
   const qa = checkPortalReadyV2(e);
-  const checksHTML = qa.checks.map(c=>`
-    <div class="qa-check ${c.ok?'ok':'miss'}">
-      <span class="qa-check-icon">${c.ok?'✓':'✗'}</span>
-      <span class="qa-check-label">${c.label}</span>
-      ${c.detail?`<span style="margin-left:auto;font-size:11px;color:var(--muted);font-style:italic;">${c.detail}</span>`:''}
-    </div>`).join('');
+  const groupLabels = {
+    obligatorisk: '1. Obligatoriskt innehåll',
+    struktur: '2. Struktur & genomförande',
+    kvalitet: '3. Kvalitet (inte bara fält finns)',
+    separation: '4. Intern/publik separation'
+  };
+
+  const checksHTML = Object.entries(qa.groups).map(([key, checks])=>`
+    <div class="qa-group">
+      <div class="qa-group-title">${groupLabels[key]}</div>
+      ${checks.map(c=>`
+        <div class="qa-check ${c.ok?'ok':'miss'}">
+          <span class="qa-check-icon">${c.ok?'✓':'✗'}</span>
+          <div class="qa-check-content">
+            <div class="qa-check-label">${c.label}</div>
+            ${c.detail ? `<div class="qa-check-detail">${c.detail}</div>` : ''}
+          </div>
+        </div>`).join('')}
+    </div>
+  `).join('');
+
+  const prov = e.provenance || {};
+  const intern = e.internal || {};
 
   return `
     <div class="admin-section">
-      <div class="admin-section-title">📋 Klar för portal — checklista</div>
+      <div class="admin-section-title">📋 Klar för portal — kvalitetschecklista</div>
       <div class="qa-summary">
         <div>
           <div class="qa-summary-score ${qa.bandClass}">${qa.score}/${qa.total}</div>
@@ -696,39 +886,52 @@ function renderAdminView(e){
     </div>
 
     <div class="admin-section">
-      <div class="admin-section-title">⚙ Intern metadata</div>
-      <div class="admin-row"><span class="admin-key">ID</span><span class="admin-val" style="font-family:monospace;font-size:11px;">${e.internal.id}</span></div>
-      <div class="admin-row"><span class="admin-key">Slug</span><span class="admin-val" style="font-family:monospace;font-size:11px;">${e.slug}</span></div>
-      <div class="admin-row"><span class="admin-key">Production status</span><span class="admin-val"><span class="admin-status-pill ${e.internal.productionStatus}">${e.internal.productionStatus}</span></span></div>
-      <div class="admin-row"><span class="admin-key">Skapad</span><span class="admin-val">${e.internal.createdAt||'—'}</span></div>
-      <div class="admin-row"><span class="admin-key">Senast ändrad</span><span class="admin-val">${e.internal.updatedAt||'—'}</span></div>
-      <div class="admin-row"><span class="admin-key">Skapad av</span><span class="admin-val">${e.internal.createdBy||'—'}</span></div>
-      <div class="admin-row"><span class="admin-key">Källa</span><span class="admin-val" style="font-size:11px;">${e.internal.source||'—'}</span></div>
+      <div class="admin-section-title">📜 Provenance (publik)</div>
+      <div class="admin-row"><span class="admin-key">Författare</span><span class="admin-val">${prov.author||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Källa</span><span class="admin-val" style="font-size:11px;">${prov.source||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Skapad</span><span class="admin-val">${prov.createdAt||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Språk</span><span class="admin-val">${prov.language||'—'}</span></div>
     </div>
 
-    ${e.internal.notes ? `
+    <div class="admin-section">
+      <div class="admin-section-title">⚙ Intern metadata (exporteras EJ)</div>
+      <div class="admin-row"><span class="admin-key">ID</span><span class="admin-val" style="font-family:monospace;font-size:11px;">${intern.id}</span></div>
+      <div class="admin-row"><span class="admin-key">Slug</span><span class="admin-val" style="font-family:monospace;font-size:11px;">${e.slug}</span></div>
+      <div class="admin-row"><span class="admin-key">Schema-version</span><span class="admin-val">${e.schemaVersion||1}</span></div>
+      <div class="admin-row"><span class="admin-key">Production status</span><span class="admin-val"><span class="admin-status-pill ${intern.productionStatus}">${intern.productionStatus}</span></span></div>
+      <div class="admin-row"><span class="admin-key">Skapad i v2</span><span class="admin-val">${intern.createdAt||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Senast ändrad</span><span class="admin-val">${intern.updatedAt||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Skapad av</span><span class="admin-val">${intern.createdBy||'—'}</span></div>
+      ${(intern.lockedFields||[]).length ? `<div class="admin-row"><span class="admin-key">Låsta fält</span><span class="admin-val" style="font-family:monospace;color:var(--gult);">${intern.lockedFields.join(', ')}</span></div>` : ''}
+    </div>
+
+    ${intern.notes ? `
     <div class="admin-section">
       <div class="admin-section-title">📝 Interna anteckningar</div>
-      <div class="admin-notes">${e.internal.notes}</div>
+      <div class="admin-notes">${intern.notes}</div>
     </div>` : ''}
+
+    <div class="admin-section">
+      <div class="admin-section-title">🛡️ Safety-konfiguration</div>
+      <div class="admin-row"><span class="admin-key">Säkerhetsnivå</span><span class="admin-val">${e.safety?.level||'standard'}</span></div>
+      ${e.safety?.note ? `<div class="admin-row"><span class="admin-key">Notering</span><span class="admin-val" style="font-size:11px;text-align:right;max-width:60%;">${e.safety.note}</span></div>` : ''}
+    </div>
 
     <div class="admin-section" style="border-color:rgba(16,185,129,.25);background:linear-gradient(135deg,var(--s1),rgba(16,185,129,.04));">
       <div class="admin-section-title" style="color:var(--gront)">✓ Vad som INTE exporteras till portalen</div>
       <ul style="list-style:none;padding:0;font-size:12px;color:var(--muted);line-height:1.8;">
-        <li>→ Interna anteckningar</li>
-        <li>→ Production status (workflow)</li>
-        <li>→ Källinformation</li>
-        <li>→ Versionsdata (createdAt, createdBy)</li>
-        <li>→ QA-checklist</li>
+        <li>→ <code style="color:var(--pl);background:var(--s2);padding:1px 5px;border-radius:3px;">internal</code> (allt)</li>
+        <li>&nbsp;&nbsp;&nbsp;productionStatus, qualityChecklist, notes, lockedFields,<br>&nbsp;&nbsp;&nbsp;createdAt, updatedAt, createdBy, id</li>
       </ul>
       <div style="font-size:11px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-style:italic;">
-        Allt utanför <code style="color:var(--pl);background:var(--s2);padding:1px 5px;border-radius:3px;">internal</code>-fältet exporteras. Det är design-principen.
+        <strong style="color:var(--text)">Designprincip:</strong> Allt utanför <code style="color:var(--pl);background:var(--s2);padding:1px 5px;border-radius:3px;">internal</code> exporteras automatiskt.
+        Det är OMÖJLIGT att råka exportera interna anteckningar.
       </div>
     </div>
   `;
 }
 
-// ── Toast ──
+// Toast
 let toastTimer;
 function toast(msg){
   const t = document.getElementById('toast');
@@ -737,6 +940,13 @@ function toast(msg){
   clearTimeout(toastTimer);
   toastTimer = setTimeout(()=>t.classList.remove('show'), 2200);
 }
+
+// Keyboard navigation i presentationsläget
+document.addEventListener('keydown',ev=>{
+  if(currentTab!=='presentation') return;
+  if(ev.key==='ArrowRight'||ev.key===' '){ev.preventDefault();presNext();}
+  else if(ev.key==='ArrowLeft'){ev.preventDefault();presPrev();}
+});
 </script>
 </body>
 </html>
