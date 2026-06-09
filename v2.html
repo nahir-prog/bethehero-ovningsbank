@@ -67,7 +67,16 @@ button,input,select,textarea{font-family:inherit;}
 
 .tv-image{margin-bottom:18px;border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:520px;}
 .tv-image img{width:100%;height:auto;display:block;}
-.tv-image-empty{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--dim);padding:7px 12px;border:1px dashed var(--border);border-radius:5px;margin-bottom:16px;background:transparent;}
+
+/* Tydlig label-stil för sektionsrubriker (ersätter emoji-thumbnails) */
+.tv-section-h{padding:13px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);display:flex;align-items:center;gap:10px;}
+.tv-section-mark{width:3px;height:14px;background:var(--pl);border-radius:2px;}
+.tv-section-title{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--text);}
+
+/* Safety-banner överst om extra_care */
+.tv-safety-banner{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.18);border-left:3px solid var(--rott);border-radius:6px;margin-bottom:14px;}
+.tv-safety-banner-tag{font-size:9px;font-weight:800;letter-spacing:1.2px;color:var(--rott);text-transform:uppercase;}
+.tv-safety-banner-text{font-size:12px;color:#f0c4c4;}
 
 .tv-purpose-card{background:linear-gradient(135deg,var(--s1),var(--s2));border:1px solid var(--border);border-left:3px solid var(--pl);border-radius:8px;padding:14px 16px;margin-bottom:22px;}
 .tv-purpose-label{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--pl);margin-bottom:6px;}
@@ -126,26 +135,46 @@ button,input,select,textarea{font-family:inherit;}
 .pres-toolbar-counter{margin-left:auto;font-size:13px;color:rgba(255,255,255,.55);font-weight:600;}
 .pres-toolbar-counter strong{color:#fff;}
 
-/* Slide-styling — varierar med mood */
-.pres-stage{padding:60px 60px 50px;min-height:540px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;}
-.pres-stage[data-mood="energetic"]{background:radial-gradient(ellipse at top right,rgba(124,58,237,.12),transparent 60%),#0a0d14;}
-.pres-stage[data-mood="calm"]{background:radial-gradient(ellipse at bottom,rgba(59,130,246,.08),transparent 60%),#0a0d14;}
-.pres-stage[data-mood="focused"]{background:#0a0d14;}
-.pres-stage[data-mood="still"]{background:radial-gradient(ellipse at center,rgba(255,255,255,.025),transparent 80%),#080b10;}
-.pres-stage[data-mood="collaborative"]{background:radial-gradient(ellipse at top left,rgba(16,185,129,.08),transparent 60%),#0a0d14;}
+/* Projektorläge — riktig presentation-känsla */
+.pres-stage{padding:80px 80px 70px;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;transition:background .35s;}
+.pres-stage[data-mood="energetic"]{background:radial-gradient(ellipse at top right,rgba(124,58,237,.18),transparent 60%),radial-gradient(ellipse at bottom left,rgba(245,158,11,.06),transparent 70%),#0a0d14;}
+.pres-stage[data-mood="calm"]{background:radial-gradient(ellipse at bottom,rgba(59,130,246,.12),transparent 60%),#0a0d14;}
+.pres-stage[data-mood="focused"]{background:radial-gradient(ellipse at center,rgba(124,58,237,.04),transparent 70%),#0a0d14;}
+.pres-stage[data-mood="still"]{background:radial-gradient(ellipse at center,rgba(255,255,255,.03),transparent 80%),#070a10;}
+.pres-stage[data-mood="collaborative"]{background:radial-gradient(ellipse at top left,rgba(16,185,129,.12),transparent 60%),radial-gradient(ellipse at bottom right,rgba(59,130,246,.06),transparent 70%),#0a0d14;}
 .pres-stage[data-mood="clear"]{background:#0a0d14;}
 
-.pres-slide{max-width:840px;width:100%;animation:slideIn .35s cubic-bezier(.2,.8,.4,1);}
-@keyframes slideIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.pres-slide-type{display:inline-block;font-size:10px;color:rgba(255,255,255,.4);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;padding:3px 9px;border:1px solid rgba(255,255,255,.1);border-radius:20px;}
-.pres-slide-title{font-size:clamp(36px,5vw,52px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:22px;letter-spacing:-.5px;}
-.pres-slide-body{font-size:clamp(18px,2.4vw,24px);color:rgba(255,255,255,.78);line-height:1.55;white-space:pre-line;max-width:760px;}
-.pres-slide-prompt{font-size:clamp(20px,2.5vw,28px);color:rgba(255,255,255,.92);line-height:1.45;margin-top:24px;padding:16px 22px;border-left:3px solid var(--pl);background:rgba(124,58,237,.06);border-radius:0 8px 8px 0;font-weight:500;}
-.pres-slide-duration{position:absolute;bottom:24px;right:30px;font-size:11px;color:rgba(255,255,255,.3);font-weight:600;letter-spacing:.5px;}
+.pres-slide{max-width:880px;width:100%;animation:slideIn .45s cubic-bezier(.2,.8,.4,1);}
+@keyframes slideIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.pres-slide-type{display:inline-flex;align-items:center;gap:7px;font-size:10px;color:rgba(255,255,255,.5);font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:24px;padding:4px 11px;border:1px solid rgba(255,255,255,.15);border-radius:20px;background:rgba(255,255,255,.03);}
+.pres-slide-type-dot{width:6px;height:6px;border-radius:50%;background:var(--pl);}
+.pres-slide-title{font-size:clamp(42px,6vw,64px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:28px;letter-spacing:-.8px;}
+.pres-slide-body{font-size:clamp(20px,2.6vw,28px);color:rgba(255,255,255,.85);line-height:1.55;white-space:pre-line;max-width:780px;font-weight:300;}
+.pres-slide-prompt{font-size:clamp(22px,2.8vw,32px);color:#fff;line-height:1.4;margin-top:30px;padding:20px 26px;border-left:4px solid var(--pl);background:rgba(124,58,237,.1);border-radius:0 10px 10px 0;font-weight:500;}
+.pres-slide-duration{position:absolute;bottom:28px;right:34px;font-size:11px;color:rgba(255,255,255,.35);font-weight:700;letter-spacing:1px;}
 
-/* Slide-typ-specifika layouts */
+/* Per-typ variation (utöver mood) */
+.pres-stage[data-type="intro"] .pres-slide{text-align:center;}
+.pres-stage[data-type="intro"] .pres-slide-title{font-size:clamp(46px,7vw,72px);}
+.pres-stage[data-type="closing"] .pres-slide{text-align:center;}
+.pres-stage[data-type="closing"] .pres-slide-title{color:rgba(255,255,255,.92);}
+.pres-stage[data-type="closing"] .pres-slide-body{font-style:italic;color:rgba(255,255,255,.7);}
+.pres-stage[data-type="reflection"] .pres-slide{text-align:center;}
+.pres-stage[data-type="reflection"] .pres-slide-title::before{content:'"';color:rgba(124,58,237,.3);font-size:120px;line-height:0;display:block;font-family:Georgia,serif;margin-bottom:-30px;}
+.pres-stage[data-type="voting"] .pres-slide-title{color:#fbbf24;}
+.pres-stage[data-type="discussion"] .pres-slide-title,
+.pres-stage[data-type="open_discussion"] .pres-slide-title,
+.pres-stage[data-type="group_activity"] .pres-slide-title{color:#86efac;}
+.pres-stage[data-type="individual_task"] .pres-slide-title,
+.pres-stage[data-type="creative_task"] .pres-slide-title{color:#a78bfa;}
+.pres-stage[data-type="instruction"] .pres-slide{border-left:3px solid var(--pl);padding-left:30px;}
+
+/* Silence-slide — minimalistisk */
+.pres-stage.silence-slide{justify-content:center;}
 .pres-stage.silence-slide .pres-slide{text-align:center;}
-.pres-stage.silence-slide .pres-slide-title{font-size:clamp(28px,4vw,42px);color:rgba(255,255,255,.45);font-weight:400;letter-spacing:8px;text-transform:uppercase;}
+.pres-stage.silence-slide .pres-slide-type{display:none;}
+.pres-stage.silence-slide .pres-slide-title{font-size:clamp(24px,3.5vw,36px);color:rgba(255,255,255,.5);font-weight:300;letter-spacing:14px;text-transform:uppercase;}
+.pres-stage.silence-slide .pres-slide-body{display:none;}
 
 .pres-arrows{padding:16px 18px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px;background:#080b10;}
 .pres-arrow{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);width:44px;height:40px;border-radius:6px;font-size:18px;cursor:pointer;transition:all .15s;}
@@ -169,7 +198,9 @@ button,input,select,textarea{font-family:inherit;}
 ══════════════════════════════════════ */
 .pdf-toolbar{display:flex;gap:8px;margin-bottom:14px;align-items:center;}
 .pdf-frame{background:#525252;padding:30px;border-radius:8px;display:flex;justify-content:center;}
-.pdf-page{background:#fff;color:#1a1a2e;padding:18mm 18mm 22mm;width:210mm;min-height:297mm;font-family:-apple-system,sans-serif;font-size:11pt;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,.4);position:relative;}
+.pdf-page{background:#fff;color:#1a1a2e;padding:18mm 18mm 22mm;width:210mm;min-height:297mm;font-family:-apple-system,sans-serif;font-size:11pt;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,.4);position:relative;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.pdf-section, .pdf-steps-section, .pdf-safe, .pdf-risk{page-break-inside:avoid;}
+.pdf-step{page-break-inside:avoid;}
 
 /* PDF — Header (rent och diskret BTH-branding) */
 .pdf-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;margin-bottom:22px;border-bottom:2px solid #1B2A6B;}
@@ -438,27 +469,32 @@ function renderTeacherView(e){
   const m = e.metadata, ls = e.lessonSetup, impl = e.implementation, ts = e.teacherSupport;
   const safety = e.safety||{};
 
-  const safetyTag = safety.level==='extra_care' ? '<span class="tv-meta-tag safety-extra">⚠ Extra varsamhet</span>'
-                  : safety.level==='elevhalsa_recommended' ? '<span class="tv-meta-tag safety-elev">🏥 Elevhälsa rekommenderas</span>' : '';
+  const safetyTag = safety.level==='extra_care' ? '<span class="tv-meta-tag safety-extra">Extra varsamhet</span>'
+                  : safety.level==='elevhalsa_recommended' ? '<span class="tv-meta-tag safety-elev">Elevhälsa rekommenderas</span>' : '';
 
-  // ── HERO IMAGE: bara om riktig bild, ALDRIG hero-logo ──
+  // ── HERO IMAGE: bara om riktig bild, INGET visas om saknas (intern info hamnar i Admin) ──
   let imageHTML = '';
   if(e.image && e.image.url && !e.image.url.includes('hero-logo')){
-    imageHTML = `<div class="tv-image"><img src="${e.image.url}" alt="${e.image.alt||''}" onerror="this.parentElement.outerHTML='<div class=\\'tv-image-empty\\'>📷 Bild kunde inte laddas — kontrollera URL i admin</div>';"></div>`;
-  } else {
-    imageHTML = `<div class="tv-image-empty">📷 Bild saknas — agenten ska generera en framåt</div>`;
+    imageHTML = `<div class="tv-image"><img src="${e.image.url}" alt="${e.image.alt||''}" onerror="this.parentElement.style.display='none';"></div>`;
   }
+  // Om image saknas: ingen yta i lärarvyn alls
+
+  const safetyBanner = safety.level==='extra_care' ? `
+    <div class="tv-safety-banner">
+      <span class="tv-safety-banner-tag">Extra varsamhet</span>
+      <span class="tv-safety-banner-text">${safety.note || 'Förvarna elevhälsan. Läs riskNote noga.'}</span>
+    </div>` : '';
 
   const safeStartHTML = ls.safeStartText ? `
     <div class="tv-safe-start">
-      <div class="tv-safe-start-label">🟢 Säg detta först — sätter trygg ram</div>
+      <div class="tv-safe-start-label">Säg detta först — sätter trygg ram</div>
       <div class="tv-safe-start-text">"${ls.safeStartText}"</div>
     </div>` : '';
 
   const stepsHTML = (impl.steps||[]).map((s,i)=>{
     const subItems = s.subItems ? `<ul class="tv-step-subitems">${s.subItems.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
-    const says = s.teacherSays ? `<div class="tv-step-says"><span class="tv-step-says-lbl">💬 Säg till eleverna</span>${s.teacherSays}</div>` : '';
-    const time = s.timeEstimate ? `<span class="tv-step-time">⏱ ${s.timeEstimate}</span>` : '';
+    const says = s.teacherSays ? `<div class="tv-step-says"><span class="tv-step-says-lbl">SÄG TILL ELEVERNA</span>${s.teacherSays}</div>` : '';
+    const time = s.timeEstimate ? `<span class="tv-step-time">${s.timeEstimate}</span>` : '';
     return `<div class="tv-step">
       <div class="tv-step-num">${i+1}</div>
       <div class="tv-step-content">
@@ -478,7 +514,7 @@ function renderTeacherView(e){
 
   const printMatHTML = (ls.printMaterials||[]).length ? `
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">📄</span><span class="tv-section-title">Material att skriva ut</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">Material att skriva ut</span></div>
       <div class="tv-section-b" style="display:flex;flex-direction:column;gap:10px;">
         ${ls.printMaterials.map(p=>`<div class="tv-print-mat">
           <div class="tv-print-mat-info">
@@ -492,31 +528,31 @@ function renderTeacherView(e){
 
   const riskHTML = ts.riskNote ? `
     <div class="tv-risk">
-      <div class="tv-risk-label">⚠️ Risker — läs innan du kör</div>
+      <div class="tv-risk-label">RISKER — LÄS INNAN DU KÖR</div>
       <div class="tv-risk-text">${ts.riskNote}</div>
     </div>` : '';
 
   const tipsHTML = (ts.tips||[]).length ? `
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">💡</span><span class="tv-section-title">Tips</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">Tips</span></div>
       <div class="tv-section-b"><ul class="tv-list">${ts.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>
     </div>` : '';
 
   const adaptHTML = (ts.adaptations||[]).length ? `
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">⚙</span><span class="tv-section-title">Anpassningar</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">Anpassningar</span></div>
       <div class="tv-section-b"><ul class="tv-list">${ts.adaptations.map(t=>`<li>${t}</li>`).join('')}</ul></div>
     </div>` : '';
 
   const npfHTML = ts.npfSupport ? `
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">♿</span><span class="tv-section-title">NPF-stöd</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">NPF-stöd</span></div>
       <div class="tv-section-b"><p class="tv-prose">${ts.npfSupport}</p></div>
     </div>` : '';
 
   const followUpHTML = ts.followUp ? `
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">📅</span><span class="tv-section-title">Uppföljning</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">Uppföljning</span></div>
       <div class="tv-section-b"><p class="tv-prose">${ts.followUp}</p></div>
     </div>` : '';
 
@@ -535,15 +571,17 @@ function renderTeacherView(e){
       ${imageHTML}
     </div>
 
+    ${safetyBanner}
+
     <div class="tv-purpose-card">
-      <div class="tv-purpose-label">🎯 Varför göra övningen</div>
+      <div class="tv-purpose-label">VARFÖR GÖRA ÖVNINGEN</div>
       <div class="tv-purpose-text">${e.teacherPurpose}</div>
     </div>
 
     ${safeStartHTML}
 
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">📋</span><span class="tv-section-title">Förberedelse & material</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">Förberedelse & material</span></div>
       <div class="tv-section-b">
         <p class="tv-prose" style="margin-bottom:8px"><strong>Innan lektionen:</strong> ${ls.preparation}</p>
         <p class="tv-prose"><strong>Material:</strong> ${ls.materials}</p>
@@ -553,7 +591,7 @@ function renderTeacherView(e){
     ${printMatHTML}
 
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">▶️</span><span class="tv-section-title">Genomförande</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">Genomförande</span></div>
       <div class="tv-section-b">
         ${impl.intro ? `<p class="tv-prose" style="margin-bottom:14px;padding:10px 12px;background:var(--s2);border-radius:6px;">${impl.intro}</p>` : ''}
         <div class="tv-steps">${stepsHTML}</div>
@@ -562,7 +600,7 @@ function renderTeacherView(e){
     </div>
 
     <div class="tv-section">
-      <div class="tv-section-h"><span class="tv-section-icon">💬</span><span class="tv-section-title">Reflektionsfrågor</span></div>
+      <div class="tv-section-h"><span class="tv-section-mark"></span><span class="tv-section-title">Reflektionsfrågor</span></div>
       <div class="tv-section-b"><div class="tv-questions">${refsHTML}</div></div>
     </div>
 
@@ -608,14 +646,14 @@ function renderPresentationView(e){
         <span class="pres-toolbar-eye">👁 Detta ser eleverna på projektorn</span>
         <span class="pres-toolbar-counter"><strong>${presSlideIdx+1}</strong> / ${slides.length}</span>
       </div>
-      <div class="pres-stage ${isSilence?'silence-slide':''}" data-mood="${mood}">
+      <div class="pres-stage ${isSilence?'silence-slide':''}" data-mood="${mood}" data-type="${slide.slideType||''}">
         <div class="pres-slide">
-          ${slide.slideType ? `<span class="pres-slide-type">${slide.slideType.replace(/_/g,' ')}</span>` : ''}
+          ${slide.slideType ? `<span class="pres-slide-type"><span class="pres-slide-type-dot"></span>${slide.slideType.replace(/_/g,' ')}</span>` : ''}
           <h2 class="pres-slide-title">${slide.title}</h2>
           ${slide.body ? `<div class="pres-slide-body">${slide.body}</div>` : ''}
           ${slide.prompt ? `<div class="pres-slide-prompt">${slide.prompt}</div>` : ''}
         </div>
-        ${slide.durationEstimate ? `<div class="pres-slide-duration">⏱ ${slide.durationEstimate}</div>` : ''}
+        ${slide.durationEstimate ? `<div class="pres-slide-duration">${slide.durationEstimate}</div>` : ''}
       </div>
       <div class="pres-arrows">
         <button class="pres-arrow" onclick="presPrev()" ${presSlideIdx===0?'disabled':''}>←</button>
@@ -663,7 +701,7 @@ function renderPdfPreview(e){
       <div class="pdf-stepbody">
         <div class="pdf-stepheader">
           <div class="pdf-steptitle">${s.title}</div>
-          ${time}
+          ${time||''}
         </div>
         <div class="pdf-steptext">${s.body}</div>
         ${sub}
@@ -671,6 +709,15 @@ function renderPdfPreview(e){
       </div>
     </li>`;
   }).join('');
+
+  // PDF: extra_care visas som klar varning högst upp
+  const extraCareHTML = e.safety?.level==='extra_care' ? `<div class="pdf-risk" style="margin-bottom:18px;">
+    <div class="pdf-risk-icon">!</div>
+    <div class="pdf-risk-content">
+      <div class="pdf-risk-lbl">Extra varsamhet</div>
+      <div class="pdf-risk-text">${e.safety.note || 'Förvarna elevhälsan. Läs Risker noga innan du startar.'}</div>
+    </div>
+  </div>` : '';
 
   const printMatHTML = (ls.printMaterials||[]).length ? `
     <div class="pdf-section">
@@ -716,6 +763,8 @@ function renderPdfPreview(e){
         </div>
 
         <div class="pdf-purpose">${e.teacherPurpose}</div>
+
+        ${extraCareHTML}
 
         ${ls.safeStartText ? `<div class="pdf-safe">
           <div class="pdf-safe-icon">✓</div>
@@ -975,14 +1024,37 @@ function checkPortalReady(e){
     npf ? '' : 'Saknas',
     !npf ? 'Lägg till konkreta anpassningar för elever med NPF-behov' : '');
 
-  // printMaterials om materialNeeds innehåller utskrift
-  const needsPrint = (e.metadata?.materialNeeds||[]).some(m=>/utskrift|mall|kort|papper/i.test(m));
+  // printMaterials — använder explicit requiresPrintMaterials-fält om det finns
   const hasPrint = (e.lessonSetup?.printMaterials||[]).length>0;
+  if(typeof e.requiresPrintMaterials === 'boolean'){
+    if(e.requiresPrintMaterials){
+      add('Säkerhet & kvalitet',
+        hasPrint ? 'ok' : 'miss',
+        'printMaterials kopplade (krävs)',
+        hasPrint?'OK':'Saknas',
+        !hasPrint ? 'Lägg till PDF-mallar under lessonSetup.printMaterials' : '');
+    } else {
+      add('Säkerhet & kvalitet',
+        'ok',
+        'printMaterials — krävs ej för denna övning',
+        '');
+    }
+  } else {
+    // Osäkert — gul varning
+    const looksLikePrint = (e.metadata?.materialNeeds||[]).some(m=>/utskrift|mall|kort|papper/i.test(m));
+    add('Säkerhet & kvalitet',
+      'warn',
+      'requiresPrintMaterials saknas',
+      looksLikePrint?'Material verkar peka mot utskrift':'',
+      'Verifiera om utskriftsmaterial behövs och sätt requiresPrintMaterials: true/false');
+  }
+
+  // Bild-check — visa varning i Admin/QA (intern info), inte i lärarvy
   add('Säkerhet & kvalitet',
-    !needsPrint || hasPrint ? 'ok' : 'warn',
-    'printMaterials kopplade om utskrift behövs',
-    needsPrint ? (hasPrint?'OK':'Saknas') : 'Krävs ej',
-    needsPrint && !hasPrint ? 'Lägg till PDF-mallar under lessonSetup.printMaterials' : '');
+    e.image && e.image.url && !e.image.url.includes('hero-logo') ? 'ok' : 'warn',
+    'Övningsbild finns (image.url)',
+    e.image?.url ? 'OK' : 'Saknas',
+    !e.image?.url ? 'Generera en relevant bild via Higgsfield eller liknande' : '');
 
   // teacherSays bara där det behövs
   const stepsWithSays = (e.implementation?.steps||[]).filter(s=>s.teacherSays).length;

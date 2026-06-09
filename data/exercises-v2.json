@@ -174,7 +174,8 @@
         "createdAt": "2026-06-05",
         "updatedAt": "2026-06-05",
         "createdBy": "AI-agent"
-      }
+      },
+      "requiresPrintMaterials": false
     },
     {
       "schemaVersion": 1,
@@ -381,7 +382,8 @@
         "createdAt": "2026-06-05",
         "updatedAt": "2026-06-05",
         "createdBy": "AI-agent"
-      }
+      },
+      "requiresPrintMaterials": false
     },
     {
       "schemaVersion": 1,
@@ -597,7 +599,8 @@
         "createdAt": "2026-06-05",
         "updatedAt": "2026-06-05",
         "createdBy": "AI-agent"
-      }
+      },
+      "requiresPrintMaterials": false
     },
     {
       "schemaVersion": 1,
@@ -807,7 +810,8 @@
         "createdAt": "2026-06-05",
         "updatedAt": "2026-06-05",
         "createdBy": "AI-agent (migration från CSV)"
-      }
+      },
+      "requiresPrintMaterials": true
     },
     {
       "schemaVersion": 1,
@@ -1027,7 +1031,8 @@
         "createdAt": "2026-06-05",
         "updatedAt": "2026-06-05",
         "createdBy": "AI-agent (migration från CSV)"
-      }
+      },
+      "requiresPrintMaterials": true
     },
     {
       "schemaVersion": 1,
@@ -1242,7 +1247,8 @@
         "createdAt": "2026-06-05",
         "updatedAt": "2026-06-05",
         "createdBy": "AI-agent (migration från CSV)"
-      }
+      },
+      "requiresPrintMaterials": true
     }
   ]
 }
