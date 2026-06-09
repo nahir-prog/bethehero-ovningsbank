@@ -530,6 +530,130 @@ När teamet klistrar in en befintlig övning och ber om förbättringar — elle
 
 ---
 
+## SCHEMA V1 — FACITFORMAT (NYTT — gäller alla nya övningar)
+
+**Sedan 2026-06-05 är "BTH Exercise Schema v1" facit för hur nya övningar struktureras.**
+Källa: `bethehero-ovningsbank` repo, tag `v1.0.0`. Se filerna:
+- `SCHEMA.md` — komplett kontrakt med fältdokumentation
+- `schemas/exercise.schema.json` — JSON Schema för validering
+- `schemas/exercise.zod.ts` — Zod-schema för Next.js-portalen
+- `examples/respektordet.json`, `blomman.json`, `det-du-inte-sa.json` — verifierade exempel
+
+### Viktig distinktion: TVÅ datakällor
+
+Banken har just nu TVÅ datafiler:
+
+| Fil | Innehåll | Roll |
+|---|---|---|
+| `data/exercises.json` | 19 legacy-övningar i gammal struktur | **Endast referens & inspiration** — skapa INTE i denna struktur längre |
+| `data/exercises-v2.json` | Schema v1-övningar | **Facit framåt** — alla nya övningar levereras i denna struktur |
+
+### Schema v1 — översikt
+
+Varje övning är ett objekt med dessa top-level fält:
+
+```typescript
+{
+  schemaVersion: 1,                  // ✅ alltid exakt 1
+  title: string,                     // ✅ 3-60 tecken, VERSALER
+  slug: string,                      // ✅ kebab-case, unik
+  shortDescription: string,          // ✅ 40-400 tecken
+  teacherPurpose: string,            // ✅ 40-1000 tecken
+  image: { url, alt, generationPrompt? } | null,  // null tillåtet
+  taxonomy: { themes, focusAreas, learningAreas, classNeeds },
+  safety: { level: "standard"|"extra_care"|"elevhalsa_recommended", note? },
+  metadata: { durationMinutes, preparationMinutes, gradeRange[], stages?, workForm[], materialNeeds?, cardNeeds? },
+  requiresPrintMaterials: boolean,   // ✅ explicit
+  lessonSetup: { safeStartText?, preparation, materials, printMaterials[] },
+  implementation: { intro?, steps[], outro? },
+  reflection: { questions[] },       // ✅ minst 2
+  teacherSupport: { tips[], adaptations[], riskNote?, npfSupport?, followUp? },
+  presentations: [{ id, exerciseSlug, title, audience, status, slides[] }],
+  provenance: { author, source, createdAt, language },
+  internal: { id, productionStatus, notes?, lockedFields?, ... }  // SERVER-SIDE ONLY
+}
+```
+
+### Strikta regler i Schema v1
+
+1. **`internal` exporteras ALDRIG till portalen.** Det är redaktörsdata. Använd `toPortalExport()` om du behöver strippa.
+
+2. **`extra_care` har conditional rules:**
+   - `lessonSetup.safeStartText` MÅSTE finnas (minst 20 tecken)
+   - `teacherSupport.riskNote` MÅSTE finnas (minst 30 tecken)
+   - `safety.note` bör finnas med konkret förvarningssyfte
+
+3. **`requiresPrintMaterials: true`** kräver att `lessonSetup.printMaterials[]` innehåller minst en post med `title` + `description`.
+
+4. **`image: null`** är tillåtet och betyder "ingen bild" — lärarvyn visar inget bildblock då. Lägg ALDRIG hero-loggan som hero-image.
+
+5. **`implementation.steps`** måste vara minst 2 steg. Varje steg har:
+   - `title` (3-100 tecken, börja gärna med handlingsverb: Skriv, Visa, Diskutera, Rita)
+   - `body` (15-600 tecken, ingen körlängre)
+   - `teacherSays?` (om läraren ska säga något specifikt — använd sparsamt, max 70% av stegen)
+   - `subItems?` (punktlista)
+   - `timeEstimate?` (rekommenderat)
+
+6. **`presentations`** är INBAKAD i övningen (inte separat). Varje slide har:
+   - `title` (alltid)
+   - `body`, `prompt`, `instructionForTeacher` (frivilliga)
+   - `slideType`: `intro` / `instruction` / `activity` / `group_activity` / `individual_task` / `discussion` / `reflection` / `voting` / `visualization` / `transition` / `listening` / `silence` / `closing` osv.
+   - `mood`: `energetic` / `calm` / `focused` / `still` / `collaborative` / `clear`
+   - `instructionForTeacher` visas ALDRIG för elever — bara i lärarpanel under projektorn
+
+7. **Slug måste vara unik** och i kebab-case: `^[a-z0-9]+(-[a-z0-9]+)*$`
+
+8. **Provenance ska fyllas i:**
+   ```json
+   {
+     "author": "AI-agent + redaktör",
+     "source": "Nybyggd 2026-06-XX" eller "Migrerad från legacy CSV — WordPress ID 12345",
+     "createdAt": "YYYY-MM-DD",
+     "language": "sv"
+   }
+   ```
+
+### Exempelfiler du följer
+
+- **`examples/respektordet.json`** — Enkel ny övning utan bild, `requiresPrintMaterials: false`
+- **`examples/blomman.json`** — BTH-original med riktig bild + utskriftsmaterial
+- **`examples/det-du-inte-sa.json`** — `extra_care`-övning med full riskNote + safety.note
+
+### Vad portalen gör med det
+
+När övningen är "klar för portal":
+1. Du producerar JSON enligt Schema v1
+2. `internal`-fältet strippas vid export (`toPortalExport()`)
+3. JSON skickas till portalen via `/api/studio/import-from-facit`
+4. Portalen validerar med Zod-schemat
+5. Övningen läggs som `global_pending` för HOTT-granskning
+6. När godkänd → `global_published` och syns för skolor
+
+---
+
+## BANKKOLL — håll koll på vad som finns
+
+Innan du föreslår en ny övning, kolla **`data/bank-status.md`** som har:
+- Lista över ALLA övningar (legacy + schema v1)
+- Täckning per tema (✅ / ⚠ / 🔴)
+- Täckning per årskurs
+- **Tydliga luckor** — exakt vilka tema-ålder-kombinationer som saknas
+
+Använd luckorna som **prioritetslista** när du föreslår nya övningar. Skapa inte ännu en mobbnings-övning för åk 7-9 om vi har 3 sådana — föreslå istället en konflikthantering-övning för åk 4 om det är tomt där.
+
+### Snabbcheck innan du levererar
+
+- [ ] Har jag kollat bank-status.md för luckor?
+- [ ] Har jag verifierat att slug inte krockar med befintlig övning?
+- [ ] Skapar jag i schema v1-format (inte legacy)?
+- [ ] Smal målgrupp? (åk 5-6 hellre än 4-6 om innehållet passar)
+- [ ] Alla obligatoriska fält ifyllda?
+- [ ] Om `extra_care`: finns safeStartText + riskNote?
+- [ ] Om `requiresPrintMaterials: true`: finns printMaterials-poster?
+- [ ] Inga interna anteckningar i lärartext?
+
+---
+
 ## UTDATAFORMAT — JSON FÖR ÖVNINGSBANKEN
 
 Övningar lagras i `data/exercises.json` i övningsbanken (lokalt och på GitHub). När du skapar en ny övning levererar du den i exakt detta JSON-format så att teamet (eller Claude Code) kan klistra in det direkt:
