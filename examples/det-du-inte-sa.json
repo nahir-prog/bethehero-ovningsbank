@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "title": "DET DU INTE SA",
+  "slug": "det-du-inte-sa",
+  "shortDescription": "En tyst, anonym övning där eleverna får skriva ner en gång de hade velat säga något — men lät bli. Lärarsamtal följer, inga personer hängs ut.",
+  "teacherPurpose": "Eleverna upptäcker att de inte är ensamma om att hålla saker inne. Övningen synliggör hur mycket som inte sägs i en klass — utan att tvinga någon att avslöja sig själv. Den skapar utrymme för empati och eftertanke utan press.",
+  "image": null,
+  "taxonomy": {
+    "themes": [
+      "Empati & perspektiv",
+      "Mod & civilkurage",
+      "Självkänsla & identitet"
+    ],
+    "focusAreas": [
+      "våga säga",
+      "tystnad",
+      "kommunikation"
+    ],
+    "learningAreas": [
+      "värdegrund",
+      "social förmåga"
+    ],
+    "classNeeds": [
+      "fördjupning",
+      "tillit byggd",
+      "åk 8-9"
+    ]
+  },
+  "safety": {
+    "level": "extra_care",
+    "note": "Förvarna elevhälsan. Kör inte vid pågående konflikt eller låg tillit. Sitt kvar 5 min efter lektionen."
+  },
+  "metadata": {
+    "durationMinutes": 30,
+    "preparationMinutes": 5,
+    "gradeRange": [
+      "8",
+      "9"
+    ],
+    "stages": [
+      "högstadiet"
+    ],
+    "workForm": [
+      "individuellt",
+      "helklass"
+    ],
+    "materialNeeds": [
+      "små pappersbitar (lika stora)",
+      "en kartong eller burk att samla i",
+      "penna"
+    ],
+    "cardNeeds": []
+  },
+  "lessonSetup": {
+    "safeStartText": "Det vi gör nu är helt anonymt. Ingen kommer att veta vad du har skrivit. Du kan välja att skriva, eller lämna in blankt — båda är okej. Det jag säger högt i slutet är bara dina egna ord, utan namn.",
+    "preparation": "Klipp små pappersbitar i samma storlek (8x8 cm). Ställ kartongen eller burken framme. Sitt själv ner när eleverna skriver — visa att tystnaden är okej.",
+    "materials": "Små pappersbitar (en per elev, plus extra), kartong eller burk, pennor.",
+    "printMaterials": []
+  },
+  "implementation": {
+    "intro": "Berätta att övningen handlar om sådant vi tänkt — men inte sagt. Att det är vanligt. Och att vi ska få höra varandras tankar utan att veta vems de är.",
+    "steps": [
+      {
+        "title": "Skriv en gång du höll inne",
+        "body": "Varje elev skriver ner EN gång då de hade velat säga något — till någon, om något — men lät bli. Det kan vara stort eller litet. Det måste inte ha hänt nyligen.",
+        "subItems": [
+          "Tystnad i klassrummet under tiden",
+          "Lägg din lapp i kartongen — vikt eller ovikt, du väljer",
+          "Du behöver inte skriva — du kan lämna in en blank lapp"
+        ],
+        "teacherSays": "Ingen läser detta före dig. Inga namn. Skriv som om bara du själv ska se det.",
+        "timeEstimate": "5 min"
+      },
+      {
+        "title": "Läraren läser några — slumpvis",
+        "body": "Skaka kartongen. Dra 5–7 lappar slumpvis. Läs dem högt, en i taget, med pauser mellan. Läs lugnt. Kommentera inte.",
+        "subItems": [
+          "Om en lapp är blank: säg 'och en valde tystnad' och gå vidare",
+          "Skippa lappar du tror skulle skada någon konkret"
+        ],
+        "teacherSays": "Lyssna utan att försöka gissa vem som skrivit.",
+        "timeEstimate": "8 min"
+      },
+      {
+        "title": "Tyst minut",
+        "body": "Efter sista lappen: en hel minut utan ord. Bara stillhet. Eleverna behåller sina egna tankar.",
+        "timeEstimate": "1 min"
+      },
+      {
+        "title": "Öppen reflektion — frivillig",
+        "body": "Eleverna får dela vad de tänker — men ingen tvingas. Det är okej att bara lyssna.",
+        "teacherSays": "Hade du velat svara på något du hörde? Säga 'jag förstår' till någon? Vad skulle du säga om du fick chansen?",
+        "timeEstimate": "10 min"
+      },
+      {
+        "title": "Bränn lapparna (symboliskt) eller släng dem direkt",
+        "body": "Vid lektionens slut: släng alla lappar synligt i papperskorgen, eller riv sönder dem. Ingen sparar dem.",
+        "teacherSays": "Det här stannar här i rummet.",
+        "timeEstimate": "2 min"
+      }
+    ],
+    "outro": "Tacka klassen för att de vågade. Påminn om var de kan vända sig om något kommer upp efteråt: kurator, mentor, dig."
+  },
+  "reflection": {
+    "questions": [
+      "Var något du hörde något du själv hade kunnat skriva?",
+      "Varför håller vi saker inne — när det vi inte säger sällan är något farligt?",
+      "Finns det något du efter idag vågar säga som du inte hade vågat innan?"
+    ]
+  },
+  "teacherSupport": {
+    "tips": [
+      "Förbered en plats att gå till efter lektionen om någon behöver prata — och säg det innan ni börjar.",
+      "Använd INTE övningen om klassen har en pågående konflikt — den kan eskalera.",
+      "Om en lapp tycks peka ut någon, läs den inte."
+    ],
+    "adaptations": [
+      "Eleven kan välja att inte alls skriva — bara lämna in en blank lapp, eller hoppa över.",
+      "Möjligt att istället låta eleven skriva digitalt och dela med läraren privat."
+    ],
+    "riskNote": "Övningen kan trigga elever som hållit inne svåra saker (övergrepp, mobbning, hot). Förvarna elevhälsan att övningen kommer ske. Avsluta INTE lektionen tidigare än planerat — sitt kvar i rummet 5 minuter efter att eleverna gått, så det finns någon att gå till. Använd inte om klassen är osäker eller har pågående konflikter.",
+    "npfSupport": "Tydlig struktur (5 steg, fysiska handlingar) ger förutsägbarhet. Förvarna elev med ångest enskilt i förväg om vad som kommer hända. Tillåt att gå ut under övningen utan förklaring — säg det innan ni börjar.",
+    "followUp": "Inom en vecka: avsätt 5 min i slutet av en lektion för 'är det något som dröjt sig kvar efter förra övningen?' Påminn om att kurator finns."
+  },
+  "presentations": [
+    {
+      "id": "detduintesa-elev-01",
+      "exerciseSlug": "det-du-inte-sa",
+      "title": "Det du inte sa",
+      "audience": "students",
+      "status": "ready",
+      "slides": [
+        {
+          "title": "Det här är anonymt",
+          "body": "Inga namn.\n\nIngen kommer att veta vad du har skrivit.\n\nDu kan välja att inte skriva alls.",
+          "instructionForTeacher": "Läs detta lugnt högt. Sätt tonen.",
+          "slideType": "intro",
+          "mood": "energetic",
+          "durationEstimate": "1 min"
+        },
+        {
+          "title": "Skriv en gång du höll inne",
+          "body": "En gång då du hade velat säga något — till någon, om något — men lät bli.\n\nStort eller litet. Nytt eller gammalt.",
+          "instructionForTeacher": "Tystnad i 5 min. Sitt själv ner.",
+          "slideType": "individual_task",
+          "mood": "focused",
+          "durationEstimate": "5 min"
+        },
+        {
+          "title": "Lägg din lapp i kartongen",
+          "body": "Vikt eller ovikt. Du väljer.\n\nBlank lapp är också okej.",
+          "slideType": "transition",
+          "mood": "clear",
+          "durationEstimate": "1 min"
+        },
+        {
+          "title": "Lyssna",
+          "body": "Jag läser några lappar.\n\nUtan att försöka gissa vem som skrivit.",
+          "instructionForTeacher": "Dra 5-7 lappar. Läs lugnt med pauser. Skippa något som kan skada.",
+          "slideType": "listening",
+          "mood": "calm",
+          "durationEstimate": "8 min"
+        },
+        {
+          "title": "En tyst minut",
+          "body": "",
+          "instructionForTeacher": "EN HEL MINUT tystnad. Visa själv genom att sitta lugnt.",
+          "slideType": "silence",
+          "mood": "still",
+          "durationEstimate": "1 min"
+        },
+        {
+          "title": "Vill någon säga något?",
+          "body": "Helt frivilligt.\n\nÄven att bara lyssna är ett val.",
+          "instructionForTeacher": "Pressa ingen. Tystnad är okej även här.",
+          "slideType": "open_discussion",
+          "mood": "collaborative",
+          "durationEstimate": "10 min"
+        },
+        {
+          "title": "Det här stannar här i rummet",
+          "body": "",
+          "instructionForTeacher": "Riv sönder lapparna synligt. Säg att det är okej att komma och prata efteråt.",
+          "slideType": "closing",
+          "mood": "calm",
+          "durationEstimate": "2 min"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "author": "AI-agent + redaktör",
+    "source": "Nybyggd för schema V2-test",
+    "createdAt": "2026-06-05",
+    "language": "sv"
+  },
+  "requiresPrintMaterials": false
+}

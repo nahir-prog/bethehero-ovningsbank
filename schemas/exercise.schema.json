@@ -1,0 +1,323 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bethehero.se/schemas/exercise.schema.json",
+  "title": "BTH Exercise Schema",
+  "description": "Strukturerad övningsmodell för BE THE HERO — facit för portal-import",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "title",
+    "slug",
+    "shortDescription",
+    "teacherPurpose",
+    "safety",
+    "metadata",
+    "requiresPrintMaterials",
+    "lessonSetup",
+    "implementation",
+    "reflection",
+    "teacherSupport",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1,
+      "description": "Schema-version, exakt 1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 60,
+      "description": "Övningens titel i versaler, 3-60 tecken"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 3,
+      "maxLength": 80,
+      "description": "URL-säker, kebab-case, unik identifierare"
+    },
+    "shortDescription": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 400,
+      "description": "Kort beskrivning för lärare — vad övningen handlar om"
+    },
+    "teacherPurpose": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 1000,
+      "description": "Varför övningen görs — pedagogiskt syfte"
+    },
+    "image": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["url", "alt"],
+          "additionalProperties": false,
+          "properties": {
+            "url": { "type": "string", "format": "uri" },
+            "alt": { "type": "string", "minLength": 3 },
+            "generationPrompt": { "type": ["string", "null"] }
+          }
+        }
+      ]
+    },
+    "taxonomy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "themes": { "type": "array", "items": { "type": "string" } },
+        "focusAreas": { "type": "array", "items": { "type": "string" } },
+        "learningAreas": { "type": "array", "items": { "type": "string" } },
+        "classNeeds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["level"],
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["standard", "extra_care", "elevhalsa_recommended"]
+        },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["durationMinutes", "preparationMinutes", "gradeRange", "workForm"],
+      "additionalProperties": false,
+      "properties": {
+        "durationMinutes": { "type": "integer", "minimum": 1 },
+        "preparationMinutes": { "type": "integer", "minimum": 0 },
+        "gradeRange": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "enum": ["F", "1", "2", "3", "4", "5", "6", "7", "8", "9"] }
+        },
+        "stages": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["F-klass", "lågstadiet", "mellanstadiet", "högstadiet"] }
+        },
+        "workForm": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "materialNeeds": { "type": "array", "items": { "type": "string" } },
+        "cardNeeds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "requiresPrintMaterials": {
+      "type": "boolean",
+      "description": "true om övningen kräver PDF-mall för att fungera"
+    },
+    "lessonSetup": {
+      "type": "object",
+      "required": ["preparation", "materials", "printMaterials"],
+      "additionalProperties": false,
+      "properties": {
+        "safeStartText": { "type": ["string", "null"], "maxLength": 400 },
+        "preparation": { "type": "string", "minLength": 5 },
+        "materials": { "type": "string", "minLength": 5 },
+        "printMaterials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "description"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string", "minLength": 3 },
+              "description": { "type": "string" },
+              "filename": { "type": "string" },
+              "url": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "required": ["steps"],
+      "additionalProperties": false,
+      "properties": {
+        "intro": { "type": ["string", "null"] },
+        "outro": { "type": ["string", "null"] },
+        "steps": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["title", "body"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string", "minLength": 3, "maxLength": 100 },
+              "body": { "type": "string", "minLength": 15, "maxLength": 600 },
+              "subItems": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "teacherSays": { "type": "string" },
+              "timeEstimate": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "reflection": {
+      "type": "object",
+      "required": ["questions"],
+      "additionalProperties": false,
+      "properties": {
+        "questions": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 10 }
+        }
+      }
+    },
+    "teacherSupport": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tips": { "type": "array", "items": { "type": "string" } },
+        "adaptations": { "type": "array", "items": { "type": "string" } },
+        "riskNote": { "type": ["string", "null"] },
+        "npfSupport": { "type": ["string", "null"] },
+        "followUp": { "type": ["string", "null"] }
+      }
+    },
+    "presentations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "exerciseSlug", "title", "audience", "status", "slides"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 3 },
+          "exerciseSlug": { "type": "string" },
+          "title": { "type": "string", "minLength": 3 },
+          "audience": { "type": "string", "enum": ["students", "teacher", "both"] },
+          "status": { "type": "string", "enum": ["draft", "needs_review", "ready"] },
+          "slides": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["title"],
+              "additionalProperties": true,
+              "properties": {
+                "title": { "type": "string", "minLength": 1 },
+                "body": { "type": ["string", "null"] },
+                "prompt": { "type": ["string", "null"] },
+                "instructionForTeacher": { "type": ["string", "null"] },
+                "slideType": {
+                  "type": "string",
+                  "enum": [
+                    "intro", "instruction", "activity", "group_activity", "individual_task",
+                    "discussion", "group_reading", "open_discussion", "reflection", "voting",
+                    "visualization", "transition", "listening", "silence", "closing",
+                    "observation", "brainstorm", "concept", "creative_task",
+                    "guided_breathing", "presentation"
+                  ]
+                },
+                "mood": {
+                  "type": "string",
+                  "enum": ["energetic", "calm", "focused", "still", "collaborative", "clear"]
+                },
+                "durationEstimate": { "type": "string" },
+                "interactionType": { "type": "string", "description": "Legacy alias för slideType" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["author", "source", "createdAt", "language"],
+      "additionalProperties": false,
+      "properties": {
+        "author": { "type": "string", "minLength": 2 },
+        "source": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date" },
+        "language": { "type": "string", "minLength": 2, "maxLength": 5 }
+      }
+    },
+    "internal": {
+      "description": "SERVER-SIDE ENDAST. Får aldrig exporteras till portalen.",
+      "type": "object",
+      "required": ["id", "productionStatus"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "pattern": "^BTH-[A-Z0-9-]+$" },
+        "productionStatus": {
+          "type": "string",
+          "enum": [
+            "utkast",
+            "pedagogisk_granskning",
+            "material_produktion",
+            "sprakkoll",
+            "klar_for_portal",
+            "exporterad"
+          ]
+        },
+        "qualityChecklist": {},
+        "notes": { "type": ["string", "null"] },
+        "lockedFields": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "createdBy": { "type": "string" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "description": "Om safety.level === extra_care måste lessonSetup.safeStartText finnas och vara ≥20 tecken",
+      "if": {
+        "properties": {
+          "safety": { "properties": { "level": { "const": "extra_care" } } }
+        }
+      },
+      "then": {
+        "properties": {
+          "lessonSetup": {
+            "required": ["safeStartText"],
+            "properties": {
+              "safeStartText": { "type": "string", "minLength": 20 }
+            }
+          },
+          "teacherSupport": {
+            "required": ["riskNote"],
+            "properties": {
+              "riskNote": { "type": "string", "minLength": 30 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "Om requiresPrintMaterials === true måste lessonSetup.printMaterials innehålla minst en post",
+      "if": {
+        "properties": { "requiresPrintMaterials": { "const": true } }
+      },
+      "then": {
+        "properties": {
+          "lessonSetup": {
+            "properties": {
+              "printMaterials": { "minItems": 1 }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

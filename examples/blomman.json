@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "title": "BLOMMAN",
+  "slug": "blomman",
+  "shortDescription": "Eleverna utforskar vad människor behöver för att må bra — genom liknelsen med en blomma som behöver rätt miljö. De ritar sig själva som en blomma och fyller en vattenkanna med vad de behöver.",
+  "teacherPurpose": "Eleverna lär sig att identifiera och förstå både sina egna och andras behov. Övningen synliggör att vi alla påverkas av vår miljö — och att det är miljön runt 'blomman', inte blomman själv, som gör skillnad.",
+  "image": {
+    "url": "https://www.heroofthetalk.se/wp-content/uploads/2024/05/AdobeStock_794376317-scaled-e1739544920957.jpeg",
+    "alt": "Blomma som blommar — liknelsen för välmående",
+    "generationPrompt": null
+  },
+  "taxonomy": {
+    "themes": [
+      "Självkänsla & identitet",
+      "Känslor & självreglering"
+    ],
+    "focusAreas": [
+      "behov",
+      "välmående",
+      "klassrumsklimat"
+    ],
+    "learningAreas": [
+      "värdegrund",
+      "biologi (analogi)"
+    ],
+    "classNeeds": [
+      "självkännedom",
+      "empati",
+      "ny klass"
+    ]
+  },
+  "safety": {
+    "level": "standard",
+    "note": "Var uppmärksam om en elev ritar mycket vissna blommor — kan vara tecken på att eleven själv inte mår bra."
+  },
+  "metadata": {
+    "durationMinutes": 30,
+    "preparationMinutes": 5,
+    "gradeRange": [
+      "F",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "stages": [
+      "F-klass",
+      "lågstadiet"
+    ],
+    "workForm": [
+      "individuellt",
+      "helklass"
+    ],
+    "materialNeeds": [
+      "utskriftsmaterial (blomma, kruka, vattenkanna)",
+      "pennor",
+      "sax",
+      "lim"
+    ],
+    "cardNeeds": []
+  },
+  "lessonSetup": {
+    "safeStartText": "Idag pratar vi om vad människor behöver för att må bra. Vi använder en blomma som hjälp — för att blommor visar oss något viktigt.",
+    "preparation": "Skriv ut materialet: blomma som vissnar/blommar, tom kruka, vattenkanna-mall. Ha pennor, sax och lim redo.",
+    "materials": "Utskrivna mallar (en uppsättning per elev), pennor, sax, lim.",
+    "printMaterials": [
+      {
+        "title": "Blomman — full uppsättning",
+        "description": "PDF med vissnande blomma + blommande blomma + tom kruka + vattenkanna-mall.",
+        "filename": "blomman-mallar.pdf"
+      }
+    ]
+  },
+  "implementation": {
+    "intro": "Visa två bilder: en blomma som blommar, en som vissnar. Be barnen titta och fundera över skillnaden.",
+    "steps": [
+      {
+        "title": "Visa bilder och prata",
+        "body": "Visa bilder på en blomma som blommar och en som vissnar. Prata tillsammans om hur blommor påverkas av sin omgivning.",
+        "subItems": [
+          "Vad händer med en blomma som inte får vatten eller näring?",
+          "Vad behöver en blomma för att må bra och blomstra?",
+          "Det är miljön runt blomman som gör skillnad — inte själva blomman"
+        ],
+        "teacherSays": "Människor är som blommor. Vi blommar när vi har det vi behöver.",
+        "timeEstimate": "8 min"
+      },
+      {
+        "title": "Rita dig själv som en blomma",
+        "body": "Ge varje elev en bild på den vissna och den blommande blomman — där de kan rita och skriva vad som gör att man känner sig vissen eller blommande.",
+        "subItems": [
+          "En tom kruka per elev",
+          "Eleven ritar sig själv som blomma på krukan"
+        ],
+        "timeEstimate": "10 min"
+      },
+      {
+        "title": "Fyll vattenkannan",
+        "body": "Eleverna klipper ut sin vattenkanna och fyller den med ord eller bilder som visar vad DE behöver för att må bra och växa.",
+        "subItems": [
+          "Mat, sömn, kärlek, vänskap, lek, skratt",
+          "Att känna sig sedd, respekt, lugn och tid för sig själv"
+        ],
+        "teacherSays": "Vad behöver just DU i ditt liv?",
+        "timeEstimate": "8 min"
+      },
+      {
+        "title": "Sätt upp och reflektera tillsammans",
+        "body": "Sätt upp blommorna och vattenkannorna på väggen. Samla gruppen och prata om vad ni ser.",
+        "subItems": [
+          "Vad har ni gemensamt?",
+          "Vad är unikt för var och en?",
+          "Diskutera hur ni kan hjälpa varandra att 'blomma'"
+        ],
+        "timeEstimate": "4 min"
+      }
+    ],
+    "outro": "Låt verkbilderna sitta uppe i klassrummet. Återkom till dem under terminen — fråga 'Vad behöver du mer av just nu?'"
+  },
+  "reflection": {
+    "questions": [
+      "Vad behöver du i ditt liv för att må bra och utvecklas?",
+      "Vad gör dig glad, trygg eller lugn?",
+      "Vad kan VI i klassen göra för att fler ska blomma?"
+    ]
+  },
+  "teacherSupport": {
+    "tips": [
+      "Var nära elever som ritar mycket vissna blommor — fråga försiktigt efteråt.",
+      "Spara bilderna. Använd dem som start på terminens samtal om välmående.",
+      "Övningen kan göras flera gånger per år — det är OK att 'din blomma' ändras."
+    ],
+    "adaptations": [
+      "Yngre barn kan rita istället för att skriva.",
+      "Tillåt elev att be en vuxen skriva åt dem om de inte kan skriva själva."
+    ],
+    "riskNote": "Var uppmärksam på elever som tydligt beskriver att de mår dåligt. Kontakta hemmet eller elevhälsan vid oro.",
+    "npfSupport": "Konkret material (blomma, kruka, vattenkanna) ger struktur. Bilder före text hjälper. Ge tydlig tidssignal mellan momenten.",
+    "followUp": "Använd terminen igenom: 'Hur ser din blomma ut nu?' Sätt upp ny vattenkanna varje månad."
+  },
+  "presentations": [
+    {
+      "id": "blomman-elev-01",
+      "exerciseSlug": "blomman",
+      "title": "Blomman",
+      "audience": "students",
+      "status": "ready",
+      "slides": [
+        {
+          "title": "Titta på de här två blommorna",
+          "body": "En blommar. En vissnar.\n\nVad ser ni för skillnad?",
+          "instructionForTeacher": "Visa bilder på blommor. Låt barnen svara fritt.",
+          "slideType": "observation",
+          "mood": "focused",
+          "durationEstimate": "3 min"
+        },
+        {
+          "title": "Vad behöver en blomma?",
+          "body": "Vatten. Sol. Jord. Tid.",
+          "instructionForTeacher": "Skriv ord på tavlan när barnen säger dem.",
+          "slideType": "brainstorm",
+          "mood": "energetic",
+          "durationEstimate": "3 min"
+        },
+        {
+          "title": "Människor är som blommor",
+          "body": "Vi blommar när vi har det vi behöver.\n\nVi vissnar när vi inte har det.",
+          "slideType": "concept",
+          "mood": "clear",
+          "durationEstimate": "2 min"
+        },
+        {
+          "title": "Rita dig själv som en blomma",
+          "body": "Hur ser DU ut när du blommar?\n\nHur ser du ut när du vissnar?",
+          "instructionForTeacher": "Dela ut blomma- och kruka-mallarna.",
+          "slideType": "creative_task",
+          "mood": "focused",
+          "durationEstimate": "10 min"
+        },
+        {
+          "title": "Vad behöver DU?",
+          "body": "Fyll din vattenkanna med:\n\nvad du behöver för att må bra.",
+          "instructionForTeacher": "Ge exempel: mat, sömn, kärlek, vänskap, lek, lugn.",
+          "slideType": "individual_task",
+          "mood": "focused",
+          "durationEstimate": "8 min"
+        },
+        {
+          "title": "Sätt upp era blommor",
+          "body": "Titta på alla blommor.\n\nVad har vi gemensamt?\n\nVad är ditt unikt?",
+          "slideType": "reflection",
+          "mood": "calm",
+          "durationEstimate": "4 min"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "author": "BE THE HERO original",
+    "source": "Migrerad från legacy CSV — WordPress ID 19123",
+    "createdAt": "2024-05-15",
+    "language": "sv"
+  },
+  "requiresPrintMaterials": true
+}

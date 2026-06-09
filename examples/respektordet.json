@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "title": "RESPEKTORDET",
+  "slug": "respektordet",
+  "shortDescription": "En snabb klassrumsövning där eleverna tillsammans samlar ord som beskriver respekt — och blir överens om vad de faktiskt betyder.",
+  "teacherPurpose": "Eleverna upptäcker att 'respekt' inte är ett ord — det är många. Och att olika personer menar olika saker med det. Övningen bygger ett gemensamt språk klassen kan luta sig mot resten av terminen.",
+  "image": null,
+  "taxonomy": {
+    "themes": [
+      "Gemenskap & inkludering",
+      "Sociala roller"
+    ],
+    "focusAreas": [
+      "respekt",
+      "klassrumsklimat"
+    ],
+    "learningAreas": [
+      "värdegrund",
+      "språkutveckling"
+    ],
+    "classNeeds": [
+      "nystart",
+      "ny klass",
+      "efter konflikt"
+    ]
+  },
+  "safety": {
+    "level": "standard",
+    "note": null
+  },
+  "metadata": {
+    "durationMinutes": 20,
+    "preparationMinutes": 2,
+    "gradeRange": [
+      "4",
+      "5",
+      "6"
+    ],
+    "stages": [
+      "mellanstadiet"
+    ],
+    "workForm": [
+      "individuellt",
+      "helklass"
+    ],
+    "materialNeeds": [
+      "whiteboard",
+      "post-it eller papper"
+    ],
+    "cardNeeds": []
+  },
+  "lessonSetup": {
+    "safeStartText": "Idag bygger vi ihop ett ord. Det finns inga fel svar — bara olika sätt att tänka.",
+    "preparation": "Skriv 'RESPEKT' stort på tavlan. Ha post-it eller papper redo till alla.",
+    "materials": "Whiteboard, post-it-lappar (eller pappersbitar) — en per elev.",
+    "printMaterials": []
+  },
+  "implementation": {
+    "intro": "Berätta att klassen ska försöka bygga ett gemensamt språk för vad respekt är.",
+    "steps": [
+      {
+        "title": "Skriv ett ord — i tysthet",
+        "body": "Varje elev skriver ett enda ord eller en kort fras som beskriver vad respekt betyder för dem. Ingen ser vad de andra skriver.",
+        "teacherSays": "Tänk på en gång när någon visade dig respekt. Vad gjorde de? Skriv det ordet.",
+        "timeEstimate": "2 min"
+      },
+      {
+        "title": "Samla orden på tavlan",
+        "body": "Varje elev sätter upp sin lapp under ordet RESPEKT. Läs tyst igenom alla orden tillsammans.",
+        "subItems": [
+          "Gruppera lappar som hör ihop",
+          "Sätt liknande ord nära varandra"
+        ],
+        "timeEstimate": "5 min"
+      },
+      {
+        "title": "Rösta fram klassens topp 3",
+        "body": "Varje elev får visa 3 fingrar bredvid de ord de tycker fångar respekt bäst. Markera de tre mest valda på tavlan.",
+        "teacherSays": "Det här är vår klass definition av respekt — i dag. Vi kan ändra den senare om vi vill.",
+        "timeEstimate": "10 min"
+      }
+    ],
+    "outro": "Foto av tavlan. Sätt upp som påminnelse i klassrummet."
+  },
+  "reflection": {
+    "questions": [
+      "Var det något ord som överraskade dig?",
+      "Saknades något du tycker hör hemma där?",
+      "Vad gör det lättare att visa respekt mot någon?"
+    ]
+  },
+  "teacherSupport": {
+    "tips": [
+      "Om någon inte kommer på ett ord — låt dem rita istället.",
+      "Spara fotot. Återkom till orden vid konflikt under terminen."
+    ],
+    "adaptations": [],
+    "riskNote": null,
+    "npfSupport": "Tillåt att skriva eller rita. Ge en konkret startsignal (t.ex. en timer på tavlan). Eleven kan välja att sätta upp lappen själv eller be läraren göra det.",
+    "followUp": "Återkom i en månad och fråga: 'Stämmer vår definition fortfarande?'"
+  },
+  "presentations": [
+    {
+      "id": "respektordet-elev-01",
+      "exerciseSlug": "respektordet",
+      "title": "RESPEKT — våra ord",
+      "audience": "students",
+      "status": "ready",
+      "slides": [
+        {
+          "title": "RESPEKT",
+          "body": "Vad betyder respekt för DIG?",
+          "instructionForTeacher": "Visa tyst i 10 sekunder. Dela sedan ut post-it-lappar.",
+          "slideType": "reflection",
+          "mood": "calm",
+          "durationEstimate": "30 sek"
+        },
+        {
+          "title": "Skriv ett ord",
+          "body": "Skriv ETT ord eller en kort fras.\n\nIngen annan ser vad du skriver.",
+          "instructionForTeacher": "Sätt en timer på 2 min. Var tyst själv.",
+          "slideType": "individual_task",
+          "mood": "focused",
+          "durationEstimate": "2 min"
+        },
+        {
+          "title": "Sätt upp era ord",
+          "body": "Sätt upp din lapp på tavlan.\n\nLägg den nära ord som påminner om ditt.",
+          "instructionForTeacher": "Hjälp att gruppera om eleverna är osäkra.",
+          "slideType": "group_activity",
+          "mood": "collaborative",
+          "durationEstimate": "5 min"
+        },
+        {
+          "title": "Vilka är klassens tre viktigaste?",
+          "body": "Du får tre röster.\n\nVisa med fingrar bredvid de ord du tycker fångar respekt bäst.",
+          "instructionForTeacher": "Räkna högt. Markera topp 3 på tavlan.",
+          "slideType": "voting",
+          "mood": "energetic",
+          "durationEstimate": "10 min"
+        },
+        {
+          "title": "Det här är VÅRT språk",
+          "body": "Det här är vår klass definition av respekt.\n\nVi kan ändra den när som helst.",
+          "instructionForTeacher": "Ta foto av tavlan.",
+          "slideType": "closing",
+          "mood": "calm",
+          "durationEstimate": "1 min"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "author": "AI-agent + redaktör",
+    "source": "Nybyggd för schema V2-test",
+    "createdAt": "2026-06-05",
+    "language": "sv"
+  },
+  "requiresPrintMaterials": false
+}
