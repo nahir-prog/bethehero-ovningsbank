@@ -8,42 +8,57 @@
       "slug": "respektordet",
       "shortDescription": "En snabb klassrumsövning där eleverna tillsammans samlar ord som beskriver respekt — och blir överens om vad de faktiskt betyder.",
       "teacherPurpose": "Eleverna upptäcker att 'respekt' inte är ett ord — det är många. Och att olika personer menar olika saker med det. Övningen bygger ett gemensamt språk klassen kan luta sig mot resten av terminen.",
-
-      "image": {
-        "url": "images/hero-logo-400.png",
-        "alt": "BE THE HERO-logo (placeholder för övningsbild)",
-        "generationPrompt": "Klassrum med ord på post-it-lappar runt ordet RESPEKT på tavla, mjukt dagsljus, varma toner"
-      },
-
+      "image": null,
       "taxonomy": {
-        "themes": ["Gemenskap & inkludering","Sociala roller"],
-        "focusAreas": ["respekt","klassrumsklimat"],
-        "learningAreas": ["värdegrund","språkutveckling"],
-        "classNeeds": ["nystart","ny klass","efter konflikt"]
+        "themes": [
+          "Gemenskap & inkludering",
+          "Sociala roller"
+        ],
+        "focusAreas": [
+          "respekt",
+          "klassrumsklimat"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "språkutveckling"
+        ],
+        "classNeeds": [
+          "nystart",
+          "ny klass",
+          "efter konflikt"
+        ]
       },
-
       "safety": {
         "level": "standard",
         "note": null
       },
-
       "metadata": {
         "durationMinutes": 20,
         "preparationMinutes": 2,
-        "gradeRange": ["4","5","6"],
-        "stages": ["mellanstadiet"],
-        "workForm": ["individuellt","helklass"],
-        "materialNeeds": ["whiteboard","post-it eller papper"],
+        "gradeRange": [
+          "4",
+          "5",
+          "6"
+        ],
+        "stages": [
+          "mellanstadiet"
+        ],
+        "workForm": [
+          "individuellt",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "whiteboard",
+          "post-it eller papper"
+        ],
         "cardNeeds": []
       },
-
       "lessonSetup": {
         "safeStartText": "Idag bygger vi ihop ett ord. Det finns inga fel svar — bara olika sätt att tänka.",
         "preparation": "Skriv 'RESPEKT' stort på tavlan. Ha post-it eller papper redo till alla.",
         "materials": "Whiteboard, post-it-lappar (eller pappersbitar) — en per elev.",
         "printMaterials": []
       },
-
       "implementation": {
         "intro": "Berätta att klassen ska försöka bygga ett gemensamt språk för vad respekt är.",
         "steps": [
@@ -71,7 +86,6 @@
         ],
         "outro": "Foto av tavlan. Sätt upp som påminnelse i klassrummet."
       },
-
       "reflection": {
         "questions": [
           "Var det något ord som överraskade dig?",
@@ -79,7 +93,6 @@
           "Vad gör det lättare att visa respekt mot någon?"
         ]
       },
-
       "teacherSupport": {
         "tips": [
           "Om någon inte kommer på ett ord — låt dem rita istället.",
@@ -90,7 +103,6 @@
         "npfSupport": "Tillåt att skriva eller rita. Ge en konkret startsignal (t.ex. en timer på tavlan). Eleven kan välja att sätta upp lappen själv eller be läraren göra det.",
         "followUp": "Återkom i en månad och fråga: 'Stämmer vår definition fortfarande?'"
       },
-
       "presentations": [
         {
           "id": "respektordet-elev-01",
@@ -104,47 +116,55 @@
               "body": "Vad betyder respekt för DIG?",
               "instructionForTeacher": "Visa tyst i 10 sekunder. Dela sedan ut post-it-lappar.",
               "interactionType": "reflection",
-              "estimatedTime": "30 sek"
+              "slideType": "reflection",
+              "mood": "calm",
+              "durationEstimate": "30 sek"
             },
             {
               "title": "Skriv ett ord",
               "body": "Skriv ETT ord eller en kort fras.\n\nIngen annan ser vad du skriver.",
               "instructionForTeacher": "Sätt en timer på 2 min. Var tyst själv.",
               "interactionType": "individual_task",
-              "estimatedTime": "2 min"
+              "slideType": "individual_task",
+              "mood": "focused",
+              "durationEstimate": "2 min"
             },
             {
               "title": "Sätt upp era ord",
               "body": "Sätt upp din lapp på tavlan.\n\nLägg den nära ord som påminner om ditt.",
               "instructionForTeacher": "Hjälp att gruppera om eleverna är osäkra.",
               "interactionType": "group_activity",
-              "estimatedTime": "5 min"
+              "slideType": "group_activity",
+              "mood": "collaborative",
+              "durationEstimate": "5 min"
             },
             {
               "title": "Vilka är klassens tre viktigaste?",
               "body": "Du får tre röster.\n\nVisa med fingrar bredvid de ord du tycker fångar respekt bäst.",
               "instructionForTeacher": "Räkna högt. Markera topp 3 på tavlan.",
               "interactionType": "voting",
-              "estimatedTime": "10 min"
+              "slideType": "voting",
+              "mood": "energetic",
+              "durationEstimate": "10 min"
             },
             {
               "title": "Det här är VÅRT språk",
               "body": "Det här är vår klass definition av respekt.\n\nVi kan ändra den när som helst.",
               "instructionForTeacher": "Ta foto av tavlan.",
               "interactionType": "closing",
-              "estimatedTime": "1 min"
+              "slideType": "closing",
+              "mood": "calm",
+              "durationEstimate": "1 min"
             }
           ]
         }
       ],
-
       "provenance": {
         "author": "AI-agent + redaktör",
         "source": "Nybyggd för schema V2-test",
         "createdAt": "2026-06-05",
         "language": "sv"
       },
-
       "internal": {
         "id": "BTH-V2-001",
         "productionStatus": "klar_for_portal",
@@ -156,42 +176,60 @@
         "createdBy": "AI-agent"
       }
     },
-
     {
       "schemaVersion": 1,
       "title": "KARTAN ÖVER OSS",
       "slug": "kartan-over-oss",
       "shortDescription": "Eleverna ritar en karta över klassen — men inte över namn. Över intressen, känslor och vad var och en bidrar med.",
       "teacherPurpose": "Eleverna ser sin grupp ur ett nytt perspektiv. Istället för 'vem är vän med vem' blir det 'vad gör oss till en grupp'. Övningen synliggör styrkor som annars är osynliga och stärker gemenskap.",
-
-      "image": {
-        "url": "images/hero-logo-400.png",
-        "alt": "Karta med cirklar (placeholder)",
-        "generationPrompt": "Stor karta med många små satelliter runt en mittencirkel, varma färger, känsla av gemenskap"
-      },
-
+      "image": null,
       "taxonomy": {
-        "themes": ["Gemenskap & inkludering","Sociala roller","Självkänsla & identitet"],
-        "focusAreas": ["gruppdynamik","styrkebaserat"],
-        "learningAreas": ["värdegrund","social förmåga"],
-        "classNeeds": ["gruppstärkande","ny klass","efter konflikt"]
+        "themes": [
+          "Gemenskap & inkludering",
+          "Sociala roller",
+          "Självkänsla & identitet"
+        ],
+        "focusAreas": [
+          "gruppdynamik",
+          "styrkebaserat"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "social förmåga"
+        ],
+        "classNeeds": [
+          "gruppstärkande",
+          "ny klass",
+          "efter konflikt"
+        ]
       },
-
       "safety": {
         "level": "standard",
         "note": "Var uppmärksam på elever som drar sig undan från att skriva sig själva."
       },
-
       "metadata": {
         "durationMinutes": 40,
         "preparationMinutes": 10,
-        "gradeRange": ["6","7","8"],
-        "stages": ["mellanstadiet","högstadiet"],
-        "workForm": ["i grupp om 3–5","helklass"],
-        "materialNeeds": ["stora pappersark (A3)","tuschpennor","linjal"],
+        "gradeRange": [
+          "6",
+          "7",
+          "8"
+        ],
+        "stages": [
+          "mellanstadiet",
+          "högstadiet"
+        ],
+        "workForm": [
+          "i grupp om 3–5",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "stora pappersark (A3)",
+          "tuschpennor",
+          "linjal"
+        ],
         "cardNeeds": []
       },
-
       "lessonSetup": {
         "safeStartText": "Vi gör en karta — men det här är ingen kartlektion. Det handlar om er. Och alla är med på kartan.",
         "preparation": "Ta fram ett A3-papper per grupp, tuschpennor i flera färger. Förbered ett exempel på tavlan: en cirkel med 'GRUPP' i mitten, små satelliter runt om.",
@@ -204,7 +242,6 @@
           }
         ]
       },
-
       "implementation": {
         "intro": "Visa exemplet på tavlan. Förklara att grupperna ska göra sin egen karta som visar vad just deras grupp består av.",
         "steps": [
@@ -247,7 +284,6 @@
         ],
         "outro": "Sätt upp kartorna i klassrummet. Återkom till dem om 4 veckor."
       },
-
       "reflection": {
         "questions": [
           "Vad såg du i din grupp som du inte tänkt på tidigare?",
@@ -255,7 +291,6 @@
           "Om er karta såg ut om en månad — vad skulle vara annorlunda?"
         ]
       },
-
       "teacherSupport": {
         "tips": [
           "Gå runt och bekräfta tysta satelliter. 'Att lyssna' är ett bidrag — markera det.",
@@ -270,7 +305,6 @@
         "npfSupport": "Strukturen (mall, exempel, fysiska steg) hjälper elever som behöver tydlighet. Bestäm i förväg vilken person som skriver först om gruppen behöver det.",
         "followUp": "Återkom efter 4 veckor. Fråga: 'Vad har förändrats? Stämmer er karta fortfarande?'"
       },
-
       "presentations": [
         {
           "id": "kartan-elev-01",
@@ -283,51 +317,61 @@
               "title": "Idag gör vi en karta",
               "body": "Men inte en vanlig karta.\n\nEn karta över VÅR GRUPP.",
               "interactionType": "intro",
-              "estimatedTime": "1 min"
+              "slideType": "intro",
+              "mood": "energetic",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Steg 1: Mittencirkeln",
               "body": "Skriv 'VÅR GRUPP' mitt på pappret.\n\nRunt den ska era satelliter sitta.",
               "instructionForTeacher": "Visa exemplet på tavlan.",
               "interactionType": "group_activity",
-              "estimatedTime": "3 min"
+              "slideType": "group_activity",
+              "mood": "collaborative",
+              "durationEstimate": "3 min"
             },
             {
               "title": "Steg 2: Din satellit",
               "body": "Skriv EN sak du tillför just DEN här gruppen.\n\nInget är för litet.",
               "instructionForTeacher": "Gå runt. Bekräfta tysta satelliter — 'att lyssna' räknas.",
               "interactionType": "individual_task",
-              "estimatedTime": "10 min"
+              "slideType": "individual_task",
+              "mood": "focused",
+              "durationEstimate": "10 min"
             },
             {
               "title": "Steg 3: Koppla ihop",
               "body": "Vilka satelliter hör ihop?\n\nDra ett streck mellan dem.",
               "interactionType": "group_activity",
-              "estimatedTime": "10 min"
+              "slideType": "group_activity",
+              "mood": "collaborative",
+              "durationEstimate": "10 min"
             },
             {
               "title": "Steg 4: Önskan",
               "body": "En sista satellit:\n\n'Något vi skulle vilja ha mer av i gruppen.'",
               "interactionType": "group_activity",
-              "estimatedTime": "5 min"
+              "slideType": "group_activity",
+              "mood": "collaborative",
+              "durationEstimate": "5 min"
             },
             {
               "title": "Visa er karta",
               "body": "Berätta kort vad er karta visar.\n\nAndra grupperna får ge er ETT ord.",
               "interactionType": "presentation",
-              "estimatedTime": "12 min"
+              "slideType": "presentation",
+              "mood": "collaborative",
+              "durationEstimate": "12 min"
             }
           ]
         }
       ],
-
       "provenance": {
         "author": "AI-agent + redaktör",
         "source": "Nybyggd för schema V2-test",
         "createdAt": "2026-06-05",
         "language": "sv"
       },
-
       "internal": {
         "id": "BTH-V2-002",
         "productionStatus": "klar_for_portal",
@@ -339,49 +383,65 @@
         "createdBy": "AI-agent"
       }
     },
-
     {
       "schemaVersion": 1,
       "title": "DET DU INTE SA",
       "slug": "det-du-inte-sa",
       "shortDescription": "En tyst, anonym övning där eleverna får skriva ner en gång de hade velat säga något — men lät bli. Lärarsamtal följer, inga personer hängs ut.",
       "teacherPurpose": "Eleverna upptäcker att de inte är ensamma om att hålla saker inne. Övningen synliggör hur mycket som inte sägs i en klass — utan att tvinga någon att avslöja sig själv. Den skapar utrymme för empati och eftertanke utan press.",
-
-      "image": {
-        "url": "images/hero-logo-400.png",
-        "alt": "Kuvert med anonyma lappar (placeholder)",
-        "generationPrompt": "Tyst klassrum med en kartong full med vikta papperslappar i mitten, mjukt eftermiddagsljus, eftertänksam stämning"
-      },
-
+      "image": null,
       "taxonomy": {
-        "themes": ["Empati & perspektiv","Mod & civilkurage","Självkänsla & identitet"],
-        "focusAreas": ["våga säga","tystnad","kommunikation"],
-        "learningAreas": ["värdegrund","social förmåga"],
-        "classNeeds": ["fördjupning","tillit byggd","åk 8-9"]
+        "themes": [
+          "Empati & perspektiv",
+          "Mod & civilkurage",
+          "Självkänsla & identitet"
+        ],
+        "focusAreas": [
+          "våga säga",
+          "tystnad",
+          "kommunikation"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "social förmåga"
+        ],
+        "classNeeds": [
+          "fördjupning",
+          "tillit byggd",
+          "åk 8-9"
+        ]
       },
-
       "safety": {
         "level": "extra_care",
         "note": "Förvarna elevhälsan. Kör inte vid pågående konflikt eller låg tillit. Sitt kvar 5 min efter lektionen."
       },
-
       "metadata": {
         "durationMinutes": 30,
         "preparationMinutes": 5,
-        "gradeRange": ["8","9"],
-        "stages": ["högstadiet"],
-        "workForm": ["individuellt","helklass"],
-        "materialNeeds": ["små pappersbitar (lika stora)","en kartong eller burk att samla i","penna"],
+        "gradeRange": [
+          "8",
+          "9"
+        ],
+        "stages": [
+          "högstadiet"
+        ],
+        "workForm": [
+          "individuellt",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "små pappersbitar (lika stora)",
+          "en kartong eller burk att samla i",
+          "penna"
+        ],
         "cardNeeds": []
       },
-
       "lessonSetup": {
         "safeStartText": "Det vi gör nu är helt anonymt. Ingen kommer att veta vad du har skrivit. Du kan välja att skriva, eller lämna in blankt — båda är okej. Det jag säger högt i slutet är bara dina egna ord, utan namn.",
         "preparation": "Klipp små pappersbitar i samma storlek (8x8 cm). Ställ kartongen eller burken framme. Sitt själv ner när eleverna skriver — visa att tystnaden är okej.",
         "materials": "Små pappersbitar (en per elev, plus extra), kartong eller burk, pennor.",
         "printMaterials": []
       },
-
       "implementation": {
         "intro": "Berätta att övningen handlar om sådant vi tänkt — men inte sagt. Att det är vanligt. Och att vi ska få höra varandras tankar utan att veta vems de är.",
         "steps": [
@@ -426,7 +486,6 @@
         ],
         "outro": "Tacka klassen för att de vågade. Påminn om var de kan vända sig om något kommer upp efteråt: kurator, mentor, dig."
       },
-
       "reflection": {
         "questions": [
           "Var något du hörde något du själv hade kunnat skriva?",
@@ -434,7 +493,6 @@
           "Finns det något du efter idag vågar säga som du inte hade vågat innan?"
         ]
       },
-
       "teacherSupport": {
         "tips": [
           "Förbered en plats att gå till efter lektionen om någon behöver prata — och säg det innan ni börjar.",
@@ -449,7 +507,6 @@
         "npfSupport": "Tydlig struktur (5 steg, fysiska handlingar) ger förutsägbarhet. Förvarna elev med ångest enskilt i förväg om vad som kommer hända. Tillåt att gå ut under övningen utan förklaring — säg det innan ni börjar.",
         "followUp": "Inom en vecka: avsätt 5 min i slutet av en lektion för 'är det något som dröjt sig kvar efter förra övningen?' Påminn om att kurator finns."
       },
-
       "presentations": [
         {
           "id": "detduintesa-elev-01",
@@ -463,107 +520,149 @@
               "body": "Inga namn.\n\nIngen kommer att veta vad du har skrivit.\n\nDu kan välja att inte skriva alls.",
               "instructionForTeacher": "Läs detta lugnt högt. Sätt tonen.",
               "interactionType": "intro",
-              "estimatedTime": "1 min"
+              "slideType": "intro",
+              "mood": "energetic",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Skriv en gång du höll inne",
               "body": "En gång då du hade velat säga något — till någon, om något — men lät bli.\n\nStort eller litet. Nytt eller gammalt.",
               "instructionForTeacher": "Tystnad i 5 min. Sitt själv ner.",
               "interactionType": "individual_task",
-              "estimatedTime": "5 min"
+              "slideType": "individual_task",
+              "mood": "focused",
+              "durationEstimate": "5 min"
             },
             {
               "title": "Lägg din lapp i kartongen",
               "body": "Vikt eller ovikt. Du väljer.\n\nBlank lapp är också okej.",
               "interactionType": "transition",
-              "estimatedTime": "1 min"
+              "slideType": "transition",
+              "mood": "clear",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Lyssna",
               "body": "Jag läser några lappar.\n\nUtan att försöka gissa vem som skrivit.",
               "instructionForTeacher": "Dra 5-7 lappar. Läs lugnt med pauser. Skippa något som kan skada.",
               "interactionType": "listening",
-              "estimatedTime": "8 min"
+              "slideType": "listening",
+              "mood": "calm",
+              "durationEstimate": "8 min"
             },
             {
               "title": "En tyst minut",
               "body": "",
               "instructionForTeacher": "EN HEL MINUT tystnad. Visa själv genom att sitta lugnt.",
               "interactionType": "silence",
-              "estimatedTime": "1 min"
+              "slideType": "silence",
+              "mood": "still",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Vill någon säga något?",
               "body": "Helt frivilligt.\n\nÄven att bara lyssna är ett val.",
               "instructionForTeacher": "Pressa ingen. Tystnad är okej även här.",
               "interactionType": "open_discussion",
-              "estimatedTime": "10 min"
+              "slideType": "open_discussion",
+              "mood": "collaborative",
+              "durationEstimate": "10 min"
             },
             {
               "title": "Det här stannar här i rummet",
               "body": "",
               "instructionForTeacher": "Riv sönder lapparna synligt. Säg att det är okej att komma och prata efteråt.",
               "interactionType": "closing",
-              "estimatedTime": "2 min"
+              "slideType": "closing",
+              "mood": "calm",
+              "durationEstimate": "2 min"
             }
           ]
         }
       ],
-
       "provenance": {
         "author": "AI-agent + redaktör",
         "source": "Nybyggd för schema V2-test",
         "createdAt": "2026-06-05",
         "language": "sv"
       },
-
       "internal": {
         "id": "BTH-V2-003",
         "productionStatus": "klar_for_portal",
         "qualityChecklist": null,
         "notes": "Känslig övning som testar att strukturen håller för material med stark riskNote, utvecklad npfSupport och tydlig followUp. Får inte exporteras utan att elevhälsan är förvarnad.",
-        "lockedFields": ["safety"],
+        "lockedFields": [
+          "safety"
+        ],
         "createdAt": "2026-06-05",
         "updatedAt": "2026-06-05",
         "createdBy": "AI-agent"
       }
     },
-
     {
       "schemaVersion": 1,
       "title": "ANDAS IN OCH UT SOPPA",
       "slug": "andas-in-och-ut-soppa",
       "shortDescription": "En kort andningsövning där eleverna föreställer sig en skål med varm soppa — andas in doften, blåser ut för att svalka. Återkommande som rutin gör att kroppen lär sig själv-reglera.",
       "teacherPurpose": "Eleverna får ett konkret verktyg för att reglera sina egna känslor. Genom att koppla andning till en bild (varm soppa) blir tekniken lätt att komma ihåg när det behövs — i klassrummet, på rasten, hemma.",
-
       "image": {
         "url": "https://www.heroofthetalk.se/wp-content/uploads/2025/03/Firefly-a-bowl-with-hot-food-with-many-hearts-in-different-colors-11037-scaled.jpg",
         "alt": "Soppskål med många färgade hjärtan",
         "generationPrompt": null
       },
-
       "taxonomy": {
-        "themes": ["Känslor & självreglering"],
-        "focusAreas": ["andning","självreglering","mindfulness"],
-        "learningAreas": ["värdegrund","välmående"],
-        "classNeeds": ["återkommande rutin","efter rast","vid hög stressnivå"]
+        "themes": [
+          "Känslor & självreglering"
+        ],
+        "focusAreas": [
+          "andning",
+          "självreglering",
+          "mindfulness"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "välmående"
+        ],
+        "classNeeds": [
+          "återkommande rutin",
+          "efter rast",
+          "vid hög stressnivå"
+        ]
       },
-
       "safety": {
         "level": "standard",
         "note": "Övningen är helt ofarlig — kan göras dagligen utan risk."
       },
-
       "metadata": {
         "durationMinutes": 10,
         "preparationMinutes": 5,
-        "gradeRange": ["F","1","2","3","4","5","6","7","8","9"],
-        "stages": ["F-klass","lågstadiet","mellanstadiet","högstadiet"],
-        "workForm": ["individuellt"],
-        "materialNeeds": ["projektor (för film)","papper och färgpennor (valfritt)"],
+        "gradeRange": [
+          "F",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "stages": [
+          "F-klass",
+          "lågstadiet",
+          "mellanstadiet",
+          "högstadiet"
+        ],
+        "workForm": [
+          "individuellt"
+        ],
+        "materialNeeds": [
+          "projektor (för film)",
+          "papper och färgpennor (valfritt)"
+        ],
         "cardNeeds": []
       },
-
       "lessonSetup": {
         "safeStartText": "Nu ska vi göra en kort övning som kan hjälpa kroppen att bli lugn när man känner sig stressad, arg eller nervös.",
         "preparation": "Förbered filmen 'Andas soppa'. Valfritt: skriv ut PDF-mallen med soppskålen som eleverna kan färglägga efter övningen.",
@@ -576,7 +675,6 @@
           }
         ]
       },
-
       "implementation": {
         "intro": "Berätta kort att kroppen kan tränas på att lugna sig — och att andningen är ett verktyg som finns med dig hela tiden.",
         "steps": [
@@ -612,7 +710,6 @@
         ],
         "outro": "Påminn eleverna: 'När du blir stressad nästa gång — tänk på din soppskål. Andas in doften, blås ut för att svalka.'"
       },
-
       "reflection": {
         "questions": [
           "Hur kändes det i kroppen efter andetagen?",
@@ -620,7 +717,6 @@
           "Vilken soppa skulle din vara om du fick välja?"
         ]
       },
-
       "teacherSupport": {
         "tips": [
           "Gör övningen återkommande — 2-3 gånger i veckan eller efter raster — så lär sig kroppen att använda andningen själv.",
@@ -635,7 +731,6 @@
         "npfSupport": "Förutsägbar struktur (samma övning varje gång) skapar trygghet. Bilden av soppan ger konkret stöd för elever som har svårt med abstrakt 'andas djupt'. Tillåt att inte delta — eleven kan bara observera.",
         "followUp": "Använd som dagligt verktyg. Påminn eleven om soppskålen när du ser att de behöver det."
       },
-
       "presentations": [
         {
           "id": "andas-soppa-elev-01",
@@ -649,50 +744,60 @@
               "body": "Fötterna i golvet.\nHänderna i knät.\nHumset rakt.",
               "instructionForTeacher": "Vänta tills alla sitter bekvämt.",
               "interactionType": "intro",
-              "estimatedTime": "1 min"
+              "slideType": "intro",
+              "mood": "energetic",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Tänk dig en skål med varm soppa",
               "body": "Den ångar. Den doftar gott.",
               "interactionType": "visualization",
-              "estimatedTime": "30 sek"
+              "slideType": "visualization",
+              "mood": "calm",
+              "durationEstimate": "30 sek"
             },
             {
               "title": "Andas IN — luktar du doften",
               "body": "Långsamt. Genom näsan.",
               "interactionType": "guided_breathing",
-              "estimatedTime": "1 min"
+              "slideType": "guided_breathing",
+              "mood": "still",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Andas UT — du svalkar soppan",
               "body": "Långsamt. Genom munnen.",
               "interactionType": "guided_breathing",
-              "estimatedTime": "1 min"
+              "slideType": "guided_breathing",
+              "mood": "still",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Vi gör det fem gånger till",
               "body": "In doften... ut svalkan...",
               "instructionForTeacher": "Räkna långsamt med eleverna.",
               "interactionType": "guided_breathing",
-              "estimatedTime": "3 min"
+              "slideType": "guided_breathing",
+              "mood": "still",
+              "durationEstimate": "3 min"
             },
             {
               "title": "Bra jobbat",
               "body": "Nästa gång du blir stressad — tänk på din soppskål.",
               "interactionType": "closing",
-              "estimatedTime": "30 sek"
+              "slideType": "closing",
+              "mood": "calm",
+              "durationEstimate": "30 sek"
             }
           ]
         }
       ],
-
       "provenance": {
         "author": "BE THE HERO original",
         "source": "Migrerad från legacy CSV — WordPress ID 32644",
         "createdAt": "2025-03-15",
         "language": "sv"
       },
-
       "internal": {
         "id": "BTH-LEGACY-32644",
         "productionStatus": "klar_for_portal",
@@ -704,42 +809,67 @@
         "createdBy": "AI-agent (migration från CSV)"
       }
     },
-
     {
       "schemaVersion": 1,
       "title": "BLOMMAN",
       "slug": "blomman",
       "shortDescription": "Eleverna utforskar vad människor behöver för att må bra — genom liknelsen med en blomma som behöver rätt miljö. De ritar sig själva som en blomma och fyller en vattenkanna med vad de behöver.",
       "teacherPurpose": "Eleverna lär sig att identifiera och förstå både sina egna och andras behov. Övningen synliggör att vi alla påverkas av vår miljö — och att det är miljön runt 'blomman', inte blomman själv, som gör skillnad.",
-
       "image": {
         "url": "https://www.heroofthetalk.se/wp-content/uploads/2024/05/AdobeStock_794376317-scaled-e1739544920957.jpeg",
         "alt": "Blomma som blommar — liknelsen för välmående",
         "generationPrompt": null
       },
-
       "taxonomy": {
-        "themes": ["Självkänsla & identitet","Känslor & självreglering"],
-        "focusAreas": ["behov","välmående","klassrumsklimat"],
-        "learningAreas": ["värdegrund","biologi (analogi)"],
-        "classNeeds": ["självkännedom","empati","ny klass"]
+        "themes": [
+          "Självkänsla & identitet",
+          "Känslor & självreglering"
+        ],
+        "focusAreas": [
+          "behov",
+          "välmående",
+          "klassrumsklimat"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "biologi (analogi)"
+        ],
+        "classNeeds": [
+          "självkännedom",
+          "empati",
+          "ny klass"
+        ]
       },
-
       "safety": {
         "level": "standard",
         "note": "Var uppmärksam om en elev ritar mycket vissna blommor — kan vara tecken på att eleven själv inte mår bra."
       },
-
       "metadata": {
         "durationMinutes": 30,
         "preparationMinutes": 5,
-        "gradeRange": ["F","1","2","3","4"],
-        "stages": ["F-klass","lågstadiet"],
-        "workForm": ["individuellt","helklass"],
-        "materialNeeds": ["utskriftsmaterial (blomma, kruka, vattenkanna)","pennor","sax","lim"],
+        "gradeRange": [
+          "F",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "stages": [
+          "F-klass",
+          "lågstadiet"
+        ],
+        "workForm": [
+          "individuellt",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "utskriftsmaterial (blomma, kruka, vattenkanna)",
+          "pennor",
+          "sax",
+          "lim"
+        ],
         "cardNeeds": []
       },
-
       "lessonSetup": {
         "safeStartText": "Idag pratar vi om vad människor behöver för att må bra. Vi använder en blomma som hjälp — för att blommor visar oss något viktigt.",
         "preparation": "Skriv ut materialet: blomma som vissnar/blommar, tom kruka, vattenkanna-mall. Ha pennor, sax och lim redo.",
@@ -752,7 +882,6 @@
           }
         ]
       },
-
       "implementation": {
         "intro": "Visa två bilder: en blomma som blommar, en som vissnar. Be barnen titta och fundera över skillnaden.",
         "steps": [
@@ -799,7 +928,6 @@
         ],
         "outro": "Låt verkbilderna sitta uppe i klassrummet. Återkom till dem under terminen — fråga 'Vad behöver du mer av just nu?'"
       },
-
       "reflection": {
         "questions": [
           "Vad behöver du i ditt liv för att må bra och utvecklas?",
@@ -807,7 +935,6 @@
           "Vad kan VI i klassen göra för att fler ska blomma?"
         ]
       },
-
       "teacherSupport": {
         "tips": [
           "Var nära elever som ritar mycket vissna blommor — fråga försiktigt efteråt.",
@@ -822,7 +949,6 @@
         "npfSupport": "Konkret material (blomma, kruka, vattenkanna) ger struktur. Bilder före text hjälper. Ge tydlig tidssignal mellan momenten.",
         "followUp": "Använd terminen igenom: 'Hur ser din blomma ut nu?' Sätt upp ny vattenkanna varje månad."
       },
-
       "presentations": [
         {
           "id": "blomman-elev-01",
@@ -836,52 +962,62 @@
               "body": "En blommar. En vissnar.\n\nVad ser ni för skillnad?",
               "instructionForTeacher": "Visa bilder på blommor. Låt barnen svara fritt.",
               "interactionType": "observation",
-              "estimatedTime": "3 min"
+              "slideType": "observation",
+              "mood": "focused",
+              "durationEstimate": "3 min"
             },
             {
               "title": "Vad behöver en blomma?",
               "body": "Vatten. Sol. Jord. Tid.",
               "instructionForTeacher": "Skriv ord på tavlan när barnen säger dem.",
               "interactionType": "brainstorm",
-              "estimatedTime": "3 min"
+              "slideType": "brainstorm",
+              "mood": "energetic",
+              "durationEstimate": "3 min"
             },
             {
               "title": "Människor är som blommor",
               "body": "Vi blommar när vi har det vi behöver.\n\nVi vissnar när vi inte har det.",
               "interactionType": "concept",
-              "estimatedTime": "2 min"
+              "slideType": "concept",
+              "mood": "clear",
+              "durationEstimate": "2 min"
             },
             {
               "title": "Rita dig själv som en blomma",
               "body": "Hur ser DU ut när du blommar?\n\nHur ser du ut när du vissnar?",
               "instructionForTeacher": "Dela ut blomma- och kruka-mallarna.",
               "interactionType": "creative_task",
-              "estimatedTime": "10 min"
+              "slideType": "creative_task",
+              "mood": "focused",
+              "durationEstimate": "10 min"
             },
             {
               "title": "Vad behöver DU?",
               "body": "Fyll din vattenkanna med:\n\nvad du behöver för att må bra.",
               "instructionForTeacher": "Ge exempel: mat, sömn, kärlek, vänskap, lek, lugn.",
               "interactionType": "individual_task",
-              "estimatedTime": "8 min"
+              "slideType": "individual_task",
+              "mood": "focused",
+              "durationEstimate": "8 min"
             },
             {
               "title": "Sätt upp era blommor",
               "body": "Titta på alla blommor.\n\nVad har vi gemensamt?\n\nVad är ditt unikt?",
               "interactionType": "reflection",
-              "estimatedTime": "4 min"
+              "slideType": "reflection",
+              "mood": "calm",
+              "durationEstimate": "4 min"
             }
           ]
         }
       ],
-
       "provenance": {
         "author": "BE THE HERO original",
         "source": "Migrerad från legacy CSV — WordPress ID 19123",
         "createdAt": "2024-05-15",
         "language": "sv"
       },
-
       "internal": {
         "id": "BTH-LEGACY-19123",
         "productionStatus": "klar_for_portal",
@@ -893,42 +1029,69 @@
         "createdBy": "AI-agent (migration från CSV)"
       }
     },
-
     {
       "schemaVersion": 1,
       "title": "BRA KOMPIS TRIANGEL",
       "slug": "bra-kompis-triangel",
       "shortDescription": "Eleverna rangordnar 12 påståenden om vad en bra klasskamrat ska vara — och bygger en pyramid där de viktigaste hamnar högst. Diskussion och perspektiv i grupp.",
       "teacherPurpose": "Eleverna tränar på att samarbeta, motivera sina åsikter och se andras perspektiv. Övningen synliggör vad gruppen tycker är viktigast i en kompis — och visar att olika grupper kan komma fram till olika svar.",
-
       "image": {
         "url": "https://www.heroofthetalk.se/wp-content/uploads/2025/04/Firefly-a-cool-trinangle-with-a-lot-of-hearts-in-thge-background-with-in-different-colors.-59993-scaled.jpg",
         "alt": "Färgglad triangel med hjärtan i bakgrunden",
         "generationPrompt": null
       },
-
       "taxonomy": {
-        "themes": ["Empati & perspektiv","Självkänsla & identitet","Gemenskap & inkludering"],
-        "focusAreas": ["vänskap","prioritering","samarbete"],
-        "learningAreas": ["värdegrund","social förmåga","argumentation"],
-        "classNeeds": ["gruppstärkande","åk 3-7","efter konflikt"]
+        "themes": [
+          "Empati & perspektiv",
+          "Självkänsla & identitet",
+          "Gemenskap & inkludering"
+        ],
+        "focusAreas": [
+          "vänskap",
+          "prioritering",
+          "samarbete"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "social förmåga",
+          "argumentation"
+        ],
+        "classNeeds": [
+          "gruppstärkande",
+          "åk 3-7",
+          "efter konflikt"
+        ]
       },
-
       "safety": {
         "level": "standard",
         "note": null
       },
-
       "metadata": {
         "durationMinutes": 30,
         "preparationMinutes": 15,
-        "gradeRange": ["3","4","5","6","7"],
-        "stages": ["lågstadiet","mellanstadiet"],
-        "workForm": ["i grupp om 3–5","helklass"],
-        "materialNeeds": ["utskriftsmaterial (12 kort per grupp)","sax","papper","pennor"],
+        "gradeRange": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "stages": [
+          "lågstadiet",
+          "mellanstadiet"
+        ],
+        "workForm": [
+          "i grupp om 3–5",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "utskriftsmaterial (12 kort per grupp)",
+          "sax",
+          "papper",
+          "pennor"
+        ],
         "cardNeeds": []
       },
-
       "lessonSetup": {
         "safeStartText": "Vi ska prata om vad en bra klasskamrat är. Det finns inte ett rätt svar — bara vad just ER grupp tycker är viktigast.",
         "preparation": "Skriv ut Bra Kompis-korten (PDF) — ett set per grupp om 3-5 elever. Klipp ut korten innan lektionen.",
@@ -941,7 +1104,6 @@
           }
         ]
       },
-
       "implementation": {
         "intro": "Visa ett exempel på en pyramid med tre nivåer. Förklara att grupperna ska rangordna 12 påståenden — viktigast högst, minst viktigt längst ner.",
         "steps": [
@@ -983,7 +1145,6 @@
         ],
         "outro": "Sätt upp pyramiderna i klassrummet. Använd som referens vid konflikt: 'Vad sa er pyramid om det här?'"
       },
-
       "reflection": {
         "questions": [
           "Hur ska en bra klasskamrat vara?",
@@ -991,7 +1152,6 @@
           "Var något kort svårt att placera — och varför?"
         ]
       },
-
       "teacherSupport": {
         "tips": [
           "Det går att skriva egna kort och anpassa pyramid-metoden till andra ämnen — t.ex. 'en bra lärare', 'en bra rast', 'en bra grupp'.",
@@ -1006,7 +1166,6 @@
         "npfSupport": "Korten ger struktur. Tydlig pyramid-form (3-5 nivåer) hjälper visuellt. Bestäm i förväg vem som läser första kortet om gruppen behöver det.",
         "followUp": "Återkom om en månad. Stämmer fortfarande er pyramid? Vill någon flytta något?"
       },
-
       "presentations": [
         {
           "id": "bra-kompis-elev-01",
@@ -1019,51 +1178,61 @@
               "title": "Vad är en bra kompis?",
               "body": "Det finns inte ett rätt svar.\n\nBara vad ER grupp tycker är viktigast.",
               "interactionType": "intro",
-              "estimatedTime": "1 min"
+              "slideType": "intro",
+              "mood": "energetic",
+              "durationEstimate": "1 min"
             },
             {
               "title": "Ni får 12 kort",
               "body": "Varje kort säger en sak en bra kompis kan vara.",
               "instructionForTeacher": "Dela ut korten — ett set per grupp.",
               "interactionType": "transition",
-              "estimatedTime": "2 min"
+              "slideType": "transition",
+              "mood": "clear",
+              "durationEstimate": "2 min"
             },
             {
               "title": "Läs alla kort tillsammans",
               "body": "En i taget.\n\nPrata om vad varje kort betyder.",
               "interactionType": "group_reading",
-              "estimatedTime": "7 min"
+              "slideType": "group_reading",
+              "mood": "collaborative",
+              "durationEstimate": "7 min"
             },
             {
               "title": "Bygg en pyramid",
               "body": "Viktigast HÖGST UPP.\nMindre viktigt LÄNGST NER.",
               "instructionForTeacher": "Visa exempel på tavlan. Pyramidens form spelar mindre roll än samtalet.",
               "interactionType": "group_activity",
-              "estimatedTime": "12 min"
+              "slideType": "group_activity",
+              "mood": "collaborative",
+              "durationEstimate": "12 min"
             },
             {
               "title": "Visa er pyramid",
               "body": "Vad valde ni högst upp — och varför?",
               "interactionType": "presentation",
-              "estimatedTime": "5 min"
+              "slideType": "presentation",
+              "mood": "collaborative",
+              "durationEstimate": "5 min"
             },
             {
               "title": "Jämför",
               "body": "Vad ser ni för skillnader mellan pyramiderna?",
               "interactionType": "discussion",
-              "estimatedTime": "3 min"
+              "slideType": "discussion",
+              "mood": "collaborative",
+              "durationEstimate": "3 min"
             }
           ]
         }
       ],
-
       "provenance": {
         "author": "BE THE HERO original",
         "source": "Migrerad från legacy CSV — WordPress ID 32731",
         "createdAt": "2025-04-10",
         "language": "sv"
       },
-
       "internal": {
         "id": "BTH-LEGACY-32731",
         "productionStatus": "klar_for_portal",
