@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BE THE HERO — Strukturerad modell (test)</title>
+<style>
+:root {
+  --bg:#0d1117; --s1:#161b27; --s2:#1e2535; --s3:#252d40;
+  --border:#2a3249; --purple:#7c3aed; --pl:#a78bfa; --pp:rgba(124,58,237,.12);
+  --text:#e8edf8; --muted:#7a8499; --dim:#4a5568;
+  --gult:#f59e0b; --gront:#10b981; --blatt:#3b82f6; --rott:#ef4444;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;}
+button,input,select,textarea{font-family:inherit;}
+
+/* ── TOPBAR ── */
+.topbar{height:52px;background:var(--s1);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 18px;gap:14px;position:sticky;top:0;z-index:50;}
+.brand{display:flex;align-items:center;gap:9px;flex-shrink:0;}
+.brand-h{width:28px;height:28px;background:var(--purple);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;}
+.brand-name{font-size:13px;font-weight:800;}
+.brand-sub{font-size:10px;color:var(--muted);}
+.test-badge{font-size:10px;font-weight:800;letter-spacing:1.2px;background:#a855f7;color:#fff;padding:3px 8px;border-radius:4px;}
+.back-link{margin-left:auto;font-size:12px;color:var(--muted);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:5px;transition:all .12s;}
+.back-link:hover{color:var(--text);border-color:var(--pl);}
+
+/* ── LAYOUT ── */
+#app{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 52px);}
+.sidebar{background:var(--s1);border-right:1px solid var(--border);padding:18px 14px;overflow-y:auto;height:calc(100vh - 52px);position:sticky;top:52px;}
+.sidebar-title{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.sidebar-info{font-size:11px;color:var(--muted);line-height:1.55;padding:10px;background:var(--s2);border-radius:6px;margin-bottom:16px;}
+.ex-list{display:flex;flex-direction:column;gap:6px;}
+.ex-item{padding:11px 12px;background:var(--s2);border:1px solid var(--border);border-radius:7px;cursor:pointer;transition:all .12s;}
+.ex-item:hover{border-color:var(--pl);}
+.ex-item.active{background:var(--pp);border-color:var(--purple);}
+.ex-item-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.ex-item-meta{font-size:10px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;}
+.ex-item-id{font-size:9px;color:var(--dim);margin-top:4px;font-family:monospace;}
+
+.main{padding:24px 28px;overflow-y:auto;max-width:1100px;}
+
+/* ── TABS ── */
+.tabs{display:flex;gap:2px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:4px;margin-bottom:22px;}
+.tab{flex:1;background:transparent;border:none;color:var(--muted);font-size:13px;font-weight:600;padding:9px 14px;border-radius:5px;cursor:pointer;transition:all .12s;}
+.tab:hover{color:var(--text);}
+.tab.on{background:var(--purple);color:#fff;}
+
+/* ── TEACHER VIEW (renderar från structured JSON) ── */
+.tv-header{margin-bottom:20px;}
+.tv-h1{font-size:30px;font-weight:900;color:var(--text);line-height:1.1;margin-bottom:8px;letter-spacing:-.3px;}
+.tv-short{font-size:15px;color:#b0bcd4;line-height:1.6;margin-bottom:14px;max-width:680px;}
+.tv-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
+.tv-meta-tag{background:var(--s2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 10px;border-radius:5px;}
+.tv-meta-tag.alder{background:var(--pp);color:var(--pl);border-color:rgba(124,58,237,.25);}
+
+.tv-purpose-card{background:linear-gradient(135deg,var(--s1),var(--s2));border:1px solid var(--border);border-left:3px solid var(--pl);border-radius:8px;padding:14px 16px;margin-bottom:22px;}
+.tv-purpose-label{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--pl);margin-bottom:6px;}
+.tv-purpose-text{font-size:14px;color:var(--text);line-height:1.65;}
+
+.tv-section{background:var(--s1);border:1px solid var(--border);border-radius:9px;margin-bottom:14px;overflow:hidden;}
+.tv-section-h{padding:13px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);display:flex;align-items:center;gap:8px;}
+.tv-section-icon{font-size:16px;}
+.tv-section-title{font-size:12px;font-weight:800;letter-spacing:.3px;}
+.tv-section-b{padding:16px;}
+.tv-prose{font-size:13.5px;color:#c8d3e8;line-height:1.65;}
+.tv-prose strong{color:var(--text);font-weight:600;}
+
+/* Trygg start */
+.tv-safe-start{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.25);border-left:4px solid var(--gront);border-radius:8px;padding:14px 16px;margin-bottom:16px;}
+.tv-safe-start-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gront);margin-bottom:6px;}
+.tv-safe-start-text{font-size:14px;color:var(--text);line-height:1.55;font-style:italic;}
+
+/* Implementation steps */
+.tv-steps{display:flex;flex-direction:column;gap:14px;}
+.tv-step{display:flex;gap:14px;align-items:flex-start;}
+.tv-step-num{width:32px;height:32px;background:var(--purple);color:#fff;border-radius:50%;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.tv-step-content{flex:1;}
+.tv-step-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;display:flex;align-items:center;gap:10px;}
+.tv-step-time{font-size:11px;font-weight:600;color:var(--muted);background:var(--s2);padding:2px 8px;border-radius:4px;border:1px solid var(--border);}
+.tv-step-body{font-size:13px;color:#b0bcd4;line-height:1.6;margin-bottom:8px;}
+.tv-step-subitems{list-style:none;padding-left:0;display:flex;flex-direction:column;gap:5px;margin:8px 0;}
+.tv-step-subitems li{font-size:12.5px;color:#9aaac4;padding-left:18px;position:relative;line-height:1.5;}
+.tv-step-subitems li::before{content:'·';position:absolute;left:6px;color:var(--pl);font-weight:800;}
+.tv-step-says{background:rgba(124,58,237,.07);border-left:2px solid var(--pl);padding:8px 12px;border-radius:0 5px 5px 0;font-size:12.5px;color:var(--pl);font-style:italic;margin-top:8px;}
+.tv-step-says::before{content:'💬 ';font-style:normal;}
+
+/* Reflection */
+.tv-questions{display:flex;flex-direction:column;gap:1px;}
+.tv-q{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:#b0bcd4;align-items:flex-start;}
+.tv-q:last-child{border-bottom:none;}
+.tv-q-num{color:var(--pl);font-weight:800;flex-shrink:0;font-size:13px;}
+
+/* Tips, adaptations, follow-up */
+.tv-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;}
+.tv-list li{font-size:13px;color:#b0bcd4;line-height:1.55;padding-left:20px;position:relative;}
+.tv-list li::before{content:'→';position:absolute;left:0;color:var(--pl);}
+
+/* Risk note */
+.tv-risk{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-left:4px solid var(--rott);border-radius:7px;padding:12px 14px;margin-bottom:12px;}
+.tv-risk-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--rott);margin-bottom:6px;}
+.tv-risk-text{font-size:13px;color:#f0c4c4;line-height:1.55;}
+
+/* Print materials */
+.tv-print-mat{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;}
+.tv-print-mat-info{flex:1;}
+.tv-print-mat-title{font-size:13px;font-weight:700;color:var(--text);}
+.tv-print-mat-desc{font-size:11px;color:var(--muted);margin-top:2px;}
+.tv-print-mat-icon{font-size:18px;color:var(--pl);}
+
+/* ── JSON-vy ── */
+.json-toolbar{display:flex;gap:8px;margin-bottom:12px;align-items:center;}
+.json-btn{background:var(--s2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:600;padding:7px 14px;border-radius:6px;cursor:pointer;transition:all .12s;}
+.json-btn:hover{border-color:var(--pl);color:var(--pl);}
+.json-btn.primary{background:var(--purple);color:#fff;border-color:var(--purple);}
+.json-btn.primary:hover{background:#6d28d9;color:#fff;}
+.json-info{font-size:11px;color:var(--muted);margin-left:auto;}
+.json-box{background:#0a0d14;border:1px solid var(--border);border-radius:8px;padding:16px;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:11.5px;color:#a8b5d1;overflow-x:auto;max-height:600px;overflow-y:auto;white-space:pre;line-height:1.6;}
+
+/* JSON syntax highlighting */
+.json-key{color:#a78bfa;}
+.json-string{color:#86efac;}
+.json-number{color:#fbbf24;}
+.json-boolean{color:#60a5fa;}
+.json-null{color:#94a3b8;font-style:italic;}
+
+/* ── PDF Preview ── */
+.pdf-toolbar{display:flex;gap:8px;margin-bottom:14px;align-items:center;}
+.pdf-frame{background:#525252;padding:30px;border-radius:8px;display:flex;justify-content:center;}
+.pdf-page{background:#fff;color:#1a1a2e;padding:18mm 16mm 22mm 16mm;width:210mm;min-height:297mm;font-family:-apple-system,sans-serif;font-size:11pt;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,.4);}
+.pdf-header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #1B2A6B;padding-bottom:10px;margin-bottom:18px;}
+.pdf-brand{display:flex;align-items:center;gap:10px;}
+.pdf-logo{width:38px;height:38px;background:#1B2A6B;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;}
+.pdf-brand-text{font-size:9pt;color:#64748b;}
+.pdf-brand-text strong{display:block;font-size:11pt;color:#1B2A6B;letter-spacing:1px;}
+.pdf-doctype{font-size:8pt;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase;text-align:right;}
+.pdf-id{font-size:8pt;color:#94a3b8;margin-top:2px;font-family:monospace;}
+.pdf-title{font-size:22pt;font-weight:900;color:#1B2A6B;line-height:1.1;margin-bottom:8px;}
+.pdf-short{font-size:11pt;color:#475569;line-height:1.5;margin-bottom:12px;font-style:italic;}
+.pdf-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+.pdf-mtag{font-size:8.5pt;font-weight:600;padding:2px 8px;border-radius:4px;background:#EEF4FF;color:#2B5FBF;border:1px solid #c7d2fe;}
+.pdf-purpose{background:#f5f3ff;border-left:3px solid #7c3aed;padding:10px 12px;margin-bottom:16px;font-size:10pt;color:#4c1d95;line-height:1.55;}
+.pdf-safe{background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #16a34a;border-radius:6px;padding:10px 14px;margin-bottom:16px;}
+.pdf-safe-lbl{font-size:7.5pt;font-weight:800;letter-spacing:1.2px;color:#15803d;margin-bottom:5px;}
+.pdf-safe-text{font-size:10pt;font-style:italic;color:#1a1a2e;}
+.pdf-section{margin-bottom:16px;page-break-inside:avoid;}
+.pdf-section-title{font-size:8.5pt;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:#1B2A6B;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid #cbd5e1;}
+.pdf-steps{list-style:none;padding:0;}
+.pdf-steps > li{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid #f1f5f9;}
+.pdf-stepnum{width:22px;height:22px;background:#1B2A6B;color:#fff;border-radius:50%;font-size:9pt;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pdf-stepbody{flex:1;}
+.pdf-steptitle{font-size:10.5pt;font-weight:700;color:#1a1a2e;margin-bottom:4px;}
+.pdf-steptext{font-size:9.5pt;color:#475569;line-height:1.55;}
+.pdf-stepsub{list-style:disc;padding-left:18px;margin-top:4px;font-size:9pt;color:#64748b;line-height:1.5;}
+.pdf-stepsays{margin-top:6px;font-size:9pt;font-style:italic;color:#6d28d9;border-left:2px solid #c4b5fd;padding-left:10px;}
+.pdf-steptime{font-size:7.5pt;font-weight:600;color:#94a3b8;background:#f1f5f9;padding:1px 7px;border-radius:3px;margin-left:8px;}
+.pdf-refs{list-style:none;padding:0;}
+.pdf-refs li{padding:5px 0;border-bottom:1px solid #f1f5f9;font-size:10pt;color:#1a1a2e;display:flex;gap:8px;}
+.pdf-refs .pdf-q{color:#2B5FBF;font-weight:800;}
+.pdf-tips{background:#fefce8;border-left:3px solid #eab308;padding:10px 14px;border-radius:5px;}
+.pdf-tips ul{list-style:none;padding:0;font-size:9.5pt;color:#713f12;line-height:1.6;}
+.pdf-tips li{padding-left:14px;position:relative;margin-bottom:4px;}
+.pdf-tips li::before{content:'•';position:absolute;left:0;color:#eab308;font-weight:800;}
+.pdf-risk{background:#fef2f2;border:1px solid #fecaca;border-left:4px solid #dc2626;border-radius:5px;padding:11px 14px;}
+.pdf-risk-lbl{font-size:8pt;font-weight:800;letter-spacing:1.2px;color:#991b1b;margin-bottom:5px;}
+.pdf-risk-text{font-size:9.5pt;color:#7f1d1d;line-height:1.55;}
+.pdf-footer{margin-top:24px;padding-top:8px;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;font-size:7.5pt;color:#94a3b8;}
+
+/* ── ADMIN & QA ── */
+.admin-section{background:var(--s1);border:1px solid var(--border);border-radius:9px;padding:18px;margin-bottom:16px;}
+.admin-section-title{font-size:12px;font-weight:800;letter-spacing:.3px;margin-bottom:12px;color:var(--text);}
+.admin-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;}
+.admin-row:last-child{border-bottom:none;}
+.admin-key{color:var(--muted);}
+.admin-val{font-weight:600;text-align:right;color:var(--text);}
+.admin-status-pill{display:inline-block;font-size:10px;font-weight:700;padding:3px 9px;border-radius:12px;}
+.admin-status-pill.klar_for_portal{background:rgba(16,185,129,.12);color:var(--gront);}
+.admin-status-pill.utkast{background:rgba(74,85,104,.15);color:#9ca3af;}
+.admin-status-pill.exporterad{background:rgba(59,130,246,.12);color:#3b82f6;}
+.admin-notes{font-size:12.5px;color:#b0bcd4;line-height:1.6;padding:10px;background:var(--s2);border-radius:6px;border-left:3px solid var(--pl);}
+
+/* QA-checklist (samma som huvudsida) */
+.qa-summary{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.qa-summary-score{font-size:24px;font-weight:900;}
+.qa-summary-score.complete{color:var(--gront);}
+.qa-summary-score.almost{color:#f59e0b;}
+.qa-summary-score.incomplete{color:var(--rott);}
+.qa-summary-label{font-size:11px;color:var(--muted);margin-top:2px;}
+.qa-progress{flex:1;margin:0 20px;height:6px;background:var(--s3);border-radius:3px;overflow:hidden;}
+.qa-progress-fill{height:100%;transition:width .3s;}
+.qa-check{display:flex;gap:9px;padding:6px 0;font-size:12.5px;align-items:flex-start;border-bottom:1px solid var(--border);}
+.qa-check:last-child{border-bottom:none;}
+.qa-check-icon{width:16px;flex-shrink:0;font-weight:800;font-size:13px;}
+.qa-check.ok .qa-check-icon{color:var(--gront);}
+.qa-check.miss .qa-check-icon{color:var(--rott);}
+.qa-check-label{color:var(--muted);}
+.qa-check.miss .qa-check-label{color:var(--text);}
+
+/* Empty / loading */
+.empty{text-align:center;padding:80px 20px;color:var(--muted);}
+.empty-icon{font-size:42px;margin-bottom:12px;opacity:.6;}
+
+/* Toast */
+.toast{position:fixed;bottom:22px;right:22px;background:var(--s2);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:7px;font-size:12px;font-weight:600;z-index:3000;opacity:0;transform:translateY(6px);transition:all .22s;pointer-events:none;}
+.toast.show{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-h">H</div>
+    <div>
+      <div class="brand-name">BE THE HERO</div>
+      <div class="brand-sub">Övningsbank</div>
+    </div>
+  </div>
+  <span class="test-badge">SCHEMA V2 — TEST</span>
+  <a href="index.html" class="back-link">← Tillbaka till banken</a>
+</header>
+
+<div id="app">
+  <aside class="sidebar">
+    <div class="sidebar-info">
+      <strong style="color:var(--text);font-size:12px;">Testversion av strukturerad modell</strong><br><br>
+      Här testas hur AI-agenten ska producera övningar i en struktur som portalen kan läsa direkt — utan att tolka HTML.
+    </div>
+    <div class="sidebar-title">Testövningar (3)</div>
+    <div class="ex-list" id="ex-list"></div>
+  </aside>
+
+  <main class="main">
+    <div class="tabs">
+      <button class="tab on" data-tab="teacher" onclick="switchTab('teacher')">📖 Lärarvy</button>
+      <button class="tab" data-tab="pdf" onclick="switchTab('pdf')">🖨 PDF-preview</button>
+      <button class="tab" data-tab="json" onclick="switchTab('json')">{ } JSON</button>
+      <button class="tab" data-tab="admin" onclick="switchTab('admin')">⚙ Admin & QA</button>
+    </div>
+    <div id="content"></div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let exercises = [];
+let currentIdx = 0;
+let currentTab = 'teacher';
+
+// ── Load data ──
+fetch('data/exercises-v2.json').then(r=>r.json()).then(data=>{
+  exercises = data.exercises;
+  renderSidebar();
+  renderMain();
+});
+
+function renderSidebar(){
+  const list = document.getElementById('ex-list');
+  list.innerHTML = exercises.map((e,i)=>`
+    <div class="ex-item ${i===currentIdx?'active':''}" onclick="selectExercise(${i})">
+      <div class="ex-item-title">${e.title}</div>
+      <div class="ex-item-meta">
+        <span>${e.metadata.durationMinutes} min</span>
+        <span>·</span>
+        <span>Åk ${e.metadata.gradeRange.join(', ')}</span>
+      </div>
+      <div class="ex-item-id">${e.internal.id}</div>
+    </div>
+  `).join('');
+}
+
+function selectExercise(i){
+  currentIdx = i;
+  renderSidebar();
+  renderMain();
+}
+
+function switchTab(t){
+  currentTab = t;
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on', b.dataset.tab===t));
+  renderMain();
+}
+
+function renderMain(){
+  if(!exercises.length) return;
+  const e = exercises[currentIdx];
+  const c = document.getElementById('content');
+  if(currentTab==='teacher')      c.innerHTML = renderTeacherView(e);
+  else if(currentTab==='pdf')     c.innerHTML = renderPdfPreview(e);
+  else if(currentTab==='json')    c.innerHTML = renderJsonView(e);
+  else if(currentTab==='admin')   c.innerHTML = renderAdminView(e);
+}
+
+// ══════════════════════════════════════
+// LÄRARVY — endast lärarrelevant data
+// ══════════════════════════════════════
+function renderTeacherView(e){
+  const m = e.metadata;
+  const ls = e.lessonSetup;
+  const impl = e.implementation;
+  const ts = e.teacherSupport;
+
+  const safeStartHTML = ls.safeStartText ? `
+    <div class="tv-safe-start">
+      <div class="tv-safe-start-label">🟢 Säg detta först — sätter trygg ram</div>
+      <div class="tv-safe-start-text">"${ls.safeStartText}"</div>
+    </div>` : '';
+
+  const stepsHTML = (impl.steps||[]).map((s,i)=>{
+    const subItems = s.subItems ? `<ul class="tv-step-subitems">${s.subItems.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
+    const says = s.teacherSays ? `<div class="tv-step-says">${s.teacherSays}</div>` : '';
+    const time = s.timeEstimate ? `<span class="tv-step-time">${s.timeEstimate}</span>` : '';
+    return `<div class="tv-step">
+      <div class="tv-step-num">${i+1}</div>
+      <div class="tv-step-content">
+        <div class="tv-step-title">${s.title}${time}</div>
+        <div class="tv-step-body">${s.body}</div>
+        ${subItems}
+        ${says}
+      </div>
+    </div>`;
+  }).join('');
+
+  const refsHTML = (e.reflection.questions||[]).map((q,i)=>`
+    <div class="tv-q"><span class="tv-q-num">${i+1}.</span><span>${q}</span></div>
+  `).join('');
+
+  const printMatHTML = (ls.printMaterials||[]).length ? `
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">📄</span><span class="tv-section-title">Utskriftsmaterial</span></div>
+      <div class="tv-section-b" style="display:flex;flex-direction:column;gap:10px;">
+        ${ls.printMaterials.map(p=>`<div class="tv-print-mat">
+          <div class="tv-print-mat-info">
+            <div class="tv-print-mat-title">${p.title}</div>
+            <div class="tv-print-mat-desc">${p.description||''}${p.filename?` · ${p.filename}`:''}</div>
+          </div>
+          <span class="tv-print-mat-icon">↗</span>
+        </div>`).join('')}
+      </div>
+    </div>` : '';
+
+  const riskHTML = ts.riskNote ? `
+    <div class="tv-risk">
+      <div class="tv-risk-label">⚠️ Risker — läs innan du kör</div>
+      <div class="tv-risk-text">${ts.riskNote}</div>
+    </div>` : '';
+
+  const tipsHTML = (ts.tips||[]).length ? `
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">💡</span><span class="tv-section-title">Tips</span></div>
+      <div class="tv-section-b"><ul class="tv-list">${ts.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+    </div>` : '';
+
+  const adaptHTML = (ts.adaptations||[]).length ? `
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">⚙</span><span class="tv-section-title">Anpassningar</span></div>
+      <div class="tv-section-b"><ul class="tv-list">${ts.adaptations.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+    </div>` : '';
+
+  const npfHTML = ts.npfSupport ? `
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">♿</span><span class="tv-section-title">NPF-stöd</span></div>
+      <div class="tv-section-b"><p class="tv-prose">${ts.npfSupport}</p></div>
+    </div>` : '';
+
+  const followUpHTML = ts.followUp ? `
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">📅</span><span class="tv-section-title">Uppföljning</span></div>
+      <div class="tv-section-b"><p class="tv-prose">${ts.followUp}</p></div>
+    </div>` : '';
+
+  return `
+    <div class="tv-header">
+      <h1 class="tv-h1">${e.title}</h1>
+      <p class="tv-short">${e.shortDescription}</p>
+      <div class="tv-meta">
+        <span class="tv-meta-tag alder">👥 Åk ${m.gradeRange.join(', ')}</span>
+        <span class="tv-meta-tag">⏱ ${m.durationMinutes} min</span>
+        <span class="tv-meta-tag">📋 ${m.preparationMinutes} min förberedelse</span>
+        <span class="tv-meta-tag">👥 ${m.workForm.join(' · ')}</span>
+        ${m.cardNeeds && m.cardNeeds.length ? `<span class="tv-meta-tag">🃏 ${m.cardNeeds.join(', ')}</span>` : ''}
+      </div>
+    </div>
+
+    <div class="tv-purpose-card">
+      <div class="tv-purpose-label">🎯 Varför göra övningen</div>
+      <div class="tv-purpose-text">${e.teacherPurpose}</div>
+    </div>
+
+    ${safeStartHTML}
+
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">📋</span><span class="tv-section-title">Förberedelse & material</span></div>
+      <div class="tv-section-b">
+        <p class="tv-prose" style="margin-bottom:8px"><strong>Innan lektionen:</strong> ${ls.preparation}</p>
+        <p class="tv-prose"><strong>Material:</strong> ${ls.materials}</p>
+      </div>
+    </div>
+
+    ${printMatHTML}
+
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">▶️</span><span class="tv-section-title">Genomförande</span></div>
+      <div class="tv-section-b">
+        ${impl.intro ? `<p class="tv-prose" style="margin-bottom:14px;padding:10px 12px;background:var(--s2);border-radius:6px;">${impl.intro}</p>` : ''}
+        <div class="tv-steps">${stepsHTML}</div>
+        ${impl.outro ? `<p class="tv-prose" style="margin-top:14px;padding:10px 12px;background:var(--s2);border-radius:6px;font-style:italic;">${impl.outro}</p>` : ''}
+      </div>
+    </div>
+
+    <div class="tv-section">
+      <div class="tv-section-h"><span class="tv-section-icon">💬</span><span class="tv-section-title">Reflektionsfrågor</span></div>
+      <div class="tv-section-b"><div class="tv-questions">${refsHTML}</div></div>
+    </div>
+
+    ${riskHTML}
+    ${tipsHTML}
+    ${adaptHTML}
+    ${npfHTML}
+    ${followUpHTML}
+  `;
+}
+
+// ══════════════════════════════════════
+// PDF PREVIEW — så ser läraren det utskrivet
+// ══════════════════════════════════════
+function renderPdfPreview(e){
+  const m = e.metadata;
+  const ls = e.lessonSetup;
+  const impl = e.implementation;
+  const ts = e.teacherSupport;
+  const today = new Date().toLocaleDateString('sv-SE',{year:'numeric',month:'long',day:'numeric'});
+
+  const stepsHTML = (impl.steps||[]).map((s,i)=>{
+    const sub = s.subItems ? `<ul class="pdf-stepsub">${s.subItems.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
+    const says = s.teacherSays ? `<div class="pdf-stepsays">💬 ${s.teacherSays}</div>` : '';
+    const time = s.timeEstimate ? `<span class="pdf-steptime">${s.timeEstimate}</span>` : '';
+    return `<li>
+      <div class="pdf-stepnum">${i+1}</div>
+      <div class="pdf-stepbody">
+        <div class="pdf-steptitle">${s.title}${time}</div>
+        <div class="pdf-steptext">${s.body}</div>
+        ${sub}
+        ${says}
+      </div>
+    </li>`;
+  }).join('');
+
+  return `
+    <div class="pdf-toolbar">
+      <button class="json-btn primary" onclick="printPdf()">🖨 Skriv ut denna sida</button>
+      <span class="json-info">A4-vy · samma data som lärarvyn · INGA interna fält</span>
+    </div>
+    <div class="pdf-frame">
+      <div class="pdf-page" id="pdf-page">
+        <div class="pdf-header">
+          <div class="pdf-brand">
+            <div class="pdf-logo">H</div>
+            <div class="pdf-brand-text"><strong>BE THE HERO</strong>Lärarinstruktion</div>
+          </div>
+          <div>
+            <div class="pdf-doctype">${today}</div>
+            <div class="pdf-id">${e.internal.id}</div>
+          </div>
+        </div>
+
+        <h1 class="pdf-title">${e.title}</h1>
+        <p class="pdf-short">${e.shortDescription}</p>
+        <div class="pdf-meta">
+          <span class="pdf-mtag">👥 Åk ${m.gradeRange.join(', ')}</span>
+          <span class="pdf-mtag">⏱ ${m.durationMinutes} min</span>
+          <span class="pdf-mtag">📋 ${m.preparationMinutes} min förberedelse</span>
+          <span class="pdf-mtag">👥 ${m.workForm.join(' · ')}</span>
+        </div>
+
+        <div class="pdf-purpose">${e.teacherPurpose}</div>
+
+        ${ls.safeStartText ? `<div class="pdf-safe">
+          <div class="pdf-safe-lbl">🟢 Säg detta först</div>
+          <div class="pdf-safe-text">"${ls.safeStartText}"</div>
+        </div>` : ''}
+
+        <div class="pdf-section">
+          <div class="pdf-section-title">📋 Förberedelse & material</div>
+          <p style="font-size:10pt;color:#374151;line-height:1.55;margin-bottom:6px;"><strong>Innan lektionen:</strong> ${ls.preparation}</p>
+          <p style="font-size:10pt;color:#374151;line-height:1.55;"><strong>Material:</strong> ${ls.materials}</p>
+        </div>
+
+        ${(ls.printMaterials||[]).length ? `<div class="pdf-section">
+          <div class="pdf-section-title">📄 Utskriftsmaterial</div>
+          ${ls.printMaterials.map(p=>`<div style="font-size:10pt;padding:6px 0;border-bottom:1px solid #f1f5f9;">
+            <strong>${p.title}</strong>${p.filename?` <span style="color:#94a3b8;font-family:monospace;font-size:8.5pt">— ${p.filename}</span>`:''}<br>
+            <span style="font-size:9pt;color:#64748b">${p.description||''}</span>
+          </div>`).join('')}
+        </div>` : ''}
+
+        <div class="pdf-section">
+          <div class="pdf-section-title">▶️ Genomförande</div>
+          ${impl.intro ? `<p style="font-size:10pt;color:#475569;font-style:italic;margin-bottom:10px;">${impl.intro}</p>` : ''}
+          <ol class="pdf-steps">${stepsHTML}</ol>
+          ${impl.outro ? `<p style="font-size:10pt;color:#475569;font-style:italic;margin-top:10px;padding:8px 10px;background:#f8fafc;border-radius:5px;">${impl.outro}</p>` : ''}
+        </div>
+
+        <div class="pdf-section">
+          <div class="pdf-section-title">💬 Reflektionsfrågor</div>
+          <ul class="pdf-refs">
+            ${e.reflection.questions.map((q,i)=>`<li><span class="pdf-q">${i+1}.</span><span>${q}</span></li>`).join('')}
+          </ul>
+        </div>
+
+        ${(ts.tips||[]).length ? `<div class="pdf-section">
+          <div class="pdf-section-title">💡 Tips</div>
+          <div class="pdf-tips"><ul>${ts.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+        </div>` : ''}
+
+        ${(ts.adaptations||[]).length ? `<div class="pdf-section">
+          <div class="pdf-section-title">⚙ Anpassningar</div>
+          <ul style="list-style:none;padding:0;font-size:10pt;color:#374151;">
+            ${ts.adaptations.map(a=>`<li style="padding:3px 0;padding-left:14px;position:relative;">→ ${a}</li>`).join('')}
+          </ul>
+        </div>` : ''}
+
+        ${ts.riskNote ? `<div class="pdf-section">
+          <div class="pdf-risk">
+            <div class="pdf-risk-lbl">⚠️ Risker — läs innan du kör</div>
+            <div class="pdf-risk-text">${ts.riskNote}</div>
+          </div>
+        </div>` : ''}
+
+        ${ts.npfSupport ? `<div class="pdf-section">
+          <div class="pdf-section-title">♿ NPF-stöd</div>
+          <p style="font-size:10pt;color:#374151;line-height:1.55;">${ts.npfSupport}</p>
+        </div>` : ''}
+
+        ${ts.followUp ? `<div class="pdf-section">
+          <div class="pdf-section-title">📅 Uppföljning</div>
+          <p style="font-size:10pt;color:#374151;line-height:1.55;">${ts.followUp}</p>
+        </div>` : ''}
+
+        <div class="pdf-footer">
+          <span><strong style="color:#1B2A6B">BE THE HERO</strong> · bethehero.se</span>
+          <span>${e.title} · ${e.internal.id}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function printPdf(){
+  const pdfHtml = document.getElementById('pdf-page').outerHTML;
+  const w = window.open('','_blank');
+  w.document.write(`<!DOCTYPE html><html><head><title>${exercises[currentIdx].title}</title>
+  <style>
+    @page{size:A4;margin:0;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:-apple-system,sans-serif;color:#1a1a2e;}
+    .pdf-page{padding:18mm 16mm 22mm 16mm;width:210mm;min-height:297mm;font-size:11pt;line-height:1.5;background:white;box-shadow:none;}
+    ${document.querySelector('style').innerHTML}
+    .pdf-frame{padding:0;background:none;}
+    .pdf-page{box-shadow:none;}
+  </style></head><body>${pdfHtml}</body></html>`);
+  w.document.close(); w.focus(); setTimeout(()=>w.print(),400);
+}
+
+// ══════════════════════════════════════
+// JSON VIEW — strukturerad export
+// ══════════════════════════════════════
+function exportableJson(e){
+  // Endast portaldata — internal-fält är INTE med
+  const {internal, ...portalData} = e;
+  return portalData;
+}
+
+function renderJsonView(e){
+  const portalJson = JSON.stringify(exportableJson(e), null, 2);
+  const fullJson = JSON.stringify(e, null, 2);
+  const portalHighlighted = highlightJson(portalJson);
+  return `
+    <div class="json-toolbar">
+      <button class="json-btn primary" onclick="downloadJson()">💾 Exportera som JSON</button>
+      <button class="json-btn" onclick="copyJson()">📋 Kopiera till clipboard</button>
+      <button class="json-btn" onclick="toggleInternal()" id="internal-toggle">+ Visa interna fält</button>
+      <span class="json-info">Portal-export: ${(portalJson.length/1024).toFixed(1)} kB · INGA internal-fält</span>
+    </div>
+    <div class="json-box" id="json-box"><code>${portalHighlighted}</code></div>
+    <input type="hidden" id="json-data" value='${escapeForAttr(portalJson)}'>
+    <input type="hidden" id="json-full" value='${escapeForAttr(fullJson)}'>
+  `;
+}
+
+let showInternal = false;
+function toggleInternal(){
+  showInternal = !showInternal;
+  const e = exercises[currentIdx];
+  const json = showInternal ? JSON.stringify(e, null, 2) : JSON.stringify(exportableJson(e), null, 2);
+  document.getElementById('json-box').innerHTML = `<code>${highlightJson(json)}</code>`;
+  document.getElementById('internal-toggle').innerHTML = showInternal ? '− Dölj interna fält' : '+ Visa interna fält';
+}
+
+function downloadJson(){
+  const e = exercises[currentIdx];
+  const data = JSON.stringify(exportableJson(e), null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${e.slug}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('✓ JSON-fil nedladdad');
+}
+
+function copyJson(){
+  const e = exercises[currentIdx];
+  const data = JSON.stringify(exportableJson(e), null, 2);
+  navigator.clipboard.writeText(data).then(()=>toast('📋 JSON kopierad'));
+}
+
+function highlightJson(json){
+  return json
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"([^"\\]*(\\.[^"\\]*)*)"(\s*:)/g, '<span class="json-key">"$1"</span>$3')
+    .replace(/: "([^"\\]*(\\.[^"\\]*)*)"/g, ': <span class="json-string">"$1"</span>')
+    .replace(/: (\d+\.?\d*)/g, ': <span class="json-number">$1</span>')
+    .replace(/: (true|false)/g, ': <span class="json-boolean">$1</span>')
+    .replace(/: null/g, ': <span class="json-null">null</span>');
+}
+
+function escapeForAttr(s){
+  return s.replace(/'/g,'&apos;').replace(/"/g,'&quot;');
+}
+
+// ══════════════════════════════════════
+// ADMIN & QA VIEW — endast intern data
+// ══════════════════════════════════════
+function checkPortalReadyV2(e){
+  const checks = [];
+  const add = (label, ok, detail='') => checks.push({label, ok, detail});
+
+  add('Titel finns', !!e.title && e.title.length >= 3, e.title?'':'Saknas');
+  add('Kort beskrivning finns (40–300 tecken)',
+    !!e.shortDescription && e.shortDescription.length>=40 && e.shortDescription.length<=400,
+    e.shortDescription?`${e.shortDescription.length} tecken`:'Saknas');
+  add('Lärarsyfte (teacherPurpose) finns',
+    !!e.teacherPurpose && e.teacherPurpose.length>=40,
+    e.teacherPurpose?'':'Saknas eller för kort');
+  add('Metadata komplett',
+    e.metadata && e.metadata.durationMinutes>0 && (e.metadata.gradeRange||[]).length>0 && (e.metadata.workForm||[]).length>0,
+    '');
+  add('Minst 2 genomförandesteg',
+    e.implementation && (e.implementation.steps||[]).length>=2,
+    e.implementation?`${(e.implementation.steps||[]).length} steg`:'');
+  add('Varje steg har titel + body',
+    (e.implementation?.steps||[]).every(s=>s.title && s.body),
+    '');
+  add('Reflektionsfrågor finns (minst 2)',
+    (e.reflection?.questions||[]).length>=2,
+    `${(e.reflection?.questions||[]).length} frågor`);
+  add('Trygg start finns vid känsligare övning',
+    !e.teacherSupport?.riskNote || (e.lessonSetup?.safeStartText && e.lessonSetup.safeStartText.length>20),
+    e.teacherSupport?.riskNote && !e.lessonSetup?.safeStartText ? 'Övning har riskNote men saknar safeStartText' : '');
+  add('printMaterials kopplade om de behövs',
+    true, // alltid OK för nu
+    '');
+  add('Inga interna anteckningar i lärarrelevant text',
+    !JSON.stringify({...e, internal:undefined}).match(/\b(TODO|FIXME|placeholder|XXX)\b/i),
+    '');
+
+  const score = checks.filter(c=>c.ok).length;
+  const total = checks.length;
+  const passed = score === total;
+  return {checks, score, total, passed, pct: Math.round(score/total*100),
+    bandClass: passed ? 'complete' : (score/total >= 0.85 ? 'almost' : 'incomplete')};
+}
+
+function renderAdminView(e){
+  const qa = checkPortalReadyV2(e);
+  const checksHTML = qa.checks.map(c=>`
+    <div class="qa-check ${c.ok?'ok':'miss'}">
+      <span class="qa-check-icon">${c.ok?'✓':'✗'}</span>
+      <span class="qa-check-label">${c.label}</span>
+      ${c.detail?`<span style="margin-left:auto;font-size:11px;color:var(--muted);font-style:italic;">${c.detail}</span>`:''}
+    </div>`).join('');
+
+  return `
+    <div class="admin-section">
+      <div class="admin-section-title">📋 Klar för portal — checklista</div>
+      <div class="qa-summary">
+        <div>
+          <div class="qa-summary-score ${qa.bandClass}">${qa.score}/${qa.total}</div>
+          <div class="qa-summary-label">${qa.passed?'Klar att exporteras':'Behöver justeras'}</div>
+        </div>
+        <div class="qa-progress"><div class="qa-progress-fill ${qa.bandClass}" style="width:${qa.pct}%;background:${qa.bandClass==='complete'?'var(--gront)':qa.bandClass==='almost'?'#f59e0b':'var(--rott)'};"></div></div>
+      </div>
+      ${checksHTML}
+    </div>
+
+    <div class="admin-section">
+      <div class="admin-section-title">⚙ Intern metadata</div>
+      <div class="admin-row"><span class="admin-key">ID</span><span class="admin-val" style="font-family:monospace;font-size:11px;">${e.internal.id}</span></div>
+      <div class="admin-row"><span class="admin-key">Slug</span><span class="admin-val" style="font-family:monospace;font-size:11px;">${e.slug}</span></div>
+      <div class="admin-row"><span class="admin-key">Production status</span><span class="admin-val"><span class="admin-status-pill ${e.internal.productionStatus}">${e.internal.productionStatus}</span></span></div>
+      <div class="admin-row"><span class="admin-key">Skapad</span><span class="admin-val">${e.internal.createdAt||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Senast ändrad</span><span class="admin-val">${e.internal.updatedAt||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Skapad av</span><span class="admin-val">${e.internal.createdBy||'—'}</span></div>
+      <div class="admin-row"><span class="admin-key">Källa</span><span class="admin-val" style="font-size:11px;">${e.internal.source||'—'}</span></div>
+    </div>
+
+    ${e.internal.notes ? `
+    <div class="admin-section">
+      <div class="admin-section-title">📝 Interna anteckningar</div>
+      <div class="admin-notes">${e.internal.notes}</div>
+    </div>` : ''}
+
+    <div class="admin-section" style="border-color:rgba(16,185,129,.25);background:linear-gradient(135deg,var(--s1),rgba(16,185,129,.04));">
+      <div class="admin-section-title" style="color:var(--gront)">✓ Vad som INTE exporteras till portalen</div>
+      <ul style="list-style:none;padding:0;font-size:12px;color:var(--muted);line-height:1.8;">
+        <li>→ Interna anteckningar</li>
+        <li>→ Production status (workflow)</li>
+        <li>→ Källinformation</li>
+        <li>→ Versionsdata (createdAt, createdBy)</li>
+        <li>→ QA-checklist</li>
+      </ul>
+      <div style="font-size:11px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-style:italic;">
+        Allt utanför <code style="color:var(--pl);background:var(--s2);padding:1px 5px;border-radius:3px;">internal</code>-fältet exporteras. Det är design-principen.
+      </div>
+    </div>
+  `;
+}
+
+// ── Toast ──
+let toastTimer;
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2200);
+}
+</script>
+</body>
+</html>

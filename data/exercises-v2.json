@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 2,
+  "schemaDate": "2026-06-05",
+  "exercises": [
+    {
+      "title": "RESPEKTORDET",
+      "slug": "respektordet",
+      "shortDescription": "En snabb klassrumsövning där eleverna tillsammans samlar ord som beskriver respekt — och blir överens om vad de faktiskt betyder.",
+      "teacherPurpose": "Eleverna upptäcker att 'respekt' inte är ett ord — det är många. Och att olika personer menar olika saker med det. Övningen bygger ett gemensamt språk klassen kan luta sig mot resten av terminen.",
+
+      "metadata": {
+        "durationMinutes": 20,
+        "preparationMinutes": 2,
+        "gradeRange": ["4","5","6"],
+        "stages": ["mellanstadiet"],
+        "workForm": ["individuellt","helklass"],
+        "materialNeeds": ["whiteboard","post-it eller papper"],
+        "cardNeeds": []
+      },
+
+      "lessonSetup": {
+        "safeStartText": "Idag ska vi bygga ihop ett ord. Det finns inga fel svar — bara olika sätt att tänka.",
+        "preparation": "Skriv 'RESPEKT' stort på tavlan. Ha post-it eller papper redo till alla.",
+        "materials": "Whiteboard, post-it-lappar (eller pappersbitar) — en per elev.",
+        "printMaterials": []
+      },
+
+      "implementation": {
+        "intro": "Berätta att klassen ska försöka bygga ett gemensamt språk för vad respekt är.",
+        "steps": [
+          {
+            "title": "Skriv ett ord — i tysthet",
+            "body": "Varje elev skriver ett enda ord eller en kort fras som beskriver vad respekt betyder för dem. Ingen ser vad de andra skriver.",
+            "teacherSays": "Tänk på en gång när någon visade dig respekt. Vad gjorde de? Skriv det ordet.",
+            "timeEstimate": "2 min"
+          },
+          {
+            "title": "Samla orden på tavlan",
+            "body": "Varje elev sätter upp sin lapp under ordet RESPEKT. Läs tyst igenom alla orden tillsammans.",
+            "subItems": [
+              "Gruppera lappar som hör ihop",
+              "Sätt liknande ord nära varandra"
+            ],
+            "timeEstimate": "5 min"
+          },
+          {
+            "title": "Rösta fram klassens topp 3",
+            "body": "Varje elev får visa 3 fingrar bredvid de ord de tycker fångar respekt bäst. Markera de tre mest valda på tavlan.",
+            "teacherSays": "Det här är vår klass definition av respekt — i dag. Vi kan ändra den senare om vi vill.",
+            "timeEstimate": "10 min"
+          }
+        ],
+        "outro": "Foto av tavlan. Sätt upp som påminnelse i klassrummet."
+      },
+
+      "reflection": {
+        "questions": [
+          "Var det något ord som överraskade dig?",
+          "Saknades något du tycker hör hemma där?",
+          "Vad gör det lättare att visa respekt mot någon?"
+        ]
+      },
+
+      "teacherSupport": {
+        "tips": [
+          "Om någon inte kommer på ett ord — låt dem rita istället.",
+          "Spara fotot. Återkom till orden vid konflikt under terminen."
+        ],
+        "adaptations": [],
+        "riskNote": null,
+        "npfSupport": "Tillåt att skriva eller rita. Ge en konkret startsignal (t.ex. en timer på tavlan). Eleven kan välja att sätta upp lappen själv eller be läraren göra det.",
+        "followUp": "Återkom i en månad och fråga: 'Stämmer vår definition fortfarande?'"
+      },
+
+      "internal": {
+        "id": "BTH-V2-001",
+        "productionStatus": "klar_for_portal",
+        "qualityChecklist": null,
+        "notes": "Pilotövning för schemaVersion 2. Använd för att verifiera att strukturen fungerar hela vägen från JSON till PDF.",
+        "source": "Skapad av AI-agent + redaktör 2026-06-05",
+        "createdAt": "2026-06-05",
+        "updatedAt": "2026-06-05",
+        "createdBy": "AI-agent"
+      }
+    },
+
+    {
+      "title": "KARTAN ÖVER OSS",
+      "slug": "kartan-over-oss",
+      "shortDescription": "Eleverna ritar en karta över klassen — men inte över namn. Över intressen, känslor och vad var och en bidrar med.",
+      "teacherPurpose": "Eleverna ser sin grupp ur ett nytt perspektiv. Istället för 'vem är vän med vem' blir det 'vad gör oss till en grupp'. Övningen synliggör styrkor som annars är osynliga och stärker gemenskap.",
+
+      "metadata": {
+        "durationMinutes": 40,
+        "preparationMinutes": 10,
+        "gradeRange": ["6","7","8"],
+        "stages": ["mellanstadiet","högstadiet"],
+        "workForm": ["i grupp om 3–5","helklass"],
+        "materialNeeds": ["stora pappersark (A3)","tuschpennor","linjal"],
+        "cardNeeds": []
+      },
+
+      "lessonSetup": {
+        "safeStartText": "Vi gör en karta — men det här är ingen kartlektion. Det handlar om er. Och alla är med på kartan.",
+        "preparation": "Ta fram ett A3-papper per grupp, tuschpennor i flera färger. Förbered ett exempel på tavlan: en cirkel med 'GRUPP' i mitten, små satelliter runt om.",
+        "materials": "A3-papper (ett per grupp om 3–5), tuschpennor, valfritt: post-it.",
+        "printMaterials": [
+          {
+            "title": "Kartmall (valfritt)",
+            "description": "A3-mall med tom mittencirkel och 8 satelliter runt om.",
+            "filename": "kartan-mall-a3.pdf"
+          }
+        ]
+      },
+
+      "implementation": {
+        "intro": "Visa exemplet på tavlan. Förklara att grupperna ska göra sin egen karta som visar vad just deras grupp består av.",
+        "steps": [
+          {
+            "title": "Forma grupper och starta kartan",
+            "body": "Dela in i grupper om 3–5. Varje grupp får ett A3-papper. Skriv 'VÅR GRUPP' i mitten.",
+            "teacherSays": "Det här är er karta. Ingen annan grupp har samma.",
+            "timeEstimate": "3 min"
+          },
+          {
+            "title": "Ringa in styrkor — satelliter runt cirkeln",
+            "body": "Varje person ritar en satellit (en liten cirkel) bredvid mittencirkeln och skriver en sak DE bidrar med till gruppen. Inte vad de är bra på generellt — vad de tillför just till denna grupp.",
+            "subItems": [
+              "Det kan vara 'kommer alltid i tid', 'lyssnar', 'frågar massor', 'får alla att skratta'",
+              "Inget är för litet"
+            ],
+            "teacherSays": "Det här ska inte vara en CV-rad. Det är vad du faktiskt gör i gruppen.",
+            "timeEstimate": "10 min"
+          },
+          {
+            "title": "Koppla ihop med streck",
+            "body": "Gruppen drar streck mellan satelliter som hör ihop eller stöder varandra. Diskutera medan ni ritar.",
+            "subItems": [
+              "Den som lyssnar + den som pratar mycket: koppla.",
+              "Den som strukturerar + den som har idéer: koppla."
+            ],
+            "timeEstimate": "10 min"
+          },
+          {
+            "title": "Lägg till en 'önskan'",
+            "body": "Varje grupp lägger till en sista satellit längst ut: 'något vi skulle vilja ha mer av i gruppen'.",
+            "teacherSays": "Det här är inte kritik. Det är ett önskemål från gruppen, till gruppen.",
+            "timeEstimate": "5 min"
+          },
+          {
+            "title": "Visa kartorna i helklass",
+            "body": "Varje grupp visar sin karta kort. Andra grupperna får ge ett ord som beskriver kartan de såg.",
+            "timeEstimate": "12 min"
+          }
+        ],
+        "outro": "Sätt upp kartorna i klassrummet. Återkom till dem om 4 veckor."
+      },
+
+      "reflection": {
+        "questions": [
+          "Vad såg du i din grupp som du inte tänkt på tidigare?",
+          "Var det svårt att skriva vad just DU bidrar med? Varför?",
+          "Om er karta såg ut om en månad — vad skulle vara annorlunda?"
+        ]
+      },
+
+      "teacherSupport": {
+        "tips": [
+          "Gå runt och bekräfta tysta satelliter. 'Att lyssna' är ett bidrag — markera det.",
+          "Om någon skriver sig själv negativt, gör det om till en styrka: 'tar plats' blir 'får igång diskussion'.",
+          "Spara kartorna. Använd om gruppdynamiken försämras."
+        ],
+        "adaptations": [
+          "Eleven kan rita sin satellit istället för att skriva.",
+          "Tillåt att be en annan i gruppen skriva ner det elev säger högt."
+        ],
+        "riskNote": "Om en elev inte vågar skriva något: erbjud att de skriver en sak om någon annan i gruppen istället. Ingen ska lämnas utanför kartan.",
+        "npfSupport": "Strukturen (mall, exempel, fysiska steg) hjälper elever som behöver tydlighet. Bestäm i förväg vilken person som skriver först om gruppen behöver det.",
+        "followUp": "Återkom efter 4 veckor. Fråga: 'Vad har förändrats? Stämmer er karta fortfarande?'"
+      },
+
+      "internal": {
+        "id": "BTH-V2-002",
+        "productionStatus": "klar_for_portal",
+        "qualityChecklist": null,
+        "notes": "Längre övning som testar strukturens kapacitet: 5 steg, subItems, teacherSays per steg, printMaterials, både tips och adaptations.",
+        "source": "Skapad av AI-agent + redaktör 2026-06-05",
+        "createdAt": "2026-06-05",
+        "updatedAt": "2026-06-05",
+        "createdBy": "AI-agent"
+      }
+    },
+
+    {
+      "title": "DET DU INTE SA",
+      "slug": "det-du-inte-sa",
+      "shortDescription": "En tyst, anonym övning där eleverna får skriva ner en gång de hade velat säga något — men lät bli. Lärarsamtal följer, inga personer hängs ut.",
+      "teacherPurpose": "Eleverna upptäcker att de inte är ensamma om att hålla saker inne. Övningen synliggör hur mycket som inte sägs i en klass — utan att tvinga någon att avslöja sig själv. Den skapar utrymme för empati och eftertanke utan press.",
+
+      "metadata": {
+        "durationMinutes": 30,
+        "preparationMinutes": 5,
+        "gradeRange": ["8","9"],
+        "stages": ["högstadiet"],
+        "workForm": ["individuellt","helklass"],
+        "materialNeeds": ["små pappersbitar (lika stora)","en kartong eller burk att samla i","penna"],
+        "cardNeeds": []
+      },
+
+      "lessonSetup": {
+        "safeStartText": "Det vi gör nu är helt anonymt. Ingen kommer att veta vad du har skrivit. Du kan välja att skriva, eller lämna in blankt — båda är okej. Det jag säger högt i slutet är bara dina egna ord, utan namn.",
+        "preparation": "Klipp små pappersbitar i samma storlek (8x8 cm). Ställ kartongen eller burken framme. Sitt själv ner när eleverna skriver — visa att tystnaden är okej.",
+        "materials": "Små pappersbitar (en per elev, plus extra), kartong eller burk, pennor.",
+        "printMaterials": []
+      },
+
+      "implementation": {
+        "intro": "Berätta att övningen handlar om sådant vi tänkt — men inte sagt. Att det är vanligt. Och att vi ska få höra varandras tankar utan att veta vems de är.",
+        "steps": [
+          {
+            "title": "Skriv en gång du höll inne",
+            "body": "Varje elev skriver ner EN gång då de hade velat säga något — till någon, om något — men lät bli. Det kan vara stort eller litet. Det måste inte ha hänt nyligen.",
+            "subItems": [
+              "Tystnad i klassrummet under tiden",
+              "Lägg din lapp i kartongen — vikt eller ovikt, du väljer",
+              "Du behöver inte skriva — du kan lämna in en blank lapp"
+            ],
+            "teacherSays": "Ingen läser detta före dig. Inga namn. Skriv som om bara du själv ska se det.",
+            "timeEstimate": "5 min"
+          },
+          {
+            "title": "Läraren läser några — slumpvis",
+            "body": "Skaka kartongen. Dra 5–7 lappar slumpvis. Läs dem högt, en i taget, med pauser mellan. Läs lugnt. Kommentera inte.",
+            "subItems": [
+              "Om en lapp är blank: säg 'och en valde tystnad' och gå vidare",
+              "Skippa lappar du tror skulle skada någon konkret"
+            ],
+            "teacherSays": "Lyssna utan att försöka gissa vem som skrivit.",
+            "timeEstimate": "8 min"
+          },
+          {
+            "title": "Tyst minut",
+            "body": "Efter sista lappen: en hel minut utan ord. Bara stillhet. Eleverna behåller sina egna tankar.",
+            "timeEstimate": "1 min"
+          },
+          {
+            "title": "Öppen reflektion — frivillig",
+            "body": "Eleverna får dela vad de tänker — men ingen tvingas. Det är okej att bara lyssna.",
+            "teacherSays": "Hade du velat svara på något du hörde? Säga 'jag förstår' till någon? Vad skulle du säga om du fick chansen?",
+            "timeEstimate": "10 min"
+          },
+          {
+            "title": "Bränn lapparna (symboliskt) eller släng dem direkt",
+            "body": "Vid lektionens slut: släng alla lappar synligt i papperskorgen, eller riv sönder dem. Ingen sparar dem.",
+            "teacherSays": "Det här stannar här i rummet.",
+            "timeEstimate": "2 min"
+          }
+        ],
+        "outro": "Tacka klassen för att de vågade. Påminn om var de kan vända sig om något kommer upp efteråt: kurator, mentor, dig."
+      },
+
+      "reflection": {
+        "questions": [
+          "Var något du hörde något du själv hade kunnat skriva?",
+          "Varför håller vi saker inne — när det vi inte säger sällan är något farligt?",
+          "Finns det något du efter idag vågar säga som du inte hade vågat innan?"
+        ]
+      },
+
+      "teacherSupport": {
+        "tips": [
+          "Förbered en plats att gå till efter lektionen om någon behöver prata — och säg det innan ni börjar.",
+          "Använd INTE övningen om klassen har en pågående konflikt — den kan eskalera.",
+          "Om en lapp tycks peka ut någon, läs den inte."
+        ],
+        "adaptations": [
+          "Eleven kan välja att inte alls skriva — bara lämna in en blank lapp, eller hoppa över.",
+          "Möjligt att istället låta eleven skriva digitalt och dela med läraren privat."
+        ],
+        "riskNote": "Övningen kan trigga elever som hållit inne svåra saker (övergrepp, mobbning, hot). Förvarna elevhälsan att övningen kommer ske. Avsluta INTE lektionen tidigare än planerat — sitt kvar i rummet 5 minuter efter att eleverna gått, så det finns någon att gå till. Använd inte om klassen är osäker eller har pågående konflikter.",
+        "npfSupport": "Tydlig struktur (5 steg, fysiska handlingar) ger förutsägbarhet. Förvarna elev med ångest enskilt i förväg om vad som kommer hända. Tillåt att gå ut under övningen utan förklaring — säg det innan ni börjar.",
+        "followUp": "Inom en vecka: avsätt 5 min i slutet av en lektion för 'är det något som dröjt sig kvar efter förra övningen?' Påminn om att kurator finns."
+      },
+
+      "internal": {
+        "id": "BTH-V2-003",
+        "productionStatus": "klar_for_portal",
+        "qualityChecklist": null,
+        "notes": "Känslig övning som testar att strukturen håller för material med stark riskNote, utvecklad npfSupport och tydlig followUp. Får inte exporteras utan att elevhälsan är förvarnad.",
+        "source": "Skapad av AI-agent + redaktör 2026-06-05",
+        "createdAt": "2026-06-05",
+        "updatedAt": "2026-06-05",
+        "createdBy": "AI-agent"
+      }
+    }
+  ]
+}
