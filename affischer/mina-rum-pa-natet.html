@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Mina rum på nätet — elevblad · BE THE HERO</title>
+<style>
+  /* ── PRINT BASE ── */
+  @page { size: A4 portrait; margin: 0; }
+  @media print {
+    html, body {
+      background: #fff !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      min-height: 0 !important;
+      max-height: 297mm !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+    .screen-only, .print-bar {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      top: -9999px !important;
+    }
+    .sheet {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      max-height: 297mm !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      page-break-after: avoid !important;
+      page-break-inside: avoid !important;
+      page-break-before: avoid !important;
+      break-inside: avoid !important;
+      break-after: avoid !important;
+      break-before: avoid !important;
+    }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B2A6B;
+    --blue: #2B5FBF;
+    --gront: #16A34A;
+    --gult:  #F5C42E;
+    --rott:  #DC2626;
+    --text:  #1B2A6B;
+    --muted: #64748b;
+    --line:  #94a3b8;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #e2e8f0;
+    color: var(--text);
+  }
+
+  /* SCREEN-ONLY: Skriv ut-knapp */
+  .print-bar { position: fixed; top: 14px; right: 14px; z-index: 999; }
+  .print-bar button {
+    background: var(--navy); color: #fff; border: 0;
+    padding: 9px 16px; border-radius: 6px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  }
+
+  /* ── A4 SHEET ── */
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    margin: 14px auto;
+    background: #fff;
+    padding: 13mm 16mm;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  }
+
+  /* HEADER */
+  .header {
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 5mm;
+    border-bottom: 1pt solid var(--navy);
+    margin-bottom: 6mm;
+  }
+  .header-logo { height: 11mm; width: auto; display: block; }
+  .header-meta {
+    margin-left: auto; text-align: right;
+    font-size: 8pt; color: var(--muted); line-height: 1.3;
+  }
+  .header-meta strong {
+    color: var(--navy); font-weight: 800; display: block;
+    font-size: 9pt; letter-spacing: 1.2px;
+  }
+
+  /* TITEL */
+  .titel {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.8px;
+    color: var(--navy);
+    margin-bottom: 2mm;
+  }
+  .subtitel {
+    font-size: 10pt;
+    color: var(--muted);
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 5mm;
+  }
+
+  /* FÄRGNYCKEL */
+  .farger {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4mm;
+    margin-bottom: 5mm;
+  }
+  .farg {
+    display: flex; align-items: center; gap: 3mm;
+    padding: 2.5mm 3mm;
+    border: 1pt solid var(--line);
+    border-radius: 3mm;
+  }
+  .farg-prick {
+    width: 6mm; height: 6mm; border-radius: 50%; flex-shrink: 0;
+    border: 1pt solid rgba(0,0,0,0.35);
+  }
+  .farg-prick.gron  { background: var(--gront); }
+  .farg-prick.gul   { background: var(--gult);  }
+  .farg-prick.rod   { background: var(--rott);  }
+  .farg-text {
+    font-size: 9pt; color: var(--navy); line-height: 1.2;
+  }
+  .farg-text strong { display: block; font-weight: 800; letter-spacing: 0.5px; font-size: 8.5pt; }
+
+  /* HUS-IKON ovanför rum-rutnätet */
+  .hus-symbol {
+    text-align: center;
+    margin-bottom: 2mm;
+  }
+  .hus-symbol svg {
+    height: 12mm;
+    color: var(--blue);
+  }
+  .hus-label {
+    text-align: center;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    margin-bottom: 3mm;
+    text-transform: uppercase;
+  }
+
+  /* RUM-GRID — 2 kolumner × 4 rader = 8 rum */
+  .rum-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5mm;
+    margin-bottom: 5mm;
+  }
+  .rum {
+    border: 1.5pt solid var(--blue);
+    border-radius: 2mm;
+    padding: 4mm 4mm 3mm;
+    min-height: 22mm;
+    position: relative;
+    background: #fff;
+  }
+  .rum-nr {
+    position: absolute;
+    top: 2mm; right: 3mm;
+    font-size: 8pt;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .rum-label {
+    font-size: 8pt;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1mm;
+  }
+  .rum-line {
+    border-bottom: 0.75pt solid var(--line);
+    height: 4mm;
+  }
+  /* Liten färgningsbubbla i hörnet av varje rum */
+  .rum-farg-circles {
+    position: absolute;
+    bottom: 2.5mm; right: 3mm;
+    display: flex;
+    gap: 1.5mm;
+  }
+  .rum-farg-circles span {
+    width: 3.5mm; height: 3.5mm;
+    border-radius: 50%;
+    border: 0.75pt solid var(--line);
+    background: #fff;
+  }
+
+  /* SECRET BOX */
+  .secret {
+    border: 1.5pt dashed var(--navy);
+    border-radius: 3mm;
+    padding: 4mm 5mm;
+    background: #fafbff;
+    margin-bottom: 4mm;
+  }
+  .secret-titel {
+    display: flex; align-items: center; gap: 2.5mm;
+    font-size: 10pt;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1mm;
+  }
+  .secret-lock {
+    width: 5mm; height: 5mm;
+    display: inline-block;
+  }
+  .secret-text {
+    font-size: 8.5pt;
+    color: var(--muted);
+    margin-bottom: 2mm;
+    line-height: 1.4;
+  }
+  .secret-line {
+    border-bottom: 0.75pt solid var(--line);
+    height: 5mm;
+    margin-top: 1mm;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: auto;
+    padding-top: 3mm;
+    border-top: 0.5pt solid #cbd5e1;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 7.5pt; color: var(--muted);
+  }
+  .footer strong { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="print-bar screen-only">
+  <button onclick="window.print()">Skriv ut</button>
+</div>
+
+<div class="sheet">
+
+  <div class="header">
+    <img class="header-logo" src="../images/hero-logo-400.png" alt="BE THE HERO">
+    <div class="header-meta">
+      <strong>ELEVBLAD</strong>
+      Åk 4–6 · Digitala relationer
+    </div>
+  </div>
+
+  <h1 class="titel">Mina rum på nätet</h1>
+  <p class="subtitel">Skriv in dina egna rum — chattar, spel, appar. Färglägg sedan varje rum efter hur det känns. Bladet är ditt.</p>
+
+  <div class="farger">
+    <div class="farg">
+      <span class="farg-prick gron"></span>
+      <div class="farg-text"><strong>GRÖNT</strong>känns bra</div>
+    </div>
+    <div class="farg">
+      <span class="farg-prick gul"></span>
+      <div class="farg-text"><strong>GULT</strong>sådär</div>
+    </div>
+    <div class="farg">
+      <span class="farg-prick rod"></span>
+      <div class="farg-text"><strong>RÖTT</strong>något skaver</div>
+    </div>
+  </div>
+
+  <div class="hus-symbol">
+    <svg viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+      <path d="M10 32 L50 6 L90 32 L90 56 L10 56 Z"/>
+      <path d="M42 56 L42 38 L58 38 L58 56"/>
+    </svg>
+  </div>
+  <div class="hus-label">Mina åtta rum</div>
+
+  <div class="rum-grid">
+    <div class="rum">
+      <span class="rum-nr">1</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+    <div class="rum">
+      <span class="rum-nr">2</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+    <div class="rum">
+      <span class="rum-nr">3</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+    <div class="rum">
+      <span class="rum-nr">4</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+    <div class="rum">
+      <span class="rum-nr">5</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+    <div class="rum">
+      <span class="rum-nr">6</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+    <div class="rum">
+      <span class="rum-nr">7</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+    <div class="rum">
+      <span class="rum-nr">8</span>
+      <div class="rum-label">Rummets namn</div>
+      <div class="rum-line"></div>
+      <div class="rum-farg-circles"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <div class="secret">
+    <div class="secret-titel">
+      <svg class="secret-lock" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3H9zm3 5a2 2 0 0 1 1 3.732V21h-2v-3.268A2 2 0 0 1 12 14z"/>
+      </svg>
+      Ett rum ingen vuxen känner till
+    </div>
+    <div class="secret-text">Fyll i bara om du vill. Ingen ska be dig visa eller läsa upp det här. Det är bara till för dig att tänka på.</div>
+    <div class="secret-line"></div>
+  </div>
+
+  <div class="footer">
+    <span><strong>BE THE HERO</strong> · bethehero.se</span>
+    <span>MINA RUM PÅ NÄTET · BTH-V2-004</span>
+  </div>
+
+</div>
+
+</body>
+</html>

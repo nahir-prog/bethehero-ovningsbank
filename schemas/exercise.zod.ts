@@ -64,10 +64,36 @@ export const MetadataSchema = z.object({
   cardNeeds: z.array(z.string()).optional(),
 });
 
+export const PrintMaterialKindSchema = z.enum([
+  'poster',
+  'worksheet',
+  'cards',
+  'template',
+  'discussion_cards',
+]);
+
+export const PrintMaterialFormatSchema = z.enum(['A4', 'A3', 'A5']);
+
+export const PrintMaterialAudienceSchema = z.enum([
+  'classroom',
+  'student',
+  'teacher',
+]);
+
 export const PrintMaterialSchema = z.object({
+  kind: PrintMaterialKindSchema,
   title: z.string().min(3),
-  description: z.string(),
-  filename: z.string().optional(),
+  description: z.string().min(10, 'Beskrivning måste vara minst 10 tecken'),
+  filename: z.string().min(3, 'filename krävs (relativ sökväg eller filnamn)'),
+  format: PrintMaterialFormatSchema.default('A4'),
+  audience: PrintMaterialAudienceSchema,
+  printIntent: z
+    .string()
+    .min(15, 'printIntent: beskriv när läraren använder materialet (≥15 tecken)'),
+  requiresColor: z.boolean().optional(),
+  safeMargin: z.boolean().optional(),
+  sourceExerciseId: z.string().regex(/^BTH-[A-Z0-9-]+$/).optional(),
+  exerciseSlug: z.string().optional(),
   url: z.string().url().optional(),
 });
 

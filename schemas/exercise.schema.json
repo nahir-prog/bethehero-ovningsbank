@@ -129,12 +129,36 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["title", "description"],
+            "required": ["kind", "title", "description", "filename", "format", "audience", "printIntent"],
             "additionalProperties": false,
             "properties": {
+              "kind": {
+                "type": "string",
+                "enum": ["poster", "worksheet", "cards", "template", "discussion_cards"],
+                "description": "Materialtyp — styr rendering och QA"
+              },
               "title": { "type": "string", "minLength": 3 },
-              "description": { "type": "string" },
-              "filename": { "type": "string" },
+              "description": { "type": "string", "minLength": 10 },
+              "filename": { "type": "string", "minLength": 3 },
+              "format": {
+                "type": "string",
+                "enum": ["A4", "A3", "A5"],
+                "default": "A4"
+              },
+              "audience": {
+                "type": "string",
+                "enum": ["classroom", "student", "teacher"],
+                "description": "classroom=affisch i klassrummet, student=elevmaterial att fylla i, teacher=lärarstöd"
+              },
+              "printIntent": {
+                "type": "string",
+                "minLength": 15,
+                "description": "Kort text om när/hur läraren använder materialet"
+              },
+              "requiresColor": { "type": "boolean" },
+              "safeMargin": { "type": "boolean" },
+              "sourceExerciseId": { "type": "string", "pattern": "^BTH-[A-Z0-9-]+$" },
+              "exerciseSlug": { "type": "string" },
               "url": { "type": "string", "format": "uri" }
             }
           }

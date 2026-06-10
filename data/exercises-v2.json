@@ -237,9 +237,17 @@
         "materials": "A3-papper (ett per grupp om 3–5), tuschpennor, valfritt: post-it.",
         "printMaterials": [
           {
+            "kind": "template",
             "title": "Kartmall (valfritt)",
             "description": "A3-mall med tom mittencirkel och 8 satelliter runt om.",
-            "filename": "kartan-mall-a3.pdf"
+            "filename": "kartan-mall-a3.pdf",
+            "format": "A3",
+            "audience": "student",
+            "printIntent": "Skriv ut en per elev innan lektionen. Eleven fyller mittencirkeln med eget namn och åtta satelliter med intressen, styrkor och bidrag till klassen.",
+            "requiresColor": false,
+            "safeMargin": true,
+            "sourceExerciseId": "BTH-V2-002",
+            "exerciseSlug": "kartan-over-oss"
           }
         ]
       },
@@ -672,9 +680,17 @@
         "materials": "Projektor och ljud för filmen. Valfritt: utskriven soppskål-mall + färgpennor, eller blankt A4-papper.",
         "printMaterials": [
           {
+            "kind": "worksheet",
             "title": "Soppskål — färglägg din egen",
             "description": "Mall med en tom soppskål som eleverna fyller med sin fantasifavoritsoppa.",
-            "filename": "andas-soppa-mall.pdf"
+            "filename": "andas-soppa-mall.pdf",
+            "format": "A4",
+            "audience": "student",
+            "printIntent": "Skriv ut en per elev. Eleverna färglägger sin egen fantasisoppa som visualiseringsstöd under andningsövningen.",
+            "requiresColor": true,
+            "safeMargin": true,
+            "sourceExerciseId": "BTH-LEGACY-32644",
+            "exerciseSlug": "andas-in-och-ut-soppa"
           }
         ]
       },
@@ -880,9 +896,17 @@
         "materials": "Utskrivna mallar (en uppsättning per elev), pennor, sax, lim.",
         "printMaterials": [
           {
+            "kind": "template",
             "title": "Blomman — full uppsättning",
             "description": "PDF med vissnande blomma + blommande blomma + tom kruka + vattenkanna-mall.",
-            "filename": "blomman-mallar.pdf"
+            "filename": "blomman-mallar.pdf",
+            "format": "A4",
+            "audience": "student",
+            "printIntent": "Skriv ut hela mallpaketet — eleverna använder olika delar (blomma, kruka, vattenkanna) under övningens moment.",
+            "requiresColor": false,
+            "safeMargin": true,
+            "sourceExerciseId": "BTH-LEGACY-19123",
+            "exerciseSlug": "blomman"
           }
         ]
       },
@@ -1103,9 +1127,17 @@
         "materials": "Bra Kompis-korten (12 per grupp), papper för att bygga pyramiden, valfritt: sax och tejp.",
         "printMaterials": [
           {
+            "kind": "cards",
             "title": "Bra Kompis-korten",
             "description": "12 påståendekort om hur en bra klasskamrat ska vara — klipps ut innan lektionen.",
-            "filename": "bra-kompis-kort.pdf"
+            "filename": "bra-kompis-kort.pdf",
+            "format": "A4",
+            "audience": "classroom",
+            "printIntent": "Klipp ut korten innan lektionen. Används i smågrupp för att rangordna och diskutera vad som gör en bra klasskamrat.",
+            "requiresColor": false,
+            "safeMargin": true,
+            "sourceExerciseId": "BTH-LEGACY-32731",
+            "exerciseSlug": "bra-kompis-triangel"
           }
         ]
       },
@@ -1252,6 +1284,238 @@
     },
     {
       "schemaVersion": 1,
+      "title": "MINA RUM PÅ NÄTET",
+      "slug": "mina-rum-pa-natet",
+      "shortDescription": "Varje elev kartlägger sina egna digitala rum — chattar, spel och appar — och märker ut var det känns bra, var det skaver, och var ingen vuxen vet att de finns. Ett personligt elevblad som blir starten på ett ärligt samtal om livet på skärmen.",
+      "teacherPurpose": "Eleverna får syn på att de rör sig mellan många olika digitala rum med olika regler — och att vissa rum känns trygga medan andra skaver. Övningen ger klassen ett gemensamt språk för att prata om nätet utan att någon behöver hängas ut, och visar eleven själv var de kanske borde släppa in en vuxen.",
+      "image": null,
+      "taxonomy": {
+        "themes": [
+          "Digitala relationer",
+          "Självkänsla & identitet"
+        ],
+        "focusAreas": [
+          "digital trygghet",
+          "självkännedom",
+          "gränser"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "digital kompetens"
+        ],
+        "classNeeds": [
+          "ny klass",
+          "förebyggande",
+          "samtal om nätet"
+        ]
+      },
+      "safety": {
+        "level": "standard",
+        "note": "Vissa elever kan upptäcka att ett av deras rum skaver mer än de trott. Var beredd på att en elev kan vilja prata enskilt efteråt."
+      },
+      "metadata": {
+        "durationMinutes": 40,
+        "preparationMinutes": 5,
+        "gradeRange": [
+          "4",
+          "5",
+          "6"
+        ],
+        "stages": [
+          "mellanstadiet"
+        ],
+        "workForm": [
+          "individuellt",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "projektor",
+          "pennor",
+          "färgpennor (valfritt)"
+        ],
+        "cardNeeds": []
+      },
+      "requiresPrintMaterials": true,
+      "lessonSetup": {
+        "safeStartText": "Det du fyller i på ditt blad är ditt. Du bestämmer själv vad du visar och vad du behåller. Ingen kommer att tvingas läsa upp något.",
+        "preparation": "Skriv ut elevbladet 'Mina rum på nätet' — ett per elev. Ha pennor framme. Tänk igenom att du själv inte ska be någon namnge personer som varit elaka — bara rum och känslor.",
+        "materials": "Elevbladet 'Mina rum på nätet' (en per elev), pennor, valfritt färgpennor. Projektor för slides.",
+        "printMaterials": [
+          {
+            "kind": "worksheet",
+            "title": "Mina rum på nätet — elevblad",
+            "description": "A4-elevblad med ett 'hus' med 8 rum-rutor + en avskild ruta längst ner: 'Ett rum ingen vuxen känner till'. Eleven skriver in vilka chattar, spel och appar de är i, ett rum i taget, och färglägger varje rum efter hur det känns: grönt = bra, gult = sådär, rött = skaver.",
+            "filename": "mina-rum-pa-natet.html",
+            "format": "A4",
+            "audience": "student",
+            "printIntent": "Skriv ut ett per elev innan lektionen. Eleven fyller i sina egna digitala rum och färglägger efter känsla. Bladet är elevens eget och ska inte samlas in eller läsas av läraren.",
+            "requiresColor": false,
+            "safeMargin": true,
+            "sourceExerciseId": "BTH-V2-004",
+            "exerciseSlug": "mina-rum-pa-natet"
+          }
+        ]
+      },
+      "implementation": {
+        "intro": "Förklara att alla är på massor av olika ställen på nätet varje dag — och att de ställena är som rum. Vissa rum är mysiga, vissa är stökiga, och vissa vet ingen vuxen om.",
+        "steps": [
+          {
+            "title": "Visa idén — nätet är ett hus med många rum",
+            "body": "Visa sliden med huset. Förklara att varje chatt, spel eller app är ett eget rum med egna regler. I ett rum kanske alla är snälla. I ett annat säger folk saker de aldrig skulle säga i verkligheten.",
+            "teacherSays": "Tänk på nätet som ett hus. Du går in och ut ur olika rum hela dagen — utan att tänka på det.",
+            "timeEstimate": "4 min"
+          },
+          {
+            "title": "Fyll i dina rum",
+            "body": "Dela ut elevbladet. Varje elev skriver in sina egna rum — vilka chattar, spel och appar de faktiskt är i. Ett rum per ruta. De behöver inte fylla alla rutor.",
+            "subItems": [
+              "Skriv namnet på rummet i varje ruta (t.ex. 'klasschatten', 'Roblox', 'lag-chatten')",
+              "Det är ditt blad — skriv så ärligt du vill"
+            ],
+            "timeEstimate": "8 min"
+          },
+          {
+            "title": "Färglägg efter hur det känns",
+            "body": "Eleverna färglägger varje rum efter känsla: grönt om rummet känns bra, gult om det är sådär, rött om något skaver där. Samma rum kan kännas olika olika dagar — de väljer hur det känns oftast.",
+            "teacherSays": "Det finns inga fel färger. Ditt röda rum kanske är någon annans gröna.",
+            "timeEstimate": "6 min"
+          },
+          {
+            "title": "Den sista rutan",
+            "body": "Be eleverna titta på rutan längst ner: 'Ett rum ingen vuxen känner till'. De fyller i den bara om de vill — och ingen kommer att fråga vad de skrev. Poängen är att de själva märker om de har ett sådant rum.",
+            "subItems": [
+              "Ingen ska visa eller läsa upp den här rutan",
+              "Den är bara till för eleven själv att tänka på"
+            ],
+            "timeEstimate": "3 min"
+          },
+          {
+            "title": "Prata i helklass — utan namn",
+            "body": "Samla klassen. Ställ frågorna på sliden, en i taget. Reglen är: vi pratar om rum och känslor, aldrig om vem som gjort vad. Den som vill räcker upp handen.",
+            "subItems": [
+              "Vad gör ett rum grönt?",
+              "Vad gör ett rum rött?",
+              "Är det skillnad på hur folk är i olika rum?"
+            ],
+            "timeEstimate": "12 min"
+          }
+        ],
+        "outro": "Be eleverna vika bladet och ta hem det, eller spara det i pärmen. Det är deras eget. Påminn om att om något rum känns rött ofta — då är det smart att släppa in en vuxen de litar på."
+      },
+      "reflection": {
+        "questions": [
+          "Vilket av dina rum kändes bäst att vara i — och vad är det som gör det bra?",
+          "Var du i något rött rum? Vad är det som skaver där?",
+          "Om ett av dina rum blev rött imorgon — vem skulle du berätta det för?",
+          "Vad kan du själv göra för att hålla ett av dina rum grönt för andra?"
+        ]
+      },
+      "teacherSupport": {
+        "tips": [
+          "Säg flera gånger att bladet är elevens eget — då vågar de skriva ärligt.",
+          "Gå runt under färgläggningen. Om du ser många röda rum hos en elev — fråga försiktigt enskilt efteråt, inte inför klassen.",
+          "Tjata inte om den sista rutan. Att eleven bara läser den och tänker till räcker."
+        ],
+        "adaptations": [
+          "Eleven som inte vill skriva namn på rummen kan rita en symbol istället (en controller för spel, en pratbubbla för chatt).",
+          "Den som har få eller inga digitala rum fyller bara i det de har — ingen ska känna sig konstig för att de är på få ställen."
+        ],
+        "riskNote": null,
+        "npfSupport": "Bladet ger tydlig struktur — en ruta i taget, en sak att göra åt gången. Ge en konkret tidssignal mellan momenten (t.ex. timer på tavlan). Eleven kan välja att rita istället för att skriva, och att helt hoppa över helklassdelen och bara jobba med sitt blad.",
+        "followUp": "Återkom om någon vecka: 'Har något av era rum bytt färg sen sist?' Det visar eleverna att digitala rum förändras — och att de kan göra något åt det."
+      },
+      "presentations": [
+        {
+          "id": "mina-rum-pa-natet-elev-01",
+          "exerciseSlug": "mina-rum-pa-natet",
+          "title": "Mina rum på nätet",
+          "audience": "students",
+          "status": "ready",
+          "slides": [
+            {
+              "title": "Hur många rum var du i igår?",
+              "body": "Tänk på allt du gjorde på skärmen igår.\n\nHur många olika ställen var du på?",
+              "instructionForTeacher": "Låt frågan hänga. Be inte om svar än — det här är bara för att få dem att tänka.",
+              "slideType": "intro",
+              "mood": "energetic",
+              "durationEstimate": "1 min"
+            },
+            {
+              "title": "Nätet är ett hus med många rum",
+              "body": "Varje chatt, spel och app är ett eget rum.\n\nVarje rum har sina egna regler.",
+              "instructionForTeacher": "Förklara liknelsen lugnt. Ett rum kan vara mysigt, ett annat stökigt.",
+              "slideType": "concept",
+              "mood": "clear",
+              "durationEstimate": "3 min"
+            },
+            {
+              "title": "Fyll i dina egna rum",
+              "body": "Skriv in dina rum på bladet.\n\nEtt rum i varje ruta. Du väljer själv vilka du skriver.",
+              "instructionForTeacher": "Dela ut bladet. Sätt en timer på 8 min. Gå runt och bekräfta.",
+              "slideType": "individual_task",
+              "mood": "focused",
+              "durationEstimate": "8 min"
+            },
+            {
+              "title": "Vilken färg har ditt rum?",
+              "body": "Grönt = känns bra\nGult = sådär\nRött = något skaver\n\nFärglägg varje rum.",
+              "instructionForTeacher": "Påminn: inga fel färger. Samma rum kan kännas olika för olika personer.",
+              "slideType": "individual_task",
+              "mood": "focused",
+              "durationEstimate": "6 min"
+            },
+            {
+              "title": "Rutan längst ner",
+              "body": "Finns det ett rum ingen vuxen känner till?\n\nFyll i den rutan bara om du vill. Ingen kommer att fråga vad du skrev.",
+              "instructionForTeacher": "Säg detta lugnt. Ingen ska visa rutan. Poängen är att eleven själv märker det.",
+              "slideType": "reflection",
+              "mood": "calm",
+              "durationEstimate": "3 min"
+            },
+            {
+              "title": "Vad gör ett rum grönt?",
+              "body": "Vi pratar om rum och känslor.\n\nAldrig om vem som gjort vad.",
+              "instructionForTeacher": "Ta frågorna en i taget: Vad gör ett rum grönt? Vad gör det rött? Är folk olika i olika rum?",
+              "slideType": "open_discussion",
+              "mood": "collaborative",
+              "durationEstimate": "12 min"
+            },
+            {
+              "title": "Ditt blad är ditt",
+              "body": "Ta hem det. Spara det.\n\nKänns ett rum rött ofta? Då är det smart att släppa in en vuxen du litar på.",
+              "instructionForTeacher": "Avsluta lugnt. Påminn om vem de kan prata med — du, mentor, kurator.",
+              "slideType": "closing",
+              "mood": "calm",
+              "durationEstimate": "2 min"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "author": "AI-agent + redaktör",
+        "source": "Nybyggd 2026-06-10 — fyller lucka Digitala relationer × mellanstadiet",
+        "createdAt": "2026-06-10",
+        "language": "sv"
+      },
+      "internal": {
+        "id": "BTH-V2-004",
+        "productionStatus": "pedagogisk_granskning",
+        "qualityChecklist": {
+          "pedagogiskGranskning": "pending",
+          "sprakkoll": "pending",
+          "forskningspanelen": "pending",
+          "elevbladA4Verifierad": "pending",
+          "stavfelsKoll": "pending"
+        },
+        "notes": "Fyller luckan Digitala relationer × mellanstadiet (var tunt: bara BTH-004 åk 8-9 och BTH-014 åk 5-6). Personlig självkartläggning, inte scenariobaserad — skiljer sig från BTH-004 (chatt-scenario, civilkurage) och BTH-014 (jämförelse mot andra). Den sista rutan ('rum ingen vuxen känner till') är medvetet opt-out — ingen får be eleven visa den. Elevblad byggt 2026-06-10 av Claude Code som A4-HTML med print-CSS. printMaterials uppgraderad från agentens v1.0-format till v1.1.",
+        "lockedFields": [],
+        "createdAt": "2026-06-10",
+        "updatedAt": "2026-06-10",
+        "createdBy": "AI-agent"
+      }
+    },
+    {
+      "schemaVersion": 1,
       "title": "FRÅGA FÖRST",
       "slug": "fraga-forst",
       "shortDescription": "En kort och lekfull övning för åk 2 om att fråga innan man tar eller tittar på någon annans surfplatta, telefon eller skärm. Eleverna visar med tummen om det känns okej eller inte okej i olika små vardagssituationer.",
@@ -1307,10 +1571,17 @@
         "materials": "Projektor för presentationen. Eleverna behöver bara sina händer.",
         "printMaterials": [
           {
+            "kind": "poster",
             "title": "VI FRÅGAR FÖRST — affisch",
-            "description": "A4-affisch med klassens regel. Sätt upp i klassrummet som påminnelse efter lektionen.",
+            "description": "A4-affisch med klassens regel om att fråga innan man tar en kompis platta. Tre korta regler och tummen-tecknet.",
             "filename": "fraga-forst-affisch.html",
-            "url": "https://github.com/nahir-prog/bethehero-ovningsbank/blob/main/affischer/fraga-forst-affisch.html"
+            "format": "A4",
+            "audience": "classroom",
+            "printIntent": "Sätt upp i klassrummet direkt efter lektionen som synlig påminnelse. Återanvänd vid behov under terminen.",
+            "requiresColor": true,
+            "safeMargin": true,
+            "sourceExerciseId": "BTH-V2-007",
+            "exerciseSlug": "fraga-forst"
           }
         ]
       },
@@ -1436,12 +1707,18 @@
       },
       "internal": {
         "id": "BTH-V2-007",
-        "productionStatus": "utkast",
-        "qualityChecklist": null,
-        "notes": "Fyller bank-luckan Digitala relationer × åk 2. Smal målgrupp (bara åk 2). Ingen platta behövs — medvetet val så övningen kan köras var som helst utan teknik utöver projektorn. Affisch byggd separat av Claude Code.",
+        "productionStatus": "pedagogisk_granskning",
+        "qualityChecklist": {
+          "pedagogiskGranskning": "pending",
+          "sprakkoll": "pending",
+          "forskningspanelen": "pending",
+          "affischA4Verifierad": "pending",
+          "stavfelsKoll": "pending"
+        },
+        "notes": "Fyller bank-luckan Digitala relationer × åk 2. Smal målgrupp (bara åk 2). Ingen platta behövs — medvetet val så övningen kan köras var som helst utan teknik utöver projektorn. Affisch byggd separat och uppgraderad med riktig HERO-logo, A4-safe area, print-CSS (color-adjust:exact) 2026-06-10.\n\nVARFÖR EJ KLAR_FOR_PORTAL:\n1. Pedagogisk granskning saknas — redaktör har inte godkänt steg/teacherSays/safeStart.\n2. Språkkoll saknas — ingen mänsklig läs-bokstav-för-bokstav-pass (kritisk rad: stavfel framför klass = förödande).\n3. Forskningspanelen har inte verifierat ramen (tummen-tecknet + fråga-först-regeln vs ålders-/utvecklingspsykologi).\n4. Affischens A4-passform behöver visuell verifiering med riktig utskrift — print-CSS är på plats men ingen har bekräftat att regel 3 syns och inget kapas.\n5. Maximus-roll har inte verifierats (Maximus är ALDRIG karaktär i scenarion — bara programledare).",
         "lockedFields": [],
         "createdAt": "2026-06-09",
-        "updatedAt": "2026-06-09",
+        "updatedAt": "2026-06-10",
         "createdBy": "AI-agent"
       }
     }

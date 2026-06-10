@@ -2,186 +2,254 @@
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
-<title>VI FRÅGAR FÖRST — BE THE HERO</title>
+<title>VI FRÅGAR FÖRST — affisch · BE THE HERO</title>
 <style>
-  @page { size: A4 portrait; margin: 0; }
+  /* ── PRINT BASE ── */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  @media print {
+    html, body {
+      background: #fff !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      min-height: 0 !important;
+      max-height: 297mm !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+    .screen-only,
+    .print-bar {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      top: -9999px !important;
+    }
+    /* position: absolute tar affischen helt ur dokumentflödet — body kan inte längre
+       växa förbi 297mm och Safari skapar inte fantomsidor. */
+    .poster {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      max-height: 297mm !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      page-break-after: avoid !important;
+      page-break-inside: avoid !important;
+      page-break-before: avoid !important;
+      break-inside: avoid !important;
+      break-after: avoid !important;
+      break-before: avoid !important;
+    }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --navy: #1B2A6B;
     --blue: #2B5FBF;
-    --gult: #fbbf24;
-    --gront: #10b981;
-    --rott: #ef4444;
-    --cream: #fdf8e8;
+    --gult: #F5C42E;
+    --gront: #16A34A;
+    --rott: #DC2626;
+    --cream: #FFFBED;
+    --text: #1B2A6B;
+    --muted: #64748b;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: #e2e8f0;
+    color: var(--text);
   }
 
+  /* SCREEN-ONLY: Print-knapp för snabb utskrift från preview */
+  .print-bar {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 999;
+    display: flex;
+    gap: 8px;
+  }
+  .print-bar button {
+    background: var(--navy);
+    color: #fff;
+    border: 0;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  }
+  .print-bar button:hover { background: var(--blue); }
+
+  /* ── A4 POSTER ── */
   .poster {
     width: 210mm;
     height: 297mm;
-    margin: 0 auto;
+    margin: 14px auto;
     background: var(--cream);
-    color: var(--navy);
-    padding: 22mm 18mm;
+    padding: 14mm 16mm;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
   }
 
-  /* Dekorativa cirklar i bakgrunden */
-  .poster::before {
-    content: '';
+  /* Dekorativa cirklar — bakom innehåll, inne i safe area */
+  .deco {
     position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 320px;
-    height: 320px;
     border-radius: 50%;
-    background: var(--blue);
-    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
   }
-  .poster::after {
-    content: '';
-    position: absolute;
-    bottom: -120px;
-    left: -120px;
-    width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    background: var(--gult);
-    opacity: 0.15;
-  }
+  .deco-1 { top: -50mm; right: -50mm; width: 130mm; height: 130mm; background: var(--blue); opacity: 0.07; }
+  .deco-2 { bottom: -60mm; left: -55mm; width: 150mm; height: 150mm; background: var(--gult); opacity: 0.14; }
 
-  /* HEADER med BTH-branding */
-  .poster-header {
+  .poster > *:not(.deco) { position: relative; z-index: 1; }
+
+  /* ── HEADER (BE THE HERO-lockup) ── */
+  .header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding-bottom: 14px;
-    border-bottom: 3px solid var(--navy);
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
+    gap: 10px;
+    padding-bottom: 6mm;
+    border-bottom: 1pt solid var(--navy);
+    margin-bottom: 9mm;
   }
-  .poster-logo {
-    width: 44px;
-    height: 44px;
-    background: var(--navy);
-    color: white;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 22px;
-  }
-  .poster-brand {
-    font-size: 14pt;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: var(--navy);
-  }
-  .poster-brand-sub {
-    font-size: 9pt;
-    color: #64748b;
-    margin-top: 2px;
-  }
-
-  /* HUVUDTITEL */
-  .poster-titel {
-    font-size: 76pt;
-    font-weight: 900;
-    color: var(--navy);
-    line-height: 1.0;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
-  }
-  .poster-titel-line {
+  .header-logo {
+    height: 13mm;
+    width: auto;
     display: block;
   }
-  .poster-titel-accent {
-    color: var(--blue);
+  .header-meta {
+    margin-left: auto;
+    text-align: right;
+    font-size: 8.5pt;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .header-meta strong {
+    color: var(--navy);
+    font-weight: 800;
+    display: block;
+    font-size: 9.5pt;
+    letter-spacing: 1.2px;
   }
 
-  /* TUMME-INSTRUKTIONER */
-  .tummen-row {
+  /* ── HUVUDTITEL ── */
+  .titel {
+    font-size: 58pt;
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: -1.5px;
+    color: var(--navy);
+    margin-bottom: 10mm;
+  }
+  .titel-line { display: block; }
+  .titel-accent { color: var(--blue); }
+
+  /* ── TUMMEN ── */
+  .tummen {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16mm;
-    margin-bottom: 26mm;
-    position: relative;
-    z-index: 2;
+    gap: 8mm;
+    margin-bottom: 9mm;
   }
   .tumme-card {
     text-align: center;
-    padding: 14mm 6mm;
-    border-radius: 14px;
+    padding: 7mm 4mm;
+    border-radius: 6mm;
+    border: 2pt solid var(--navy);
+    background: #fff;
+    position: relative;
   }
-  .tumme-card.up {
-    background: rgba(16, 185, 129, 0.12);
-    border: 3px solid var(--gront);
+  /* Färgade accenter — för skärm-impact. Tas EJ bort i print, men allt fungerar utan färg pga
+     1) tummens riktning, 2) text-innehåll, 3) badge i hörnet. */
+  .tumme-card.up   { box-shadow: inset 0 0 0 4pt rgba(22, 163, 74, 0.18); }
+  .tumme-card.down { box-shadow: inset 0 0 0 4pt rgba(220, 38, 38, 0.16); }
+  /* Badge i toppen — B&W-säker text-baserad markör */
+  .tumme-badge {
+    position: absolute;
+    top: -5pt;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2pt 8pt;
+    font-size: 8pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    border-radius: 99pt;
+    background: var(--navy);
+    color: #fff;
+    border: 1.5pt solid #fff;
   }
-  .tumme-card.down {
-    background: rgba(239, 68, 68, 0.10);
-    border: 3px solid var(--rott);
-  }
+  .tumme-card.up   .tumme-badge { background: var(--gront); }
+  .tumme-card.down .tumme-badge { background: var(--rott); }
   .tumme-icon {
-    font-size: 60pt;
-    line-height: 1;
-    margin-bottom: 8mm;
+    line-height: 0;
+    margin: 3mm auto 4mm;
+    color: var(--navy);
+  }
+  .tumme-svg {
+    width: 22mm;
+    height: 22mm;
+    display: block;
+    margin: 0 auto;
   }
   .tumme-text {
-    font-size: 18pt;
+    font-size: 13pt;
     font-weight: 800;
     color: var(--navy);
     line-height: 1.2;
   }
   .tumme-label {
-    font-size: 11pt;
+    font-size: 8.5pt;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
-    margin-top: 6mm;
+    margin-top: 3mm;
+    color: var(--navy);
   }
-  .tumme-card.up .tumme-label { color: var(--gront); }
-  .tumme-card.down .tumme-label { color: var(--rott); }
 
-  /* DE TRE REGLERNA */
+  /* ── REGLER ── */
   .regler {
-    background: white;
-    border-radius: 14px;
-    padding: 14mm 12mm;
-    box-shadow: 0 4px 14px rgba(27, 42, 107, 0.1);
-    margin-bottom: 14mm;
-    position: relative;
-    z-index: 2;
+    background: #fff;
+    border-radius: 7mm;
+    padding: 9mm 8mm;
+    box-shadow: 0 2pt 8pt rgba(27, 42, 107, 0.10);
   }
   .regler-titel {
-    font-size: 11pt;
+    font-size: 9.5pt;
     font-weight: 800;
     letter-spacing: 2px;
     color: var(--blue);
     text-align: center;
-    margin-bottom: 10mm;
+    margin-bottom: 6mm;
   }
   .regel {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 8mm;
+    gap: 5mm;
+    margin-bottom: 5mm;
   }
   .regel:last-child { margin-bottom: 0; }
   .regel-nr {
-    width: 42px;
-    height: 42px;
+    width: 11mm;
+    height: 11mm;
     background: var(--gult);
     color: var(--navy);
     border-radius: 50%;
@@ -189,58 +257,72 @@
     align-items: center;
     justify-content: center;
     font-weight: 900;
-    font-size: 20pt;
+    font-size: 15pt;
     flex-shrink: 0;
   }
   .regel-text {
-    font-size: 16pt;
+    font-size: 12.5pt;
     font-weight: 700;
     color: var(--navy);
     line-height: 1.3;
   }
 
-  /* FOOTER */
-  .poster-footer {
+  /* ── FOOTER ── */
+  .footer {
     margin-top: auto;
-    padding-top: 10mm;
-    border-top: 1px solid #cbd5e1;
+    padding-top: 5mm;
+    border-top: 0.75pt solid #cbd5e1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 9pt;
-    color: #64748b;
-    position: relative;
-    z-index: 2;
+    font-size: 8pt;
+    color: var(--muted);
   }
-  .poster-footer strong { color: var(--navy); }
+  .footer strong { color: var(--navy); }
 </style>
 </head>
 <body>
 
-<div class="poster">
+<div class="print-bar screen-only">
+  <button onclick="window.print()">Skriv ut</button>
+</div>
 
-  <div class="poster-header">
-    <div class="poster-logo">H</div>
-    <div>
-      <div class="poster-brand">BE THE HERO</div>
-      <div class="poster-brand-sub">Klassregel · Åk 2</div>
+<div class="poster">
+  <div class="deco deco-1"></div>
+  <div class="deco deco-2"></div>
+
+  <div class="header">
+    <img class="header-logo" src="../images/hero-logo-400.png" alt="BE THE HERO">
+    <div class="header-meta">
+      <strong>KLASSREGEL</strong>
+      Åk 2 · Digitala relationer
     </div>
   </div>
 
-  <h1 class="poster-titel">
-    <span class="poster-titel-line">VI</span>
-    <span class="poster-titel-line poster-titel-accent">FRÅGAR</span>
-    <span class="poster-titel-line">FÖRST</span>
+  <h1 class="titel">
+    <span class="titel-line">VI</span>
+    <span class="titel-line titel-accent">FRÅGAR</span>
+    <span class="titel-line">FÖRST</span>
   </h1>
 
-  <div class="tummen-row">
+  <div class="tummen">
     <div class="tumme-card up">
-      <div class="tumme-icon">👍</div>
+      <span class="tumme-badge">OKEJ</span>
+      <div class="tumme-icon">
+        <svg class="tumme-svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Tummen upp" role="img">
+          <path d="M7.493 18.75c-.425 0-.82-.236-.975-.632A7.48 7.48 0 0 1 6 15.375c0-1.75.599-3.358 1.602-4.634.151-.192.373-.309.6-.397.473-.183.89-.514 1.212-.924a9.042 9.042 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H14.23c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23h-.777ZM2.331 10.977a11.969 11.969 0 0 0-.831 4.398 12 12 0 0 0 .52 3.507c.26.85 1.084 1.368 1.973 1.368H4.9c.445 0 .72-.498.523-.898a8.963 8.963 0 0 1-.924-3.977c0-1.708.476-3.305 1.302-4.666.245-.403-.028-.959-.5-.959H4.25c-.832 0-1.612.453-1.918 1.227Z"/>
+        </svg>
+      </div>
       <div class="tumme-text">Det känns okej</div>
       <div class="tumme-label">Tummen upp</div>
     </div>
     <div class="tumme-card down">
-      <div class="tumme-icon">👎</div>
+      <span class="tumme-badge">EJ OKEJ</span>
+      <div class="tumme-icon">
+        <svg class="tumme-svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Tummen ner" role="img">
+          <path d="M15.73 5.5h1.035A7.465 7.465 0 0 1 18 9.625a7.465 7.465 0 0 1-1.235 4.125h-.148c-.806 0-1.534.446-2.031 1.08a9.04 9.04 0 0 1-2.861 2.4c-.723.384-1.35.956-1.653 1.715a4.498 4.498 0 0 0-.322 1.672V21a.75.75 0 0 1-.75.75 2.25 2.25 0 0 1-2.25-2.25c0-1.152.26-2.243.723-3.218.266-.558-.107-1.282-.725-1.282H3.622c-1.026 0-1.945-.694-2.054-1.715A12.137 12.137 0 0 1 1.5 12.25c0-2.848.992-5.464 2.649-7.521C4.537 4.247 5.136 4 5.754 4H9.77a4.5 4.5 0 0 1 1.423.23l3.114 1.04a4.5 4.5 0 0 0 1.423.23ZM21.669 13.023c.536-1.362.831-2.845.831-4.398 0-1.22-.182-2.398-.52-3.507-.26-.85-1.084-1.368-1.973-1.368H19.1c-.445 0-.72.498-.523.898.591 1.2.924 2.55.924 3.977a8.959 8.959 0 0 1-1.302 4.666c-.245.403.028.959.5.959h1.053c.832 0 1.612-.453 1.918-1.227Z"/>
+        </svg>
+      </div>
       <div class="tumme-text">Det känns inte okej</div>
       <div class="tumme-label">Tummen ner</div>
     </div>
@@ -250,7 +332,7 @@
     <div class="regler-titel">VÅRA TRE REGLER</div>
     <div class="regel">
       <div class="regel-nr">1</div>
-      <div class="regel-text">Fråga först innan du tar någons platta.</div>
+      <div class="regel-text">Fråga först innan du tar eller tittar på någons platta.</div>
     </div>
     <div class="regel">
       <div class="regel-nr">2</div>
@@ -262,11 +344,10 @@
     </div>
   </div>
 
-  <div class="poster-footer">
+  <div class="footer">
     <span><strong>BE THE HERO</strong> · bethehero.se</span>
     <span>FRÅGA FÖRST · BTH-V2-007</span>
   </div>
-
 </div>
 
 </body>

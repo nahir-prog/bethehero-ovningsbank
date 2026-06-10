@@ -583,7 +583,19 @@ Varje övning är ett objekt med dessa top-level fält:
    - `teacherSupport.riskNote` MÅSTE finnas (minst 30 tecken)
    - `safety.note` bör finnas med konkret förvarningssyfte
 
-3. **`requiresPrintMaterials: true`** kräver att `lessonSetup.printMaterials[]` innehåller minst en post med `title` + `description`.
+3. **`requiresPrintMaterials: true`** kräver att `lessonSetup.printMaterials[]` innehåller minst en post med ALLA dessa fält (Schema v1.1):
+   - `kind` (obligatoriskt) — `"poster"` / `"worksheet"` / `"cards"` / `"template"` / `"discussion_cards"`
+   - `title` (obligatoriskt, ≥3 tecken)
+   - `description` (obligatoriskt, ≥10 tecken)
+   - `filename` (obligatoriskt, ≥3 tecken — t.ex. `mina-rum-pa-natet.html` eller `bra-kompis-kort.pdf`)
+   - `format` (obligatoriskt) — `"A4"` / `"A3"` / `"A5"` (default A4)
+   - `audience` (obligatoriskt) — `"classroom"` (affisch som sätts upp) / `"student"` (elev fyller i) / `"teacher"` (lärarstöd)
+   - `printIntent` (obligatoriskt, ≥15 tecken) — kort text om NÄR läraren använder materialet
+   - `requiresColor?: boolean` — true om B&W-utskrift förstör materialet
+   - `safeMargin?: boolean` — true om materialet följer A4-safe area (≥14mm marginal)
+   - `sourceExerciseId?` / `exerciseSlug?` — bakåtreferens till övningen
+
+   **För `kind: "poster"`:** följ designreglerna i SCHEMA.md (max 3 regler, EN huvudrubrik, HERO-logo, B&W-säker, ingen lång brödtext). Använd `affischer/_TEMPLATE-affisch.html` som mall.
 
 4. **`image: null`** är tillåtet och betyder "ingen bild" — lärarvyn visar inget bildblock då. Lägg ALDRIG hero-loggan som hero-image.
 

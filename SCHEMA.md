@@ -120,15 +120,72 @@ Alla fält är arrays av strängar och optional individuellt. Används för sök
 
 `safeStartText` är optional generellt men **obligatorisk om `safety.level === "extra_care"`**.
 
-**`printMaterials`-element:**
+**`printMaterials`-element (v1.1):**
 ```json
 {
-  "title": "Bra Kompis-korten",         // ✅
-  "description": "12 påståendekort...", // ✅
-  "filename": "bra-kompis-kort.pdf",    // optional
-  "url": "https://..."                  // optional
+  "kind": "poster",                                        // ✅ poster|worksheet|cards|template|discussion_cards
+  "title": "VI FRÅGAR FÖRST — affisch",                    // ✅
+  "description": "A4-affisch med klassens regel...",       // ✅ ≥10 tecken
+  "filename": "fraga-forst-affisch.html",                  // ✅ relativ till affischer/
+  "format": "A4",                                          // ✅ A4|A3|A5 (default A4)
+  "audience": "classroom",                                 // ✅ classroom|student|teacher
+  "printIntent": "Sätt upp i klassrummet efter lektionen", // ✅ ≥15 tecken
+  "requiresColor": true,                                   // optional
+  "safeMargin": true,                                      // optional — true om affischen följer A4 safe area (≥14mm)
+  "sourceExerciseId": "BTH-V2-007",                        // optional — koppling till övning
+  "exerciseSlug": "fraga-forst",                           // optional — koppling till övning
+  "url": "https://..."                                     // optional — full URL om materialet finns externt
 }
 ```
+
+**Fältförklaringar:**
+- `kind` — styr hur portalen renderar materialet och vilka QA-regler som körs
+- `audience` — `classroom`=affisch som sätts upp · `student`=eget material att fylla i · `teacher`=lärarstöd
+- `printIntent` — kort text om **när** läraren använder materialet (efter lektionen, under övning, som förberedelse)
+- `safeMargin` — flagga att designern följt A4 safe area så texten inte kapas vid utskrift
+- `sourceExerciseId` / `exerciseSlug` — bakåtreferens till övningen för portal-rendering och spårbarhet
+
+**Designkrav för affischer (`kind: "poster"`):**
+
+Använd `affischer/_TEMPLATE-affisch.html` som utgångspunkt — den följer alla regler nedan.
+
+*Måste finnas:*
+- ✅ Allt får plats på en A4 utan att kapas (mät: `.poster` ≤ 297mm hög)
+- ✅ Print-CSS: `@page A4 portrait; margin: 0` + `print-color-adjust: exact` + `html,body { height: 297mm; overflow: hidden }`
+- ✅ Print-CSS döljer skärm-element (`.print-bar`, `.screen-only`) med `display: none + visibility: hidden + height: 0`
+- ✅ A4-safe area: 14mm top/bottom, 16mm vänster/höger — viktig text aldrig närmare än 14mm sidkant
+- ✅ EN stor huvudrubrik (≥48pt, max 3 ord per rad)
+- ✅ ETT huvudbudskap
+- ✅ Max 3 regler/punkter
+- ✅ Header med riktig HERO-logga (`../images/hero-logo-400.png`) + kategori-label + målgrupp
+- ✅ Footer med `BE THE HERO · bethehero.se` + `[ÖVNINGSTITEL] · BTH-ID`
+- ✅ Klassrumsaffisch-känsla, inte webbsida
+
+*Får INTE finnas:*
+- ❌ Lång brödtext (max 1 mening per regel)
+- ❌ Intern metadata (utkast, draft, BTH-prefix utan motsvarande övning)
+- ❌ Läraranteckningar eller pedagogiska förklaringar
+- ❌ Text som kräver att man står nära och läser länge
+- ❌ Mer än ETT huvudbudskap
+- ❌ Färg som ENDA differentiering — allt måste fungera i B&W
+
+**Svartvit-utskrift (B&W):**
+
+Skolor skriver ofta ut i svartvitt. Affischen MÅSTE fungera även utan färg.
+
+- ✅ Tumme upp/ner skiljs åt av **riktning** (SVG-form), inte färg
+- ✅ Lägg till **text-baserad badge** (t.ex. `OKEJ` / `EJ OKEJ`) som extra B&W-säker markör
+- ✅ Borders ≥1.5pt så de syns tydligt i greyscale
+- ✅ Använd navy/dark som primärfärg på text och ikoner — färgade accenter endast som dekoration
+- ✅ Bakgrunder antingen vita eller mycket subtila tints (rgba opacity ≤0.12)
+- ✅ Rule-numreringar (`.regel-nr`) har border + bakgrund — fungerar både med och utan färg
+
+**Ikonstil för affischer:**
+
+- **Standard:** SVG-ikoner i navy (currentColor), 22mm storlek, viewBox 0 0 24 24
+- **Undantag — "low-age visual style"** (åk F–1): Emoji kan användas som medvetet val.
+  Dokumentera detta i `internal.notes` på övningen så portal-Claude vet att det är avsiktligt.
+- Använd `aria-label` och `role="img"` för tillgänglighet
 
 ### `implementation`
 
