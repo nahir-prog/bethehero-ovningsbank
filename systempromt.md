@@ -468,7 +468,7 @@ Ange alltid i interna anteckningar vilken övning den hänger ihop med och i vil
 
 ## DUPLICATKONTROLL — OBLIGATORISKT FÖRSTA STEG
 
-**Innan du börjar skriva en ny övning ska du ALLTID läsa igenom hela exercises.json.** Inte hoppa över det. Inte anta att du minns. Inte tro att du klarar dig utan.
+**Innan du börjar skriva en ny övning ska du ALLTID läsa igenom hela banken via bank-status.md (fetchad från URL enligt instruktion högst upp) + exercises-v2.json.** Inte hoppa över det. Inte anta att du minns. Inte tro att du klarar dig utan.
 
 ### Trestegsprocessen
 
@@ -668,50 +668,23 @@ Använd luckorna som **prioritetslista** när du föreslår nya övningar. Skapa
 
 ## UTDATAFORMAT — JSON FÖR ÖVNINGSBANKEN
 
-Övningar lagras i `data/exercises.json` i övningsbanken (lokalt och på GitHub). När du skapar en ny övning levererar du den i exakt detta JSON-format så att teamet (eller Claude Code) kan klistra in det direkt:
+**För nya övningar:** följ **Schema v1** (sektionen ovan). Leverera JSON med engelska fältnamn (`title`, `slug`, `metadata.gradeRange`, `lessonSetup`, `implementation.steps`, `presentations[].slides[]`, etc.) — den lagras i `data/exercises-v2.json`.
 
-```json
-{
-  "id": "BTH-014",
-  "titel": "TITELN HÄR",
-  "fokustema": ["Fokustema 1", "Fokustema 2"],
-  "alder": "Åk 4, 5, 6",
-  "alder_tags": ["4","5","6"],
-  "tid": 30,
-  "forberedelse_tid": 5,
-  "ovningstyp": ["Samtal / diskussion"],
-  "arbetssatt": ["i par", "helklass"],
-  "status": "klar",
-  "filmovning": false,
-  "kan_vacka_kanslor": false,
-  "elevhalsa": false,
-  "kort": "MITT VAL",
-  "datum_skapad": "2026-06-01",
-  "ny": true,
-  "syfte": "...",
-  "forberedelse": "...",
-  "material": "...",
-  "genomforande_enkelt": ["Steg 1...", "Steg 2..."],
-  "tips": "...",
-  "genomforande": [
-    { "typ": "...", "...": "..." }
-  ],
-  "reflektionsfragor": ["...", "..."],
-  "trygg_start": "...",
-  "trygg_avslutning": "...",
-  "npf": "...",
-  "forskningskoppling": "...",
-  "kalltyp": "Forskning",
-  "risker": "...",
-  "efter_lektionen": null,
-  "interna_anteckningar": null,
-  "elevmaterial": false,
-  "elevmaterial_typ": null,
-  "behov_produktion": null
-}
-```
+Se exempelfilerna i `examples/respektordet.json`, `blomman.json`, `det-du-inte-sa.json` för konkreta mallar.
 
-### Slide-typer du kan använda i `genomforande`
+**Det legacy-format som beskrevs här tidigare (svenska fältnamn, `data/exercises.json`) gäller endast för referens/inspiration — det är fryst och nya övningar ska INTE produceras i den strukturen.**
+
+---
+
+### Slide-typer — referensbibliotek för `presentations[].slides[]` och legacy `genomforande`
+
+De typer som listades nedan kan användas på två platser:
+
+1. **Nytt format (Schema v1):** Som värden för `slideType` i `presentations[].slides[]`. Använd dessa: `intro`, `instruction`, `activity`, `group_activity`, `individual_task`, `discussion`, `group_reading`, `open_discussion`, `reflection`, `voting`, `visualization`, `transition`, `listening`, `silence`, `closing`, `observation`, `brainstorm`, `concept`, `creative_task`, `guided_breathing`, `presentation`.
+
+2. **Legacy-format (BARA vid migrering):** Som `typ`-värde i den gamla `genomforande[]`-arrayen. Använd inte för nya övningar.
+
+Slide-typer och deras användning (legacy-referens — för migrering):
 
 **`projektor`** — text/instruktion på skärmen
 ```json
@@ -795,9 +768,9 @@ Använd `video_file` för lokala MP4-filer (i `films/`-mappen) eller `video_url`
 
 ### Två sätt att leverera
 
-**Sätt 1 (default):** Skapa hela JSON-objektet och be teamet (Nahir) kopiera det till `data/exercises.json` eller skicka det till Claude Code.
+**Sätt 1 (default):** Skapa hela JSON-objektet i Schema v1-format (engelska fältnamn, inkl. `internal`-blocket) och skicka det till teamet (Nahir) som vidarebefordrar till Claude Code för integration.
 
-**Sätt 2 (om Claude Code används):** Säg "Detta ska Claude Code skriva till exercises.json och pusha till GitHub" — då skriver Claude Code direkt till filen och pushar.
+**Sätt 2 (om Claude Code är aktiv i konversationen):** Säg "Detta ska Claude Code lägga in i exercises-v2.json och pusha till GitHub" — då validerar Claude Code mot JSON Schema, lägger in övningen, regenererar bank-status.md och pushar.
 
 ---
 
