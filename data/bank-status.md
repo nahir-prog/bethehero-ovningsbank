@@ -1,7 +1,7 @@
 # Bankstatus — översikt för agenten
 
-**Senast uppdaterad:** 2026-06-10 12:57
-**Total:** 19 legacy + 8 schema v1 = 27 övningar
+**Senast uppdaterad:** 2026-06-11 02:32
+**Total:** 19 legacy + 9 schema v1 = 28 övningar
 
 Denna fil är agentens snabbreferens för vad som finns i banken och vad som saknas.
 Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
@@ -20,6 +20,7 @@ Uppdatera vid behov genom att köra `python3 tools/generate-bank-status.py`.
 - **BRA KOMPIS TRIANGEL** (BTH-LEGACY-32731) — Åk 3, 4, 5, 6, 7 · Empati & perspektiv, Självkänsla & identitet, Gemenskap & inkludering + cards
 - **MINA RUM PÅ NÄTET** (BTH-V2-004) [pedagogisk_granskning] — Åk 4, 5, 6 · Digitala relationer, Självkänsla & identitet + worksheet
 - **FRÅGA FÖRST** (BTH-V2-007) [pedagogisk_granskning] — Åk 2 · Digitala relationer, Empati & perspektiv + poster
+- **VOLYMKNAPPEN** (BTH-V2-008) [pedagogisk_granskning] — Åk 4 · Känslor & självreglering
 
 ### Legacy (gamla strukturen — för referens & inspiration)
 

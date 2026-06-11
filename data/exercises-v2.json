@@ -1721,6 +1721,239 @@
         "updatedAt": "2026-06-10",
         "createdBy": "AI-agent"
       }
+    },
+    {
+      "schemaVersion": 1,
+      "title": "VOLYMKNAPPEN",
+      "slug": "volymknappen",
+      "shortDescription": "Eleverna upptäcker att känslor har en volym — inte bara av eller på. De ställer sig på en linje efter hur starkt något känns, och tränar på vad som faktiskt vrider ner volymen när den är på max.",
+      "teacherPurpose": "Eleverna lär sig att starka känslor inte är fel — men att de går att reglera. Genom att placera sig fysiskt efter känslans styrka blir det abstrakta konkret, och klassen bygger en gemensam verktygslåda för vad som faktiskt hjälper när volymen är uppe.",
+      "image": null,
+      "taxonomy": {
+        "themes": [
+          "Känslor & självreglering"
+        ],
+        "focusAreas": [
+          "självreglering",
+          "känslomedvetenhet",
+          "impulskontroll"
+        ],
+        "learningAreas": [
+          "värdegrund",
+          "social förmåga"
+        ],
+        "classNeeds": [
+          "återkommande rutin",
+          "vid hög stressnivå",
+          "efter konflikt"
+        ]
+      },
+      "safety": {
+        "level": "standard",
+        "note": "Övningen handlar om känslor i allmänhet, inte om enskilda händelser. Var uppmärksam på elev som konsekvent placerar sig på max — kan vara värt ett enskilt samtal efteråt."
+      },
+      "metadata": {
+        "durationMinutes": 30,
+        "preparationMinutes": 5,
+        "gradeRange": [
+          "4"
+        ],
+        "stages": [
+          "mellanstadiet"
+        ],
+        "workForm": [
+          "individuellt",
+          "helklass"
+        ],
+        "materialNeeds": [
+          "projektor",
+          "öppen golvyta för en linje tvärs över rummet",
+          "valfritt: två A4-lappar att märka linjens ändar"
+        ],
+        "cardNeeds": []
+      },
+      "requiresPrintMaterials": false,
+      "lessonSetup": {
+        "safeStartText": "Idag pratar vi om känslor — och här finns inga fel känslor och inga fel platser att ställa sig på. Att vara arg eller ledsen är inte fel. Vi ska bara träna på att märka HUR starkt något känns, och vad som hjälper.",
+        "preparation": "Tänk ut var linjen ska gå i klassrummet — tvärs över, från en vägg till en annan, med plats att stå längs hela. Flytta undan stolar om det behövs. Valfritt: sätt en lapp med '0 — lugnt' i ena änden och '10 — på max' i den andra.",
+        "materials": "Projektor för slides. En tänkt linje tvärs över golvet. Valfritt: två A4-lappar som märker ändarna (0 och 10).",
+        "printMaterials": []
+      },
+      "implementation": {
+        "intro": "Förklara att en känsla är som en volymknapp på en högtalare — den kan stå på 2, på 6 eller på max. Idag ska eleverna känna efter var deras egen knapp står, och tillsammans lista ut vad som vrider ner den. Säg också i förväg att de kommer att flytta sig på linjen flera gånger — det blir fyra påståenden — så vet alla vad som väntar.",
+        "steps": [
+          {
+            "title": "Visa volymknappen",
+            "body": "Visa bilden av linjen på projektorn: 0 i ena änden, 10 i den andra. Förklara att golvet nu ÄR den linjen. Peka ut var 0 är och var 10 är. Berätta att de kommer flytta sig fyra gånger, en gång per påstående.",
+            "teacherSays": "En känsla är inte bara av eller på. Den har en volym — precis som en högtalare. Den här linjen är volymknappen. Vi flyttar oss fyra gånger.",
+            "timeEstimate": "3 min"
+          },
+          {
+            "title": "Ställ er på första känslan",
+            "body": "Visa det första påståendet på skärmen. Eleverna går och ställer sig på linjen efter hur starkt DEN känslan brukar bli för dem. Ingen får knuffas eller kommentera var andra står.",
+            "subItems": [
+              "Påminn om att alla platser är okej",
+              "Vänta tills alla hittat sin plats innan du går vidare",
+              "Kommentera aldrig enskilda placeringar inför klassen. Håll i tysthet ett extra öga på elev som återkommande hamnar längst ut på en jobbig känsla — ta det med ett lugnt, enskilt samtal efteråt, aldrig framför de andra."
+            ],
+            "timeEstimate": "3 min"
+          },
+          {
+            "title": "Titta er omkring — utan att döma",
+            "body": "Be eleverna titta sig omkring och se att klassen står utspridd. Poängen: samma sak känns olika starkt för olika personer. Det är helt normalt.",
+            "teacherSays": "Titta er omkring. Vi står inte på samma ställe — och det är precis så det ska vara.",
+            "timeEstimate": "2 min"
+          },
+          {
+            "title": "Kör tre till fyra påståenden",
+            "body": "Visa nästa påståenden ett i taget. För varje: eleverna flyttar sig till sin nya plats. Variera mellan ilska, en känsla mellan kompisar, glädje och besvikelse så det inte bara handlar om jobbiga känslor.",
+            "subItems": [
+              "Låt det gå undan — flytta, titta, vidare",
+              "Kommentera inte enskilda placeringar"
+            ],
+            "timeEstimate": "8 min"
+          },
+          {
+            "title": "Frågan som vänder övningen",
+            "body": "Ställ alla på max-änden (10) och fråga: vad gör man när volymen står här? Eleverna får ge förslag. Skriv upp dem på tavlan medan de säger dem.",
+            "teacherSays": "Säg att din volym står på 10 just nu. Vad kan du göra för att vrida ner den ett snäpp? Inte stänga av — bara ner.",
+            "timeEstimate": "8 min"
+          },
+          {
+            "title": "Välj din egen knapp",
+            "body": "Var och en väljer i tysthet EN sak från tavlan som de tror skulle funka för just dem. De behöver inte säga den högt.",
+            "timeEstimate": "3 min"
+          }
+        ],
+        "outro": "Sätt upp listan med 'sätt att vrida ner volymen' i klassrummet. Återkom till den nästa gång någon eller hela klassen står på max."
+      },
+      "reflection": {
+        "questions": [
+          "Var det någon känsla där du stod längre ut än du trodde att du skulle göra?",
+          "Hur känns det i kroppen när din volym är på max — var märker du det först?",
+          "Vad kan du göra nästa gång du känner att volymen börjar gå upp?",
+          "Vad kan VI i klassen göra för varandra när någons volym är hög?"
+        ]
+      },
+      "teacherSupport": {
+        "tips": [
+          "Stå själv på linjen på något påstående — det visar att vuxna också har en volymknapp och sänker tröskeln.",
+          "Håll tempo. Övningen tappar kraft om varje påstående blir ett långt samtal — spara samtalet till max-frågan och reflektionen.",
+          "Spara tavellistan. Den är hela poängen — fotografera den och sätt upp den.",
+          "Stökig grupp? Låt eleverna ställa sig längs väggen istället för mitt på golvet, och släpp fram dem en rad i taget. Då blir rörelsen på den öppna ytan lugnare och ingen springer."
+        ],
+        "adaptations": [
+          "Elev som inte vill gå på linjen kan visa sin volym sittande med fingrar (0–10) från sin plats.",
+          "Elev som tycker det är svårt att välja plats kan få ställa sig bredvid en kompis först och justera sedan."
+        ],
+        "riskNote": null,
+        "npfSupport": "Den fysiska linjen ger en konkret, synlig skala istället för abstrakt 'hur mycket känner du'. Ge tydlig signal mellan varje påstående (t.ex. 'nästa' + paus) så bytena blir förutsägbara. Tillåt att stå kvar och bara observera — eleven kan delta genom att titta. Erbjud en fast plats nära dörren för den som behöver kunna kliva ut.",
+        "followUp": "Använd listan som klassens gemensamma verktyg. När stämningen är hög: peka på listan och fråga 'vad vrider ner volymen nu?' istället för att tillrättavisa."
+      },
+      "presentations": [
+        {
+          "id": "volymknappen-elev-01",
+          "exerciseSlug": "volymknappen",
+          "title": "Volymknappen",
+          "audience": "students",
+          "status": "ready",
+          "slides": [
+            {
+              "title": "VOLYMKNAPPEN",
+              "body": "En känsla är inte bara av eller på.\n\nDen har en volym.",
+              "instructionForTeacher": "Läs rubriken. Peka på linjen på golvet — 0 i ena änden, 10 i den andra. Säg att klassen kommer flytta sig fyra gånger.",
+              "slideType": "intro",
+              "mood": "energetic",
+              "durationEstimate": "2 min"
+            },
+            {
+              "title": "Golvet är din volymknapp",
+              "body": "0 = lugnt, knappt något.\n10 = på max.\n\nVi flyttar oss fyra gånger.\nStäll dig där din känsla brukar landa.",
+              "instructionForTeacher": "Peka ut 0-änden och 10-änden tydligt. Säg att det blir fyra påståenden. Vänta tills alla förstått innan första påståendet.",
+              "slideType": "instruction",
+              "mood": "clear",
+              "durationEstimate": "1 min"
+            },
+            {
+              "title": "Någon tar din sak utan att fråga",
+              "body": "Hur hög blir din volym då?\n\nGå och ställ dig på linjen. (1 av 4)",
+              "instructionForTeacher": "Låt alla hitta sin plats. Kommentera ingen. Säg sedan: titta er omkring.",
+              "slideType": "activity",
+              "mood": "focused",
+              "durationEstimate": "3 min"
+            },
+            {
+              "title": "En kompis blir arg på dig",
+              "body": "Hur hög volym känner du då?\n\nFlytta dig till din nya plats. (2 av 4)",
+              "instructionForTeacher": "En relationell känsla — handlar om någon annan, inte bara dig. Låt dem flytta, titta, vidare.",
+              "slideType": "activity",
+              "mood": "focused",
+              "durationEstimate": "2 min"
+            },
+            {
+              "title": "Du får göra precis det du längtat efter",
+              "body": "Glädje har också en volym.\n\nVar landar du? (3 av 4)",
+              "instructionForTeacher": "Visa att även glada känslor mäts. Håll tempo.",
+              "slideType": "activity",
+              "mood": "energetic",
+              "durationEstimate": "2 min"
+            },
+            {
+              "title": "Något du sett fram emot blir inställt",
+              "body": "Besviken? Hur hög volym?\n\nGå dit du känner. (4 av 4)",
+              "instructionForTeacher": "Sista påståendet. Samla sedan alla på 10-änden inför nästa slide.",
+              "slideType": "activity",
+              "mood": "focused",
+              "durationEstimate": "2 min"
+            },
+            {
+              "title": "Ställ er alla på 10",
+              "body": "Volymen står på max.\n\nVad gör du för att vrida ner den ett snäpp — inte stänga av, bara ner?",
+              "instructionForTeacher": "Samla in förslag. Skriv upp ALLA på tavlan medan de säger dem. Detta är övningens kärna.",
+              "slideType": "brainstorm",
+              "mood": "collaborative",
+              "durationEstimate": "8 min"
+            },
+            {
+              "title": "Välj din egen knapp",
+              "body": "Titta på listan.\n\nVilken sak tror DU skulle funka för dig?\n\nVälj en i tysthet.",
+              "instructionForTeacher": "Tyst, individuellt. Ingen behöver säga sitt val högt.",
+              "slideType": "reflection",
+              "mood": "calm",
+              "durationEstimate": "3 min"
+            },
+            {
+              "title": "Den här listan är vår",
+              "body": "Nästa gång volymen går upp —\nvi vet vad som hjälper.",
+              "instructionForTeacher": "Fotografera tavlan. Sätt upp listan i klassrummet.",
+              "slideType": "closing",
+              "mood": "calm",
+              "durationEstimate": "1 min"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "author": "AI-agent + redaktör",
+        "source": "Nybyggd 2026-06-11 — fyller lucka Känslor & självreglering × åk 4 (aktiv reglering med gradskala)",
+        "createdAt": "2026-06-11",
+        "language": "sv"
+      },
+      "internal": {
+        "id": "BTH-V2-008",
+        "productionStatus": "pedagogisk_granskning",
+        "qualityChecklist": {
+          "pedagogiskGranskning": "pending",
+          "sprakkoll": "pending",
+          "forskningspanelen": "pending",
+          "stavfelsKoll": "pending"
+        },
+        "notes": "Fyller lucka: Känslor & självreglering finns för F-4 (BLOMMAN) och F-9 (ANDAS SOPPA), men ingen tränar reglering som ett aktivt val med gradskala. VOLYMKNAPPEN kompletterar genom fysisk linje + verktygsbyggande, inte andning eller behovsidentifiering. Rev 2026-06-11: lade till vakthållning på återkommande max-placeringar (enskilt samtal, aldrig inför klass), förvarning om antal förflyttningar i intro+slides, vägg-rad-tips för stökiga grupper, och bytte nervositets-påståendet mot relationell känsla ('en kompis blir arg på dig') så övningen knyter an till relationer. Smal målgrupp åk 4 medvetet — kan breddas till 5-6 om teamet vill. Projektorburet, inget elevmaterial.",
+        "lockedFields": [],
+        "createdAt": "2026-06-11",
+        "updatedAt": "2026-06-11",
+        "createdBy": "AI-agent"
+      }
     }
   ]
 }
